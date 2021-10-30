@@ -1,0 +1,1 @@
+python train.py --dataset wisconsin --model mlp_norm  --dropout 0.5  --epochs 2000 --learning_rate 0.01 --weight_decay 5e-4 --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 0.01 --gamma 0.4 --norm_layers 2 --split_part 0

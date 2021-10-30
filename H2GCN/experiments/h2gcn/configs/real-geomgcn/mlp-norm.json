@@ -1,0 +1,23 @@
+{
+    "model_args": [
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 1 --norm_layers 1",
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 0.1 --norm_layers 1",
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 1 --norm_layers 2",
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 0.1 --norm_layers 2",
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 1 --norm_layers 3",
+        "--model mlp_norm --hidden1 64 --early_stopping 40 --alpha 0.1 --beta 0.1 --norm_layers 3"
+    ],
+    "exp_regex": "unmodified-0\\.48p__0\\.2p",
+    "arg_regex": "",
+    "graph_filter_dict": {
+        "benchmark": true,
+        "$or": [
+            {
+                "method.$in": [
+                    "planetoid",
+                    "GeomGCN"
+                ]
+            }
+        ]
+    }
+}

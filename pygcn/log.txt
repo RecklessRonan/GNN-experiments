@@ -1,0 +1,15 @@
+Loading cora dataset...
+Traceback (most recent call last):
+  File "pygcn.py", line 321, in <module>
+    train(epoch)
+  File "pygcn.py", line 286, in train
+    output = model(features, adj)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "pygcn.py", line 60, in forward
+    x = F.relu(self.gc1(x, adj))
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "pygcn.py", line 38, in forward
+    support = torch.mm(input, self.weight)
+RuntimeError: expected scalar type Double but found Float

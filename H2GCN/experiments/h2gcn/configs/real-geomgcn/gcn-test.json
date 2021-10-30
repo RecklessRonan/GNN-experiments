@@ -1,0 +1,17 @@
+{
+    "model_args": [
+       "--model gcn --hidden1 16 --learning_rate 0.05 --weight_decay 5e-6",
+       "--model gcn --hidden1 32 --learning_rate 0.05 --weight_decay 5e-6",
+       "--model gcn --hidden1 48 --learning_rate 0.05 --weight_decay 5e-6",
+       "--model gcn --hidden1 64 --learning_rate 0.05 --weight_decay 5e-6"
+    ],
+    "exp_regex": "unmodified-0\\.48p__0\\.2p",
+    "arg_regex": "",
+    
+    "graph_filter_dict": {
+        "benchmark": true,
+        "$or": [
+            {"method.$in": ["planetoid", "GeomGCN"]}
+        ]
+    }
+}

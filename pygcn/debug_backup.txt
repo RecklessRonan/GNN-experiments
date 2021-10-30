@@ -1,0 +1,70 @@
+
+class MLP_NORM(nn.Module):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers):
+        super(MLP_NORM, self).__init__()
+        self.fc1 = nn.Linear(nfeat, nhid)
+        self.fc2 = nn.Linear(nhid, nclass)
+        self.fc3 = nn.Linear(nclass, nclass)
+        self.nclass = nclass
+        self.dropout = dropout
+        self.alpha = alpha
+        self.beta = beta
+        self.gamma = gamma
+        self.norm_layers = norm_layers
+
+    def forward(self, x, adj):
+        x = self.fc1(x)
+        x = F.dropout(x, self.dropout, training=self.training)
+        x = self.fc2(x)
+        h0 = x
+        for _ in range(self.norm_layers):
+            x = self.norm(x, h0, adj)
+        return F.log_softmax(x, dim=1)
+
+    def norm(self, x, h0, adj):
+        # print('x')
+        # print(x)
+        # print('h0')
+        # print(h0)
+        # print('adj')
+        # print(adj)
+        # print('alpha: ', self.alpha, 'beta', self.beta, 'gamma', self.gamma)
+        coe = 1.0 / (self.alpha + self.beta)
+        # print('coe = 1.0 / (self.alpha + self.beta)')
+        # print(coe)
+        coe1 = 1 - self.gamma
+        # print('coe1 = 1 - self.gamma')
+        # print(coe1)
+        coe2 = 1.0 / coe1
+        # print('coe2 = 1.0 / coe1')
+        # print(coe2)
+        res = torch.mm(torch.transpose(x, 0, 1), x)
+        # print('res = torch.mm(torch.transpose(x, 0, 1), x)')
+        # print(res)
+
+        inv = torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        # print('torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)')
+        # print(inv)
+
+        # inv = self.fc3(res)
+        # print('inv = self.fc3(res)')
+        # print(inv)
+
+        res = torch.mm(inv, res)
+        # print('res = torch.mm(inv, res)')
+        # print(res)
+
+        res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)
+        # print('res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)')
+        # print(res)
+
+        tmp = torch.mm(torch.transpose(x, 0, 1), res)
+        # print('tmp = torch.mm(torch.transpose(x, 0, 1), res)')
+        # print(tmp)
+        res = coe1 * torch.mm(x, tmp) + self.beta * torch.spmm(adj, res) - \
+            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+        # print(' res = coe1 * torch.mm(x, tmp) + self.beta * torch.spmm(adj, res) - \
+        #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0')
+        # print(res)
+
+        return res

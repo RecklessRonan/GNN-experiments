@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.nn.init as init
 import torch.optim as optim
 from torch.nn.parameter import Parameter
 import math
@@ -70,7 +71,7 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders, nnodes):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
@@ -82,8 +83,15 @@ class MLP_NORM(nn.Module):
         self.gamma = gamma
         self.norm_layers = norm_layers
         self.orders = orders
-        self.orders_weight = torch.nn.Parameter(
-            torch.ones(orders, 1) / orders, requires_grad=True)
+        # each weight is same to 1/(orders + 1)
+        self.orders_weight = Parameter(
+            torch.ones(orders+1, 1) / (orders + 1), requires_grad=True
+        )
+        # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
+        self.orders_weight_matrix = Parameter(
+            torch.DoubleTensor(orders+1, nnodes), requires_grad=True
+        )
+        init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
 
     def forward(self, x, adj):
         x = self.fc1(x)
@@ -106,16 +114,34 @@ class MLP_NORM(nn.Module):
         res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)
         tmp = torch.mm(torch.transpose(x, 0, 1), res)
 
-        # print(adj.shape)
-        # print(type(adj))
+        # Orders1
+        # tmp_orders = res
+        # sum_orders = tmp_orders
+        # for _ in range(self.orders):
+        #     tmp_orders = torch.spmm(adj, tmp_orders)
+        #     sum_orders = sum_orders + tmp_orders
 
-        tmp_orders = torch.spmm(adj, res)
+        # Orders2
+        # tmp_orders = res * self.orders_weight[0]
+        # sum_orders = tmp_orders
+        # for i in range(self.orders):
+        #     tmp_orders = torch.spmm(adj, tmp_orders)
+        #     sum_orders = sum_orders + tmp_orders * self.orders_weight[i+1]
+
+        # res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
+        #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+
+        # Orders 3
+        tmp_orders = self.orders_weight[0].unsqueeze(1) * res
         sum_orders = tmp_orders
-        for _ in range(1, self.orders):
+        for i in range(self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
-            sum_orders += tmp_orders
-        res = coe1 * torch.mm(x, tmp) + self.beta * tmp_orders - \
+            sum_orders = sum_orders + \
+                self.orders_weight[i+1].unsqueeze(1) * tmp_orders
+
+        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+
         return res
 
 
@@ -126,47 +152,6 @@ def encode_onehot(labels):
     labels_onehot = np.array(list(map(classes_dict.get, labels)),
                              dtype=np.int32)
     return labels_onehot
-
-
-def load_data(path="./data/cora/", dataset="cora"):
-    """Load citation network dataset (cora only for now)"""
-    # print('Loading {} dataset...'.format(dataset))
-
-    idx_features_labels = np.genfromtxt("{}{}.content".format(path, dataset),
-                                        dtype=np.dtype(str))
-    features = sp.csr_matrix(idx_features_labels[:, 1:-1], dtype=np.float32)
-    labels = encode_onehot(idx_features_labels[:, -1])
-
-    # build graph
-    idx = np.array(idx_features_labels[:, 0], dtype=np.int32)
-    idx_map = {j: i for i, j in enumerate(idx)}
-    edges_unordered = np.genfromtxt("{}{}.cites".format(path, dataset),
-                                    dtype=np.int32)
-    edges = np.array(list(map(idx_map.get, edges_unordered.flatten())),
-                     dtype=np.int32).reshape(edges_unordered.shape)
-    adj = sp.coo_matrix((np.ones(edges.shape[0]), (edges[:, 0], edges[:, 1])),
-                        shape=(labels.shape[0], labels.shape[0]),
-                        dtype=np.float32)
-
-    # build symmetric adjacency matrix
-    adj = adj + adj.T.multiply(adj.T > adj) - adj.multiply(adj.T > adj)
-
-    features = normalize(features)
-    adj = normalize(adj + sp.eye(adj.shape[0]))
-
-    idx_train = range(140)
-    idx_val = range(200, 500)
-    idx_test = range(500, 1500)
-
-    features = torch.FloatTensor(np.array(features.todense()))
-    labels = torch.LongTensor(np.where(labels)[1])
-    adj = sparse_mx_to_torch_sparse_tensor(adj)
-
-    idx_train = torch.LongTensor(idx_train)
-    idx_val = torch.LongTensor(idx_val)
-    idx_test = torch.LongTensor(idx_test)
-
-    return adj, features, labels, idx_train, idx_val, idx_test
 
 
 def normalize(mx):
@@ -454,7 +439,8 @@ elif args.model == 'mlp_norm':
         beta=args.beta,
         gamma=args.gamma,
         norm_layers=args.norm_layers,
-        orders=args.orders)
+        orders=args.orders,
+        nnodes=adj.shape[0])
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 

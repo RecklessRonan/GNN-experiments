@@ -110,11 +110,10 @@ class MLP_NORM(nn.Module):
         # print(type(adj))
 
         tmp_orders = torch.spmm(adj, res)
-        adj_orders = adj
+        sum_orders = tmp_orders
         for _ in range(1, self.orders):
-            adj_orders = torch.mm(adj_orders, adj)
-            tmp_orders += torch.spmm(adj_orders, res)
-
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders += tmp_orders
         res = coe1 * torch.mm(x, tmp) + self.beta * tmp_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
         return res

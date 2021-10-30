@@ -106,8 +106,8 @@ class MLP_NORM(nn.Module):
         res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)
         tmp = torch.mm(torch.transpose(x, 0, 1), res)
 
-        print(adj.shape)
-        print(type(adj))
+        # print(adj.shape)
+        # print(type(adj))
 
         tmp_orders = torch.spmm(adj, res)
         adj_orders = adj

@@ -502,6 +502,6 @@ results_dict['test_cost'] = float(loss_test.item())
 results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
-outfile_name = f'''{args.dataset}_lr{args.lr}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

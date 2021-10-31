@@ -132,13 +132,12 @@ class MLP_NORM(nn.Module):
         #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
 
         # Orders 3
-        tmp_orders = self.orders_weight[0].unsqueeze(1) * res
+        tmp_orders = self.orders_weight_matrix[0].unsqueeze(1) * res
         sum_orders = tmp_orders
         for i in range(self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
             sum_orders = sum_orders + \
-                self.orders_weight[i+1].unsqueeze(1) * tmp_orders
-
+                self.orders_weight_matrix[i+1].unsqueeze(1) * tmp_orders
         res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
 

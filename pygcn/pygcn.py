@@ -16,7 +16,7 @@ from collections import defaultdict
 import os
 import json
 
-# torch.set_default_dtype(torch.float64)
+torch.set_default_dtype(torch.float64)
 
 
 class GraphConvolution(nn.Module):
@@ -419,8 +419,8 @@ adj, features, labels, idx_train, idx_val, idx_test = load_data_new(
 
 
 # Change data type to float
-# features = features.to(torch.float64)
-# adj = adj.to(torch.float64)
+features = features.to(torch.float64)
+adj = adj.to(torch.float64)
 
 # Model and optimizer
 
@@ -457,7 +457,6 @@ if args.cuda:
 cost_val = []
 t_total = time.time()
 
-print(model.orders_weight_matrix)
 for epoch in range(args.epochs):
     t = time.time()
     model.train()
@@ -467,7 +466,6 @@ for epoch in range(args.epochs):
     acc_train = accuracy(output[idx_train], labels[idx_train])
     loss_train.backward()
     optimizer.step()
-    print(model.orders_weight_matrix)
 
     if not args.fastmode:
         # Evaluate validation set performance separately,

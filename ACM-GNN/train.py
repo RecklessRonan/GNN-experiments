@@ -79,20 +79,20 @@ best_lambda = None
 # else:
 #     lr = [0.01, 0.05, 0.1]  # [0.002,0.01,0.05]
 # weight_decay = [0, 5e-6, 1e-5, 5e-5, 1e-4, 5e-4, 1e-3, 5e-3, 1e-2]
-# lambda_range = [0.5, 1, 1.5]
-# alpha_range = [0.1, 0.2, 0.3, 0.4, 0.5]
-# layers_range = [4, 8, 16, 32, 64]
+lambda_range = [0.5, 1, 1.5]
+alpha_range = [0.1, 0.2, 0.3, 0.4, 0.5]
+layers_range = [4, 8, 16, 32, 64]
 # if args.model == 'sgc':
 #     dropout = [0.0]
 # else:
 #     dropout = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-# datasets = ['cornell', 'wisconsin', 'texas', 'film', 'chameleon',
-#             'squirrel', 'cora', 'citeseer', 'pubmed', 'deezer-europe']
+datasets = ['cornell', 'wisconsin', 'texas', 'film', 'chameleon',
+            'squirrel', 'cora', 'citeseer', 'pubmed', 'deezer-europe']
 
 
-lr = [args.lr]
-weight_decay = [args.weight_decay]
-dropout = [args.dropout]
+lr = [args.lr, args.lr]
+weight_decay = [args.weight_decay, args.weight_decay]
+dropout = [args.dropout, args.dropout]
 
 
 if args.model == 'graphsage':
@@ -127,6 +127,8 @@ if args.dataset_name in {'deezer-europe'}:
 # Hyperparameter for other GNNs
 for args.lr, args.weight_decay, args.dropout in itertools.product(lr, weight_decay, dropout):
     # for args.layers, args.lamda, args.alpha, args.weight_decay in itertools.product(layers_range, lambda_range, alpha_range, weight_decay): #Hyperparameter for GCNII
+    print(args.lr, args.weight_decay, args.dropout)
+
     def test(eval_func, dataset_name):
         model.eval()
         output = model(features, adj_low, adj_high)

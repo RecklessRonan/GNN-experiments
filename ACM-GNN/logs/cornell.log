@@ -1,0 +1,542 @@
+Using backend: pytorch
+Total time elapsed: 43.8168s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7459, Test Std: 0.0530, runtime average time: 4.38s, epoch average time: 13.21ms
+Total time elapsed: 36.3835s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7541, Test Std: 0.0622, runtime average time: 3.64s, epoch average time: 12.94ms
+Total time elapsed: 31.0458s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0560, runtime average time: 3.10s, epoch average time: 13.82ms
+Total time elapsed: 32.9716s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7946, Test Std: 0.0501, runtime average time: 3.30s, epoch average time: 14.65ms
+Total time elapsed: 33.5002s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0499, runtime average time: 3.35s, epoch average time: 14.86ms
+Total time elapsed: 29.0206s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0468, runtime average time: 2.90s, epoch average time: 13.62ms
+Total time elapsed: 28.6566s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7784, Test Std: 0.0415, runtime average time: 2.87s, epoch average time: 13.43ms
+Total time elapsed: 31.2801s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0484, runtime average time: 3.13s, epoch average time: 14.18ms
+Total time elapsed: 33.3743s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7514, Test Std: 0.0495, runtime average time: 3.34s, epoch average time: 13.79ms
+Total time elapsed: 65.8319s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7081, Test Std: 0.0577, runtime average time: 6.58s, epoch average time: 13.82ms
+Total time elapsed: 123.1860s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0580, runtime average time: 12.32s, epoch average time: 13.37ms
+Total time elapsed: 65.2005s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7946, Test Std: 0.0471, runtime average time: 6.52s, epoch average time: 19.70ms
+Total time elapsed: 34.4915s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0475, runtime average time: 3.45s, epoch average time: 13.91ms
+Total time elapsed: 35.6727s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0490, runtime average time: 3.57s, epoch average time: 13.73ms
+Total time elapsed: 32.1470s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.0471, runtime average time: 3.21s, epoch average time: 13.34ms
+Total time elapsed: 29.8988s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0555, runtime average time: 2.99s, epoch average time: 13.52ms
+Total time elapsed: 30.0219s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0513, runtime average time: 3.00s, epoch average time: 13.57ms
+Total time elapsed: 29.9915s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0519, runtime average time: 3.00s, epoch average time: 13.60ms
+Total time elapsed: 35.2231s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0459, runtime average time: 3.52s, epoch average time: 13.74ms
+Total time elapsed: 69.3883s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000005, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0484, runtime average time: 6.94s, epoch average time: 13.53ms
+Total time elapsed: 72.0316s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8162, Test Std: 0.0577, runtime average time: 7.20s, epoch average time: 13.61ms
+Total time elapsed: 38.3154s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0577, runtime average time: 3.83s, epoch average time: 13.66ms
+Total time elapsed: 36.5421s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0513, runtime average time: 3.65s, epoch average time: 13.56ms
+Total time elapsed: 34.1066s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0505, runtime average time: 3.41s, epoch average time: 13.25ms
+Total time elapsed: 33.8775s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0397, runtime average time: 3.39s, epoch average time: 13.87ms
+Total time elapsed: 35.1366s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0436, runtime average time: 3.51s, epoch average time: 15.00ms
+Total time elapsed: 34.1212s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0541, runtime average time: 3.41s, epoch average time: 15.14ms
+Total time elapsed: 32.8287s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7784, Test Std: 0.0551, runtime average time: 3.28s, epoch average time: 14.29ms
+Total time elapsed: 34.5502s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7649, Test Std: 0.0514, runtime average time: 3.45s, epoch average time: 13.75ms
+Total time elapsed: 62.7745s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000010, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7243, Test Std: 0.0590, runtime average time: 6.28s, epoch average time: 14.04ms
+Total time elapsed: 58.2242s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0570, runtime average time: 5.82s, epoch average time: 13.68ms
+Total time elapsed: 33.2982s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0697, runtime average time: 3.33s, epoch average time: 13.14ms
+Total time elapsed: 31.8623s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0645, runtime average time: 3.19s, epoch average time: 13.64ms
+Total time elapsed: 30.0440s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0573, runtime average time: 3.00s, epoch average time: 13.29ms
+Total time elapsed: 30.8331s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8162, Test Std: 0.0564, runtime average time: 3.08s, epoch average time: 13.48ms
+Total time elapsed: 32.2551s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8162, Test Std: 0.0692, runtime average time: 3.23s, epoch average time: 13.87ms
+Total time elapsed: 30.9729s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7946, Test Std: 0.0471, runtime average time: 3.10s, epoch average time: 13.80ms
+Total time elapsed: 33.3494s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0530, runtime average time: 3.33s, epoch average time: 13.44ms
+Total time elapsed: 38.4927s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0499, runtime average time: 3.85s, epoch average time: 13.77ms
+Total time elapsed: 69.8331s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000050, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7243, Test Std: 0.0564, runtime average time: 6.98s, epoch average time: 13.57ms
+Total time elapsed: 51.3302s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8270, Test Std: 0.0530, runtime average time: 5.13s, epoch average time: 13.43ms
+Total time elapsed: 31.1182s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0718, runtime average time: 3.11s, epoch average time: 13.54ms
+Total time elapsed: 31.1077s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.0629, runtime average time: 3.11s, epoch average time: 13.73ms
+Total time elapsed: 30.8100s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0595, runtime average time: 3.08s, epoch average time: 13.59ms
+Total time elapsed: 32.0596s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0689, runtime average time: 3.21s, epoch average time: 13.71ms
+Total time elapsed: 31.9032s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0541, runtime average time: 3.19s, epoch average time: 13.52ms
+Total time elapsed: 32.8486s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0629, runtime average time: 3.28s, epoch average time: 13.73ms
+Total time elapsed: 35.8743s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0577, runtime average time: 3.59s, epoch average time: 13.36ms
+Total time elapsed: 36.0996s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0453, runtime average time: 3.61s, epoch average time: 13.01ms
+Total time elapsed: 61.6480s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000100, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0557, runtime average time: 6.16s, epoch average time: 13.21ms
+Total time elapsed: 63.1784s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0514, runtime average time: 6.32s, epoch average time: 13.56ms
+Total time elapsed: 36.7825s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8432, Test Std: 0.0692, runtime average time: 3.68s, epoch average time: 15.41ms
+Total time elapsed: 38.5175s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8432, Test Std: 0.0577, runtime average time: 3.85s, epoch average time: 15.25ms
+Total time elapsed: 33.6755s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8405, Test Std: 0.0656, runtime average time: 3.37s, epoch average time: 14.08ms
+Total time elapsed: 32.0019s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.0640, runtime average time: 3.20s, epoch average time: 13.63ms
+Total time elapsed: 32.6820s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8162, Test Std: 0.0649, runtime average time: 3.27s, epoch average time: 13.98ms
+Total time elapsed: 34.3101s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.0541, runtime average time: 3.43s, epoch average time: 14.25ms
+Total time elapsed: 34.4389s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0568, runtime average time: 3.44s, epoch average time: 13.63ms
+Total time elapsed: 41.4484s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0524, runtime average time: 4.14s, epoch average time: 13.15ms
+Total time elapsed: 62.2253s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.000500, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7270, Test Std: 0.0505, runtime average time: 6.22s, epoch average time: 13.23ms
+Total time elapsed: 58.3102s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0472, runtime average time: 5.83s, epoch average time: 13.41ms
+Total time elapsed: 35.7175s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8351, Test Std: 0.0459, runtime average time: 3.57s, epoch average time: 13.81ms
+Total time elapsed: 34.5335s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8459, Test Std: 0.0605, runtime average time: 3.45s, epoch average time: 14.09ms
+Total time elapsed: 33.4173s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0593, runtime average time: 3.34s, epoch average time: 14.05ms
+Total time elapsed: 33.0552s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8405, Test Std: 0.0759, runtime average time: 3.31s, epoch average time: 13.56ms
+Total time elapsed: 31.7176s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0568, runtime average time: 3.17s, epoch average time: 13.69ms
+Total time elapsed: 34.3221s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0547, runtime average time: 3.43s, epoch average time: 13.59ms
+Total time elapsed: 36.0867s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.0543, runtime average time: 3.61s, epoch average time: 13.69ms
+Total time elapsed: 45.7418s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7811, Test Std: 0.0533, runtime average time: 4.57s, epoch average time: 13.74ms
+Total time elapsed: 63.4463s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.001000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7270, Test Std: 0.0459, runtime average time: 6.34s, epoch average time: 13.61ms
+Total time elapsed: 55.2244s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0577, runtime average time: 5.52s, epoch average time: 13.64ms
+Total time elapsed: 40.2456s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0580, runtime average time: 4.02s, epoch average time: 13.58ms
+Total time elapsed: 39.8821s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0564, runtime average time: 3.99s, epoch average time: 13.31ms
+Total time elapsed: 38.8561s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0538, runtime average time: 3.89s, epoch average time: 13.50ms
+Total time elapsed: 37.9338s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0626, runtime average time: 3.79s, epoch average time: 13.66ms
+Total time elapsed: 43.2460s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0642, runtime average time: 4.32s, epoch average time: 13.94ms
+Total time elapsed: 47.6871s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0510, runtime average time: 4.77s, epoch average time: 15.02ms
+Total time elapsed: 44.9471s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0582, runtime average time: 4.49s, epoch average time: 13.75ms
+Total time elapsed: 50.4921s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0487, runtime average time: 5.05s, epoch average time: 13.50ms
+Total time elapsed: 58.9694s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.005000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6703, Test Std: 0.0660, runtime average time: 5.90s, epoch average time: 14.15ms
+Total time elapsed: 52.4392s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0555, runtime average time: 5.24s, epoch average time: 13.20ms
+Total time elapsed: 46.1451s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7676, Test Std: 0.0557, runtime average time: 4.61s, epoch average time: 13.07ms
+Total time elapsed: 50.2570s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0642, runtime average time: 5.03s, epoch average time: 13.66ms
+Total time elapsed: 50.3085s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7486, Test Std: 0.0484, runtime average time: 5.03s, epoch average time: 14.01ms
+Total time elapsed: 49.9207s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0541, runtime average time: 4.99s, epoch average time: 14.13ms
+Total time elapsed: 48.0439s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0528, runtime average time: 4.80s, epoch average time: 13.62ms
+Total time elapsed: 49.2653s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7243, Test Std: 0.0637, runtime average time: 4.93s, epoch average time: 13.59ms
+Total time elapsed: 52.9005s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7081, Test Std: 0.0713, runtime average time: 5.29s, epoch average time: 13.69ms
+Total time elapsed: 54.6301s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6811, Test Std: 0.0660, runtime average time: 5.46s, epoch average time: 13.94ms
+Total time elapsed: 40.3284s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0100, weight decay 0.010000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.5892, Test Std: 0.0315, runtime average time: 4.03s, epoch average time: 13.85ms
+Total time elapsed: 27.1472s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7189, Test Std: 0.0686, runtime average time: 2.71s, epoch average time: 13.51ms
+Total time elapsed: 29.7964s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7324, Test Std: 0.0709, runtime average time: 2.98s, epoch average time: 13.43ms
+Total time elapsed: 28.7199s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7324, Test Std: 0.0505, runtime average time: 2.87s, epoch average time: 13.43ms
+Total time elapsed: 29.9512s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7486, Test Std: 0.0629, runtime average time: 3.00s, epoch average time: 13.58ms
+Total time elapsed: 27.6042s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7541, Test Std: 0.0519, runtime average time: 2.76s, epoch average time: 13.29ms
+Total time elapsed: 27.2333s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0592, runtime average time: 2.72s, epoch average time: 13.34ms
+Total time elapsed: 27.6268s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0607, runtime average time: 2.76s, epoch average time: 13.42ms
+Total time elapsed: 26.5037s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7486, Test Std: 0.0580, runtime average time: 2.65s, epoch average time: 13.19ms
+Total time elapsed: 27.8327s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7514, Test Std: 0.0637, runtime average time: 2.78s, epoch average time: 13.65ms
+Total time elapsed: 45.9040s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6541, Test Std: 0.0449, runtime average time: 4.59s, epoch average time: 14.87ms
+Total time elapsed: 99.8135s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0495, runtime average time: 9.98s, epoch average time: 13.82ms
+Total time elapsed: 32.0997s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0735, runtime average time: 3.21s, epoch average time: 13.84ms
+Total time elapsed: 28.4558s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7541, Test Std: 0.0426, runtime average time: 2.85s, epoch average time: 13.87ms
+Total time elapsed: 27.2548s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0469, runtime average time: 2.73s, epoch average time: 13.47ms
+Total time elapsed: 26.0002s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0678, runtime average time: 2.60s, epoch average time: 12.71ms
+Total time elapsed: 28.6329s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0382, runtime average time: 2.86s, epoch average time: 13.59ms
+Total time elapsed: 28.0897s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7459, Test Std: 0.0607, runtime average time: 2.81s, epoch average time: 13.56ms
+Total time elapsed: 27.6827s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7703, Test Std: 0.0583, runtime average time: 2.77s, epoch average time: 13.36ms
+Total time elapsed: 30.5565s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0567, runtime average time: 3.06s, epoch average time: 13.93ms
+Total time elapsed: 46.7419s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000005, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6811, Test Std: 0.0713, runtime average time: 4.67s, epoch average time: 13.69ms
+Total time elapsed: 78.1371s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0675, runtime average time: 7.81s, epoch average time: 13.72ms
+Total time elapsed: 29.3960s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.0686, runtime average time: 2.94s, epoch average time: 13.72ms
+Total time elapsed: 27.0614s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0593, runtime average time: 2.71s, epoch average time: 13.27ms
+Total time elapsed: 26.5513s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0505, runtime average time: 2.66s, epoch average time: 13.21ms
+Total time elapsed: 28.2137s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0616, runtime average time: 2.82s, epoch average time: 13.28ms
+Total time elapsed: 29.1901s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0610, runtime average time: 2.92s, epoch average time: 13.43ms
+Total time elapsed: 27.4405s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0570, runtime average time: 2.74s, epoch average time: 13.24ms
+Total time elapsed: 26.5120s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0580, runtime average time: 2.65s, epoch average time: 13.02ms
+Total time elapsed: 31.0946s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7405, Test Std: 0.0530, runtime average time: 3.11s, epoch average time: 13.15ms
+Total time elapsed: 39.9138s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000010, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7000, Test Std: 0.0610, runtime average time: 3.99s, epoch average time: 13.01ms
+Total time elapsed: 46.2362s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0595, runtime average time: 4.62s, epoch average time: 13.15ms
+Total time elapsed: 27.7422s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.0642, runtime average time: 2.77s, epoch average time: 13.25ms
+Total time elapsed: 27.2442s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.1004, runtime average time: 2.72s, epoch average time: 13.47ms
+Total time elapsed: 26.9613s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0684, runtime average time: 2.70s, epoch average time: 13.13ms
+Total time elapsed: 27.7368s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8108, Test Std: 0.0628, runtime average time: 2.77s, epoch average time: 13.14ms
+Total time elapsed: 28.0294s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0717, runtime average time: 2.80s, epoch average time: 13.32ms
+Total time elapsed: 26.4929s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0547, runtime average time: 2.65s, epoch average time: 12.92ms
+Total time elapsed: 28.8468s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7784, Test Std: 0.0510, runtime average time: 2.88s, epoch average time: 13.56ms
+Total time elapsed: 33.6163s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7676, Test Std: 0.0582, runtime average time: 3.36s, epoch average time: 14.82ms
+Total time elapsed: 44.0768s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000050, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6919, Test Std: 0.0675, runtime average time: 4.41s, epoch average time: 14.68ms
+Total time elapsed: 40.3873s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8324, Test Std: 0.0510, runtime average time: 4.04s, epoch average time: 14.61ms
+Total time elapsed: 31.1283s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0577, runtime average time: 3.11s, epoch average time: 13.74ms
+Total time elapsed: 28.3307s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0738, runtime average time: 2.83s, epoch average time: 13.52ms
+Total time elapsed: 28.3289s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0568, runtime average time: 2.83s, epoch average time: 13.93ms
+Total time elapsed: 29.0898s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0516, runtime average time: 2.91s, epoch average time: 13.87ms
+Total time elapsed: 29.0061s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8162, Test Std: 0.0577, runtime average time: 2.90s, epoch average time: 13.42ms
+Total time elapsed: 26.8884s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0551, runtime average time: 2.69s, epoch average time: 12.85ms
+Total time elapsed: 28.5196s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0541, runtime average time: 2.85s, epoch average time: 13.30ms
+Total time elapsed: 31.1933s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7649, Test Std: 0.0469, runtime average time: 3.12s, epoch average time: 13.38ms
+Total time elapsed: 39.5215s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000100, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7054, Test Std: 0.0645, runtime average time: 3.95s, epoch average time: 13.35ms
+Total time elapsed: 37.6293s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8405, Test Std: 0.0709, runtime average time: 3.76s, epoch average time: 13.75ms
+Total time elapsed: 27.8815s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0580, runtime average time: 2.79s, epoch average time: 13.37ms
+Total time elapsed: 28.3212s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8324, Test Std: 0.0510, runtime average time: 2.83s, epoch average time: 13.63ms
+Total time elapsed: 27.1920s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8514, Test Std: 0.0718, runtime average time: 2.72s, epoch average time: 13.33ms
+Total time elapsed: 26.5941s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8108, Test Std: 0.0673, runtime average time: 2.66s, epoch average time: 13.07ms
+Total time elapsed: 27.4750s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0471, runtime average time: 2.75s, epoch average time: 13.06ms
+Total time elapsed: 30.0255s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8351, Test Std: 0.0730, runtime average time: 3.00s, epoch average time: 13.59ms
+Total time elapsed: 29.3533s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.0499, runtime average time: 2.94s, epoch average time: 13.62ms
+Total time elapsed: 30.6697s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7757, Test Std: 0.0695, runtime average time: 3.07s, epoch average time: 13.70ms
+Total time elapsed: 29.9037s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6730, Test Std: 0.0610, runtime average time: 2.99s, epoch average time: 13.42ms
+Total time elapsed: 34.0243s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8270, Test Std: 0.0530, runtime average time: 3.40s, epoch average time: 13.36ms
+Total time elapsed: 28.0828s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8351, Test Std: 0.0778, runtime average time: 2.81s, epoch average time: 13.28ms
+Total time elapsed: 27.5292s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8324, Test Std: 0.0480, runtime average time: 2.75s, epoch average time: 13.28ms
+Total time elapsed: 27.8998s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0765, runtime average time: 2.79s, epoch average time: 13.43ms
+Total time elapsed: 27.6446s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8270, Test Std: 0.0747, runtime average time: 2.76s, epoch average time: 13.60ms
+Total time elapsed: 28.4300s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0757, runtime average time: 2.84s, epoch average time: 13.79ms
+Total time elapsed: 27.5485s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8297, Test Std: 0.0629, runtime average time: 2.75s, epoch average time: 13.24ms
+Total time elapsed: 27.6870s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0472, runtime average time: 2.77s, epoch average time: 13.13ms
+Total time elapsed: 28.7333s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0516, runtime average time: 2.87s, epoch average time: 13.24ms
+Total time elapsed: 26.7298s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.001000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6486, Test Std: 0.0554, runtime average time: 2.67s, epoch average time: 13.08ms
+Total time elapsed: 27.9105s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0720, runtime average time: 2.79s, epoch average time: 12.79ms
+Total time elapsed: 30.4632s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0656, runtime average time: 3.05s, epoch average time: 14.52ms
+Total time elapsed: 30.7988s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0822, runtime average time: 3.08s, epoch average time: 14.80ms
+Total time elapsed: 31.4892s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8108, Test Std: 0.0735, runtime average time: 3.15s, epoch average time: 15.11ms
+Total time elapsed: 27.7313s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0654, runtime average time: 2.77s, epoch average time: 13.16ms
+Total time elapsed: 29.2879s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0614, runtime average time: 2.93s, epoch average time: 13.62ms
+Total time elapsed: 29.0576s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0709, runtime average time: 2.91s, epoch average time: 13.67ms
+Total time elapsed: 31.1650s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7622, Test Std: 0.0692, runtime average time: 3.12s, epoch average time: 13.94ms
+Total time elapsed: 31.1772s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7162, Test Std: 0.0607, runtime average time: 3.12s, epoch average time: 14.01ms
+Total time elapsed: 29.5447s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.005000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.5892, Test Std: 0.0315, runtime average time: 2.95s, epoch average time: 14.04ms
+Total time elapsed: 30.0151s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7811, Test Std: 0.0824, runtime average time: 3.00s, epoch average time: 13.28ms
+Total time elapsed: 30.0777s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0707, runtime average time: 3.01s, epoch average time: 13.72ms
+Total time elapsed: 29.4777s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7703, Test Std: 0.0570, runtime average time: 2.95s, epoch average time: 13.73ms
+Total time elapsed: 29.1398s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7514, Test Std: 0.0682, runtime average time: 2.91s, epoch average time: 13.39ms
+Total time elapsed: 30.9362s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7459, Test Std: 0.0696, runtime average time: 3.09s, epoch average time: 14.07ms
+Total time elapsed: 31.7465s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7324, Test Std: 0.0598, runtime average time: 3.17s, epoch average time: 14.25ms
+Total time elapsed: 30.7127s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7216, Test Std: 0.0617, runtime average time: 3.07s, epoch average time: 13.84ms
+Total time elapsed: 29.6453s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7081, Test Std: 0.0524, runtime average time: 2.96s, epoch average time: 13.62ms
+Total time elapsed: 28.1879s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6378, Test Std: 0.0530, runtime average time: 2.82s, epoch average time: 13.49ms
+Total time elapsed: 28.0216s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.010000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.5892, Test Std: 0.0315, runtime average time: 2.80s, epoch average time: 13.74ms
+Total time elapsed: 27.4153s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6757, Test Std: 0.0513, runtime average time: 2.74s, epoch average time: 13.64ms
+Total time elapsed: 34.8723s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7027, Test Std: 0.0662, runtime average time: 3.49s, epoch average time: 13.52ms
+Total time elapsed: 27.3353s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0472, runtime average time: 2.73s, epoch average time: 13.59ms
+Total time elapsed: 27.6773s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7081, Test Std: 0.0614, runtime average time: 2.77s, epoch average time: 13.40ms
+Total time elapsed: 27.2412s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7108, Test Std: 0.0746, runtime average time: 2.72s, epoch average time: 13.22ms
+Total time elapsed: 27.7493s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0469, runtime average time: 2.77s, epoch average time: 13.52ms
+Total time elapsed: 27.4021s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7297, Test Std: 0.1040, runtime average time: 2.74s, epoch average time: 13.59ms
+Total time elapsed: 27.1353s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7405, Test Std: 0.0653, runtime average time: 2.71s, epoch average time: 13.41ms
+Total time elapsed: 27.1902s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7162, Test Std: 0.0654, runtime average time: 2.72s, epoch average time: 13.53ms
+Total time elapsed: 45.6245s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6514, Test Std: 0.0560, runtime average time: 4.56s, epoch average time: 13.29ms
+Total time elapsed: 66.4044s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0908, runtime average time: 6.64s, epoch average time: 12.91ms
+Total time elapsed: 27.0043s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7000, Test Std: 0.0443, runtime average time: 2.70s, epoch average time: 13.30ms
+Total time elapsed: 32.8098s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0472, runtime average time: 3.28s, epoch average time: 15.13ms
+Total time elapsed: 31.0430s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7703, Test Std: 0.0728, runtime average time: 3.10s, epoch average time: 14.15ms
+Total time elapsed: 30.3753s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7243, Test Std: 0.0415, runtime average time: 3.04s, epoch average time: 14.88ms
+Total time elapsed: 23.3376s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0471, runtime average time: 2.33s, epoch average time: 11.10ms
+Total time elapsed: 24.7201s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7622, Test Std: 0.0432, runtime average time: 2.47s, epoch average time: 11.39ms
+Total time elapsed: 24.9444s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7486, Test Std: 0.0343, runtime average time: 2.49s, epoch average time: 11.94ms
+Total time elapsed: 24.1176s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7243, Test Std: 0.0495, runtime average time: 2.41s, epoch average time: 11.46ms
+Total time elapsed: 33.1276s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000005, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6541, Test Std: 0.0602, runtime average time: 3.31s, epoch average time: 11.14ms
+Total time elapsed: 39.0416s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0674, runtime average time: 3.90s, epoch average time: 11.00ms
+Total time elapsed: 23.0988s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7486, Test Std: 0.0838, runtime average time: 2.31s, epoch average time: 11.00ms
+Total time elapsed: 23.3476s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7649, Test Std: 0.0765, runtime average time: 2.33s, epoch average time: 11.22ms
+Total time elapsed: 27.3397s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7676, Test Std: 0.0471, runtime average time: 2.73s, epoch average time: 11.51ms
+Total time elapsed: 24.1710s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7703, Test Std: 0.0676, runtime average time: 2.42s, epoch average time: 11.65ms
+Total time elapsed: 24.9212s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7514, Test Std: 0.0703, runtime average time: 2.49s, epoch average time: 11.73ms
+Total time elapsed: 24.6931s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7568, Test Std: 0.0604, runtime average time: 2.47s, epoch average time: 11.88ms
+Total time elapsed: 25.1533s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7784, Test Std: 0.0538, runtime average time: 2.52s, epoch average time: 11.91ms
+Total time elapsed: 24.5482s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7432, Test Std: 0.0405, runtime average time: 2.45s, epoch average time: 11.67ms
+Total time elapsed: 31.2748s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000010, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6703, Test Std: 0.0818, runtime average time: 3.13s, epoch average time: 11.60ms
+Total time elapsed: 32.6738s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.1004, runtime average time: 3.27s, epoch average time: 11.52ms
+Total time elapsed: 24.4060s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0560, runtime average time: 2.44s, epoch average time: 11.48ms
+Total time elapsed: 23.6427s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.1013, runtime average time: 2.36s, epoch average time: 11.38ms
+Total time elapsed: 24.7150s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8000, Test Std: 0.0569, runtime average time: 2.47s, epoch average time: 11.15ms
+Total time elapsed: 24.1628s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0662, runtime average time: 2.42s, epoch average time: 11.65ms
+Total time elapsed: 23.3767s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0629, runtime average time: 2.34s, epoch average time: 11.28ms
+Total time elapsed: 23.2899s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7784, Test Std: 0.0510, runtime average time: 2.33s, epoch average time: 11.24ms
+Total time elapsed: 24.0245s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0727, runtime average time: 2.40s, epoch average time: 11.01ms
+Total time elapsed: 25.9162s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7622, Test Std: 0.0660, runtime average time: 2.59s, epoch average time: 11.64ms
+Total time elapsed: 29.1803s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000050, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6784, Test Std: 0.0598, runtime average time: 2.92s, epoch average time: 11.43ms
+Total time elapsed: 38.2167s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0797, runtime average time: 3.82s, epoch average time: 11.19ms
+Total time elapsed: 24.3155s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0544, runtime average time: 2.43s, epoch average time: 11.12ms
+Total time elapsed: 24.7854s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0505, runtime average time: 2.48s, epoch average time: 11.27ms
+Total time elapsed: 23.8406s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0916, runtime average time: 2.38s, epoch average time: 11.56ms
+Total time elapsed: 23.1154s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0547, runtime average time: 2.31s, epoch average time: 11.16ms
+Total time elapsed: 24.0695s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8324, Test Std: 0.0692, runtime average time: 2.41s, epoch average time: 11.68ms
+Total time elapsed: 23.8538s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7811, Test Std: 0.0610, runtime average time: 2.39s, epoch average time: 11.33ms
+Total time elapsed: 23.7346s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7865, Test Std: 0.0505, runtime average time: 2.37s, epoch average time: 11.49ms
+Total time elapsed: 25.1605s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0443, runtime average time: 2.52s, epoch average time: 11.33ms
+Total time elapsed: 33.1939s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000100, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6541, Test Std: 0.0713, runtime average time: 3.32s, epoch average time: 11.71ms
+Total time elapsed: 37.9120s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8432, Test Std: 0.0682, runtime average time: 3.79s, epoch average time: 11.73ms
+Total time elapsed: 23.7268s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8135, Test Std: 0.0505, runtime average time: 2.37s, epoch average time: 11.45ms
+Total time elapsed: 23.1318s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8270, Test Std: 0.0569, runtime average time: 2.31s, epoch average time: 11.31ms
+Total time elapsed: 23.8232s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7973, Test Std: 0.0686, runtime average time: 2.38s, epoch average time: 11.54ms
+Total time elapsed: 24.3392s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0840, runtime average time: 2.43s, epoch average time: 11.81ms
+Total time elapsed: 24.3166s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8270, Test Std: 0.0486, runtime average time: 2.43s, epoch average time: 11.72ms
+Total time elapsed: 23.1124s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0660, runtime average time: 2.31s, epoch average time: 11.29ms
+Total time elapsed: 23.3883s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7892, Test Std: 0.0495, runtime average time: 2.34s, epoch average time: 11.27ms
+Total time elapsed: 24.0072s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0617, runtime average time: 2.40s, epoch average time: 11.41ms
+Total time elapsed: 24.9564s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.000500, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6162, Test Std: 0.0660, runtime average time: 2.50s, epoch average time: 11.44ms
+Total time elapsed: 35.3203s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8324, Test Std: 0.0743, runtime average time: 3.53s, epoch average time: 11.18ms
+Total time elapsed: 22.9338s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0642, runtime average time: 2.29s, epoch average time: 11.09ms
+Total time elapsed: 23.9926s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8378, Test Std: 0.0783, runtime average time: 2.40s, epoch average time: 11.61ms
+Total time elapsed: 23.3859s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8378, Test Std: 0.0811, runtime average time: 2.34s, epoch average time: 11.50ms
+Total time elapsed: 23.0653s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8486, Test Std: 0.0727, runtime average time: 2.31s, epoch average time: 11.21ms
+Total time elapsed: 23.3635s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8189, Test Std: 0.0674, runtime average time: 2.34s, epoch average time: 11.30ms
+Total time elapsed: 24.3208s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8216, Test Std: 0.0696, runtime average time: 2.43s, epoch average time: 11.65ms
+Total time elapsed: 24.1708s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0737, runtime average time: 2.42s, epoch average time: 11.67ms
+Total time elapsed: 24.0068s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7378, Test Std: 0.0383, runtime average time: 2.40s, epoch average time: 11.58ms
+Total time elapsed: 23.8655s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.001000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6054, Test Std: 0.0557, runtime average time: 2.39s, epoch average time: 11.26ms
+Total time elapsed: 25.2407s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0813, runtime average time: 2.52s, epoch average time: 11.28ms
+Total time elapsed: 24.4068s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8243, Test Std: 0.0654, runtime average time: 2.44s, epoch average time: 11.89ms
+Total time elapsed: 24.4673s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8027, Test Std: 0.0640, runtime average time: 2.45s, epoch average time: 11.84ms
+Total time elapsed: 24.9604s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8054, Test Std: 0.0564, runtime average time: 2.50s, epoch average time: 12.17ms
+Total time elapsed: 24.7985s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8081, Test Std: 0.0867, runtime average time: 2.48s, epoch average time: 12.07ms
+Total time elapsed: 24.7286s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7919, Test Std: 0.0528, runtime average time: 2.47s, epoch average time: 12.08ms
+Total time elapsed: 23.6639s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7649, Test Std: 0.0651, runtime average time: 2.37s, epoch average time: 11.42ms
+Total time elapsed: 23.4547s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7324, Test Std: 0.0519, runtime average time: 2.35s, epoch average time: 11.50ms
+Total time elapsed: 23.9845s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6811, Test Std: 0.0510, runtime average time: 2.40s, epoch average time: 11.47ms
+Total time elapsed: 23.2896s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.005000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.5892, Test Std: 0.0315, runtime average time: 2.33s, epoch average time: 11.40ms
+Total time elapsed: 25.2066s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.0000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7838, Test Std: 0.0684, runtime average time: 2.52s, epoch average time: 11.49ms
+Total time elapsed: 23.4355s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.1000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7730, Test Std: 0.0727, runtime average time: 2.34s, epoch average time: 11.40ms
+Total time elapsed: 24.1010s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.2000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7649, Test Std: 0.0802, runtime average time: 2.41s, epoch average time: 11.57ms
+Total time elapsed: 23.0811s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7595, Test Std: 0.0645, runtime average time: 2.31s, epoch average time: 11.23ms
+Total time elapsed: 23.4386s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.4000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7162, Test Std: 0.0631, runtime average time: 2.34s, epoch average time: 11.47ms
+Total time elapsed: 24.3860s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.5000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7324, Test Std: 0.0633, runtime average time: 2.44s, epoch average time: 11.77ms
+Total time elapsed: 24.1382s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.6000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.7189, Test Std: 0.0727, runtime average time: 2.41s, epoch average time: 11.71ms
+Total time elapsed: 24.9653s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.7000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6784, Test Std: 0.0573, runtime average time: 2.50s, epoch average time: 12.22ms
+Total time elapsed: 23.6989s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.8000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.6189, Test Std: 0.0622, runtime average time: 2.37s, epoch average time: 11.39ms
+Total time elapsed: 24.2095s
+cornell, Model: acmgcn, variant: False, Hops: 1, Hidden: 64, learning rate 0.1000, weight decay 0.010000, dropout 0.9000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.5892, Test Std: 0.0315, runtime average time: 2.42s, epoch average time: 12.01ms
+Best Result of acmgcn, variant: False, on Dataset: cornell, Hops: 1, Hidden: 64, learning rate 0.0500, weight decay 0.000500, dropout 0.3000, layers 1, alpha 0.50, lambda 0.50, Test Mean: 0.8514, Test Std: 0.0718, epoch average/runtime average time: 13.33ms/2.72s

@@ -209,8 +209,8 @@ def load_data_new(dataset_str, split):
     :param dataset_str: Dataset name
     :return: All data input files loaded (as well the training/test data).
     """
-    print('dataset_str', dataset_str)
-    print('split', split)
+    # print('dataset_str', dataset_str)
+    # print('split', split)
     if dataset_str in ['citeseer', 'cora', 'pubmed']:
         names = ['x', 'y', 'tx', 'ty', 'allx', 'ally', 'graph']
         objects = []
@@ -358,12 +358,12 @@ def load_data_new(dataset_str, split):
     idx_val = torch.LongTensor(idx_val)
     idx_test = torch.LongTensor(idx_test)
 
-    print('adj', adj.shape)
-    print('features', features.shape)
-    print('labels', labels.shape)
-    print('idx_train', idx_train.shape)
-    print('idx_val', idx_val.shape)
-    print('idx_test', idx_test.shape)
+    # print('adj', adj.shape)
+    # print('features', features.shape)
+    # print('labels', labels.shape)
+    # print('idx_train', idx_train.shape)
+    # print('idx_val', idx_val.shape)
+    # print('idx_test', idx_test.shape)
     return adj, features, labels, idx_train, idx_val, idx_test
 
 
@@ -503,5 +503,6 @@ results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
 outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+print(outfile_name)
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

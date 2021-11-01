@@ -155,6 +155,9 @@ for args.lr, args.weight_decay, args.dropout in itertools.product(lr, weight_dec
             model = GCN(nfeat=features.shape[1], nhid=args.hidden, nclass=labels.max().item(
             ) + 1, dropout=args.dropout,  model_type=args.model, nlayers=args.layers, variant=args.variant).to(device)
 
+        # for layer in model.gcns:
+        #     layer.reset_parameters()
+
         if args.dataset_name in {'deezer-europe'}:
             idx_train, idx_val, idx_test = split_idx_lst[idx]['train'].to(
                 device), split_idx_lst[idx]['valid'].to(device), split_idx_lst[idx]['test'].to(device)

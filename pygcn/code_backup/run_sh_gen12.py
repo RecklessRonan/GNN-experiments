@@ -9,14 +9,13 @@ beta = [0.1, 0.5, 1.0, 10.0]
 gamma = [0.1, 0.5, 0.9]
 norm_layers = [1, 2, 3]
 orders = [1, 3, 5]
-datasets = ['chameleon', 'cornell', 'film', 'squirrel',
+datasets = ['chameleon', 'cornell', 'squirrel',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
 
 best_abg = {
     'chameleon': [0.1, 0.1, 0.9],
     'cornell': [0.5, 0.1, 0.1],
-    'film': [10.0, 10.0, 0.5],
     'squirrel': [0.1, 0.1, 0.1],
     'texas': [10.0, 1.0, 0.5],
     'wisconsin': [1.0, 0.1, 0.9],

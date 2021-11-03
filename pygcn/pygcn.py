@@ -15,6 +15,9 @@ import networkx as nx
 from collections import defaultdict
 import os
 import json
+import warnings
+
+warnings.filterwarnings('ignore')
 
 torch.set_default_dtype(torch.float64)
 
@@ -87,6 +90,7 @@ class MLP_NORM(nn.Module):
         self.orders_weight = Parameter(
             torch.ones(orders, 1) / orders, requires_grad=True
         )
+        # init.kaiming_normal_(self.orders_weight, mode='fan_out')
         # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
         self.orders_weight_matrix = Parameter(
             torch.DoubleTensor(nclass, orders), requires_grad=True
@@ -475,18 +479,21 @@ for epoch in range(args.epochs):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
-    print('Epoch: {:04d}'.format(epoch+1),
-          'loss_train: {:.4f}'.format(loss_train.item()),
-          'acc_train: {:.4f}'.format(acc_train.item()),
-          'loss_val: {:.4f}'.format(loss_val.item()),
-          'acc_val: {:.4f}'.format(acc_val.item()),
-          'time: {:.4f}s'.format(time.time() - t))
+    # print('Epoch: {:04d}'.format(epoch+1),
+    #       'loss_train: {:.4f}'.format(loss_train.item()),
+    #       'acc_train: {:.4f}'.format(acc_train.item()),
+    #       'loss_val: {:.4f}'.format(loss_val.item()),
+    #       'acc_val: {:.4f}'.format(acc_val.item()),
+    #       'time: {:.4f}s'.format(time.time() - t))
     cost_val.append(loss_val.item())
     if epoch > args.early_stopping and cost_val[-1] > np.mean(cost_val[-(args.early_stopping+1):-1]):
-        print("Early stopping...")
+        # print("Early stopping...")
         break
-print("Optimization Finished!")
-print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+# print("Optimization Finished!")
+# print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+
+outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+print(outfile_name)
 
 # Testing
 model.eval()
@@ -503,7 +510,8 @@ results_dict['test_cost'] = float(loss_test.item())
 results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
-outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
-print(outfile_name)
+
+# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

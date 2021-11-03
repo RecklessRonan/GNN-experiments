@@ -71,7 +71,7 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders, nnodes):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
@@ -85,11 +85,13 @@ class MLP_NORM(nn.Module):
         self.orders = orders
         # each weight is same to 1/(orders + 1)
         self.orders_weight = Parameter(
-            torch.ones(orders+1, 1) / (orders + 1), requires_grad=True
+            torch.ones(orders, 1) / orders, requires_grad=True
         )
+        # init.kaiming_normal_(self.orders_weight, mode='fan_out')
+
         # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
         self.orders_weight_matrix = Parameter(
-            torch.DoubleTensor(orders+1, nnodes), requires_grad=True
+            torch.DoubleTensor(nclass, orders), requires_grad=True
         )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
 
@@ -122,22 +124,23 @@ class MLP_NORM(nn.Module):
         #     sum_orders = sum_orders + tmp_orders
 
         # Orders2
-        # tmp_orders = res * self.orders_weight[0]
+        # tmp_orders = torch.spmm(adj, res) * self.orders_weight[0]
         # sum_orders = tmp_orders
-        # for i in range(self.orders):
+        # for i in range(1, self.orders):
         #     tmp_orders = torch.spmm(adj, tmp_orders)
-        #     sum_orders = sum_orders + tmp_orders * self.orders_weight[i+1]
+        #     sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
 
         # res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
         #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
 
         # Orders 3
-        tmp_orders = self.orders_weight_matrix[0].unsqueeze(1) * res
+        orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
+        orders_para = torch.transpose(orders_para, 0, 1)
+        tmp_orders = orders_para[0].unsqueeze(1) * torch.spmm(adj, res)
         sum_orders = tmp_orders
-        for i in range(self.orders):
+        for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
-            sum_orders = sum_orders + \
-                self.orders_weight_matrix[i+1].unsqueeze(1) * tmp_orders
+            sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
         res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
 
@@ -438,8 +441,7 @@ elif args.model == 'mlp_norm':
         beta=args.beta,
         gamma=args.gamma,
         norm_layers=args.norm_layers,
-        orders=args.orders,
-        nnodes=adj.shape[0])
+        orders=args.orders)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
@@ -453,7 +455,7 @@ if args.cuda:
     idx_test = idx_test.cuda()
 
 
-print(model.orders_weight)
+# print(model.orders_weight)
 
 # Train model
 cost_val = []
@@ -468,7 +470,7 @@ for epoch in range(args.epochs):
     loss_train.backward()
     optimizer.step()
 
-    print(model.orders_weight)
+    # print(model.orders_weight)
 
     if not args.fastmode:
         # Evaluate validation set performance separately,

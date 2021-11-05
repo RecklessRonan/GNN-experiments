@@ -100,7 +100,7 @@ class MLP_NORM(nn.Module):
         self.diag_weight = Parameter(
             torch.ones(nclass, 1) / nclass, requires_grad=True
         )
-        self.diag_matrix = torch.diag(self.diag_weight)
+        # self.diag_matrix = torch.eye(5) * self.diag_weight
 
         if norm_func_id == 1:
             self.norm = self.norm_func1
@@ -124,6 +124,7 @@ class MLP_NORM(nn.Module):
         return F.log_softmax(x, dim=1)
 
     def norm_func1(self, x, h0, adj):
+        # print('norm_func1 run')
         coe = 1.0 / (self.alpha + self.beta)
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
@@ -140,6 +141,7 @@ class MLP_NORM(nn.Module):
         return res
 
     def norm_func2(self, x, h0, adj):
+        # print('norm_func2 run')
         coe = 1.0 / (self.alpha + self.beta)
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
@@ -149,8 +151,9 @@ class MLP_NORM(nn.Module):
         # inv = torch.cholesky_inverse(u)
         res = torch.mm(inv, res)
         res = (coe1 * coe * x -
-               coe1 * coe * coe * torch.mm(x, res)) * self.diag_matrix
-        tmp = self.diag_matrix * (torch.mm(torch.transpose(x, 0, 1), res))
+               coe1 * coe * coe * torch.mm(x, res)) * self.diag_weight.t()
+        tmp = self.diag_weight * \
+            (torch.mm(torch.transpose(x, 0, 1), res))
         sum_orders = self.order_func(x, res, adj)
         res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
@@ -167,8 +170,8 @@ class MLP_NORM(nn.Module):
 
     def order_func2(self, x, res, adj):
         # Orders2
-        tmp_orders = torch.spmm(adj, res) * self.orders_weight[0]
-        sum_orders = tmp_orders
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = tmp_orders * self.orders_weight[0]
         for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
             sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
@@ -178,8 +181,8 @@ class MLP_NORM(nn.Module):
         # Orders3
         orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
         orders_para = torch.transpose(orders_para, 0, 1)
-        tmp_orders = orders_para[0].unsqueeze(1) * torch.spmm(adj, res)
-        sum_orders = tmp_orders
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
         for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
             sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
@@ -446,7 +449,7 @@ parser.add_argument('--orders', type=int, default=2,
                     help='Number of adj orders in norm layer')
 parser.add_argument('--orders_func_id', type=int, default=3,
                     help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
-parser.add_argument('--norm_func_id', type=int, default=1,
+parser.add_argument('--norm_func_id', type=int, default=2,
                     help='Function of norm layer, ids \in [1, 2]')
 
 
@@ -504,6 +507,8 @@ if args.cuda:
 cost_val = []
 t_total = time.time()
 
+
+print(model.diag_weight)
 for epoch in range(args.epochs):
     t = time.time()
     model.train()
@@ -513,6 +518,8 @@ for epoch in range(args.epochs):
     acc_train = accuracy(output[idx_train], labels[idx_train])
     loss_train.backward()
     optimizer.step()
+
+    print(model.diag_weight)
 
     if not args.fastmode:
         # Evaluate validation set performance separately,
@@ -557,7 +564,7 @@ results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
 
-# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
 
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

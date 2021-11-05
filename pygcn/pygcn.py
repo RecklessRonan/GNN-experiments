@@ -138,8 +138,19 @@ class MLP_NORM(nn.Module):
         # Orders 3
         orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
         orders_para = torch.transpose(orders_para, 0, 1)
-        tmp_orders = orders_para[0].unsqueeze(1) * torch.spmm(adj, res)
-        sum_orders = tmp_orders
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
+        for i in range(1, self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
+        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
+            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+
+        # Orders 4
+        orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
+        orders_para = torch.transpose(orders_para, 0, 1)
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
         for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
             sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders

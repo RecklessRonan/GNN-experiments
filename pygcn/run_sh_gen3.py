@@ -8,11 +8,11 @@ datasets = ['chameleon', 'cornell', 'squirrel',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
 # lr, early_stopping, alpha, beta, norm_layers, orders
-best1 = [0.01, 200, 1, 10000, 2, 3]
+best1 = [0.01, 200, 1.0, 10000.0, 2, 3]
 # lr, early_stopping, alpha, beta, norm_layers, orders
 best2 = [0.01, 200, 0.1, 0.1, 2, 3]
 # lr, early_stopping, alpha, beta , norm_layers, orders
-best3 = [0.05, 200, 1, 0.1, 2, 3]
+best3 = [0.05, 200, 1.0, 0.1, 2, 3]
 
 
 weight_decay = [1e-7, 1e-6, 5e-5, 1e-4]

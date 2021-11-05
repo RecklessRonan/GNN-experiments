@@ -15,6 +15,9 @@ import networkx as nx
 from collections import defaultdict
 import os
 import json
+import warnings
+
+warnings.filterwarnings('ignore')
 
 torch.set_default_dtype(torch.float64)
 
@@ -83,17 +86,18 @@ class MLP_NORM(nn.Module):
         self.gamma = gamma
         self.norm_layers = norm_layers
         self.orders = orders
-        # each weight is same to 1/(orders + 1)
+        # each weight is same to 1/orders
         self.orders_weight = Parameter(
             torch.ones(orders, 1) / orders, requires_grad=True
         )
         # init.kaiming_normal_(self.orders_weight, mode='fan_out')
-
         # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
         self.orders_weight_matrix = Parameter(
             torch.DoubleTensor(nclass, orders), requires_grad=True
         )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
+
+        self.order_func = self.order_func1
 
     def forward(self, x, adj):
         x = self.fc1(x)
@@ -115,24 +119,30 @@ class MLP_NORM(nn.Module):
         res = torch.mm(inv, res)
         res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)
         tmp = torch.mm(torch.transpose(x, 0, 1), res)
+        sum_orders = self.order_func(x, res, adj)
+        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
+            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+        return res
 
-        # Orders1
-        # tmp_orders = res
-        # sum_orders = tmp_orders
-        # for _ in range(self.orders):
-        #     tmp_orders = torch.spmm(adj, tmp_orders)
-        #     sum_orders = sum_orders + tmp_orders
+    def order_func1(self, x, res, adj):
+        # orders1
+        tmp_orders = res
+        sum_orders = tmp_orders
+        for _ in range(self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + tmp_orders
+        return sum_orders
 
+    def order_func2(self, x, res, adj):
         # Orders2
-        # tmp_orders = torch.spmm(adj, res) * self.orders_weight[0]
-        # sum_orders = tmp_orders
-        # for i in range(1, self.orders):
-        #     tmp_orders = torch.spmm(adj, tmp_orders)
-        #     sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
+        tmp_orders = torch.spmm(adj, res) * self.orders_weight[0]
+        sum_orders = tmp_orders
+        for i in range(1, self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
+        return sum_orders
 
-        # res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
-        #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
-
+    def order_func3(self, x, res, adj):
         # Orders 3
         orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
         orders_para = torch.transpose(orders_para, 0, 1)
@@ -141,10 +151,7 @@ class MLP_NORM(nn.Module):
         for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
             sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
-        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
-            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
-
-        return res
+        return sum_orders
 
 
 def encode_onehot(labels):
@@ -404,7 +411,9 @@ parser.add_argument('--early_stopping', type=int, default=40,
 parser.add_argument('--model', type=str, default='gcn',
                     help='Model name ')
 parser.add_argument('--orders', type=int, default=2,
-                    help='Model name ')
+                    help='Number of adj orders in norm layer')
+parser.add_argument('--orders_func_id', type=int, default=3,
+                    help='Sum function of adj orders in norm layer, ids \in [1, 2, 3 ,4]')
 
 
 args = parser.parse_args()
@@ -441,7 +450,8 @@ elif args.model == 'mlp_norm':
         beta=args.beta,
         gamma=args.gamma,
         norm_layers=args.norm_layers,
-        orders=args.orders)
+        orders=args.orders,
+        orders_func_id=args.orders_func_id)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
@@ -455,11 +465,10 @@ if args.cuda:
     idx_test = idx_test.cuda()
 
 
-# print(model.orders_weight)
-
 # Train model
 cost_val = []
 t_total = time.time()
+
 for epoch in range(args.epochs):
     t = time.time()
     model.train()
@@ -470,8 +479,6 @@ for epoch in range(args.epochs):
     loss_train.backward()
     optimizer.step()
 
-    # print(model.orders_weight)
-
     if not args.fastmode:
         # Evaluate validation set performance separately,
         # deactivates dropout during validation run.
@@ -480,18 +487,21 @@ for epoch in range(args.epochs):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
-    print('Epoch: {:04d}'.format(epoch+1),
-          'loss_train: {:.4f}'.format(loss_train.item()),
-          'acc_train: {:.4f}'.format(acc_train.item()),
-          'loss_val: {:.4f}'.format(loss_val.item()),
-          'acc_val: {:.4f}'.format(acc_val.item()),
-          'time: {:.4f}s'.format(time.time() - t))
+    # print('Epoch: {:04d}'.format(epoch+1),
+    #       'loss_train: {:.4f}'.format(loss_train.item()),
+    #       'acc_train: {:.4f}'.format(acc_train.item()),
+    #       'loss_val: {:.4f}'.format(loss_val.item()),
+    #       'acc_val: {:.4f}'.format(acc_val.item()),
+    #       'time: {:.4f}s'.format(time.time() - t))
     cost_val.append(loss_val.item())
     if epoch > args.early_stopping and cost_val[-1] > np.mean(cost_val[-(args.early_stopping+1):-1]):
-        print("Early stopping...")
+        # print("Early stopping...")
         break
-print("Optimization Finished!")
-print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+# print("Optimization Finished!")
+# print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+
+outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+print(outfile_name)
 
 # Testing
 model.eval()
@@ -508,7 +518,8 @@ results_dict['test_cost'] = float(loss_test.item())
 results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
-outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
-print(outfile_name)
+
+# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

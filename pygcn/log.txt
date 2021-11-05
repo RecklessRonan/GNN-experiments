@@ -1,13 +1,992 @@
 nohup: ignoring input
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split0_results.txt
-Test set results: loss= 3.2586 accuracy= 0.4518
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split1_results.txt
-Test set results: loss= 3.3094 accuracy= 0.4825
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split2_results.txt
-Test set results: loss= 3.2177 accuracy= 0.4912
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split3_results.txt
-Test set results: loss= 2.8940 accuracy= 0.5197
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split4_results.txt
-Test set results: loss= 3.5787 accuracy= 0.4715
-chameleon_lr0.01_do0.2_es200_wd1e-07_alpha0.1_beta0.1_gamma0.2_nl2_orders3_split5_results.txt
-Test set results: loss= 3.1194 accuracy= 0.4825
+Parameter containing:
+tensor([[0.2000],
+        [0.2000],
+        [0.2000],
+        [0.2000],
+        [0.2000]], requires_grad=True)
+Parameter containing:
+tensor([[0.2100],
+        [0.1900],
+        [0.2100],
+        [0.2100],
+        [0.1900]], requires_grad=True)
+Epoch: 0001 loss_train: 1.5947 acc_train: 0.4167 loss_val: 1.5885 acc_val: 0.5125 time: 0.0425s
+Parameter containing:
+tensor([[0.2200],
+        [0.1933],
+        [0.2192],
+        [0.2200],
+        [0.1800]], requires_grad=True)
+Epoch: 0002 loss_train: 1.5915 acc_train: 0.4167 loss_val: 1.5843 acc_val: 0.5125 time: 0.0107s
+Parameter containing:
+tensor([[0.2299],
+        [0.2001],
+        [0.2281],
+        [0.2299],
+        [0.1701]], requires_grad=True)
+Epoch: 0003 loss_train: 1.5871 acc_train: 0.4167 loss_val: 1.5796 acc_val: 0.5125 time: 0.0101s
+Parameter containing:
+tensor([[0.2399],
+        [0.2079],
+        [0.2369],
+        [0.2398],
+        [0.1605]], requires_grad=True)
+Epoch: 0004 loss_train: 1.5826 acc_train: 0.4333 loss_val: 1.5744 acc_val: 0.5125 time: 0.0101s
+Parameter containing:
+tensor([[0.2498],
+        [0.2161],
+        [0.2458],
+        [0.2498],
+        [0.1515]], requires_grad=True)
+Epoch: 0005 loss_train: 1.5788 acc_train: 0.4333 loss_val: 1.5687 acc_val: 0.5125 time: 0.0099s
+Parameter containing:
+tensor([[0.2598],
+        [0.2246],
+        [0.2548],
+        [0.2597],
+        [0.1448]], requires_grad=True)
+Epoch: 0006 loss_train: 1.5722 acc_train: 0.4250 loss_val: 1.5624 acc_val: 0.5125 time: 0.0049s
+Parameter containing:
+tensor([[0.2699],
+        [0.2334],
+        [0.2638],
+        [0.2697],
+        [0.1413]], requires_grad=True)
+Epoch: 0007 loss_train: 1.5681 acc_train: 0.4000 loss_val: 1.5555 acc_val: 0.5125 time: 0.0050s
+Parameter containing:
+tensor([[0.2799],
+        [0.2424],
+        [0.2730],
+        [0.2797],
+        [0.1415]], requires_grad=True)
+Epoch: 0008 loss_train: 1.5597 acc_train: 0.5083 loss_val: 1.5480 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.2899],
+        [0.2516],
+        [0.2824],
+        [0.2898],
+        [0.1450]], requires_grad=True)
+Epoch: 0009 loss_train: 1.5559 acc_train: 0.4417 loss_val: 1.5400 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.3001],
+        [0.2610],
+        [0.2918],
+        [0.3000],
+        [0.1506]], requires_grad=True)
+Epoch: 0010 loss_train: 1.5462 acc_train: 0.4250 loss_val: 1.5314 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.3102],
+        [0.2706],
+        [0.3014],
+        [0.3104],
+        [0.1576]], requires_grad=True)
+Epoch: 0011 loss_train: 1.5427 acc_train: 0.4417 loss_val: 1.5223 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.3205],
+        [0.2804],
+        [0.3112],
+        [0.3208],
+        [0.1654]], requires_grad=True)
+Epoch: 0012 loss_train: 1.5310 acc_train: 0.4417 loss_val: 1.5125 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.3308],
+        [0.2902],
+        [0.3211],
+        [0.3313],
+        [0.1739]], requires_grad=True)
+Epoch: 0013 loss_train: 1.5207 acc_train: 0.4667 loss_val: 1.5022 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.3412],
+        [0.3003],
+        [0.3312],
+        [0.3420],
+        [0.1829]], requires_grad=True)
+Epoch: 0014 loss_train: 1.5141 acc_train: 0.4167 loss_val: 1.4914 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.3517],
+        [0.3106],
+        [0.3414],
+        [0.3528],
+        [0.1924]], requires_grad=True)
+Epoch: 0015 loss_train: 1.5091 acc_train: 0.4167 loss_val: 1.4800 acc_val: 0.5125 time: 0.0053s
+Parameter containing:
+tensor([[0.3623],
+        [0.3211],
+        [0.3518],
+        [0.3637],
+        [0.2022]], requires_grad=True)
+Epoch: 0016 loss_train: 1.4982 acc_train: 0.4167 loss_val: 1.4683 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.3730],
+        [0.3319],
+        [0.3624],
+        [0.3748],
+        [0.2122]], requires_grad=True)
+Epoch: 0017 loss_train: 1.4881 acc_train: 0.4250 loss_val: 1.4561 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.3839],
+        [0.3427],
+        [0.3732],
+        [0.3860],
+        [0.2224]], requires_grad=True)
+Epoch: 0018 loss_train: 1.4721 acc_train: 0.4167 loss_val: 1.4435 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.3949],
+        [0.3537],
+        [0.3842],
+        [0.3973],
+        [0.2329]], requires_grad=True)
+Epoch: 0019 loss_train: 1.4688 acc_train: 0.4167 loss_val: 1.4306 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.4061],
+        [0.3650],
+        [0.3953],
+        [0.4087],
+        [0.2436]], requires_grad=True)
+Epoch: 0020 loss_train: 1.4525 acc_train: 0.4083 loss_val: 1.4175 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.4175],
+        [0.3763],
+        [0.4067],
+        [0.4203],
+        [0.2545]], requires_grad=True)
+Epoch: 0021 loss_train: 1.4324 acc_train: 0.4083 loss_val: 1.4042 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.4290],
+        [0.3879],
+        [0.4182],
+        [0.4319],
+        [0.2656]], requires_grad=True)
+Epoch: 0022 loss_train: 1.4258 acc_train: 0.4000 loss_val: 1.3907 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.4407],
+        [0.3996],
+        [0.4299],
+        [0.4436],
+        [0.2769]], requires_grad=True)
+Epoch: 0023 loss_train: 1.4158 acc_train: 0.4417 loss_val: 1.3772 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.4526],
+        [0.4113],
+        [0.4417],
+        [0.4548],
+        [0.2885]], requires_grad=True)
+Epoch: 0024 loss_train: 1.4082 acc_train: 0.4333 loss_val: 1.3639 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.4646],
+        [0.4230],
+        [0.4538],
+        [0.4652],
+        [0.3004]], requires_grad=True)
+Epoch: 0025 loss_train: 1.3976 acc_train: 0.4333 loss_val: 1.3509 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.4769],
+        [0.4348],
+        [0.4660],
+        [0.4749],
+        [0.3124]], requires_grad=True)
+Epoch: 0026 loss_train: 1.3873 acc_train: 0.4167 loss_val: 1.3383 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.4893],
+        [0.4469],
+        [0.4784],
+        [0.4834],
+        [0.3247]], requires_grad=True)
+Epoch: 0027 loss_train: 1.3686 acc_train: 0.4250 loss_val: 1.3264 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.5019],
+        [0.4591],
+        [0.4909],
+        [0.4900],
+        [0.3372]], requires_grad=True)
+Epoch: 0028 loss_train: 1.3574 acc_train: 0.4250 loss_val: 1.3152 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.5147],
+        [0.4713],
+        [0.5036],
+        [0.4952],
+        [0.3498]], requires_grad=True)
+Epoch: 0029 loss_train: 1.3364 acc_train: 0.4000 loss_val: 1.3047 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.5276],
+        [0.4830],
+        [0.5164],
+        [0.4966],
+        [0.3626]], requires_grad=True)
+Epoch: 0030 loss_train: 1.3574 acc_train: 0.4250 loss_val: 1.2954 acc_val: 0.5125 time: 0.0051s
+Parameter containing:
+tensor([[0.5407],
+        [0.4936],
+        [0.5292],
+        [0.4944],
+        [0.3755]], requires_grad=True)
+Epoch: 0031 loss_train: 1.3515 acc_train: 0.4250 loss_val: 1.2870 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.5539],
+        [0.5004],
+        [0.5423],
+        [0.4905],
+        [0.3880]], requires_grad=True)
+Epoch: 0032 loss_train: 1.3306 acc_train: 0.4250 loss_val: 1.2794 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.5672],
+        [0.5069],
+        [0.5552],
+        [0.4847],
+        [0.4006]], requires_grad=True)
+Epoch: 0033 loss_train: 1.3250 acc_train: 0.4250 loss_val: 1.2726 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.5806],
+        [0.5121],
+        [0.5682],
+        [0.4780],
+        [0.4123]], requires_grad=True)
+Epoch: 0034 loss_train: 1.3036 acc_train: 0.4167 loss_val: 1.2666 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.5940],
+        [0.5168],
+        [0.5805],
+        [0.4700],
+        [0.4237]], requires_grad=True)
+Epoch: 0035 loss_train: 1.3108 acc_train: 0.4167 loss_val: 1.2616 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.6072],
+        [0.5197],
+        [0.5919],
+        [0.4612],
+        [0.4329]], requires_grad=True)
+Epoch: 0036 loss_train: 1.3391 acc_train: 0.4083 loss_val: 1.2575 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.6204],
+        [0.5205],
+        [0.6020],
+        [0.4515],
+        [0.4409]], requires_grad=True)
+Epoch: 0037 loss_train: 1.3119 acc_train: 0.4167 loss_val: 1.2542 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.6335],
+        [0.5238],
+        [0.6085],
+        [0.4411],
+        [0.4481]], requires_grad=True)
+Epoch: 0038 loss_train: 1.3020 acc_train: 0.4167 loss_val: 1.2524 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.6464],
+        [0.5285],
+        [0.6119],
+        [0.4301],
+        [0.4539]], requires_grad=True)
+Epoch: 0039 loss_train: 1.3022 acc_train: 0.4167 loss_val: 1.2518 acc_val: 0.5125 time: 0.0047s
+Parameter containing:
+tensor([[0.6588],
+        [0.5337],
+        [0.6131],
+        [0.4192],
+        [0.4570]], requires_grad=True)
+Epoch: 0040 loss_train: 1.3055 acc_train: 0.4167 loss_val: 1.2521 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.6710],
+        [0.5384],
+        [0.6134],
+        [0.4085],
+        [0.4582]], requires_grad=True)
+Epoch: 0041 loss_train: 1.2983 acc_train: 0.4167 loss_val: 1.2529 acc_val: 0.5125 time: 0.0367s
+Parameter containing:
+tensor([[0.6832],
+        [0.5437],
+        [0.6127],
+        [0.3980],
+        [0.4578]], requires_grad=True)
+Epoch: 0042 loss_train: 1.2869 acc_train: 0.4167 loss_val: 1.2544 acc_val: 0.5125 time: 0.0060s
+Parameter containing:
+tensor([[0.6951],
+        [0.5494],
+        [0.6110],
+        [0.3877],
+        [0.4565]], requires_grad=True)
+Epoch: 0043 loss_train: 1.2801 acc_train: 0.4167 loss_val: 1.2566 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.7059],
+        [0.5568],
+        [0.6077],
+        [0.3777],
+        [0.4538]], requires_grad=True)
+Epoch: 0044 loss_train: 1.2995 acc_train: 0.4167 loss_val: 1.2598 acc_val: 0.5125 time: 0.0049s
+Parameter containing:
+tensor([[0.7162],
+        [0.5638],
+        [0.6039],
+        [0.3683],
+        [0.4496]], requires_grad=True)
+Epoch: 0045 loss_train: 1.2847 acc_train: 0.4083 loss_val: 1.2633 acc_val: 0.5125 time: 0.0048s
+Parameter containing:
+tensor([[0.7246],
+        [0.5694],
+        [0.6005],
+        [0.3597],
+        [0.4459]], requires_grad=True)
+Epoch: 0046 loss_train: 1.2884 acc_train: 0.4167 loss_val: 1.2664 acc_val: 0.5125 time: 0.0051s
+Parameter containing:
+tensor([[0.7318],
+        [0.5721],
+        [0.5971],
+        [0.3515],
+        [0.4425]], requires_grad=True)
+Epoch: 0047 loss_train: 1.3060 acc_train: 0.4250 loss_val: 1.2692 acc_val: 0.5125 time: 0.0095s
+Parameter containing:
+tensor([[0.7381],
+        [0.5744],
+        [0.5947],
+        [0.3442],
+        [0.4422]], requires_grad=True)
+Epoch: 0048 loss_train: 1.2763 acc_train: 0.3917 loss_val: 1.2716 acc_val: 0.5125 time: 0.0163s
+Parameter containing:
+tensor([[0.7441],
+        [0.5747],
+        [0.5934],
+        [0.3376],
+        [0.4424]], requires_grad=True)
+Epoch: 0049 loss_train: 1.2906 acc_train: 0.4167 loss_val: 1.2732 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7498],
+        [0.5748],
+        [0.5930],
+        [0.3316],
+        [0.4429]], requires_grad=True)
+Epoch: 0050 loss_train: 1.2869 acc_train: 0.4417 loss_val: 1.2741 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7554],
+        [0.5713],
+        [0.5948],
+        [0.3261],
+        [0.4433]], requires_grad=True)
+Epoch: 0051 loss_train: 1.2742 acc_train: 0.4583 loss_val: 1.2735 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7606],
+        [0.5664],
+        [0.5977],
+        [0.3212],
+        [0.4449]], requires_grad=True)
+Epoch: 0052 loss_train: 1.2862 acc_train: 0.4417 loss_val: 1.2723 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7650],
+        [0.5630],
+        [0.6015],
+        [0.3167],
+        [0.4488]], requires_grad=True)
+Epoch: 0053 loss_train: 1.2749 acc_train: 0.4250 loss_val: 1.2708 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7692],
+        [0.5600],
+        [0.6069],
+        [0.3129],
+        [0.4554]], requires_grad=True)
+Epoch: 0054 loss_train: 1.2469 acc_train: 0.4167 loss_val: 1.2686 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7719],
+        [0.5579],
+        [0.6125],
+        [0.3095],
+        [0.4638]], requires_grad=True)
+Epoch: 0055 loss_train: 1.2801 acc_train: 0.4333 loss_val: 1.2661 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7748],
+        [0.5565],
+        [0.6182],
+        [0.3066],
+        [0.4724]], requires_grad=True)
+Epoch: 0056 loss_train: 1.2691 acc_train: 0.4250 loss_val: 1.2636 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7770],
+        [0.5572],
+        [0.6240],
+        [0.3041],
+        [0.4821]], requires_grad=True)
+Epoch: 0057 loss_train: 1.2730 acc_train: 0.4417 loss_val: 1.2610 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7791],
+        [0.5607],
+        [0.6298],
+        [0.3019],
+        [0.4927]], requires_grad=True)
+Epoch: 0058 loss_train: 1.2640 acc_train: 0.4417 loss_val: 1.2588 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7803],
+        [0.5657],
+        [0.6357],
+        [0.3000],
+        [0.5032]], requires_grad=True)
+Epoch: 0059 loss_train: 1.2707 acc_train: 0.4500 loss_val: 1.2563 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7817],
+        [0.5721],
+        [0.6412],
+        [0.2980],
+        [0.5143]], requires_grad=True)
+Epoch: 0060 loss_train: 1.2906 acc_train: 0.4417 loss_val: 1.2540 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7816],
+        [0.5804],
+        [0.6460],
+        [0.2964],
+        [0.5266]], requires_grad=True)
+Epoch: 0061 loss_train: 1.2834 acc_train: 0.4417 loss_val: 1.2520 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7825],
+        [0.5893],
+        [0.6503],
+        [0.2953],
+        [0.5384]], requires_grad=True)
+Epoch: 0062 loss_train: 1.2799 acc_train: 0.4250 loss_val: 1.2505 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7831],
+        [0.5987],
+        [0.6555],
+        [0.2943],
+        [0.5512]], requires_grad=True)
+Epoch: 0063 loss_train: 1.2498 acc_train: 0.4500 loss_val: 1.2484 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7842],
+        [0.6097],
+        [0.6611],
+        [0.2934],
+        [0.5649]], requires_grad=True)
+Epoch: 0064 loss_train: 1.2581 acc_train: 0.4500 loss_val: 1.2464 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7854],
+        [0.6211],
+        [0.6666],
+        [0.2926],
+        [0.5777]], requires_grad=True)
+Epoch: 0065 loss_train: 1.2667 acc_train: 0.4500 loss_val: 1.2442 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7869],
+        [0.6324],
+        [0.6728],
+        [0.2921],
+        [0.5898]], requires_grad=True)
+Epoch: 0066 loss_train: 1.2456 acc_train: 0.4583 loss_val: 1.2418 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7885],
+        [0.6433],
+        [0.6801],
+        [0.2916],
+        [0.6006]], requires_grad=True)
+Epoch: 0067 loss_train: 1.2398 acc_train: 0.4833 loss_val: 1.2388 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7902],
+        [0.6545],
+        [0.6873],
+        [0.2913],
+        [0.6109]], requires_grad=True)
+Epoch: 0068 loss_train: 1.2743 acc_train: 0.4667 loss_val: 1.2355 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7913],
+        [0.6653],
+        [0.6949],
+        [0.2912],
+        [0.6191]], requires_grad=True)
+Epoch: 0069 loss_train: 1.2778 acc_train: 0.4500 loss_val: 1.2316 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7930],
+        [0.6770],
+        [0.7035],
+        [0.2912],
+        [0.6294]], requires_grad=True)
+Epoch: 0070 loss_train: 1.2218 acc_train: 0.4917 loss_val: 1.2272 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.7957],
+        [0.6895],
+        [0.7128],
+        [0.2913],
+        [0.6394]], requires_grad=True)
+Epoch: 0071 loss_train: 1.2263 acc_train: 0.4917 loss_val: 1.2226 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.7987],
+        [0.7025],
+        [0.7230],
+        [0.2916],
+        [0.6495]], requires_grad=True)
+Epoch: 0072 loss_train: 1.2204 acc_train: 0.4917 loss_val: 1.2173 acc_val: 0.5125 time: 0.0056s
+Parameter containing:
+tensor([[0.8022],
+        [0.7160],
+        [0.7336],
+        [0.2917],
+        [0.6600]], requires_grad=True)
+Epoch: 0073 loss_train: 1.2221 acc_train: 0.5167 loss_val: 1.2112 acc_val: 0.5125 time: 0.0055s
+Parameter containing:
+tensor([[0.8061],
+        [0.7307],
+        [0.7446],
+        [0.2920],
+        [0.6713]], requires_grad=True)
+Epoch: 0074 loss_train: 1.1943 acc_train: 0.5250 loss_val: 1.2049 acc_val: 0.5375 time: 0.0056s
+Parameter containing:
+tensor([[0.8098],
+        [0.7461],
+        [0.7562],
+        [0.2922],
+        [0.6821]], requires_grad=True)
+Epoch: 0075 loss_train: 1.2109 acc_train: 0.5417 loss_val: 1.1975 acc_val: 0.5625 time: 0.0055s
+Parameter containing:
+tensor([[0.8133],
+        [0.7620],
+        [0.7682],
+        [0.2925],
+        [0.6931]], requires_grad=True)
+Epoch: 0076 loss_train: 1.1937 acc_train: 0.5667 loss_val: 1.1892 acc_val: 0.5625 time: 0.0055s
+Parameter containing:
+tensor([[0.8173],
+        [0.7786],
+        [0.7807],
+        [0.2929],
+        [0.7053]], requires_grad=True)
+Epoch: 0077 loss_train: 1.1782 acc_train: 0.5250 loss_val: 1.1800 acc_val: 0.6000 time: 0.0056s
+Parameter containing:
+tensor([[0.8212],
+        [0.7950],
+        [0.7939],
+        [0.2934],
+        [0.7176]], requires_grad=True)
+Epoch: 0078 loss_train: 1.1886 acc_train: 0.5250 loss_val: 1.1693 acc_val: 0.6375 time: 0.0055s
+Parameter containing:
+tensor([[0.8258],
+        [0.8121],
+        [0.8076],
+        [0.2939],
+        [0.7306]], requires_grad=True)
+Epoch: 0079 loss_train: 1.1624 acc_train: 0.5167 loss_val: 1.1574 acc_val: 0.6500 time: 0.0055s
+Parameter containing:
+tensor([[0.8301],
+        [0.8299],
+        [0.8217],
+        [0.2945],
+        [0.7444]], requires_grad=True)
+Epoch: 0080 loss_train: 1.1336 acc_train: 0.6083 loss_val: 1.1442 acc_val: 0.6500 time: 0.0055s
+Parameter containing:
+tensor([[0.8345],
+        [0.8482],
+        [0.8364],
+        [0.2950],
+        [0.7592]], requires_grad=True)
+Epoch: 0081 loss_train: 1.1091 acc_train: 0.5833 loss_val: 1.1294 acc_val: 0.6750 time: 0.0055s
+Parameter containing:
+tensor([[0.8387],
+        [0.8667],
+        [0.8516],
+        [0.2956],
+        [0.7741]], requires_grad=True)
+Epoch: 0082 loss_train: 1.1362 acc_train: 0.5583 loss_val: 1.1129 acc_val: 0.6750 time: 0.0055s
+Parameter containing:
+tensor([[0.8437],
+        [0.8857],
+        [0.8676],
+        [0.2963],
+        [0.7894]], requires_grad=True)
+Epoch: 0083 loss_train: 1.0681 acc_train: 0.6500 loss_val: 1.0941 acc_val: 0.6750 time: 0.0055s
+Parameter containing:
+tensor([[0.8485],
+        [0.9051],
+        [0.8835],
+        [0.2972],
+        [0.8051]], requires_grad=True)
+Epoch: 0084 loss_train: 1.0842 acc_train: 0.6250 loss_val: 1.0738 acc_val: 0.6875 time: 0.0054s
+Parameter containing:
+tensor([[0.8538],
+        [0.9248],
+        [0.9004],
+        [0.2982],
+        [0.8219]], requires_grad=True)
+Epoch: 0085 loss_train: 1.0107 acc_train: 0.6583 loss_val: 1.0509 acc_val: 0.7125 time: 0.0055s
+Parameter containing:
+tensor([[0.8589],
+        [0.9448],
+        [0.9173],
+        [0.2993],
+        [0.8395]], requires_grad=True)
+Epoch: 0086 loss_train: 1.0400 acc_train: 0.6250 loss_val: 1.0261 acc_val: 0.7125 time: 0.0055s
+Parameter containing:
+tensor([[0.8648],
+        [0.9651],
+        [0.9349],
+        [0.3007],
+        [0.8579]], requires_grad=True)
+Epoch: 0087 loss_train: 1.0172 acc_train: 0.6333 loss_val: 0.9995 acc_val: 0.7125 time: 0.0056s
+Parameter containing:
+tensor([[0.8705],
+        [0.9856],
+        [0.9527],
+        [0.3023],
+        [0.8768]], requires_grad=True)
+Epoch: 0088 loss_train: 0.9829 acc_train: 0.6917 loss_val: 0.9712 acc_val: 0.7125 time: 0.0056s
+Parameter containing:
+tensor([[0.8769],
+        [1.0063],
+        [0.9711],
+        [0.3040],
+        [0.8962]], requires_grad=True)
+Epoch: 0089 loss_train: 0.9186 acc_train: 0.7083 loss_val: 0.9418 acc_val: 0.7250 time: 0.0055s
+Parameter containing:
+tensor([[0.8838],
+        [1.0272],
+        [0.9899],
+        [0.3058],
+        [0.9161]], requires_grad=True)
+Epoch: 0090 loss_train: 0.9048 acc_train: 0.7167 loss_val: 0.9118 acc_val: 0.7250 time: 0.0055s
+Parameter containing:
+tensor([[0.8917],
+        [1.0484],
+        [1.0089],
+        [0.3080],
+        [0.9363]], requires_grad=True)
+Epoch: 0091 loss_train: 0.8594 acc_train: 0.7250 loss_val: 0.8816 acc_val: 0.7375 time: 0.0056s
+Parameter containing:
+tensor([[0.9000],
+        [1.0696],
+        [1.0281],
+        [0.3104],
+        [0.9568]], requires_grad=True)
+Epoch: 0092 loss_train: 0.8145 acc_train: 0.7500 loss_val: 0.8514 acc_val: 0.7500 time: 0.0056s
+Parameter containing:
+tensor([[0.9093],
+        [1.0910],
+        [1.0477],
+        [0.3131],
+        [0.9776]], requires_grad=True)
+Epoch: 0093 loss_train: 0.8035 acc_train: 0.7583 loss_val: 0.8213 acc_val: 0.7500 time: 0.0056s
+Parameter containing:
+tensor([[0.9194],
+        [1.1123],
+        [1.0677],
+        [0.3160],
+        [0.9986]], requires_grad=True)
+Epoch: 0094 loss_train: 0.7214 acc_train: 0.7750 loss_val: 0.7918 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9306],
+        [1.1337],
+        [1.0880],
+        [0.3192],
+        [1.0198]], requires_grad=True)
+Epoch: 0095 loss_train: 0.7238 acc_train: 0.7833 loss_val: 0.7637 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9422],
+        [1.1550],
+        [1.1084],
+        [0.3228],
+        [1.0411]], requires_grad=True)
+Epoch: 0096 loss_train: 0.6867 acc_train: 0.7750 loss_val: 0.7378 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9544],
+        [1.1762],
+        [1.1289],
+        [0.3265],
+        [1.0624]], requires_grad=True)
+Epoch: 0097 loss_train: 0.6178 acc_train: 0.8000 loss_val: 0.7154 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9668],
+        [1.1971],
+        [1.1489],
+        [0.3305],
+        [1.0834]], requires_grad=True)
+Epoch: 0098 loss_train: 0.6149 acc_train: 0.7667 loss_val: 0.6960 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9793],
+        [1.2173],
+        [1.1689],
+        [0.3346],
+        [1.1045]], requires_grad=True)
+Epoch: 0099 loss_train: 0.5493 acc_train: 0.8083 loss_val: 0.6796 acc_val: 0.7500 time: 0.0055s
+Parameter containing:
+tensor([[0.9913],
+        [1.2372],
+        [1.1884],
+        [0.3388],
+        [1.1255]], requires_grad=True)
+Epoch: 0100 loss_train: 0.5515 acc_train: 0.8167 loss_val: 0.6634 acc_val: 0.7625 time: 0.0056s
+Parameter containing:
+tensor([[1.0033],
+        [1.2566],
+        [1.2070],
+        [0.3430],
+        [1.1464]], requires_grad=True)
+Epoch: 0101 loss_train: 0.4985 acc_train: 0.8083 loss_val: 0.6459 acc_val: 0.7625 time: 0.0057s
+Parameter containing:
+tensor([[1.0151],
+        [1.2752],
+        [1.2249],
+        [0.3471],
+        [1.1670]], requires_grad=True)
+Epoch: 0102 loss_train: 0.4807 acc_train: 0.8167 loss_val: 0.6264 acc_val: 0.7875 time: 0.0056s
+Parameter containing:
+tensor([[1.0265],
+        [1.2930],
+        [1.2419],
+        [0.3513],
+        [1.1871]], requires_grad=True)
+Epoch: 0103 loss_train: 0.4678 acc_train: 0.8167 loss_val: 0.6070 acc_val: 0.8000 time: 0.0056s
+Parameter containing:
+tensor([[1.0379],
+        [1.3102],
+        [1.2588],
+        [0.3556],
+        [1.2065]], requires_grad=True)
+Epoch: 0104 loss_train: 0.4435 acc_train: 0.8167 loss_val: 0.5936 acc_val: 0.8125 time: 0.0055s
+Parameter containing:
+tensor([[1.0498],
+        [1.3267],
+        [1.2750],
+        [0.3599],
+        [1.2246]], requires_grad=True)
+Epoch: 0105 loss_train: 0.4321 acc_train: 0.8167 loss_val: 0.5809 acc_val: 0.8125 time: 0.0354s
+Parameter containing:
+tensor([[1.0614],
+        [1.3426],
+        [1.2910],
+        [0.3645],
+        [1.2413]], requires_grad=True)
+Epoch: 0106 loss_train: 0.4136 acc_train: 0.8250 loss_val: 0.5739 acc_val: 0.8125 time: 0.0059s
+Parameter containing:
+tensor([[1.0732],
+        [1.3579],
+        [1.3068],
+        [0.3694],
+        [1.2572]], requires_grad=True)
+Epoch: 0107 loss_train: 0.4046 acc_train: 0.8250 loss_val: 0.5715 acc_val: 0.8125 time: 0.0098s
+Parameter containing:
+tensor([[1.0861],
+        [1.3723],
+        [1.3225],
+        [0.3744],
+        [1.2722]], requires_grad=True)
+Epoch: 0108 loss_train: 0.3681 acc_train: 0.8417 loss_val: 0.5768 acc_val: 0.7875 time: 0.0260s
+Parameter containing:
+tensor([[1.0988],
+        [1.3860],
+        [1.3369],
+        [0.3795],
+        [1.2878]], requires_grad=True)
+Epoch: 0109 loss_train: 0.3950 acc_train: 0.8500 loss_val: 0.5757 acc_val: 0.7875 time: 0.0056s
+Parameter containing:
+tensor([[1.1107],
+        [1.3990],
+        [1.3508],
+        [0.3849],
+        [1.3036]], requires_grad=True)
+Epoch: 0110 loss_train: 0.3707 acc_train: 0.8667 loss_val: 0.5714 acc_val: 0.7875 time: 0.0048s
+Parameter containing:
+tensor([[1.1217],
+        [1.4113],
+        [1.3645],
+        [0.3905],
+        [1.3198]], requires_grad=True)
+Epoch: 0111 loss_train: 0.3660 acc_train: 0.8667 loss_val: 0.5589 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.1331],
+        [1.4233],
+        [1.3776],
+        [0.3963],
+        [1.3362]], requires_grad=True)
+Epoch: 0112 loss_train: 0.3066 acc_train: 0.9167 loss_val: 0.5445 acc_val: 0.8250 time: 0.0047s
+Parameter containing:
+tensor([[1.1450],
+        [1.4349],
+        [1.3907],
+        [0.4023],
+        [1.3520]], requires_grad=True)
+Epoch: 0113 loss_train: 0.3154 acc_train: 0.9083 loss_val: 0.5331 acc_val: 0.8250 time: 0.0048s
+Parameter containing:
+tensor([[1.1576],
+        [1.4465],
+        [1.4032],
+        [0.4087],
+        [1.3683]], requires_grad=True)
+Epoch: 0114 loss_train: 0.3459 acc_train: 0.9083 loss_val: 0.5204 acc_val: 0.8250 time: 0.0047s
+Parameter containing:
+tensor([[1.1712],
+        [1.4577],
+        [1.4157],
+        [0.4155],
+        [1.3849]], requires_grad=True)
+Epoch: 0115 loss_train: 0.2824 acc_train: 0.9333 loss_val: 0.5153 acc_val: 0.8250 time: 0.0047s
+Parameter containing:
+tensor([[1.1854],
+        [1.4688],
+        [1.4283],
+        [0.4227],
+        [1.4020]], requires_grad=True)
+Epoch: 0116 loss_train: 0.2894 acc_train: 0.9417 loss_val: 0.5169 acc_val: 0.8250 time: 0.0047s
+Parameter containing:
+tensor([[1.1996],
+        [1.4797],
+        [1.4406],
+        [0.4304],
+        [1.4188]], requires_grad=True)
+Epoch: 0117 loss_train: 0.2768 acc_train: 0.9167 loss_val: 0.5199 acc_val: 0.8125 time: 0.0048s
+Parameter containing:
+tensor([[1.2143],
+        [1.4903],
+        [1.4530],
+        [0.4385],
+        [1.4345]], requires_grad=True)
+Epoch: 0118 loss_train: 0.2882 acc_train: 0.9250 loss_val: 0.5293 acc_val: 0.8125 time: 0.0048s
+Parameter containing:
+tensor([[1.2284],
+        [1.5008],
+        [1.4653],
+        [0.4469],
+        [1.4510]], requires_grad=True)
+Epoch: 0119 loss_train: 0.2614 acc_train: 0.9417 loss_val: 0.5310 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.2420],
+        [1.5110],
+        [1.4774],
+        [0.4555],
+        [1.4674]], requires_grad=True)
+Epoch: 0120 loss_train: 0.2643 acc_train: 0.9500 loss_val: 0.5332 acc_val: 0.8125 time: 0.0048s
+Parameter containing:
+tensor([[1.2558],
+        [1.5210],
+        [1.4893],
+        [0.4643],
+        [1.4845]], requires_grad=True)
+Epoch: 0121 loss_train: 0.2404 acc_train: 0.9667 loss_val: 0.5195 acc_val: 0.8125 time: 0.0048s
+Parameter containing:
+tensor([[1.2701],
+        [1.5309],
+        [1.5013],
+        [0.4731],
+        [1.5014]], requires_grad=True)
+Epoch: 0122 loss_train: 0.2146 acc_train: 0.9667 loss_val: 0.5077 acc_val: 0.8250 time: 0.0048s
+Parameter containing:
+tensor([[1.2853],
+        [1.5406],
+        [1.5133],
+        [0.4819],
+        [1.5179]], requires_grad=True)
+Epoch: 0123 loss_train: 0.2563 acc_train: 0.9500 loss_val: 0.5033 acc_val: 0.8250 time: 0.0048s
+Parameter containing:
+tensor([[1.3009],
+        [1.5501],
+        [1.5251],
+        [0.4904],
+        [1.5348]], requires_grad=True)
+Epoch: 0124 loss_train: 0.2159 acc_train: 0.9500 loss_val: 0.4976 acc_val: 0.8250 time: 0.0047s
+Parameter containing:
+tensor([[1.3170],
+        [1.5596],
+        [1.5369],
+        [0.4987],
+        [1.5514]], requires_grad=True)
+Epoch: 0125 loss_train: 0.2023 acc_train: 0.9583 loss_val: 0.5033 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.3322],
+        [1.5690],
+        [1.5486],
+        [0.5068],
+        [1.5681]], requires_grad=True)
+Epoch: 0126 loss_train: 0.1961 acc_train: 0.9667 loss_val: 0.5212 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.3460],
+        [1.5782],
+        [1.5601],
+        [0.5142],
+        [1.5852]], requires_grad=True)
+Epoch: 0127 loss_train: 0.1936 acc_train: 0.9583 loss_val: 0.5392 acc_val: 0.8000 time: 0.0047s
+Parameter containing:
+tensor([[1.3587],
+        [1.5871],
+        [1.5713],
+        [0.5211],
+        [1.6021]], requires_grad=True)
+Epoch: 0128 loss_train: 0.1879 acc_train: 0.9500 loss_val: 0.5399 acc_val: 0.8000 time: 0.0048s
+Parameter containing:
+tensor([[1.3709],
+        [1.5956],
+        [1.5821],
+        [0.5275],
+        [1.6189]], requires_grad=True)
+Epoch: 0129 loss_train: 0.1773 acc_train: 0.9500 loss_val: 0.5337 acc_val: 0.8125 time: 0.0055s
+Parameter containing:
+tensor([[1.3830],
+        [1.6040],
+        [1.5926],
+        [0.5334],
+        [1.6349]], requires_grad=True)
+Epoch: 0130 loss_train: 0.1781 acc_train: 0.9583 loss_val: 0.5156 acc_val: 0.8125 time: 0.0056s
+Parameter containing:
+tensor([[1.3955],
+        [1.6124],
+        [1.6028],
+        [0.5389],
+        [1.6508]], requires_grad=True)
+Epoch: 0131 loss_train: 0.1495 acc_train: 0.9583 loss_val: 0.5140 acc_val: 0.8125 time: 0.0055s
+Parameter containing:
+tensor([[1.4085],
+        [1.6205],
+        [1.6129],
+        [0.5437],
+        [1.6666]], requires_grad=True)
+Epoch: 0132 loss_train: 0.1533 acc_train: 0.9750 loss_val: 0.5174 acc_val: 0.8125 time: 0.0055s
+Parameter containing:
+tensor([[1.4214],
+        [1.6284],
+        [1.6229],
+        [0.5471],
+        [1.6823]], requires_grad=True)
+Epoch: 0133 loss_train: 0.1941 acc_train: 0.9417 loss_val: 0.5292 acc_val: 0.8125 time: 0.0050s
+Parameter containing:
+tensor([[1.4336],
+        [1.6362],
+        [1.6326],
+        [0.5506],
+        [1.6979]], requires_grad=True)
+Epoch: 0134 loss_train: 0.1195 acc_train: 0.9833 loss_val: 0.5413 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.4465],
+        [1.6439],
+        [1.6419],
+        [0.5536],
+        [1.7126]], requires_grad=True)
+Epoch: 0135 loss_train: 0.1166 acc_train: 0.9750 loss_val: 0.5642 acc_val: 0.8000 time: 0.0047s
+Parameter containing:
+tensor([[1.4591],
+        [1.6515],
+        [1.6511],
+        [0.5566],
+        [1.7269]], requires_grad=True)
+Epoch: 0136 loss_train: 0.1268 acc_train: 0.9667 loss_val: 0.5594 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.4718],
+        [1.6589],
+        [1.6599],
+        [0.5593],
+        [1.7402]], requires_grad=True)
+Epoch: 0137 loss_train: 0.1195 acc_train: 0.9750 loss_val: 0.5453 acc_val: 0.8125 time: 0.0047s
+Parameter containing:
+tensor([[1.4847],
+        [1.6666],
+        [1.6684],
+        [0.5615],
+        [1.7532]], requires_grad=True)
+Epoch: 0138 loss_train: 0.1191 acc_train: 0.9667 loss_val: 0.5256 acc_val: 0.8125 time: 0.0051s
+Parameter containing:
+tensor([[1.4969],
+        [1.6740],
+        [1.6766],
+        [0.5633],
+        [1.7653]], requires_grad=True)
+Epoch: 0139 loss_train: 0.1184 acc_train: 0.9750 loss_val: 0.5231 acc_val: 0.8125 time: 0.0055s
+Parameter containing:
+tensor([[1.5094],
+        [1.6813],
+        [1.6846],
+        [0.5654],
+        [1.7770]], requires_grad=True)
+Epoch: 0140 loss_train: 0.0746 acc_train: 0.9917 loss_val: 0.5593 acc_val: 0.8125 time: 0.0055s
+Early stopping...
+Optimization Finished!
+Total time elapsed: 0.9028s
+wisconsin_lr0.01_do0.5_es40_wd0.0005_alpha0.1_beta0.1_gamma0.2_nlid2_nl2_ordersid3_orders2_split0_results.txt
+Test set results: loss= 0.8309 accuracy= 0.8039

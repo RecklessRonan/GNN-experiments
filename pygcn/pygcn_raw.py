@@ -74,7 +74,7 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_func_id, norm_layers, orders, orders_func_id):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
@@ -86,18 +86,33 @@ class MLP_NORM(nn.Module):
         self.gamma = gamma
         self.norm_layers = norm_layers
         self.orders = orders
-        # each weight is same to 1/orders
+        # each weight is initilized same in Orders2
         self.orders_weight = Parameter(
             torch.ones(orders, 1) / orders, requires_grad=True
         )
-        # init.kaiming_normal_(self.orders_weight, mode='fan_out')
-        # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
+        # use kaiming_normal to initialize the weight matrix in Orders3
         self.orders_weight_matrix = Parameter(
             torch.DoubleTensor(nclass, orders), requires_grad=True
         )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
 
-        self.order_func = self.order_func1
+        # use diag matirx to initialize the second norm layer
+        self.diag_weight = Parameter(
+            torch.ones(nclass, 1) / nclass, requires_grad=True
+        )
+        self.diag_matrix = torch.diag(self.diag_weight)
+
+        if norm_func_id == 1:
+            self.norm = self.norm_func1
+        else:
+            self.norm = self.norm_func2
+
+        if orders_func_id == 1:
+            self.order_func = self.order_func1
+        elif orders_func_id == 2:
+            self.order_func = self.order_func2
+        else:
+            self.order_func = self.order_func3
 
     def forward(self, x, adj):
         x = self.fc1(x)
@@ -108,7 +123,7 @@ class MLP_NORM(nn.Module):
             x = self.norm(x, h0, adj)
         return F.log_softmax(x, dim=1)
 
-    def norm(self, x, h0, adj):
+    def norm_func1(self, x, h0, adj):
         coe = 1.0 / (self.alpha + self.beta)
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
@@ -124,8 +139,25 @@ class MLP_NORM(nn.Module):
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
         return res
 
+    def norm_func2(self, x, h0, adj):
+        coe = 1.0 / (self.alpha + self.beta)
+        coe1 = 1 - self.gamma
+        coe2 = 1.0 / coe1
+        res = torch.mm(torch.transpose(x, 0, 1), x)
+        inv = torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        # u = torch.cholesky(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        # inv = torch.cholesky_inverse(u)
+        res = torch.mm(inv, res)
+        res = (coe1 * coe * x -
+               coe1 * coe * coe * torch.mm(x, res)) * self.diag_matrix
+        tmp = self.diag_matrix * (torch.mm(torch.transpose(x, 0, 1), res))
+        sum_orders = self.order_func(x, res, adj)
+        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
+            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+        return res
+
     def order_func1(self, x, res, adj):
-        # orders1
+        # Orders1
         tmp_orders = res
         sum_orders = tmp_orders
         for _ in range(self.orders):
@@ -143,7 +175,7 @@ class MLP_NORM(nn.Module):
         return sum_orders
 
     def order_func3(self, x, res, adj):
-        # Orders 3
+        # Orders3
         orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
         orders_para = torch.transpose(orders_para, 0, 1)
         tmp_orders = orders_para[0].unsqueeze(1) * torch.spmm(adj, res)
@@ -408,12 +440,14 @@ parser.add_argument('--split', type=int, default=0,
                     help='Split part of dataset')
 parser.add_argument('--early_stopping', type=int, default=40,
                     help='Early stopping')
-parser.add_argument('--model', type=str, default='gcn',
+parser.add_argument('--model', type=str, default='mlp_norm',
                     help='Model name ')
 parser.add_argument('--orders', type=int, default=2,
                     help='Number of adj orders in norm layer')
 parser.add_argument('--orders_func_id', type=int, default=3,
-                    help='Sum function of adj orders in norm layer, ids \in [1, 2, 3 ,4]')
+                    help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
+parser.add_argument('--norm_func_id', type=int, default=1,
+                    help='Function of norm layer, ids \in [1, 2]')
 
 
 args = parser.parse_args()
@@ -449,6 +483,7 @@ elif args.model == 'mlp_norm':
         alpha=args.alpha,
         beta=args.beta,
         gamma=args.gamma,
+        norm_func_id=args.norm_func_id,
         norm_layers=args.norm_layers,
         orders=args.orders,
         orders_func_id=args.orders_func_id)
@@ -487,20 +522,23 @@ for epoch in range(args.epochs):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
-    # print('Epoch: {:04d}'.format(epoch+1),
-    #       'loss_train: {:.4f}'.format(loss_train.item()),
-    #       'acc_train: {:.4f}'.format(acc_train.item()),
-    #       'loss_val: {:.4f}'.format(loss_val.item()),
-    #       'acc_val: {:.4f}'.format(acc_val.item()),
-    #       'time: {:.4f}s'.format(time.time() - t))
+    print('Epoch: {:04d}'.format(epoch+1),
+          'loss_train: {:.4f}'.format(loss_train.item()),
+          'acc_train: {:.4f}'.format(acc_train.item()),
+          'loss_val: {:.4f}'.format(loss_val.item()),
+          'acc_val: {:.4f}'.format(acc_val.item()),
+          'time: {:.4f}s'.format(time.time() - t))
     cost_val.append(loss_val.item())
     if epoch > args.early_stopping and cost_val[-1] > np.mean(cost_val[-(args.early_stopping+1):-1]):
-        # print("Early stopping...")
+        print("Early stopping...")
         break
-# print("Optimization Finished!")
-# print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+print("Optimization Finished!")
+print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
-outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
+    f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\
+    f"nlid{args.norm_func_id}_nl{args.norm_layers}_" +\
+    f"ordersid{args.orders_func_id}_orders{args.orders}_split{args.split}_results.txt"
 print(outfile_name)
 
 # Testing

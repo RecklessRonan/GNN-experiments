@@ -139,7 +139,8 @@ class MLP_NORM(nn.Module):
             self.order_func = self.order_func3
 
     def forward(self, x, adj):
-        x = self.fc1(x)
+        x = F.dropout(x, self.dropout, training=self.training)
+        x = F.relu(self.fc1(x))
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x

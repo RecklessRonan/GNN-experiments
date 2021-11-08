@@ -10,7 +10,7 @@ for i in range(len(datasets)):
         data_id = i
 
 best_config = {
-    'chameleon': [0.05, 0.0, 200, 0.0, 1.0, 1000000.0, 0.1, 2, 2, 3, 3],
+    'chameleon': [0.05, 0.0, 250, 0.0, 1.0, 1000000.0, 0.1, 2, 2, 3, 3],
     'squirrel': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
     'cora': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
@@ -30,14 +30,14 @@ weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(11)]
 early_stopping = [40, 100, 200, 250]
-alpha = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0]
-beta = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0]
+alpha = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
+beta = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
 gamma = [i/10 for i in range(11)]
 
 
 # lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6
-parameter = early_stopping
-pos = 2
+parameter = gamma
+pos = 6
 for p in parameter:
     best[pos] = p
     for s in range(10):

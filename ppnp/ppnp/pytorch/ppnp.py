@@ -13,7 +13,8 @@ class PPNP(nn.Module):
 
         fcs = [MixedLinear(nfeatures, hiddenunits[0], bias=bias)]
         for i in range(1, len(hiddenunits)):
-            fcs.append(nn.Linear(hiddenunits[i - 1], hiddenunits[i], bias=bias))
+            fcs.append(
+                nn.Linear(hiddenunits[i - 1], hiddenunits[i], bias=bias))
         fcs.append(nn.Linear(hiddenunits[-1], nclasses, bias=bias))
         self.fcs = nn.ModuleList(fcs)
 

@@ -98,7 +98,7 @@ class MLP_NORM(nn.Module):
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
 
     def forward(self, x, adj):
-        x = self.fc1(x)
+        x = F.relu(self.fc1(x))
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x

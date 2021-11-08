@@ -1,5 +1,0 @@
-,dataset,lr,dropout,early_stopping,weight_decay,alpha,beta,gamma,norm_func_id,norm_layers,orders_func_id,orders,accuracy
-0,chameleon,0.05,0.0,40,0.0,1.0,1000000.0,0.1,2,2,3,3,0.5054824561403508
-1,chameleon,0.05,0.0,100,0.0,1.0,1000000.0,0.1,2,2,3,3,0.5243421052631579
-2,chameleon,0.05,0.0,200,0.0,1.0,1000000.0,0.1,2,2,3,3,0.5383771929824561
-3,chameleon,0.05,0.0,250,0.0,1.0,1000000.0,0.1,2,2,3,3,0.5390350877192983

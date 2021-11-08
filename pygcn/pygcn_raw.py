@@ -145,8 +145,8 @@ class MLP_NORM(nn.Module):
         x = self.fc2(x)
         h0 = x
         for _ in range(self.norm_layers):
-            adj_drop = F.dropout(adj, self.dropout, training=self.training)
-            x = self.norm(x, h0, adj_drop)
+            # adj_drop = F.dropout(adj, self.dropout, training=self.training)
+            x = self.norm(x, h0, adj)
         return F.log_softmax(x, dim=1)
 
     def norm_func1(self, x, h0, adj):
@@ -557,18 +557,18 @@ for epoch in range(args.epochs):
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
-    # print('Epoch: {:04d}'.format(epoch+1),
-    #       'loss_train: {:.4f}'.format(loss_train.item()),
-    #       'acc_train: {:.4f}'.format(acc_train.item()),
-    #       'loss_val: {:.4f}'.format(loss_val.item()),
-    #       'acc_val: {:.4f}'.format(acc_val.item()),
-    #       'time: {:.4f}s'.format(time.time() - t))
+    print('Epoch: {:04d}'.format(epoch+1),
+          'loss_train: {:.4f}'.format(loss_train.item()),
+          'acc_train: {:.4f}'.format(acc_train.item()),
+          'loss_val: {:.4f}'.format(loss_val.item()),
+          'acc_val: {:.4f}'.format(acc_val.item()),
+          'time: {:.4f}s'.format(time.time() - t))
     cost_val.append(loss_val.item())
     if epoch > args.early_stopping and cost_val[-1] > np.mean(cost_val[-(args.early_stopping+1):-1]):
-        # print("Early stopping...")
+        print("Early stopping...")
         break
-# print("Optimization Finished!")
-# print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+print("Optimization Finished!")
+print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
 outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
     f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\

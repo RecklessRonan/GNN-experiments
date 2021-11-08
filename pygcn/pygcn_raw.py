@@ -74,39 +74,56 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_func_id, norm_layers, orders, orders_func_id):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_func_id, norm_layers, orders, orders_func_id, cuda):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
         # self.fc3 = nn.Linear(nclass, nclass)
         self.nclass = nclass
         self.dropout = dropout
-        self.alpha = alpha
-        self.beta = beta
-        self.gamma = gamma
+        self.alpha = torch.tensor(alpha)
+        self.beta = torch.tensor(beta)
+        self.gamma = torch.tensor(gamma)
         self.norm_layers = norm_layers
         self.orders = orders
-        # each weight is initilized same in Orders2
-        self.orders_weight = Parameter(
-            torch.ones(orders, 1) / orders, requires_grad=True
-        )
-        # use kaiming_normal to initialize the weight matrix in Orders3
-        self.orders_weight_matrix = Parameter(
-            torch.DoubleTensor(nclass, orders), requires_grad=True
-        )
+        self.class_eye = torch.eye(self.nclass)
+
+        if cuda:
+            self.orders_weight = Parameter(
+                torch.ones(orders, 1) / orders, requires_grad=True
+            ).to('cuda')
+            # use kaiming_normal to initialize the weight matrix in Orders3
+            self.orders_weight_matrix = Parameter(
+                torch.DoubleTensor(nclass, orders), requires_grad=True
+            ).to('cuda')
+            self.orders_weight_matrix2 = Parameter(
+                torch.DoubleTensor(orders, orders), requires_grad=True
+            ).to('cuda')
+            # use diag matirx to initialize the second norm layer
+            self.diag_weight = Parameter(
+                torch.ones(nclass, 1) / nclass, requires_grad=True
+            ).to('cuda')
+            self.alpha = self.alpha.cuda()
+            self.beta = self.beta.cuda()
+            self.gamma = self.gamma.cuda()
+            self.class_eye = self.class_eye.cuda()
+        else:
+            self.orders_weight = Parameter(
+                torch.ones(orders, 1) / orders, requires_grad=True
+            )
+            # use kaiming_normal to initialize the weight matrix in Orders3
+            self.orders_weight_matrix = Parameter(
+                torch.DoubleTensor(nclass, orders), requires_grad=True
+            )
+            self.orders_weight_matrix2 = Parameter(
+                torch.DoubleTensor(orders, orders), requires_grad=True
+            )
+            # use diag matirx to initialize the second norm layer
+            self.diag_weight = Parameter(
+                torch.ones(nclass, 1) / nclass, requires_grad=True
+            )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
-
-        self.orders_weight_matrix2 = Parameter(
-            torch.DoubleTensor(orders, orders), requires_grad=True
-        )
         init.kaiming_normal_(self.orders_weight_matrix2, mode='fan_out')
-
-        # use diag matirx to initialize the second norm layer
-        self.diag_weight = Parameter(
-            torch.ones(nclass, 1) / nclass, requires_grad=True
-        )
-        # self.diag_matrix = torch.eye(5) * self.diag_weight
-
         self.elu = torch.nn.ELU()
 
         if norm_func_id == 1:
@@ -136,7 +153,7 @@ class MLP_NORM(nn.Module):
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
         res = torch.mm(torch.transpose(x, 0, 1), x)
-        inv = torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        inv = torch.inverse(coe2 * coe2 * self.class_eye + coe * res)
         # u = torch.cholesky(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
         # inv = torch.cholesky_inverse(u)
         res = torch.mm(inv, res)
@@ -153,7 +170,7 @@ class MLP_NORM(nn.Module):
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
         res = torch.mm(torch.transpose(x, 0, 1), x)
-        inv = torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        inv = torch.inverse(coe2 * coe2 * self.class_eye + coe * res)
         # u = torch.cholesky(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
         # inv = torch.cholesky_inverse(u)
         res = torch.mm(inv, res)
@@ -497,7 +514,8 @@ elif args.model == 'mlp_norm':
         norm_func_id=args.norm_func_id,
         norm_layers=args.norm_layers,
         orders=args.orders,
-        orders_func_id=args.orders_func_id)
+        orders_func_id=args.orders_func_id,
+        cuda=args.cuda)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 

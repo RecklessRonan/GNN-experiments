@@ -17,8 +17,6 @@ import os
 import json
 import warnings
 
-from ppnp.ppnp.pytorch import training
-
 warnings.filterwarnings('ignore')
 
 torch.set_default_dtype(torch.float64)
@@ -146,9 +144,9 @@ class MLP_NORM(nn.Module):
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x
-        adj = F.dropout(adj, self.dropout, training=self.training)
         for _ in range(self.norm_layers):
-            x = self.norm(x, h0, adj)
+            adj_drop = F.dropout(adj, self.dropout, training=self.training)
+            x = self.norm(x, h0, adj_drop)
         return F.log_softmax(x, dim=1)
 
     def norm_func1(self, x, h0, adj):

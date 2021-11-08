@@ -1,0 +1,21 @@
+nohup: ignoring input
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split0_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2150
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split1_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2140
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split2_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2069
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split3_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2016
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split4_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2127
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split5_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2023
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split6_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2082
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split7_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2125
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split8_results.txt
+Test set results: loss= 1.0986 accuracy= 0.1990
+pubmed_lr0.01_do0.2_es40_wd5e-05_alpha1.0_beta10000.0_gamma0.0_nlid2_nl2_ordersid3_orders3_split9_results.txt
+Test set results: loss= 1.0986 accuracy= 0.2087

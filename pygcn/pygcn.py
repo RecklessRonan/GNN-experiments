@@ -74,90 +74,146 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_layers, orders):
+    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_func_id, norm_layers, orders, orders_func_id, cuda):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
         # self.fc3 = nn.Linear(nclass, nclass)
         self.nclass = nclass
         self.dropout = dropout
-        self.alpha = alpha
-        self.beta = beta
-        self.gamma = gamma
+        self.alpha = torch.tensor(alpha)
+        self.beta = torch.tensor(beta)
+        self.gamma = torch.tensor(gamma)
         self.norm_layers = norm_layers
         self.orders = orders
-        # each weight is same to 1/orders
-        self.orders_weight = Parameter(
-            torch.ones(orders, 1) / orders, requires_grad=True
-        )
-        # init.kaiming_normal_(self.orders_weight, mode='fan_out')
-        # use kaiming_normal to initialize the weight matrix (orders+1, nnodes)
-        self.orders_weight_matrix = Parameter(
-            torch.DoubleTensor(nclass, orders), requires_grad=True
-        )
+        self.class_eye = torch.eye(self.nclass)
+
+        if cuda:
+            self.orders_weight = Parameter(
+                torch.ones(orders, 1) / orders, requires_grad=True
+            ).to('cuda')
+            # use kaiming_normal to initialize the weight matrix in Orders3
+            self.orders_weight_matrix = Parameter(
+                torch.DoubleTensor(nclass, orders), requires_grad=True
+            ).to('cuda')
+            self.orders_weight_matrix2 = Parameter(
+                torch.DoubleTensor(orders, orders), requires_grad=True
+            ).to('cuda')
+            # use diag matirx to initialize the second norm layer
+            self.diag_weight = Parameter(
+                torch.ones(nclass, 1) / nclass, requires_grad=True
+            ).to('cuda')
+            self.alpha = self.alpha.cuda()
+            self.beta = self.beta.cuda()
+            self.gamma = self.gamma.cuda()
+            self.class_eye = self.class_eye.cuda()
+        else:
+            self.orders_weight = Parameter(
+                torch.ones(orders, 1) / orders, requires_grad=True
+            )
+            # use kaiming_normal to initialize the weight matrix in Orders3
+            self.orders_weight_matrix = Parameter(
+                torch.DoubleTensor(nclass, orders), requires_grad=True
+            )
+            self.orders_weight_matrix2 = Parameter(
+                torch.DoubleTensor(orders, orders), requires_grad=True
+            )
+            # use diag matirx to initialize the second norm layer
+            self.diag_weight = Parameter(
+                torch.ones(nclass, 1) / nclass, requires_grad=True
+            )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
+        init.kaiming_normal_(self.orders_weight_matrix2, mode='fan_out')
+        self.elu = torch.nn.ELU()
+
+        if norm_func_id == 1:
+            self.norm = self.norm_func1
+        else:
+            self.norm = self.norm_func2
+
+        if orders_func_id == 1:
+            self.order_func = self.order_func1
+        elif orders_func_id == 2:
+            self.order_func = self.order_func2
+        else:
+            self.order_func = self.order_func3
 
     def forward(self, x, adj):
+        x = F.dropout(x, self.dropout, training=self.training)
         x = F.relu(self.fc1(x))
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x
         for _ in range(self.norm_layers):
+            # adj_drop = F.dropout(adj, self.dropout, training=self.training)
             x = self.norm(x, h0, adj)
         return F.log_softmax(x, dim=1)
 
-    def norm(self, x, h0, adj):
+    def norm_func1(self, x, h0, adj):
+        # print('norm_func1 run')
         coe = 1.0 / (self.alpha + self.beta)
         coe1 = 1 - self.gamma
         coe2 = 1.0 / coe1
         res = torch.mm(torch.transpose(x, 0, 1), x)
-        inv = torch.inverse(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        inv = torch.inverse(coe2 * coe2 * self.class_eye + coe * res)
         # u = torch.cholesky(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
         # inv = torch.cholesky_inverse(u)
         res = torch.mm(inv, res)
         res = coe1 * coe * x - coe1 * coe * coe * torch.mm(x, res)
         tmp = torch.mm(torch.transpose(x, 0, 1), res)
-
-        # Orders1
-        # tmp_orders = res
-        # sum_orders = tmp_orders
-        # for _ in range(self.orders):
-        #     tmp_orders = torch.spmm(adj, tmp_orders)
-        #     sum_orders = sum_orders + tmp_orders
-
-        # Orders2
-        # tmp_orders = torch.spmm(adj, res) * self.orders_weight[0]
-        # sum_orders = tmp_orders
-        # for i in range(1, self.orders):
-        #     tmp_orders = torch.spmm(adj, tmp_orders)
-        #     sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
-
-        # res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
-        #     self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
-
-        # Orders 3
-        orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
-        orders_para = torch.transpose(orders_para, 0, 1)
-        tmp_orders = torch.spmm(adj, res)
-        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
-        for i in range(1, self.orders):
-            tmp_orders = torch.spmm(adj, tmp_orders)
-            sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
+        sum_orders = self.order_func(x, res, adj)
         res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
             self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
-
-        # Orders 4
-        orders_para = torch.tanh(torch.mm(x, self.orders_weight_matrix))
-        orders_para = torch.transpose(orders_para, 0, 1)
-        tmp_orders = torch.spmm(adj, res)
-        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
-        for i in range(1, self.orders):
-            tmp_orders = torch.spmm(adj, tmp_orders)
-            sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
-        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
-            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
-
         return res
+
+    def norm_func2(self, x, h0, adj):
+        # print('norm_func2 run')
+        coe = 1.0 / (self.alpha + self.beta)
+        coe1 = 1 - self.gamma
+        coe2 = 1.0 / coe1
+        res = torch.mm(torch.transpose(x, 0, 1), x)
+        inv = torch.inverse(coe2 * coe2 * self.class_eye + coe * res)
+        # u = torch.cholesky(coe2 * coe2 * torch.eye(self.nclass) + coe * res)
+        # inv = torch.cholesky_inverse(u)
+        res = torch.mm(inv, res)
+        res = (coe1 * coe * x -
+               coe1 * coe * coe * torch.mm(x, res)) * self.diag_weight.t()
+        tmp = self.diag_weight * (torch.mm(torch.transpose(x, 0, 1), res))
+        sum_orders = self.order_func(x, res, adj)
+        res = coe1 * torch.mm(x, tmp) + self.beta * sum_orders - \
+            self.gamma * coe1 * torch.mm(h0, tmp) + self.gamma * h0
+        return res
+
+    def order_func1(self, x, res, adj):
+        # Orders1
+        tmp_orders = res
+        sum_orders = tmp_orders
+        for _ in range(self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + tmp_orders
+        return sum_orders
+
+    def order_func2(self, x, res, adj):
+        # Orders2
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = tmp_orders * self.orders_weight[0]
+        for i in range(1, self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
+        return sum_orders
+
+    def order_func3(self, x, res, adj):
+        # Orders3
+        orders_para = torch.mm(torch.relu(torch.mm(x, self.orders_weight_matrix)),
+                               self.orders_weight_matrix2)
+        # orders_para = torch.mm(x, self.orders_weight_matrix)
+        orders_para = torch.transpose(orders_para, 0, 1)
+        tmp_orders = torch.spmm(adj, res)
+        sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
+        for i in range(1, self.orders):
+            tmp_orders = torch.spmm(adj, tmp_orders)
+            sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
+        return sum_orders
 
 
 def encode_onehot(labels):
@@ -390,34 +446,38 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
 parser.add_argument('--fastmode', action='store_true', default=False,
                     help='Validate during training pass.')
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=200,
+parser.add_argument('--epochs', type=int, default=2000,
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.01,
                     help='Initial learning rate.')
-parser.add_argument('--weight_decay', type=float, default=5e-4,
+parser.add_argument('--weight_decay', type=float, default=0.0,
                     help='Weight decay (L2 loss on parameters).')
 parser.add_argument('--hidden', type=int, default=16,
                     help='Number of hidden units.')
-parser.add_argument('--dropout', type=float, default=0.5,
+parser.add_argument('--dropout', type=float, default=0.0,
                     help='Dropout rate (1 - keep probability).')
 parser.add_argument('--alpha', type=float, default=0.1,
                     help='Weight for frobenius norm on Z.')
-parser.add_argument('--beta', type=float, default=0.1,
+parser.add_argument('--beta', type=float, default=100000000.0,
                     help='Weight for frobenius norm on Z-A')
-parser.add_argument('--gamma', type=float, default=0.2,
+parser.add_argument('--gamma', type=float, default=0.0,
                     help='Weight for MLP results kept')
 parser.add_argument('--norm_layers', type=int, default=2,
                     help='Number of groupnorm layers')
-parser.add_argument('--dataset', type=str, default='wisconsin',
+parser.add_argument('--dataset', type=str, default='chameleon',
                     help='Name of dataset')
 parser.add_argument('--split', type=int, default=0,
                     help='Split part of dataset')
-parser.add_argument('--early_stopping', type=int, default=40,
+parser.add_argument('--early_stopping', type=int, default=200,
                     help='Early stopping')
-parser.add_argument('--model', type=str, default='gcn',
+parser.add_argument('--model', type=str, default='mlp_norm',
                     help='Model name ')
-parser.add_argument('--orders', type=int, default=2,
-                    help='Model name ')
+parser.add_argument('--orders', type=int, default=1,
+                    help='Number of adj orders in norm layer')
+parser.add_argument('--orders_func_id', type=int, default=2,
+                    help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
+parser.add_argument('--norm_func_id', type=int, default=1,
+                    help='Function of norm layer, ids \in [1, 2]')
 
 
 args = parser.parse_args()
@@ -453,8 +513,11 @@ elif args.model == 'mlp_norm':
         alpha=args.alpha,
         beta=args.beta,
         gamma=args.gamma,
+        norm_func_id=args.norm_func_id,
         norm_layers=args.norm_layers,
-        orders=args.orders)
+        orders=args.orders,
+        orders_func_id=args.orders_func_id,
+        cuda=args.cuda)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
 
@@ -472,6 +535,8 @@ if args.cuda:
 cost_val = []
 t_total = time.time()
 
+
+# print(model.diag_weight)
 for epoch in range(args.epochs):
     t = time.time()
     model.train()
@@ -481,6 +546,8 @@ for epoch in range(args.epochs):
     acc_train = accuracy(output[idx_train], labels[idx_train])
     loss_train.backward()
     optimizer.step()
+
+    # print(model.diag_weight)
 
     if not args.fastmode:
         # Evaluate validation set performance separately,
@@ -503,7 +570,10 @@ for epoch in range(args.epochs):
 # print("Optimization Finished!")
 # print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
-outfile_name = f'''{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_nl{args.norm_layers}_orders{args.orders}_split{args.split}_results.txt'''
+outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
+    f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\
+    f"nlid{args.norm_func_id}_nl{args.norm_layers}_" +\
+    f"ordersid{args.orders_func_id}_orders{args.orders}_split{args.split}_results.txt"
 print(outfile_name)
 
 # Testing
@@ -522,7 +592,7 @@ results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
 
-# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
 
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

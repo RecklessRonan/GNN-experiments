@@ -1,0 +1,10 @@
+python3 pygcn.py --no-cuda  --split 0
+python3 pygcn.py --no-cuda  --split 1
+python3 pygcn.py --no-cuda  --split 2
+python3 pygcn.py --no-cuda  --split 3
+python3 pygcn.py --no-cuda  --split 4
+python3 pygcn.py --no-cuda  --split 5
+python3 pygcn.py --no-cuda  --split 6
+python3 pygcn.py --no-cuda  --split 7
+python3 pygcn.py --no-cuda  --split 8
+python3 pygcn.py --no-cuda  --split 9

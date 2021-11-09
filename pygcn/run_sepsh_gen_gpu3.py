@@ -12,7 +12,7 @@ best_config = {
     'squirrel': [0.05, 0.0, 200, 0, 1.0, 1000000.0, 0.9, 2, 2, 3, 3],
     'cora': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
-    'pubmed': [0.01, 0.2, 40, 0.00005, 1.0, 10000.0, 0.6, 2, 2, 3, 3],
+    'pubmed': [0.01, 0.1, 40, 0.00005, 1000000.0, 1000000.0, 0.6, 2, 2, 3, 3],
     'texas': [10.0, 1.0, 0.5, 2, 2, 3, 3],
     'wisconsin': [1.0, 0.1, 0.9, 2, 2, 3, 3],
     'cornell': [0.5, 0.1, 0.1, 2, 2, 3, 3],
@@ -31,13 +31,14 @@ early_stopping = [40, 100, 200, 250]
 alpha = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
 beta = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
 gamma = [i/10 for i in range(11)]
+orders = [1, 2, 3, 4, 5]
 
-# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6
-parameter = dropout
-pos = 1
+# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6, orders 10
+parameter = orders
+pos = 10
 
 for p in parameter:
-    best[6] = p
+    best[pos] = p
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \

@@ -18,7 +18,7 @@ best_config = {
     'texas': [10.0, 1.0, 0.5, 2, 2, 3, 3],
     'wisconsin': [1.0, 0.1, 0.9, 2, 2, 3, 3],
     'cornell': [0.5, 0.1, 0.1, 2, 2, 3, 3],
-    'film': [0.001, 0.9, 40, 0.0005, 10.0, 10.0, 0.9, 2, 2, 3, 3]
+    'film': [0.001, 0.0, 40, 0.001, 10.0, 10.0, 0.9, 2, 2, 3, 3]
 }
 
 best = best_config[dataset]
@@ -33,11 +33,12 @@ early_stopping = [40, 100, 200, 250]
 alpha = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
 beta = [0.0, 0.1, 1.0, 10.0, 100.0, 1000000.0, 100000000.0]
 gamma = [i/10 for i in range(11)]
+orders = [1, 2, 3, 4, 5]
 
 
-# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6
-parameter = gamma
-pos = 6
+# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6. orders 10
+parameter = orders
+pos = 10
 
 for p in parameter:
     best[pos] = p

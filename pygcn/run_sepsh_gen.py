@@ -1,4 +1,5 @@
 import pickle
+import itertools
 
 dataset = 'texas'
 
@@ -15,7 +16,7 @@ best_config = {
     'cora': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
     'pubmed': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
-    'texas': [0.1, 0.5, 200, 0.00005, 10.0, 1.0, 0.6, 2, 2, 3, 3],
+    'texas': [0.05, 0.5, 200, 0.00005, 100.0, 100000000.0, 0.6, 2, 2, 3, 3],
     'wisconsin': [1.0, 0.1, 0.9, 2, 2, 3, 3],
     'cornell': [0.5, 0.1, 0.1, 2, 2, 3, 3],
     'film': [0.001, 0.9, 40, 0.0005, 10.0, 10.0, 0.5, 2, 2, 3, 3]
@@ -36,11 +37,16 @@ gamma = [i/10 for i in range(1, 10)]
 orders = [1, 2, 3, 4, 5]
 
 
-# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6, orders 10
-parameter = lr
-pos = 0
-for p in parameter:
-    best[pos] = p
+# alpha = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
+# beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
+
+
+for a, b in itertools.product(alpha, beta):
+    best[4] = a
+    best[5] = b
+
+    if a+b == 0.0:
+        continue
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
@@ -54,6 +60,26 @@ for p in parameter:
     config = best * 1
     config.append(data_id)
     config_list.append(config)
+
+
+# # lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6, orders 10
+# parameter = orders
+# pos = 10
+# for p in parameter:
+#     best[pos] = p
+#     for s in range(10):
+#         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
+#             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
+#             " --early_stopping " + str(best[2]) + \
+#             " --dropout " + str(best[1]) + " --alpha " + str(best[4]) + \
+#             " --beta " + str(best[5]) + ' --gamma ' + str(best[6]) + \
+#             " --norm_layers " + str(best[8]) + " --orders " + str(best[10]) + \
+#             " --orders_func_id " + str(best[9]) + " --norm_func_id " + str(best[7]) + \
+#             " --dataset " + dataset + " --split " + str(s)
+#         run_sh_all += run_sh + '\n'
+#     config = best * 1
+#     config.append(data_id)
+#     config_list.append(config)
 
 
 with open('config_list1', 'wb') as f:

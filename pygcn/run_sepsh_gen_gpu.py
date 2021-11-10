@@ -1,7 +1,7 @@
 import pickle
 
-dataset = 'film'
-# dataset = 'cornell'
+# dataset = 'film'
+dataset = 'cornell'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -38,8 +38,8 @@ orders = [1, 2, 3, 4, 5]
 
 
 # lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6. orders 10
-parameter = gamma
-pos = 6
+parameter = dropout
+pos = 1
 
 for p in parameter:
     best[pos] = p

@@ -1,7 +1,8 @@
 import pickle
+import itertools
 
-# dataset = 'film'
-dataset = 'cornell'
+dataset = 'film'
+# dataset = 'cornell'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -37,12 +38,29 @@ gamma = [i/10 for i in range(1, 10)]
 orders = [1, 2, 3, 4, 5]
 
 
-# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6. orders 10
-parameter = dropout
-pos = 1
+lr = [0.001, 0.005, 0.01, 0.05, 0.1]
+weight_decay = [0.00005, 0.0001, 0.0005, 0.001]
+dropout = [i/10 for i in range(0, 4)]
+early_stopping = [40, 100, 200, 250]
+alpha = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
+beta = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
+gamma = [i/10 for i in range(5, 10)]
+orders = [1, 2, 3, 4, 5]
 
-for p in parameter:
-    best[pos] = p
+
+alpha = [0.0, 0.01, 0.03, 0.05, 0.1, 0.15, 0.2, 0.5, 1.0, 10.0]
+beta = [0.0, 0.01, 0.03, 0.05, 0.1, 0.15, 0.2, 0.5, 1.0, 10.0]
+
+for d, w, g in itertools.product(dropout, weight_decay, gamma):
+    best[1] = d
+    best[3] = w
+    best[6] = g
+# for a, b in itertools.product(alpha, beta):
+#     best[4] = a
+#     best[5] = b
+
+#     if a+b == 0.0:
+#         continue
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
@@ -56,6 +74,27 @@ for p in parameter:
     config = best * 1
     config.append(data_id)
     config_list.append(config)
+
+
+# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6. orders 10
+# parameter = dropout
+# pos = 1
+
+# for p in parameter:
+#     best[pos] = p
+#     for s in range(10):
+#         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
+#             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
+#             " --early_stopping " + str(best[2]) + \
+#             " --dropout " + str(best[1]) + " --alpha " + str(best[4]) + \
+#             " --beta " + str(best[5]) + ' --gamma ' + str(best[6]) + \
+#             " --norm_layers " + str(best[8]) + " --orders " + str(best[10]) + \
+#             " --orders_func_id " + str(best[9]) + " --norm_func_id " + str(best[7]) + \
+#             " --dataset " + dataset + " --split " + str(s)
+#         run_sh_all += run_sh + '\n'
+#     config = best * 1
+#     config.append(data_id)
+#     config_list.append(config)
 
 
 with open('config_list2', 'wb') as f:

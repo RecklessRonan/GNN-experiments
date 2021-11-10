@@ -1,1 +1,3 @@
 nohup: ignoring input
+film_lr0.001_do0.0_es40_wd5e-05_alpha10.0_beta10.0_gamma0.5_nlid2_nl2_ordersid3_orders3_split0_results.txt
+Test set results: loss= 1.4175 accuracy= 0.3546

@@ -1,7 +1,8 @@
 import pickle
 import itertools
 
-dataset = 'texas'
+# dataset = 'texas'
+dataset = 'chameleon'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -16,7 +17,7 @@ best_config = {
     'cora': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
     'pubmed': [1.0, 10000.0, 0.9, 2, 2, 3, 3],
-    'texas': [0.05, 0.5, 200, 0.00005, 100.0, 100000000.0, 0.6, 2, 2, 3, 3],
+    'texas': [0.05, 0.0, 40, 0.0001, 10000.0, 10.0, 0.8, 2, 2, 3, 3],
     'wisconsin': [1.0, 0.1, 0.9, 2, 2, 3, 3],
     'cornell': [0.5, 0.1, 0.1, 2, 2, 3, 3],
     'film': [0.001, 0.9, 40, 0.0005, 10.0, 10.0, 0.5, 2, 2, 3, 3]
@@ -40,13 +41,24 @@ orders = [1, 2, 3, 4, 5]
 # alpha = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
 # beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
 
+weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
+                0.000005, 0.00001, 0.00005]
+dropout = [i/10 for i in range(0, 4)]
+gamma = [i/10 for i in range(1, 3)]
 
-for l, e in itertools.product(lr, early_stopping):
-    best[0] = l
-    best[2] = e
 
-    # if a+b == 0.0:
-    #     continue
+# for a, b in itertools.product(alpha, beta):
+#     best[4] = a
+#     best[5] = b
+
+#     if a+b == 0.0:
+#         continue
+
+for d, w, g in itertools.product(dropout, weight_decay, gamma):
+    best[1] = d
+    best[3] = w
+    best[6] = g
+
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \

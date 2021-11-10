@@ -1,7 +1,8 @@
 import pickle
+import itertools
 
-dataset = 'squirrel'
-# dataset = 'cora'
+# dataset = 'squirrel'
+dataset = 'cora'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -13,7 +14,7 @@ for i in range(len(datasets)):
 best_config = {
     'chameleon': [0.05, 0.0, 200, 0.0, 1.0, 1000000.0, 0.9, 2, 2, 3, 3],
     'squirrel': [0.05, 0.0, 250, 0.00005, 0.0, 1000000.0, 0.1, 2, 2, 3, 3],
-    'cora': [0.05, 0.5, 40, 0.00001, 1.0, 10000.0, 0.1, 2, 2, 3, 3],
+    'cora': [0.05, 0.6, 40, 0.00001, 1000000.0, 10000.0, 0.7, 2, 2, 3, 3],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
     'pubmed': [0.01, 0.2, 40, 0.00005, 1.0, 10000.0, 0.6, 2, 2, 3, 3],
     'texas': [10.0, 1.0, 0.5, 2, 2, 3, 3],
@@ -26,7 +27,7 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.001, 0.005, 0.01, 0.05]
+lr = [0.01, 0.05, 0.1]
 weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(10)]
@@ -37,12 +38,18 @@ gamma = [i/10 for i in range(1, 10)]
 orders = [1, 2, 3, 4, 5]
 
 
-# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6, orders 10
-parameter = gamma
-pos = 6
+# alpha = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
+# beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
+# dropout = [i/10 for i in range(5)]
+# weight_decay = [0.00005, 0.0001, 0.0005]
+# gamma = [i/10 for i in range(1, 5)]
 
-for p in parameter:
-    best[pos] = p
+for l, e in itertools.product(lr, early_stopping):
+    best[0] = l
+    best[2] = e
+
+    # if a+b == 0.0:
+    #     continue
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
@@ -56,6 +63,26 @@ for p in parameter:
     config = best * 1
     config.append(data_id)
     config_list.append(config)
+
+# lr 0, dropout 1, early_stopping 2, weight_decay 3, alpha 4, beta 5, gamma 6, orders 10
+# parameter = lr
+# pos = 0
+
+# for p in parameter:
+#     best[pos] = p
+#     for s in range(10):
+#         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
+#             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \
+#             " --early_stopping " + str(best[2]) + \
+#             " --dropout " + str(best[1]) + " --alpha " + str(best[4]) + \
+#             " --beta " + str(best[5]) + ' --gamma ' + str(best[6]) + \
+#             " --norm_layers " + str(best[8]) + " --orders " + str(best[10]) + \
+#             " --orders_func_id " + str(best[9]) + " --norm_func_id " + str(best[7]) + \
+#             " --dataset " + dataset + " --split " + str(s)
+#         run_sh_all += run_sh + '\n'
+#     config = best * 1
+#     config.append(data_id)
+#     config_list.append(config)
 
 
 with open('config_list3', 'wb') as f:

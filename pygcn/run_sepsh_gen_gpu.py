@@ -26,7 +26,7 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.001, 0.005, 0.01, 0.05]
+lr = [0.01, 0.05, 0.1]
 weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(10)]

@@ -26,7 +26,7 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.001, 0.005, 0.01, 0.05]
+lr = [0.01, 0.05, 0.1]
 weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(10)]
@@ -43,10 +43,9 @@ dropout = [i/10 for i in range(6)]
 weight_decay = [0.00005, 0.0001, 0.0005]
 gamma = [i/100 for i in range(85, 95)]
 
-for d, w, g in itertools.product(dropout, weight_decay, gamma):
-    best[1] = d
-    best[3] = w
-    best[6] = g
+for l, e in itertools.product(lr, early_stopping):
+    best[0] = l
+    best[2] = e
 
     # if a+b == 0.0:
     #     continue

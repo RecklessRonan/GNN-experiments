@@ -26,7 +26,7 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.001, 0.005, 0.01, 0.05]
+lr = [0.01, 0.05, 0.1]
 weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(10)]
@@ -41,12 +41,12 @@ orders = [1, 2, 3, 4, 5]
 # beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
 
 
-for a, b in itertools.product(alpha, beta):
-    best[4] = a
-    best[5] = b
+for l, e in itertools.product(lr, early_stopping):
+    best[0] = l
+    best[2] = e
 
-    if a+b == 0.0:
-        continue
+    # if a+b == 0.0:
+    #     continue
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \

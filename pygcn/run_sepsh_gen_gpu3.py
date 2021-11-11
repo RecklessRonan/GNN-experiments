@@ -1,8 +1,8 @@
 import pickle
 import itertools
 
-dataset = 'pubmed'
-# dataset = 'citeseer'
+# dataset = 'pubmed'
+dataset = 'citeseer'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -39,9 +39,9 @@ orders = [1, 2, 3, 4, 5]
 
 # alpha = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
 # beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
-dropout = [i/10 for i in range(0, 3)]
-weight_decay = [0.000005, 0.00001, 0.00005, 0.0001, 0.0005]
-gamma = [i/10 for i in range(3, 8)]
+dropout = [i/10 for i in range(3, 7)]
+weight_decay = [0.0000001, 0.0000005, 0.000001]
+gamma = [i/10 for i in range(5, 10)]
 
 
 for d, w, g in itertools.product(dropout, weight_decay, gamma):

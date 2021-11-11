@@ -1,8 +1,8 @@
 import pickle
 import itertools
 
-dataset = 'film'
-# dataset = 'cornell'
+# dataset = 'film'
+dataset = 'cornell'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
@@ -20,7 +20,7 @@ best_config = {
     'texas': [10.0, 1.0, 0.5, 2, 2, 3, 3],
     'wisconsin': [1.0, 0.1, 0.9, 2, 2, 3, 3],
     'cornell': [0.05, 0.0, 40, 0.00005, 1.0, 0.1, 0.6, 2, 2, 3, 3],
-    'film': [0.001, 0.0, 40, 0.001, 10.0, 10.0, 0.9, 2, 2, 3, 3]
+    'film': [0.001, 0.0, 40, 0.001, 10.0, 10.0, 0.2, 2, 2, 3, 3]
 }
 
 best = best_config[dataset]
@@ -38,13 +38,13 @@ gamma = [i/10 for i in range(1, 10)]
 orders = [1, 2, 3, 4, 5]
 
 
-lr = [0.001, 0.005, 0.01, 0.05, 0.1]
+lr = [0.01, 0.05, 0.1]
 weight_decay = [0.00005, 0.0001, 0.0005, 0.001]
-dropout = [i/10 for i in range(0, 4)]
+dropout = [i/10 for i in range(0, 3)]
 early_stopping = [40, 100, 200, 250]
 alpha = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
 beta = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
-gamma = [i/10 for i in range(5, 10)]
+gamma = [0.2, 0.3]
 orders = [1, 2, 3, 4, 5]
 
 
@@ -55,12 +55,16 @@ for d, w, g in itertools.product(dropout, weight_decay, gamma):
     best[1] = d
     best[3] = w
     best[6] = g
-# for a, b in itertools.product(alpha, beta):
-#     best[4] = a
-#     best[5] = b
 
-#     if a+b == 0.0:
-#         continue
+# for l, e in itertools.product(lr, early_stopping):
+#     best[0] = l
+#     best[2] = e
+# # for a, b in itertools.product(alpha, beta):
+# #     best[4] = a
+# #     best[5] = b
+
+# #     if a+b == 0.0:
+# #         continue
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \

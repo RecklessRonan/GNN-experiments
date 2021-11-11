@@ -450,33 +450,33 @@ parser.add_argument('--epochs', type=int, default=2000,
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.01,
                     help='Initial learning rate.')
-parser.add_argument('--weight_decay', type=float, default=0.0,
+parser.add_argument('--weight_decay', type=float, default=0.0001,
                     help='Weight decay (L2 loss on parameters).')
-parser.add_argument('--hidden', type=int, default=16,
+parser.add_argument('--hidden', type=int, default=64,
                     help='Number of hidden units.')
-parser.add_argument('--dropout', type=float, default=0.0,
+parser.add_argument('--dropout', type=float, default=0.1,
                     help='Dropout rate (1 - keep probability).')
-parser.add_argument('--alpha', type=float, default=0.1,
+parser.add_argument('--alpha', type=float, default=10.0,
                     help='Weight for frobenius norm on Z.')
-parser.add_argument('--beta', type=float, default=100000000.0,
+parser.add_argument('--beta', type=float, default=0.05,
                     help='Weight for frobenius norm on Z-A')
-parser.add_argument('--gamma', type=float, default=0.0,
+parser.add_argument('--gamma', type=float, default=0.9,
                     help='Weight for MLP results kept')
 parser.add_argument('--norm_layers', type=int, default=2,
                     help='Number of groupnorm layers')
-parser.add_argument('--dataset', type=str, default='chameleon',
+parser.add_argument('--dataset', type=str, default='wisconsin',
                     help='Name of dataset')
 parser.add_argument('--split', type=int, default=0,
                     help='Split part of dataset')
-parser.add_argument('--early_stopping', type=int, default=200,
+parser.add_argument('--early_stopping', type=int, default=40,
                     help='Early stopping')
 parser.add_argument('--model', type=str, default='mlp_norm',
                     help='Model name ')
-parser.add_argument('--orders', type=int, default=1,
+parser.add_argument('--orders', type=int, default=3,
                     help='Number of adj orders in norm layer')
-parser.add_argument('--orders_func_id', type=int, default=2,
+parser.add_argument('--orders_func_id', type=int, default=3,
                     help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
-parser.add_argument('--norm_func_id', type=int, default=1,
+parser.add_argument('--norm_func_id', type=int, default=2,
                     help='Function of norm layer, ids \in [1, 2]')
 
 
@@ -520,6 +520,8 @@ elif args.model == 'mlp_norm':
         cuda=args.cuda)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
+# scheduler = optim.lr_scheduler.StepLR(
+#     optimizer, step_size=args.early_stopping, gamma=0.98)
 
 if args.cuda:
     model.cuda()
@@ -538,6 +540,7 @@ t_total = time.time()
 
 # print(model.diag_weight)
 for epoch in range(args.epochs):
+    # scheduler.step()
     t = time.time()
     model.train()
     optimizer.zero_grad()

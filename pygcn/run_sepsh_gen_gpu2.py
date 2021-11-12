@@ -13,7 +13,7 @@ for i in range(len(datasets)):
 
 best_config = {
     'chameleon': [0.05, 0.0, 200, 0.0, 1.0, 1000000.0, 0.9, 2, 2, 3, 3],
-    'squirrel': [0.05, 0.0, 250, 0.00005, 0.0, 1000000.0, 0.1, 2, 2, 3, 3],
+    'squirrel': [0.01, 0.1, 250, 0.00001, 0.05, 1000000.0, 0.1, 2, 1, 3, 3],
     'cora': [0.01, 0.6, 40, 0.00001, 1000000.0, 10000.0, 0.7, 2, 2, 3, 4],
     'citeseer': [1.0, 10000.0, 0.5, 2, 2, 3, 3],
     'pubmed': [0.01, 0.2, 40, 0.00005, 1.0, 10000.0, 0.6, 2, 2, 3, 3],
@@ -32,34 +32,32 @@ weight_decay = [0.0, 0.0000001, 0.0000005, 0.000001,
                 0.000005, 0.00001, 0.00005, 0.0001, 0.0005, 0.001]
 dropout = [i/10 for i in range(10)]
 early_stopping = [40, 100, 200, 250]
-alpha = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
-beta = [0.0, 0.01, 0.1, 1.0, 10.0, 100.0, 10000.0, 1000000.0, 100000000.0]
+alpha = [0.01, 0.05, 0.1, 1.0, 10.0]
+beta = [1000000.0]
 gamma = [i/10 for i in range(1, 10)]
 orders = [1, 2, 3, 4, 5]
 
 
 # alpha = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
-# beta = [0.0, 0.01, 0.05, 0.1, 1.0, 10.0]
+beta = [1000000.0, 100000000.0]
 dropout = [i/10 for i in range(0, 5)]
 weight_decay = [0.000001, 0.000005, 0.00001]
-gamma = [i/10 for i in range(1, 5)]
+gamma = [i/10 for i in range(1, 4)]
 
 
 # for l, e in itertools.product(lr, early_stopping):
 #     best[0] = l
 #     best[2] = e
 
-for d, w, g in itertools.product(dropout, weight_decay, gamma):
-    best[1] = d
-    best[3] = w
+# for d, w, g in itertools.product(dropout, weight_decay, gamma):
+#     best[1] = d
+#     best[3] = w
+#     best[6] = g
+
+for b, g in itertools.product(beta, gamma):
+
     best[6] = g
-
-# for a, b in itertools.product(alpha, beta):
-#     if a+b == 0.0:
-#         continue
-
-#     best[4] = a
-#     best[5] = b
+    best[5] = b
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --weight_decay " + str(best[3]) + \

@@ -30,7 +30,7 @@ best_config = {
     'squirrel': [0.05, 0.1, 250, 0.00001, 0.0, 1000000.0, 0.1, 2, 2, 3, 3],
     'cora': [0.01, 0.6, 40, 0.00001, 1000000.0, 10000.0, 0.7, 2, 2, 3, 4],
     'citeseer': [0.01, 0.6, 40, 0.0000001, 100.0, 100.0, 0.9, 2, 2, 3, 5],
-    'pubmed': [0.01, 0.2, 40, 0.00005, 1000000.0, 1000000.0, 0.5, 2, 2, 3, 1],
+    'pubmed': [0.01, 0.2, 40, 0.00005, 100000000.0, 100000000.0, 0.5, 2, 2, 3, 1],
     'texas': [0.1, 0.1, 200, 0.0001, 10000.0, 10.0, 0.8, 2, 2, 3, 3],
     'wisconsin': [0.05, 0.1, 40, 0.0001, 10.0, 0.05, 0.9, 2, 2, 3, 3],
     'cornell': [0.05, 0.0, 40, 0.00005, 1.0, 0.1, 0.6, 2, 2, 3, 3],
@@ -41,19 +41,21 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.01]
+lr = [0.001, 0.01, 0.05]
 weight_decay = [0.00005]
-dropout = [0.1, 0.2, 0.3]
+dropout = [0.2]
 early_stopping = [40, 100, 200]
-alpha = [1000000.0, 10000000.0, 100000000.0]
-beta = [1000000.0, 10000000.0, 100000000.0]
-gamma = [0.4, 0.5, 0.6]
+alpha = [100000000.0]
+beta = [100000000.0]
+gamma = [0.5]
 orders = [1, 2, 3, 4, 5]
 norm_layers = [1, 2, 3, 4, 5]
 
 
-for d, w, a, b, g in itertools.product(dropout, weight_decay, alpha, beta, gamma):
+for l, e, d, w, a, b, g in itertools.product(lr, early_stopping, dropout, weight_decay, alpha, beta, gamma):
+    best[0] = l
     best[1] = d
+    best[2] = e
     best[3] = w
     best[6] = g
     best[4] = a

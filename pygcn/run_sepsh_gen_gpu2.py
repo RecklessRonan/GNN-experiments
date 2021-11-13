@@ -31,7 +31,7 @@ best_config = {
     'citeseer': [0.01, 0.6, 40, 0.0000001, 100.0, 100.0, 0.9, 2, 2, 3, 5],
     'pubmed': [0.01, 0.2, 40, 0.00005, 1000000.0, 1000000.0, 0.5, 2, 2, 3, 1],
     'texas': [0.1, 0.1, 200, 0.0001, 10000.0, 10.0, 0.8, 2, 2, 3, 3],
-    'wisconsin': [0.05, 0.1, 40, 0.0001, 10.0, 0.05, 0.9, 2, 2, 3, 3],
+    'wisconsin': [0.01, 0.0, 200, 0.00005, 1.0, 0.1, 0.5, 2, 2, 3, 3],
     'cornell': [0.05, 0.0, 40, 0.00005, 1.0, 0.1, 0.6, 2, 2, 3, 3],
     'film': [0.001, 0.0, 40, 0.001, 10.0, 10.0, 0.2, 2, 2, 3, 3]
 }
@@ -40,20 +40,25 @@ best = best_config[dataset]
 run_sh_all = ""
 config_list = []
 
-lr = [0.01, 0.05]
-weight_decay = [0.000005, 0.00001, 0.00005]
-dropout = [i/10 for i in range(4, 8)]
-early_stopping = [40, 100, 200]
-alpha = [1.0, 10.0, 100.0]
-beta = [0.01, 0.05, 0.1]
-gamma = [i/10 for i in range(7, 10)]
-orders = [2, 3, 4]
+lr = [0.01]
+weight_decay = [0.00005]
+dropout = [0.0]
+early_stopping = [200]
+alpha = [1.0]
+beta = [0.01, 0.05, 0.1, 0.5]
+gamma = [0.4, 0.5, 0.6]
+orders = [3]
 
 
-for a, b, o in itertools.product(alpha, beta, orders):
+for l, a, b, w, d, e, g in itertools.product(lr, alpha, beta, weight_decay, dropout, early_stopping, gamma):
+    best[0] = l
     best[4] = a
     best[5] = b
-    best[10] = o
+    best[3] = w
+    best[2] = e
+    best[1] = d
+    best[6] = g
+    # best[10] = o
 
 # for d, w, g in itertools.product(dropout, weight_decay, gamma):
 #     best[1] = d

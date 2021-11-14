@@ -88,6 +88,9 @@ class MLP_NORM(nn.Module):
         self.orders = orders
         self.class_eye = torch.eye(self.nclass)
 
+        self.fc3 = nn.Linear(nclass, orders)
+        self.fc4 = nn.Linear(orders, orders)
+
         if cuda:
             self.orders_weight = Parameter(
                 torch.ones(orders, 1) / orders, requires_grad=True
@@ -204,8 +207,10 @@ class MLP_NORM(nn.Module):
 
     def order_func3(self, x, res, adj):
         # Orders3
-        orders_para = torch.mm(torch.relu(torch.mm(x, self.orders_weight_matrix)),
-                               self.orders_weight_matrix2)
+        # orders_para = torch.mm(torch.relu(torch.mm(x, self.orders_weight_matrix)),
+        #    self.orders_weight_matrix2)
+
+        orders_para = self.fc4(torch.relu(self.fc3(x)))
         # orders_para = torch.mm(x, self.orders_weight_matrix)
         orders_para = torch.transpose(orders_para, 0, 1)
         tmp_orders = torch.spmm(adj, res)
@@ -446,21 +451,21 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
 parser.add_argument('--fastmode', action='store_true', default=False,
                     help='Validate during training pass.')
 parser.add_argument('--seed', type=int, default=42, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=2000,
+parser.add_argument('--epochs', type=int, default=200,
                     help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.01,
                     help='Initial learning rate.')
-parser.add_argument('--weight_decay', type=float, default=0.0001,
+parser.add_argument('--weight_decay', type=float, default=5e-4,
                     help='Weight decay (L2 loss on parameters).')
-parser.add_argument('--hidden', type=int, default=64,
+parser.add_argument('--hidden', type=int, default=16,
                     help='Number of hidden units.')
-parser.add_argument('--dropout', type=float, default=0.1,
+parser.add_argument('--dropout', type=float, default=0.5,
                     help='Dropout rate (1 - keep probability).')
-parser.add_argument('--alpha', type=float, default=10.0,
+parser.add_argument('--alpha', type=float, default=0.1,
                     help='Weight for frobenius norm on Z.')
-parser.add_argument('--beta', type=float, default=0.05,
+parser.add_argument('--beta', type=float, default=0.1,
                     help='Weight for frobenius norm on Z-A')
-parser.add_argument('--gamma', type=float, default=0.9,
+parser.add_argument('--gamma', type=float, default=0.2,
                     help='Weight for MLP results kept')
 parser.add_argument('--norm_layers', type=int, default=2,
                     help='Number of groupnorm layers')
@@ -472,7 +477,7 @@ parser.add_argument('--early_stopping', type=int, default=40,
                     help='Early stopping')
 parser.add_argument('--model', type=str, default='mlp_norm',
                     help='Model name ')
-parser.add_argument('--orders', type=int, default=3,
+parser.add_argument('--orders', type=int, default=2,
                     help='Number of adj orders in norm layer')
 parser.add_argument('--orders_func_id', type=int, default=3,
                     help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
@@ -520,8 +525,6 @@ elif args.model == 'mlp_norm':
         cuda=args.cuda)
 optimizer = optim.Adam(model.parameters(),
                        lr=args.lr, weight_decay=args.weight_decay)
-# scheduler = optim.lr_scheduler.StepLR(
-#     optimizer, step_size=args.early_stopping, gamma=0.98)
 
 if args.cuda:
     model.cuda()
@@ -540,7 +543,6 @@ t_total = time.time()
 
 # print(model.diag_weight)
 for epoch in range(args.epochs):
-    # scheduler.step()
     t = time.time()
     model.train()
     optimizer.zero_grad()
@@ -595,7 +597,7 @@ results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
 
-outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
 
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

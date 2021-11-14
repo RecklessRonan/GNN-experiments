@@ -1,0 +1,10 @@
+nohup: ignoring input
+Killed
+chameleon_lr0.01_do0.3_es250_wd5e-05_alpha10.0_beta10000000.0_gamma0.1_nlid2_nl2_ordersid3_orders3_split1_results.txt
+Test set results: loss= 2.7197 accuracy= 0.7018
+chameleon_lr0.01_do0.3_es250_wd5e-05_alpha10.0_beta10000000.0_gamma0.1_nlid2_nl2_ordersid3_orders3_split2_results.txt
+Test set results: loss= 3.2663 accuracy= 0.6864
+chameleon_lr0.01_do0.3_es250_wd5e-05_alpha10.0_beta10000000.0_gamma0.1_nlid2_nl2_ordersid3_orders3_split3_results.txt
+Test set results: loss= 3.5124 accuracy= 0.6469
+chameleon_lr0.01_do0.3_es250_wd5e-05_alpha10.0_beta10000000.0_gamma0.1_nlid2_nl2_ordersid3_orders3_split4_results.txt
+Test set results: loss= 2.6382 accuracy= 0.7149

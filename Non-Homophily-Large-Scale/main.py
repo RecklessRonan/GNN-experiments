@@ -15,7 +15,8 @@ from dataset import load_nc_dataset
 from correct_smooth import double_correlation_autoscale, double_correlation_fixed
 from data_utils import normalize, gen_normalized_adjs, evaluate, eval_acc, eval_rocauc, to_sparse_tensor, load_fixed_splits
 from parse import parse_method, parser_add_main_args
-import faulthandler; faulthandler.enable()
+import faulthandler
+faulthandler.enable()
 
 
 # NOTE: for consistent data splits, see data_utils.rand_train_test_idx
@@ -41,17 +42,17 @@ dataset.label = dataset.label.to(device)
 
 if args.rand_split or args.dataset in ['ogbn-proteins', 'wiki']:
     split_idx_lst = [dataset.get_idx_split(train_prop=args.train_prop, valid_prop=args.valid_prop)
-                for _ in range(args.runs)]
+                     for _ in range(args.runs)]
 else:
     split_idx_lst = load_fixed_splits(args.dataset, args.sub_dataset)
 
 if args.dataset == 'ogbn-proteins':
     if args.method == 'mlp' or args.method == 'cs':
         dataset.graph['node_feat'] = scatter(dataset.graph['edge_feat'], dataset.graph['edge_index'][0],
-            dim=0, dim_size=dataset.graph['num_nodes'], reduce='mean')
+                                             dim=0, dim_size=dataset.graph['num_nodes'], reduce='mean')
     else:
         dataset.graph['edge_index'] = to_sparse_tensor(dataset.graph['edge_index'],
-            dataset.graph['edge_feat'], dataset.graph['num_nodes'])
+                                                       dataset.graph['edge_feat'], dataset.graph['num_nodes'])
         dataset.graph['node_feat'] = dataset.graph['edge_index'].mean(dim=1)
         dataset.graph['edge_index'].set_value_(None)
     dataset.graph['edge_feat'] = None
@@ -110,7 +111,7 @@ if args.method == 'lp':
             result = evaluate(model, dataset, split_idx, eval_func, result=out)
             logger.add_result(run, result[:-1])
             print(f'alpha: {alpha} | Train: {100*result[0]:.2f} ' +
-                    f'| Val: {100*result[1]:.2f} | Test: {100*result[2]:.2f}')
+                  f'| Val: {100*result[1]:.2f} | Test: {100*result[2]:.2f}')
 
         best_val, best_test = logger.print_statistics()
         filename = f'results/{args.dataset}.csv'
@@ -118,14 +119,13 @@ if args.method == 'lp':
         with open(f"{filename}", 'a+') as write_obj:
             sub_dataset = f'{args.sub_dataset},' if args.sub_dataset else ''
             write_obj.write(f"{args.method}," + f"{sub_dataset}" +
-                        f"{best_val.mean():.3f} ± {best_val.std():.3f}," +
-                        f"{best_test.mean():.3f} ± {best_test.std():.3f}\n")
+                            f"{best_val.mean():.3f} ± {best_val.std():.3f}," +
+                            f"{best_test.mean():.3f} ± {best_test.std():.3f}\n")
     sys.exit()
 
 model.train()
 print('MODEL:', model)
-
-
+print('args.sampling', args.sampling)
 
 ### Training loop ###
 for run in range(args.runs):
@@ -137,17 +137,19 @@ for run in range(args.runs):
         elif args.num_layers == 3:
             sizes = [15, 10, 5]
         train_loader = NeighborSampler(dataset.graph['edge_index'], node_idx=train_idx,
-                                sizes=sizes, batch_size=1024,
-                                shuffle=True, num_workers=12)
+                                       sizes=sizes, batch_size=1024,
+                                       shuffle=True, num_workers=12)
         subgraph_loader = NeighborSampler(dataset.graph['edge_index'], node_idx=None, sizes=[-1],
-                                        batch_size=4096, shuffle=False,
-                                        num_workers=12)
+                                          batch_size=4096, shuffle=False,
+                                          num_workers=12)
 
     model.reset_parameters()
     if args.adam:
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+        optimizer = torch.optim.Adam(
+            model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     elif args.SGD:
-        optimizer = torch.optim.SGD(model.parameters(), lr=args.lr, nesterov=args.nesterov, momentum=args.momentum)
+        optimizer = torch.optim.SGD(
+            model.parameters(), lr=args.lr, nesterov=args.nesterov, momentum=args.momentum)
     else:
         optimizer = torch.optim.AdamW(
             model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
@@ -164,12 +166,13 @@ for run in range(args.runs):
                 if dataset.label.shape[1] == 1:
                     # change -1 instances to 0 for one-hot transform
                     # dataset.label[dataset.label==-1] = 0
-                    true_label = F.one_hot(dataset.label, dataset.label.max() + 1).squeeze(1)
+                    true_label = F.one_hot(
+                        dataset.label, dataset.label.max() + 1).squeeze(1)
                 else:
                     true_label = dataset.label
 
                 loss = criterion(out[train_idx], true_label.squeeze(1)[
-                                train_idx].to(torch.float))
+                    train_idx].to(torch.float))
             else:
                 out = F.log_softmax(out, dim=1)
                 loss = criterion(
@@ -182,18 +185,23 @@ for run in range(args.runs):
 
             for batch_size, n_id, adjs in train_loader:
                 # `adjs` holds a list of `(edge_index, e_id, size)` tuples.
+                print('batch_size', batch_size.shape)
+                print('n_id', n_id.shape)
+                print('adjs', adjs.shape)
                 adjs = [adj.to(device) for adj in adjs]
 
                 optimizer.zero_grad()
                 out = model(dataset, adjs, dataset.graph['node_feat'][n_id])
                 out = F.log_softmax(out, dim=1)
-                loss = criterion(out, dataset.label.squeeze(1)[n_id[:batch_size]])
+                loss = criterion(out, dataset.label.squeeze(1)
+                                 [n_id[:batch_size]])
                 loss.backward()
                 optimizer.step()
                 pbar.update(batch_size)
             pbar.close()
 
-        result = evaluate(model, dataset, split_idx, eval_func, sampling=args.sampling, subgraph_loader=subgraph_loader)
+        result = evaluate(model, dataset, split_idx, eval_func,
+                          sampling=args.sampling, subgraph_loader=subgraph_loader)
         logger.add_result(run, result[:-1])
 
         if result[1] > best_val:
@@ -211,12 +219,13 @@ for run in range(args.runs):
                   f'Test: {100 * result[2]:.2f}%')
             if args.print_prop:
                 pred = out.argmax(dim=-1, keepdim=True)
-                print("Predicted proportions:", pred.unique(return_counts=True)[1].float()/pred.shape[0])
+                print("Predicted proportions:", pred.unique(
+                    return_counts=True)[1].float()/pred.shape[0])
     logger.print_statistics(run)
     if args.method == 'cs':
         torch.save(best_out, f'{model_dir}/{run}.pt')
         _, out_cs = double_correlation_autoscale(dataset.label, best_out.cpu(),
-            split_idx, DAD, 0.5, 50, DAD, 0.5, 50, num_hops=args.hops)
+                                                 split_idx, DAD, 0.5, 50, DAD, 0.5, 50, num_hops=args.hops)
         result = evaluate(model, dataset, split_idx, eval_func, out_cs)
         cs_logger.add_result(run, (), (result[1], result[2]))
 

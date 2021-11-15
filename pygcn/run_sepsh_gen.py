@@ -4,11 +4,13 @@ import itertools
 # dataset = 'texas'
 # dataset = 'chameleon'
 # dataset = 'film'
-# dataset = 'cornell'
+# dataset = 'cora'
 # dataset = 'texas'
 # dataset = 'film'
 # dataset = 'citeseer'
-dataset = 'chameleon'
+dataset = 'pubmed'
+# dataset = 'squirrel'
+# dataset = 'wisconsin'
 
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']

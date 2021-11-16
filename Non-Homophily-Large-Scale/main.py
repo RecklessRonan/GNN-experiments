@@ -90,6 +90,8 @@ train_loader, subgraph_loader = None, None
 
 print(f"num nodes {n} | num classes {c} | num node feats {d}")
 
+
+sys.exit()
 ### Load method ###
 
 model = parse_method(args, dataset, n, c, d, device)

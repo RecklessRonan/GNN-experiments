@@ -3,5 +3,5 @@ workspace/
 __pycache__/
 .ipynb_checkpoints/
 runs/
-None-Homophily-Large-Scale/data/
-None-Homophily-Large-Scale/dataset/
+Non-Homophily-Large-Scale/data/
+Non-Homophily-Large-Scale/dataset/

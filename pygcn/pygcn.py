@@ -541,6 +541,9 @@ cost_val = []
 t_total = time.time()
 
 
+print('adj', type(adj))
+print('adj shape', adj.shape)
+
 # print(model.diag_weight)
 for epoch in range(args.epochs):
     t = time.time()

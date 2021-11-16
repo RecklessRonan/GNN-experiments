@@ -950,14 +950,7 @@ class MLPNORM(nn.Module):
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
         init.kaiming_normal_(self.orders_weight_matrix2, mode='fan_out')
 
-    def forward(self, data):
-        x = data.graph['node_feat']
-        edge_index = data.graph['edge_index']
-        adj = SparseTensor(row=edge_index[0], col=edge_index[1], sparse_sizes=(
-            data.graph['num_nodes'], data.graph['num_nodes']))
-        x = x.to(torch.float64)
-        adj = adj.to_dense()
-        adj = adj.to(torch.float64)
+    def forward(self, x, adj):
         x = F.dropout(x, self.dropout, training=self.training)
         x = F.relu(self.fc1(x))
         x = F.dropout(x, self.dropout, training=self.training)
@@ -965,7 +958,7 @@ class MLPNORM(nn.Module):
         h0 = x
         for _ in range(self.norm_layers):
             x = self.norm(x, h0, adj)
-        return F.log_softmax(x, dim=1)
+        return x
 
     def norm_func1(self, x, h0, adj):
         coe = 1.0 / (self.alpha + self.beta)
@@ -1000,15 +993,18 @@ class MLPNORM(nn.Module):
         tmp_orders = res
         sum_orders = tmp_orders
         for _ in range(self.orders):
-            tmp_orders = torch.spmm(adj, tmp_orders)
+            # tmp_orders = torch.sparse.spmm(adj, tmp_orders)
+            tmp_orders = adj.matmul(tmp_orders)
             sum_orders = sum_orders + tmp_orders
         return sum_orders
 
     def order_func2(self, x, res, adj):
-        tmp_orders = torch.spmm(adj, res)
+        # tmp_orders = torch.sparse.spmm(adj, res)
+        tmp_orders = adj.matmul(res)
         sum_orders = tmp_orders * self.orders_weight[0]
         for i in range(1, self.orders):
-            tmp_orders = torch.spmm(adj, tmp_orders)
+            # tmp_orders = torch.sparse.spmm(adj, tmp_orders)
+            tmp_orders = adj.matmul(tmp_orders)
             sum_orders = sum_orders + tmp_orders * self.orders_weight[i]
         return sum_orders
 
@@ -1016,9 +1012,11 @@ class MLPNORM(nn.Module):
         orders_para = torch.mm(torch.relu(torch.mm(x, self.orders_weight_matrix)),
                                self.orders_weight_matrix2)
         orders_para = torch.transpose(orders_para, 0, 1)
-        tmp_orders = torch.spmm(adj, res)
+        # tmp_orders = torch.sparse.spmm(adj, res)
+        tmp_orders = adj.matmul(res)
         sum_orders = orders_para[0].unsqueeze(1) * tmp_orders
         for i in range(1, self.orders):
-            tmp_orders = torch.spmm(adj, tmp_orders)
+            # tmp_orders = torch.sparse.spmm(adj, tmp_orders)
+            tmp_orders = adj.matmul(tmp_orders)
             sum_orders = sum_orders + orders_para[i].unsqueeze(1) * tmp_orders
         return sum_orders

@@ -9,11 +9,12 @@ import torch.nn.functional as F
 from torch_geometric.utils import to_undirected
 from torch_geometric.data import NeighborSampler
 from torch_scatter import scatter
+from torch_sparse import SparseTensor
 
 from logger import Logger, SimpleLogger
 from dataset import load_nc_dataset
 from correct_smooth import double_correlation_autoscale, double_correlation_fixed
-from data_utils import normalize, gen_normalized_adjs, evaluate, eval_acc, eval_rocauc, to_sparse_tensor, load_fixed_splits
+from data_utils import normalize, gen_normalized_adjs, evaluate, evaluate_mlpnorm, eval_acc, eval_rocauc, to_sparse_tensor, load_fixed_splits
 from parse import parse_method, parser_add_main_args
 import faulthandler
 faulthandler.enable()
@@ -71,9 +72,20 @@ d = dataset.graph['node_feat'].shape[1]
 if not args.directed and args.dataset != 'ogbn-proteins':
     dataset.graph['edge_index'] = to_undirected(dataset.graph['edge_index'])
 
-dataset.graph['edge_index'], dataset.graph['node_feat'] = \
-    dataset.graph['edge_index'].to(
-        device), dataset.graph['node_feat'].to(device)
+if args.method == 'mlpnorm':
+    x = dataset.graph['node_feat']
+    edge_index = dataset.graph['edge_index']
+    adj = SparseTensor(row=edge_index[0], col=edge_index[1], sparse_sizes=(
+        dataset.graph['num_nodes'], dataset.graph['num_nodes'])).to_torch_sparse_coo_tensor()
+    # adj = adj.to_dense()
+    x = x.to(device)
+    adj = adj.to(device)
+    x = x.to(torch.float64)
+    adj = adj.to(torch.float64)
+else:
+    dataset.graph['edge_index'], dataset.graph['node_feat'] = \
+        dataset.graph['edge_index'].to(
+            device), dataset.graph['node_feat'].to(device)
 train_loader, subgraph_loader = None, None
 
 print(f"num nodes {n} | num classes {c} | num node feats {d}")
@@ -162,8 +174,10 @@ for run in range(args.runs):
 
         if not args.sampling:
             optimizer.zero_grad()
-            out = model(dataset)
-
+            if args.method == 'mlpnorm':
+                out = model(x, adj)
+            else:
+                out = model(dataset)
             #loss = criterion(out[train_idx], dataset.label.squeeze(1)[train_idx].type_as(out))
             if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
                 if dataset.label.shape[1] == 1:
@@ -202,9 +216,12 @@ for run in range(args.runs):
                 optimizer.step()
                 pbar.update(batch_size)
             pbar.close()
-
-        result = evaluate(model, dataset, split_idx, eval_func,
-                          sampling=args.sampling, subgraph_loader=subgraph_loader)
+        if args.method == 'mlpnorm':
+            result = evaluate_mlpnorm(model, x, adj, dataset, split_idx, eval_func,
+                                      sampling=args.sampling, subgraph_loader=subgraph_loader)
+        else:
+            result = evaluate(model, dataset, split_idx, eval_func,
+                              sampling=args.sampling, subgraph_loader=subgraph_loader)
         logger.add_result(run, result[:-1])
 
         if result[1] > best_val:

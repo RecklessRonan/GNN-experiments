@@ -28,6 +28,9 @@ parser_add_main_args(parser)
 args = parser.parse_args()
 print(args)
 
+if args.method == 'mlpnorm':
+    torch.set_default_dtype(torch.float64)
+
 device = f'cuda:0' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device)
 if args.cpu:
@@ -125,7 +128,6 @@ if args.method == 'lp':
 
 model.train()
 print('MODEL:', model)
-print('args.sampling', args.sampling)
 
 ### Training loop ###
 for run in range(args.runs):
@@ -161,6 +163,7 @@ for run in range(args.runs):
         if not args.sampling:
             optimizer.zero_grad()
             out = model(dataset)
+
             #loss = criterion(out[train_idx], dataset.label.squeeze(1)[train_idx].type_as(out))
             if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
                 if dataset.label.shape[1] == 1:

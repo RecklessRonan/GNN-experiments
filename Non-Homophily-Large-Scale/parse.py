@@ -1,5 +1,7 @@
-from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINK_Concat, LINKX, GPRGNN, GCNII
+from numpy import select
+from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINK_Concat, LINKX, GPRGNN, GCNII, MLPNORM
 from data_utils import normalize
+
 
 def parse_method(args, dataset, n, c, d, device):
     if args.method == 'link':
@@ -7,7 +9,8 @@ def parse_method(args, dataset, n, c, d, device):
     elif args.method == 'gcn':
         if args.dataset == 'ogbn-proteins':
             # Pre-compute GCN normalization.
-            dataset.graph['edge_index'] = normalize(dataset.graph['edge_index'])
+            dataset.graph['edge_index'] = normalize(
+                dataset.graph['edge_index'])
             model = GCN(in_channels=d,
                         hidden_channels=args.hidden_channels,
                         out_channels=c,
@@ -28,42 +31,50 @@ def parse_method(args, dataset, n, c, d, device):
                     dropout=args.dropout).to(device)
     elif args.method == 'sgc':
         if args.cached:
-            model = SGC(in_channels=d, out_channels=c, hops=args.hops).to(device)
+            model = SGC(in_channels=d, out_channels=c,
+                        hops=args.hops).to(device)
         else:
             model = SGCMem(in_channels=d, out_channels=c,
                            hops=args.hops).to(device)
     elif args.method == 'gprgnn':
-        model = GPRGNN(d, args.hidden_channels, c, alpha=args.gpr_alpha, num_layers=args.num_layers, dropout=args.dropout).to(device)
+        model = GPRGNN(d, args.hidden_channels, c, alpha=args.gpr_alpha,
+                       num_layers=args.num_layers, dropout=args.dropout).to(device)
     elif args.method == 'appnp':
-        model = APPNP_Net(d, args.hidden_channels, c, alpha=args.gpr_alpha, dropout=args.dropout, num_layers=args.num_layers).to(device)
+        model = APPNP_Net(d, args.hidden_channels, c, alpha=args.gpr_alpha,
+                          dropout=args.dropout, num_layers=args.num_layers).to(device)
     elif args.method == 'gat':
         model = GAT(d, args.hidden_channels, c, num_layers=args.num_layers,
                     dropout=args.dropout, heads=args.gat_heads).to(device)
     elif args.method == 'lp':
-        mult_bin = args.dataset=='ogbn-proteins'
+        mult_bin = args.dataset == 'ogbn-proteins'
         model = MultiLP(c, args.lp_alpha, args.hops, mult_bin=mult_bin)
     elif args.method == 'mixhop':
         model = MixHop(d, args.hidden_channels, c, num_layers=args.num_layers,
                        dropout=args.dropout, hops=args.hops).to(device)
     elif args.method == 'gcnjk':
         model = GCNJK(d, args.hidden_channels, c, num_layers=args.num_layers,
-                        dropout=args.dropout, jk_type=args.jk_type).to(device)
+                      dropout=args.dropout, jk_type=args.jk_type).to(device)
     elif args.method == 'gatjk':
         model = GATJK(d, args.hidden_channels, c, num_layers=args.num_layers,
-                        dropout=args.dropout, heads=args.gat_heads,
-                        jk_type=args.jk_type).to(device)
+                      dropout=args.dropout, heads=args.gat_heads,
+                      jk_type=args.jk_type).to(device)
     elif args.method == 'h2gcn':
         model = H2GCN(d, args.hidden_channels, c, dataset.graph['edge_index'],
-                        dataset.graph['num_nodes'],
-                        num_layers=args.num_layers, dropout=args.dropout,
-                        num_mlp_layers=args.num_mlp_layers).to(device)
+                      dataset.graph['num_nodes'],
+                      num_layers=args.num_layers, dropout=args.dropout,
+                      num_mlp_layers=args.num_mlp_layers).to(device)
     elif args.method == 'link_concat':
-        model = LINK_Concat(d, args.hidden_channels, c, args.num_layers, dataset.graph['num_nodes'], dropout=args.dropout).to(device)
+        model = LINK_Concat(d, args.hidden_channels, c, args.num_layers,
+                            dataset.graph['num_nodes'], dropout=args.dropout).to(device)
     elif args.method == 'linkx':
         model = LINKX(d, args.hidden_channels, c, args.num_layers, dataset.graph['num_nodes'],
-        inner_activation=args.inner_activation, inner_dropout=args.inner_dropout, dropout=args.dropout, init_layers_A=args.link_init_layers_A, init_layers_X=args.link_init_layers_X).to(device)
+                      inner_activation=args.inner_activation, inner_dropout=args.inner_dropout, dropout=args.dropout, init_layers_A=args.link_init_layers_A, init_layers_X=args.link_init_layers_X).to(device)
     elif args.method == 'gcn2':
-        model = GCNII(d, args.hidden_channels, c, args.num_layers, args.gcn2_alpha, args.theta, dropout=args.dropout).to(device)
+        model = GCNII(d, args.hidden_channels, c, args.num_layers,
+                      args.gcn2_alpha, args.theta, dropout=args.dropout).to(device)
+    elif args.method == 'mlpnorm':
+        model = MLPNORM(nfeat=d, nhid=args.hidden_channels, nclass=c, dropout=args.dropout, alpha=args.alpha, beta=args.beta, gamma=args.gamma,
+                        norm_func_id=args.norm_func_id, norm_layers=args.norm_layers, orders_func_id=args.orders_func_id, orders=args.orders, device=device).to(device)
     else:
         raise ValueError('Invalid method')
     return model
@@ -113,12 +124,35 @@ def parser_add_main_args(parser):
                         help='training label proportion')
     parser.add_argument('--valid_prop', type=float, default=.25,
                         help='validation label proportion')
-    parser.add_argument('--adam', action='store_true', help='use adam instead of adamW')
-    parser.add_argument('--rand_split', action='store_true', help='use random splits')
-    parser.add_argument('--no_bn', action='store_true', help='do not use batchnorm')
-    parser.add_argument('--sampling', action='store_true', help='use neighbor sampling')
-    parser.add_argument('--inner_activation', action='store_true', help='Whether linkV3 uses inner activation')
-    parser.add_argument('--inner_dropout', action='store_true', help='Whether linkV3 uses inner dropout')
-    parser.add_argument("--SGD", action='store_true', help='Use SGD as optimizer')
+    parser.add_argument('--adam', action='store_true',
+                        help='use adam instead of adamW')
+    parser.add_argument('--rand_split', action='store_true',
+                        help='use random splits')
+    parser.add_argument('--no_bn', action='store_true',
+                        help='do not use batchnorm')
+    parser.add_argument('--sampling', action='store_true',
+                        help='use neighbor sampling')
+    parser.add_argument('--inner_activation', action='store_true',
+                        help='Whether linkV3 uses inner activation')
+    parser.add_argument('--inner_dropout', action='store_true',
+                        help='Whether linkV3 uses inner dropout')
+    parser.add_argument("--SGD", action='store_true',
+                        help='Use SGD as optimizer')
     parser.add_argument('--link_init_layers_A', type=int, default=1)
     parser.add_argument('--link_init_layers_X', type=int, default=1)
+
+    # used for mlpnorm
+    parser.add_argument('--alpha', type=float, default=0.1,
+                        help='Weight for frobenius norm on Z.')
+    parser.add_argument('--beta', type=float, default=1.0,
+                        help='Weight for frobenius norm on Z-A')
+    parser.add_argument('--gamma', type=float, default=0.0,
+                        help='Weight for MLP results kept')
+    parser.add_argument('--norm_func_id', type=int, default=2,
+                        help='Function of norm layer, ids \in [1, 2]')
+    parser.add_argument('--norm_layers', type=int, default=2,
+                        help='Number of groupnorm layers')
+    parser.add_argument('--orders_func_id', type=int, default=2,
+                        help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
+    parser.add_argument('--orders', type=int, default=2,
+                        help='Number of adj orders in norm layer')

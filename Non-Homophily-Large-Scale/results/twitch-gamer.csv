@@ -26,3 +26,9 @@ mlpnorm,53.255 ± nan,53.527 ± nan
 mlpnorm,61.885 ± nan,61.912 ± nan
 mlpnorm,59.877 ± nan,59.904 ± nan
 mlpnorm,51.799 ± nan,52.045 ± nan
+mlpnorm,61.885 ± nan,61.929 ± nan
+mlpnorm,59.263 ± nan,59.328 ± nan
+mlpnorm,54.290 ± nan,54.220 ± nan
+mlpnorm,62.210 ± 0.222,61.977 ± 0.148
+mlpnorm,62.254, 0.342,62.031, 0.216
+mlpnorm,61.824, 0.470,61.624, 0.619

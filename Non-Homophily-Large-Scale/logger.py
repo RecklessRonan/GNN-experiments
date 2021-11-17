@@ -4,6 +4,7 @@ from collections import defaultdict
 
 class Logger(object):
     """ Adapted from https://github.com/snap-stanford/ogb/ """
+
     def __init__(self, runs, info=None):
         self.info = info
         self.results = [[] for _ in range(runs)]
@@ -37,34 +38,35 @@ class Logger(object):
 
             print(f'All runs:')
             r = best_result[:, 0]
-            print(f'Highest Train: {r.mean():.2f} ± {r.std():.2f}')
+            print(f'Highest Train: {r.mean():.2f}, {r.std():.2f}')
             r = best_result[:, 1]
-            print(f'Highest Valid: {r.mean():.2f} ± {r.std():.2f}')
+            print(f'Highest Valid: {r.mean():.2f}, {r.std():.2f}')
             r = best_result[:, 2]
-            print(f'  Final Train: {r.mean():.2f} ± {r.std():.2f}')
+            print(f'  Final Train: {r.mean():.2f}, {r.std():.2f}')
             r = best_result[:, 3]
-            print(f'   Final Test: {r.mean():.2f} ± {r.std():.2f}')
+            print(f'   Final Test: {r.mean():.2f}, {r.std():.2f}')
 
             return best_result[:, 1], best_result[:, 3]
 
 
 class SimpleLogger(object):
     """ Adapted from https://github.com/CUAI/CorrectAndSmooth """
+
     def __init__(self, desc, param_names, num_values=2):
         self.results = defaultdict(dict)
         self.param_names = tuple(param_names)
         self.used_args = list()
         self.desc = desc
         self.num_values = num_values
-    
-    def add_result(self, run, args, values): 
+
+    def add_result(self, run, args, values):
         """Takes run=int, args=tuple, value=tuple(float)"""
         assert(len(args) == len(self.param_names))
         assert(len(values) == self.num_values)
         self.results[run][args] = values
         if args not in self.used_args:
             self.used_args.append(args)
-    
+
     def get_best(self, top_k=1):
         all_results = []
         for args in self.used_args:
@@ -76,14 +78,14 @@ class SimpleLogger(object):
             all_results.append((args, results_mean))
         results = sorted(all_results, key=lambda x: x[1], reverse=True)[:top_k]
         return [i[0] for i in results]
-            
+
     def prettyprint(self, x):
         if isinstance(x, float):
             return '%.2f' % x
         return str(x)
-        
-    def display(self, args = None):
-        
+
+    def display(self, args=None):
+
         disp_args = self.used_args if args is None else args
         if len(disp_args) > 1:
             print(f'{self.desc} {self.param_names}, {len(self.results.keys())} runs')

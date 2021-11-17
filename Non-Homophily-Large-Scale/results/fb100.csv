@@ -112,3 +112,35 @@ mlpnorm,Penn94,64.413 ± nan,63.246 ± nan
 mlpnorm,Penn94,76.636 ± nan,75.899 ± nan
 mlpnorm,Penn94,81.604 ± nan,80.793 ± nan
 mlpnorm,Penn94,73.987 ± nan,74.096 ± nan
+mlpnorm,Penn94,83.014, 0.363,82.968, 0.401
+mlpnorm,Penn94,83.407, nan,83.462, nan
+mlpnorm,Penn94,83.696, nan,83.534, nan
+mlpnorm,Penn94,83.376, nan,83.153, nan
+mlpnorm,Penn94,83.325, nan,83.205, nan
+mlpnorm,Penn94,83.737, nan,83.431, nan
+mlpnorm,Penn94,83.366, nan,82.844, nan
+mlpnorm,Penn94,83.387, nan,83.668, nan
+mlpnorm,Penn94,83.108, 0.241,83.116, 0.466
+mlpnorm,Penn94,83.119, 0.421,82.953, 0.554
+mlpnorm,Penn94,83.094, 0.223,82.937, 0.358
+mlpnorm,Penn94,83.187, 0.280,83.091, 0.307
+mlpnorm,Penn94,83.112, 0.325,82.871, 0.475
+mlpnorm,Penn94,83.046, 0.258,83.013, 0.418
+mlpnorm,Penn94,83.131, 0.355,82.887, 0.535
+mlpnorm,Penn94,82.941, 0.285,82.774, 0.378
+mlpnorm,Penn94,83.127, 0.321,82.978, 0.256
+mlpnorm,Penn94,82.945, 0.343,82.815, 0.437
+mlpnorm,Penn94,83.044, 0.203,82.873, 0.393
+mlpnorm,Penn94,82.945, 0.368,82.924, 0.232
+mlpnorm,Penn94,83.203, 0.487,83.083, 0.417
+mlpnorm,Penn94,83.158, 0.471,82.941, 0.592
+mlpnorm,Penn94,81.649, 0.469,81.251, 0.468
+mlpnorm,Penn94,82.080, 0.806,81.933, 0.761
+mlpnorm,Penn94,82.255, 0.532,81.937, 0.602
+mlpnorm,Penn94,82.045, 0.828,81.900, 0.689
+mlpnorm,Penn94,82.372, 0.633,82.048, 0.868
+mlpnorm,Penn94,82.156, 0.585,81.900, 0.580
+mlpnorm,Penn94,82.111, 0.285,81.859, 0.480
+mlpnorm,Penn94,82.307, 0.331,81.809, 0.612
+mlpnorm,Penn94,82.544, 0.520,82.269, 0.676
+mlpnorm,Penn94,78.673, 2.876,78.724, 2.835

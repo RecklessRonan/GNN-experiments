@@ -3,22 +3,23 @@
 startTime=`date +%Y%m%d-%H:%M`
 startTime_s=`date +%s`
 
-dataset=$1
+dataset=twitch-gamer
 sub_dataset=${2:-''}
 
-lr_lst=(0.005)
+lr_lst=(0.05 0.01 0.005 0.001)
 hidden_channels_lst=(256)
-dropout_lst=(0 0.1 0.2)
-weight_decay_lst=(0 1e-7 5e-6 1e-6 5e-5 1e-5 5e-4 1e-4 5e-3 1e-3)
+dropout_lst=(0.5)
+weight_decay_lst=(1e-3)
 alpha_lst=(1.0)
-beta_lst=(10.0)
-gamma_lst=(0.9)
+beta_lst=(0.1 10.0 1000.0)
+gamma_lst=(0.1 0.5 0.9)
 norm_layers_lst=(2)
-orders_lst=(2)
-epochs=2000
+orders_lst=(1 2 3)
+epochs=1000
 runs=1
 norm_func_id=2
 order_func_id=2
+
 
 
 for lr in "${lr_lst[@]}"; do

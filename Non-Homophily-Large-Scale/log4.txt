@@ -1,0 +1,1028 @@
+nohup: ignoring input
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6094, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 220317154339471680.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 50, Loss: 635408597552174934786048.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 75, Loss: 8395712606980797039116288.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 100, Loss: 4638795829398278741426176.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 125, Loss: 17575259851106604.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 150, Loss: 388260849031076514328161026048.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 175, Loss: 362473580855267535372681216.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 200, Loss: 620987496631291234385657856.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 225, Loss: 234060716349691544784383675413299200.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 250, Loss: 841458114879604582930497375031940612096.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 275, Loss: 621650053596319267062247054510980025286656.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 300, Loss: 1311801634560202974655908750108393472.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 325, Loss: 73703498681428674160877744248848384.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 350, Loss: 56403345662198300399777926348800000.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 375, Loss: 940899546422721442635301752831737856.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 400, Loss: 134699808560633789994710733946880.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 425, Loss: 10590071143275438396267481083674624.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 450, Loss: 181885647803435420076906270582374400.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 475, Loss: 2411448807856753593926170483202457600.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6102, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 95404966990275.3281, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 50, Loss: 24925070554258460.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 75, Loss: 682448350455140281256771584.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 100, Loss: 174835359330685817307791360.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 125, Loss: 4237158232601521951866880.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 150, Loss: 1077118351035175993868288.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 175, Loss: 1569503038890134428712960.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 200, Loss: 4343498574703009340588032.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 225, Loss: 757061943271024228302848.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 250, Loss: 1170404480398382169703055360.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 275, Loss: 1646879803336032058053315333718016.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 300, Loss: 245619979043059614274243423624166975209472.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 325, Loss: 1668580308093486434228514580850221776896.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 350, Loss: 16876570753580742896261722509865081041321984.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 375, Loss: 3108368727376041388716964004804547313664.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 400, Loss: 2425940527364771928159192842686180664279040.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 425, Loss: 60124715722401243018660126659189217792360448.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 450, Loss: 78243921305883869201936237080889903808512.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 475, Loss: 624181133173566015861142648601319865057280.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6087, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 25, Loss: 1655986263.4701, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 50, Loss: 31108317413698504228864.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 75, Loss: 30729945825268887510319104.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 100, Loss: 2659956418560415429033984.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 125, Loss: 12369981269502186225664.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 150, Loss: 205894612260815280013312.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 175, Loss: 759958284482352945876172800.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 200, Loss: 7945980125969322632399384739840.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 225, Loss: 10680332209518603500857065472.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 250, Loss: 22949828472545488976265099507400704.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 275, Loss: 134250152827737176262044440068096.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 300, Loss: 3440536408521526249348559678734336.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 325, Loss: 94978125510274306507334186172416.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 350, Loss: 40472476741387055703844393179938816.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 375, Loss: 445346951954776493617144278068232192.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 400, Loss: 480518459500825716193011352622596096.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 425, Loss: 258879602855647608234541192314880.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 450, Loss: 10006455698527681608957607018496.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 475, Loss: 715795481502618246127235371106304.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6116, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 4492.3274, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 50, Loss: 21174857717329108.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 75, Loss: 271183083216427744.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 100, Loss: 2154965777849933312.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 125, Loss: 1738375771587.3303, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 150, Loss: 65419303324.1370, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 175, Loss: 448989611659.3113, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 200, Loss: 1458966859814.2554, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 225, Loss: 600581690.5570, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 250, Loss: 346279908277.9788, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 275, Loss: 894177139609.2518, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 300, Loss: 295249657.2646, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 325, Loss: 29355510241013.9961, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 350, Loss: 198124480411.1406, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 375, Loss: 26150883.2425, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 400, Loss: 6423843831.9296, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 425, Loss: 44901066207.0157, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 450, Loss: 487692174142.9092, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 475, Loss: 3367305046595.5610, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6079, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 16915204.0387, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 50, Loss: 374081.1987, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 75, Loss: 34668729584210.6484, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 100, Loss: 87413785141109669888.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 125, Loss: 28333128830004480321655930880.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 150, Loss: 476778316690710709840793797918720.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 175, Loss: 14371376366089326003609931874304.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 200, Loss: 2330183573934638051486714560512.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 225, Loss: 147634486850880790588418949120.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 250, Loss: 1697114728795448312493768704.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 275, Loss: 17834244541647866942193664000.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 300, Loss: 62439670075444637288315748352.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 325, Loss: 671435219501434442020634492928.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 350, Loss: 13281189960752788647880687616.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 375, Loss: 4458391554440286697053749248.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 400, Loss: 422728764364769471090669912064.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 425, Loss: 149981843397011018499489792.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 450, Loss: 2285277429203387731996049408.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 475, Loss: 3142678970194343310676459520.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6086, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5109, Train: 33.52%, Valid: 33.35%, Test: 33.51%
+Epoch: 50, Loss: 1.4812, Train: 34.93%, Valid: 34.65%, Test: 34.75%
+Epoch: 75, Loss: 1.4702, Train: 35.46%, Valid: 34.87%, Test: 35.18%
+Epoch: 100, Loss: 1.4741, Train: 35.69%, Valid: 35.20%, Test: 35.54%
+Epoch: 125, Loss: 1.4705, Train: 35.41%, Valid: 34.96%, Test: 35.30%
+Epoch: 150, Loss: 1.4340, Train: 36.89%, Valid: 36.52%, Test: 36.71%
+Epoch: 175, Loss: 1.4808, Train: 34.71%, Valid: 33.75%, Test: 34.45%
+Epoch: 200, Loss: 1.4526, Train: 35.17%, Valid: 34.80%, Test: 34.95%
+Epoch: 225, Loss: 1.5294, Train: 31.34%, Valid: 31.36%, Test: 31.24%
+Epoch: 250, Loss: 1.4577, Train: 37.44%, Valid: 37.24%, Test: 37.36%
+Epoch: 275, Loss: 1.4414, Train: 37.48%, Valid: 36.99%, Test: 37.02%
+Epoch: 300, Loss: 1.4250, Train: 37.56%, Valid: 37.17%, Test: 37.10%
+Epoch: 325, Loss: 1.4086, Train: 39.04%, Valid: 38.69%, Test: 39.01%
+Epoch: 350, Loss: 1.4714, Train: 36.21%, Valid: 35.79%, Test: 36.11%
+Epoch: 375, Loss: 1.4459, Train: 37.33%, Valid: 37.08%, Test: 37.61%
+Epoch: 400, Loss: 1.4106, Train: 39.26%, Valid: 38.95%, Test: 39.40%
+Epoch: 425, Loss: 1.4186, Train: 37.39%, Valid: 37.11%, Test: 37.53%
+Epoch: 450, Loss: 1.4248, Train: 38.47%, Valid: 38.07%, Test: 38.81%
+Epoch: 475, Loss: 1.3978, Train: 40.02%, Valid: 39.79%, Test: 40.11%
+Run 01:
+Highest Train: 40.29
+Highest Valid: 40.03
+  Final Train: 40.29
+   Final Test: 40.40
+All runs:
+Highest Train: 40.29, nan
+Highest Valid: 40.03, nan
+  Final Train: 40.29, nan
+   Final Test: 40.40, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6114, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5407, Train: 31.73%, Valid: 31.71%, Test: 32.02%
+Epoch: 50, Loss: 1.4995, Train: 34.30%, Valid: 33.99%, Test: 34.27%
+Epoch: 75, Loss: 1.4932, Train: 34.65%, Valid: 34.35%, Test: 34.55%
+Epoch: 100, Loss: 1.4910, Train: 34.70%, Valid: 34.48%, Test: 34.55%
+Epoch: 125, Loss: 1.4889, Train: 34.78%, Valid: 34.52%, Test: 34.62%
+Epoch: 150, Loss: 1.4912, Train: 34.79%, Valid: 34.42%, Test: 34.70%
+Epoch: 175, Loss: 1.4869, Train: 34.78%, Valid: 34.48%, Test: 34.65%
+Epoch: 200, Loss: 1.4866, Train: 34.83%, Valid: 34.52%, Test: 34.69%
+Epoch: 225, Loss: 1.4864, Train: 34.83%, Valid: 34.56%, Test: 34.72%
+Epoch: 250, Loss: 1.4869, Train: 34.84%, Valid: 34.50%, Test: 34.70%
+Epoch: 275, Loss: 1.4872, Train: 34.79%, Valid: 34.56%, Test: 34.69%
+Epoch: 300, Loss: 1.4862, Train: 34.82%, Valid: 34.56%, Test: 34.65%
+Epoch: 325, Loss: 1.4869, Train: 34.78%, Valid: 34.58%, Test: 34.68%
+Epoch: 350, Loss: 1.4862, Train: 34.82%, Valid: 34.48%, Test: 34.69%
+Epoch: 375, Loss: 1.4860, Train: 34.82%, Valid: 34.51%, Test: 34.74%
+Epoch: 400, Loss: 1.4860, Train: 34.82%, Valid: 34.48%, Test: 34.73%
+Epoch: 425, Loss: 1.4897, Train: 34.68%, Valid: 34.52%, Test: 34.65%
+Epoch: 450, Loss: 1.4861, Train: 34.80%, Valid: 34.58%, Test: 34.62%
+Epoch: 475, Loss: 1.4858, Train: 34.85%, Valid: 34.56%, Test: 34.69%
+Run 01:
+Highest Train: 34.87
+Highest Valid: 34.62
+  Final Train: 34.82
+   Final Test: 34.69
+All runs:
+Highest Train: 34.87, nan
+Highest Valid: 34.62, nan
+  Final Train: 34.82, nan
+   Final Test: 34.69, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6086, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5578, Train: 28.74%, Valid: 28.57%, Test: 28.85%
+Epoch: 50, Loss: 1.5043, Train: 33.94%, Valid: 33.86%, Test: 34.08%
+Epoch: 75, Loss: 1.4946, Train: 34.52%, Valid: 34.25%, Test: 34.48%
+Epoch: 100, Loss: 1.4939, Train: 34.21%, Valid: 33.97%, Test: 34.12%
+Epoch: 125, Loss: 1.4883, Train: 34.53%, Valid: 34.34%, Test: 34.52%
+Epoch: 150, Loss: 1.4804, Train: 34.76%, Valid: 34.54%, Test: 34.62%
+Epoch: 175, Loss: 1.4683, Train: 34.00%, Valid: 34.14%, Test: 34.25%
+Epoch: 200, Loss: 1.4449, Train: 34.62%, Valid: 34.38%, Test: 34.57%
+Epoch: 225, Loss: 1.4064, Train: 36.54%, Valid: 36.38%, Test: 36.25%
+Epoch: 250, Loss: 1.4706, Train: 35.58%, Valid: 35.30%, Test: 35.26%
+Epoch: 275, Loss: 1.4744, Train: 32.58%, Valid: 32.14%, Test: 33.01%
+Epoch: 300, Loss: 1.4101, Train: 37.69%, Valid: 37.53%, Test: 37.34%
+Epoch: 325, Loss: 1.4623, Train: 31.42%, Valid: 31.44%, Test: 32.22%
+Epoch: 350, Loss: 1.3944, Train: 38.05%, Valid: 37.76%, Test: 37.76%
+Epoch: 375, Loss: 1.3824, Train: 39.20%, Valid: 38.93%, Test: 39.17%
+Epoch: 400, Loss: 1.3789, Train: 39.15%, Valid: 38.86%, Test: 39.20%
+Epoch: 425, Loss: 1.3634, Train: 39.83%, Valid: 39.48%, Test: 39.80%
+Epoch: 450, Loss: 1.3744, Train: 39.31%, Valid: 39.02%, Test: 39.24%
+Epoch: 475, Loss: 1.3670, Train: 39.76%, Valid: 39.31%, Test: 39.59%
+Run 01:
+Highest Train: 40.10
+Highest Valid: 39.75
+  Final Train: 40.10
+   Final Test: 39.99
+All runs:
+Highest Train: 40.10, nan
+Highest Valid: 39.75, nan
+  Final Train: 40.10, nan
+   Final Test: 39.99, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6121, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5006, Train: 33.77%, Valid: 33.67%, Test: 33.88%
+Epoch: 50, Loss: 1.4720, Train: 35.54%, Valid: 34.94%, Test: 35.19%
+Epoch: 75, Loss: 1.4886, Train: 34.46%, Valid: 34.27%, Test: 34.12%
+Epoch: 100, Loss: 1.4862, Train: 29.02%, Valid: 29.06%, Test: 29.18%
+Epoch: 125, Loss: 1.4090, Train: 38.17%, Valid: 37.89%, Test: 38.02%
+Epoch: 150, Loss: 1.3962, Train: 38.06%, Valid: 37.90%, Test: 38.00%
+Epoch: 175, Loss: 1.3772, Train: 38.64%, Valid: 38.34%, Test: 38.41%
+Epoch: 200, Loss: 1.3761, Train: 38.71%, Valid: 38.37%, Test: 38.56%
+Epoch: 225, Loss: 1.3690, Train: 38.93%, Valid: 38.62%, Test: 38.81%
+Epoch: 250, Loss: 1.3636, Train: 39.28%, Valid: 38.86%, Test: 39.12%
+Epoch: 275, Loss: 1.3689, Train: 39.20%, Valid: 38.72%, Test: 39.03%
+Epoch: 300, Loss: 1.3596, Train: 39.54%, Valid: 39.01%, Test: 39.24%
+Epoch: 325, Loss: 1.3523, Train: 40.13%, Valid: 39.64%, Test: 39.93%
+Epoch: 350, Loss: 1.3476, Train: 40.56%, Valid: 40.11%, Test: 40.34%
+Epoch: 375, Loss: 1.3466, Train: 41.03%, Valid: 40.48%, Test: 40.75%
+Epoch: 400, Loss: 1.3919, Train: 39.88%, Valid: 39.50%, Test: 39.76%
+Epoch: 425, Loss: 1.3765, Train: 39.70%, Valid: 39.36%, Test: 39.56%
+Epoch: 450, Loss: 1.3664, Train: 40.18%, Valid: 39.74%, Test: 40.00%
+Epoch: 475, Loss: 1.3572, Train: 40.52%, Valid: 40.02%, Test: 40.30%
+Run 01:
+Highest Train: 41.19
+Highest Valid: 40.76
+  Final Train: 41.19
+   Final Test: 41.04
+All runs:
+Highest Train: 41.19, nan
+Highest Valid: 40.76, nan
+  Final Train: 41.19, nan
+   Final Test: 41.04, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6097, Train: 30.26%, Valid: 29.72%, Test: 30.22%
+Epoch: 25, Loss: 53.7551, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 50, Loss: 9486106702745466880.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 75, Loss: 12405592245328854802778554368.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 100, Loss: 137222761300984350546308628480.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 125, Loss: 439856718360069513085442221670400.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 150, Loss: 221470301579174305124287372066816.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 175, Loss: 2592923866922787280272333096320237568.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 200, Loss: 749385012502959385697562283474944.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 225, Loss: 882624618760388582829451972308717535232.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 250, Loss: 81080146566294672403672133033298755584.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 275, Loss: 7126723215870111356096086016.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 300, Loss: 47949782782106279567886909440.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 325, Loss: 6464719471339685980646932480.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 350, Loss: 3805663104785960179354042368.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 375, Loss: 267628653960474022958333952.0000, Train: 17.64%, Valid: 17.78%, Test: 17.32%
+Epoch: 400, Loss: 47228489382353727270158336.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 425, Loss: 173683088750312643390078976.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 450, Loss: 34646372000587820379930624.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 475, Loss: 3853088042560835388840760785764352.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Run 01:
+Highest Train: 30.26
+Highest Valid: 29.72
+  Final Train: 30.26
+   Final Test: 30.22
+All runs:
+Highest Train: 30.26, nan
+Highest Valid: 29.72, nan
+  Final Train: 30.26, nan
+   Final Test: 30.22, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6035, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 25, Loss: 24.1768, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 50, Loss: 466868112891997.5625, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 75, Loss: 62229188805631115264.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 100, Loss: 626019883408077085231546368.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 125, Loss: 64714872055966957167443968.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 150, Loss: 380830769354774230859776.0000, Train: 12.51%, Valid: 12.59%, Test: 12.43%
+Epoch: 175, Loss: 135652353095585902844968960.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 200, Loss: 49757761616267919153430528.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 225, Loss: 49518323665230972544090112.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 250, Loss: 105477736296002038530048.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 275, Loss: 50410695636607010078720.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 300, Loss: 616438759769538977333248.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 325, Loss: 4548547053058727084032.0000, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 350, Loss: 44329480015606540402688.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 375, Loss: 159381266778622114398208.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 400, Loss: 4871429854420974698496.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 425, Loss: 70662560536877059801088.0000, Train: 18.96%, Valid: 18.92%, Test: 18.68%
+Epoch: 450, Loss: 617774249995473208213504.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 475, Loss: 267587677087362252800.0000, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Run 01:
+Highest Train: 28.72
+Highest Valid: 28.54
+  Final Train: 28.72
+   Final Test: 28.82
+All runs:
+Highest Train: 28.72, nan
+Highest Valid: 28.54, nan
+  Final Train: 28.72, nan
+   Final Test: 28.82, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6052, Train: 17.34%, Valid: 17.37%, Test: 16.83%
+Epoch: 25, Loss: 1.5203, Train: 34.12%, Valid: 33.89%, Test: 34.12%
+Epoch: 50, Loss: 1.4424, Train: 36.83%, Valid: 36.08%, Test: 36.75%
+Epoch: 75, Loss: 1.4204, Train: 37.45%, Valid: 36.94%, Test: 37.21%
+Epoch: 100, Loss: 1.4139, Train: 38.15%, Valid: 37.67%, Test: 38.05%
+Epoch: 125, Loss: 1.4425, Train: 40.23%, Valid: 39.57%, Test: 39.89%
+Epoch: 150, Loss: 1.3804, Train: 40.06%, Valid: 39.90%, Test: 40.07%
+Epoch: 175, Loss: 1.4236, Train: 37.75%, Valid: 37.43%, Test: 37.56%
+Epoch: 200, Loss: 1.3807, Train: 40.51%, Valid: 40.33%, Test: 40.51%
+Epoch: 225, Loss: 1.4043, Train: 39.07%, Valid: 38.85%, Test: 39.12%
+Epoch: 250, Loss: 1.4314, Train: 37.60%, Valid: 37.20%, Test: 37.72%
+Epoch: 275, Loss: 1.3795, Train: 39.99%, Valid: 39.93%, Test: 40.19%
+Epoch: 300, Loss: 1.5050, Train: 30.58%, Valid: 30.41%, Test: 31.03%
+Epoch: 325, Loss: 1.4136, Train: 39.35%, Valid: 39.15%, Test: 39.11%
+Epoch: 350, Loss: 1.4320, Train: 38.50%, Valid: 37.88%, Test: 38.40%
+Epoch: 375, Loss: 1.3881, Train: 39.67%, Valid: 39.46%, Test: 39.68%
+Epoch: 400, Loss: 1.4225, Train: 37.40%, Valid: 37.07%, Test: 37.28%
+Epoch: 425, Loss: 1.3894, Train: 40.76%, Valid: 40.34%, Test: 40.75%
+Epoch: 450, Loss: 1.3749, Train: 40.52%, Valid: 39.99%, Test: 40.13%
+Epoch: 475, Loss: 1.3779, Train: 41.17%, Valid: 40.82%, Test: 41.14%
+Run 01:
+Highest Train: 41.47
+Highest Valid: 41.26
+  Final Train: 41.43
+   Final Test: 41.48
+All runs:
+Highest Train: 41.47, nan
+Highest Valid: 41.26, nan
+  Final Train: 41.43, nan
+   Final Test: 41.48, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6048, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5199, Train: 29.54%, Valid: 29.14%, Test: 29.82%
+Epoch: 50, Loss: 1.4926, Train: 34.57%, Valid: 34.29%, Test: 34.56%
+Epoch: 75, Loss: 1.4879, Train: 34.90%, Valid: 34.45%, Test: 34.69%
+Epoch: 100, Loss: 1.4822, Train: 35.26%, Valid: 34.68%, Test: 35.00%
+Epoch: 125, Loss: 1.4793, Train: 35.24%, Valid: 34.78%, Test: 35.23%
+Epoch: 150, Loss: 1.4748, Train: 35.54%, Valid: 35.10%, Test: 35.48%
+Epoch: 175, Loss: 1.4754, Train: 35.65%, Valid: 35.09%, Test: 35.55%
+Epoch: 200, Loss: 1.5170, Train: 30.78%, Valid: 30.67%, Test: 30.86%
+Epoch: 225, Loss: 1.4836, Train: 34.87%, Valid: 34.59%, Test: 34.62%
+Epoch: 250, Loss: 1.4700, Train: 35.49%, Valid: 34.95%, Test: 35.32%
+Epoch: 275, Loss: 1.4862, Train: 34.71%, Valid: 34.05%, Test: 34.32%
+Epoch: 300, Loss: 1.4631, Train: 35.53%, Valid: 34.99%, Test: 35.36%
+Epoch: 325, Loss: 1.4723, Train: 35.22%, Valid: 34.80%, Test: 35.09%
+Epoch: 350, Loss: 1.4446, Train: 36.30%, Valid: 35.80%, Test: 35.93%
+Epoch: 375, Loss: 1.4582, Train: 35.73%, Valid: 35.25%, Test: 35.56%
+Epoch: 400, Loss: 1.4290, Train: 36.91%, Valid: 36.43%, Test: 36.65%
+Epoch: 425, Loss: 1.4868, Train: 35.38%, Valid: 34.95%, Test: 35.11%
+Epoch: 450, Loss: 1.4287, Train: 36.91%, Valid: 36.45%, Test: 36.35%
+Epoch: 475, Loss: 1.4167, Train: 37.63%, Valid: 37.20%, Test: 37.21%
+Run 01:
+Highest Train: 38.00
+Highest Valid: 37.65
+  Final Train: 38.00
+   Final Test: 37.57
+All runs:
+Highest Train: 38.00, nan
+Highest Valid: 37.65, nan
+  Final Train: 38.00, nan
+   Final Test: 37.57, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6112, Train: 20.64%, Valid: 20.92%, Test: 20.71%
+Epoch: 25, Loss: 1.5007, Train: 34.17%, Valid: 33.99%, Test: 34.14%
+Epoch: 50, Loss: 1.4320, Train: 36.48%, Valid: 36.06%, Test: 36.40%
+Epoch: 75, Loss: 1.4010, Train: 34.85%, Valid: 34.84%, Test: 34.92%
+Epoch: 100, Loss: 1.3880, Train: 40.51%, Valid: 40.29%, Test: 40.18%
+Epoch: 125, Loss: 1.3499, Train: 41.96%, Valid: 41.63%, Test: 41.56%
+Epoch: 150, Loss: 1.2974, Train: 43.96%, Valid: 43.59%, Test: 43.55%
+Epoch: 175, Loss: 1.2881, Train: 41.84%, Valid: 41.75%, Test: 41.83%
+Epoch: 200, Loss: 1.3005, Train: 43.42%, Valid: 43.07%, Test: 43.29%
+Epoch: 225, Loss: 1.2752, Train: 45.03%, Valid: 44.50%, Test: 44.50%
+Epoch: 250, Loss: 1.3088, Train: 44.45%, Valid: 43.85%, Test: 43.99%
+Epoch: 275, Loss: 1.2618, Train: 45.50%, Valid: 44.93%, Test: 45.18%
+Epoch: 300, Loss: 1.2649, Train: 45.26%, Valid: 44.71%, Test: 44.67%
+Epoch: 325, Loss: 1.2724, Train: 44.32%, Valid: 44.03%, Test: 44.13%
+Epoch: 350, Loss: 1.2857, Train: 44.76%, Valid: 44.31%, Test: 44.45%
+Epoch: 375, Loss: 1.2569, Train: 45.68%, Valid: 45.01%, Test: 45.45%
+Epoch: 400, Loss: 1.2675, Train: 45.59%, Valid: 45.01%, Test: 45.21%
+Epoch: 425, Loss: 1.2551, Train: 45.73%, Valid: 45.34%, Test: 45.47%
+Epoch: 450, Loss: 1.2723, Train: 45.63%, Valid: 45.04%, Test: 45.22%
+Epoch: 475, Loss: 1.2550, Train: 45.65%, Valid: 45.20%, Test: 45.51%
+Run 01:
+Highest Train: 46.40
+Highest Valid: 45.89
+  Final Train: 46.40
+   Final Test: 46.05
+All runs:
+Highest Train: 46.40, nan
+Highest Valid: 45.89, nan
+  Final Train: 46.40, nan
+   Final Test: 46.05, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6323, Train: 22.12%, Valid: 22.13%, Test: 22.69%
+Epoch: 25, Loss: 1.5084, Train: 28.87%, Valid: 28.68%, Test: 28.96%
+Epoch: 50, Loss: 1.4345, Train: 36.38%, Valid: 36.37%, Test: 35.95%
+Epoch: 75, Loss: 1.3707, Train: 37.20%, Valid: 36.81%, Test: 37.16%
+Epoch: 100, Loss: 1.4210, Train: 36.29%, Valid: 36.02%, Test: 36.25%
+Epoch: 125, Loss: 1.3751, Train: 38.49%, Valid: 38.14%, Test: 38.38%
+Epoch: 150, Loss: 1.3895, Train: 39.34%, Valid: 39.11%, Test: 39.22%
+Epoch: 175, Loss: 1.3564, Train: 40.36%, Valid: 39.93%, Test: 40.17%
+Epoch: 200, Loss: 1.3498, Train: 41.30%, Valid: 41.23%, Test: 41.41%
+Epoch: 225, Loss: 1.3627, Train: 40.84%, Valid: 40.75%, Test: 40.72%
+Epoch: 250, Loss: 1.3553, Train: 40.67%, Valid: 40.54%, Test: 40.58%
+Epoch: 275, Loss: 1.3474, Train: 39.54%, Valid: 39.72%, Test: 39.67%
+Epoch: 300, Loss: 1.3482, Train: 41.69%, Valid: 41.49%, Test: 41.60%
+Epoch: 325, Loss: 1.3412, Train: 40.71%, Valid: 40.45%, Test: 40.46%
+Epoch: 350, Loss: 1.3282, Train: 42.24%, Valid: 42.05%, Test: 42.04%
+Epoch: 375, Loss: 1.3348, Train: 42.10%, Valid: 41.91%, Test: 41.98%
+Epoch: 400, Loss: 1.3366, Train: 41.46%, Valid: 41.21%, Test: 41.26%
+Epoch: 425, Loss: 1.3271, Train: 42.13%, Valid: 41.78%, Test: 41.92%
+Epoch: 450, Loss: 1.3635, Train: 40.04%, Valid: 39.74%, Test: 39.84%
+Epoch: 475, Loss: 1.3383, Train: 41.50%, Valid: 41.30%, Test: 41.43%
+Run 01:
+Highest Train: 42.87
+Highest Valid: 42.75
+  Final Train: 42.87
+   Final Test: 42.70
+All runs:
+Highest Train: 42.87, nan
+Highest Valid: 42.75, nan
+  Final Train: 42.87, nan
+   Final Test: 42.70, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6015, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5045, Train: 34.04%, Valid: 33.83%, Test: 33.97%
+Epoch: 50, Loss: 1.4874, Train: 34.72%, Valid: 34.52%, Test: 34.67%
+Epoch: 75, Loss: 1.4820, Train: 34.86%, Valid: 34.67%, Test: 34.80%
+Epoch: 100, Loss: 1.4773, Train: 34.97%, Valid: 34.72%, Test: 34.81%
+Epoch: 125, Loss: 1.4676, Train: 35.13%, Valid: 34.69%, Test: 34.92%
+Epoch: 150, Loss: 1.4694, Train: 35.73%, Valid: 35.49%, Test: 35.46%
+Epoch: 175, Loss: 1.4099, Train: 32.95%, Valid: 32.76%, Test: 32.82%
+Epoch: 200, Loss: 1.3993, Train: 39.17%, Valid: 38.57%, Test: 38.70%
+Epoch: 225, Loss: 1.4077, Train: 39.49%, Valid: 38.69%, Test: 39.01%
+Epoch: 250, Loss: 1.3812, Train: 39.83%, Valid: 39.49%, Test: 39.34%
+Epoch: 275, Loss: 1.3908, Train: 39.85%, Valid: 39.53%, Test: 39.50%
+Epoch: 300, Loss: 1.3727, Train: 40.32%, Valid: 39.92%, Test: 39.83%
+Epoch: 325, Loss: 1.3735, Train: 40.15%, Valid: 39.79%, Test: 39.67%
+Epoch: 350, Loss: 1.3802, Train: 40.17%, Valid: 39.74%, Test: 39.63%
+Epoch: 375, Loss: 1.3629, Train: 40.70%, Valid: 40.33%, Test: 40.17%
+Epoch: 400, Loss: 1.3729, Train: 40.45%, Valid: 40.24%, Test: 39.86%
+Epoch: 425, Loss: 1.3677, Train: 40.38%, Valid: 39.91%, Test: 39.90%
+Epoch: 450, Loss: 1.3580, Train: 40.66%, Valid: 40.24%, Test: 40.16%
+Epoch: 475, Loss: 1.3980, Train: 39.66%, Valid: 39.30%, Test: 39.31%
+Run 01:
+Highest Train: 40.85
+Highest Valid: 40.50
+  Final Train: 40.85
+   Final Test: 40.16
+All runs:
+Highest Train: 40.85, nan
+Highest Valid: 40.50, nan
+  Final Train: 40.85, nan
+   Final Test: 40.16, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6021, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.4797, Train: 34.89%, Valid: 34.74%, Test: 34.86%
+Epoch: 50, Loss: 1.4444, Train: 36.72%, Valid: 36.31%, Test: 36.67%
+Epoch: 75, Loss: 1.3964, Train: 39.43%, Valid: 39.05%, Test: 39.02%
+Epoch: 100, Loss: 1.3920, Train: 40.56%, Valid: 40.27%, Test: 40.26%
+Epoch: 125, Loss: 1.3784, Train: 39.57%, Valid: 39.68%, Test: 39.54%
+Epoch: 150, Loss: 1.3810, Train: 41.87%, Valid: 41.55%, Test: 41.58%
+Epoch: 175, Loss: 1.4066, Train: 39.87%, Valid: 39.75%, Test: 39.69%
+Epoch: 200, Loss: 1.3597, Train: 41.67%, Valid: 41.50%, Test: 41.33%
+Epoch: 225, Loss: 1.3562, Train: 42.18%, Valid: 41.97%, Test: 42.04%
+Epoch: 250, Loss: 1.3451, Train: 42.49%, Valid: 42.30%, Test: 42.22%
+Epoch: 275, Loss: 1.3930, Train: 40.39%, Valid: 40.34%, Test: 40.30%
+Epoch: 300, Loss: 1.3732, Train: 41.28%, Valid: 40.96%, Test: 40.75%
+Epoch: 325, Loss: 1.3611, Train: 42.59%, Valid: 42.18%, Test: 42.22%
+Epoch: 350, Loss: 1.3297, Train: 43.36%, Valid: 42.97%, Test: 43.08%
+Epoch: 375, Loss: 1.3281, Train: 43.03%, Valid: 42.87%, Test: 42.77%
+Epoch: 400, Loss: 1.3175, Train: 43.48%, Valid: 42.98%, Test: 42.98%
+Epoch: 425, Loss: 1.3934, Train: 39.62%, Valid: 39.44%, Test: 39.33%
+Epoch: 450, Loss: 1.3576, Train: 41.75%, Valid: 41.39%, Test: 41.60%
+Epoch: 475, Loss: 1.3352, Train: 42.63%, Valid: 42.33%, Test: 42.28%
+Run 01:
+Highest Train: 43.48
+Highest Valid: 43.14
+  Final Train: 43.45
+   Final Test: 43.11
+All runs:
+Highest Train: 43.48, nan
+Highest Valid: 43.14, nan
+  Final Train: 43.45, nan
+   Final Test: 43.11, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6017, Train: 22.12%, Valid: 22.11%, Test: 22.70%
+Epoch: 25, Loss: 1.4677, Train: 28.49%, Valid: 28.36%, Test: 28.69%
+Epoch: 50, Loss: 1.4387, Train: 39.51%, Valid: 39.18%, Test: 39.52%
+Epoch: 75, Loss: 1.4170, Train: 39.31%, Valid: 38.89%, Test: 39.34%
+Epoch: 100, Loss: 1.4495, Train: 28.90%, Valid: 28.62%, Test: 28.99%
+Epoch: 125, Loss: 1.4178, Train: 39.52%, Valid: 39.16%, Test: 39.54%
+Epoch: 150, Loss: 1.5985, Train: 28.71%, Valid: 28.48%, Test: 28.82%
+Epoch: 175, Loss: 1.4576, Train: 29.03%, Valid: 28.74%, Test: 29.09%
+Epoch: 200, Loss: 1.4362, Train: 38.96%, Valid: 38.93%, Test: 38.88%
+Epoch: 225, Loss: 1.4215, Train: 33.12%, Valid: 33.06%, Test: 34.10%
+Epoch: 250, Loss: 1.4154, Train: 39.48%, Valid: 39.16%, Test: 39.70%
+Epoch: 275, Loss: 1.4104, Train: 39.19%, Valid: 39.04%, Test: 39.38%
+Epoch: 300, Loss: 1.4300, Train: 38.18%, Valid: 37.96%, Test: 38.02%
+Epoch: 325, Loss: 1.4312, Train: 38.82%, Valid: 38.62%, Test: 38.69%
+Epoch: 350, Loss: 1.4146, Train: 38.31%, Valid: 37.98%, Test: 38.31%
+Epoch: 375, Loss: 1.3996, Train: 38.91%, Valid: 38.65%, Test: 39.06%
+Epoch: 400, Loss: 1.3968, Train: 38.90%, Valid: 38.42%, Test: 39.05%
+Epoch: 425, Loss: 1.3958, Train: 38.98%, Valid: 38.57%, Test: 39.10%
+Epoch: 450, Loss: 1.3953, Train: 39.01%, Valid: 38.64%, Test: 39.12%
+Epoch: 475, Loss: 1.3950, Train: 39.04%, Valid: 38.69%, Test: 39.14%
+Run 01:
+Highest Train: 39.75
+Highest Valid: 39.39
+  Final Train: 39.75
+   Final Test: 39.64
+All runs:
+Highest Train: 39.75, nan
+Highest Valid: 39.39, nan
+  Final Train: 39.75, nan
+   Final Test: 39.64, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6259, Train: 28.72%, Valid: 28.53%, Test: 28.82%
+Epoch: 25, Loss: 1.5232, Train: 30.46%, Valid: 29.94%, Test: 30.64%
+Epoch: 50, Loss: 1.4859, Train: 34.76%, Valid: 34.45%, Test: 34.74%
+Epoch: 75, Loss: 1.4475, Train: 35.37%, Valid: 35.07%, Test: 35.29%
+Epoch: 100, Loss: 1.4136, Train: 38.03%, Valid: 37.22%, Test: 37.49%
+Epoch: 125, Loss: 1.3864, Train: 37.02%, Valid: 36.24%, Test: 36.59%
+Epoch: 150, Loss: 1.3854, Train: 39.87%, Valid: 39.10%, Test: 39.30%
+Epoch: 175, Loss: 1.3897, Train: 39.30%, Valid: 38.62%, Test: 38.53%
+Epoch: 200, Loss: 1.3677, Train: 40.34%, Valid: 39.64%, Test: 39.80%
+Epoch: 225, Loss: 1.3642, Train: 41.08%, Valid: 40.39%, Test: 40.57%
+Epoch: 250, Loss: 1.3278, Train: 41.58%, Valid: 41.03%, Test: 40.89%
+Epoch: 275, Loss: 1.3406, Train: 42.33%, Valid: 41.65%, Test: 41.49%
+Epoch: 300, Loss: 1.3286, Train: 42.37%, Valid: 41.39%, Test: 41.53%
+Epoch: 325, Loss: 1.3080, Train: 43.51%, Valid: 42.84%, Test: 42.72%
+Epoch: 350, Loss: 1.3060, Train: 43.94%, Valid: 43.31%, Test: 42.87%
+Epoch: 375, Loss: 1.3235, Train: 42.67%, Valid: 41.93%, Test: 41.92%
+Epoch: 400, Loss: 1.3081, Train: 43.40%, Valid: 42.62%, Test: 42.78%
+Epoch: 425, Loss: 1.2931, Train: 43.91%, Valid: 43.15%, Test: 43.05%
+Epoch: 450, Loss: 1.3003, Train: 44.10%, Valid: 43.55%, Test: 43.22%
+Epoch: 475, Loss: 1.2782, Train: 44.69%, Valid: 43.83%, Test: 43.83%
+Run 01:
+Highest Train: 45.32
+Highest Valid: 44.28
+  Final Train: 45.22
+   Final Test: 44.35
+All runs:
+Highest Train: 45.32, nan
+Highest Valid: 44.28, nan
+  Final Train: 45.22, nan
+   Final Test: 44.35, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6452, Train: 13.78%, Valid: 13.71%, Test: 13.73%
+Epoch: 25, Loss: 1.4369, Train: 36.74%, Valid: 36.13%, Test: 36.57%
+Epoch: 50, Loss: 1.4185, Train: 37.13%, Valid: 36.75%, Test: 36.91%
+Epoch: 75, Loss: 1.3818, Train: 38.35%, Valid: 37.94%, Test: 38.12%
+Epoch: 100, Loss: 1.3447, Train: 41.73%, Valid: 41.24%, Test: 41.52%
+Epoch: 125, Loss: 1.3387, Train: 42.23%, Valid: 41.59%, Test: 41.79%
+Epoch: 150, Loss: 1.3334, Train: 42.00%, Valid: 41.46%, Test: 41.63%
+Epoch: 175, Loss: 1.3193, Train: 43.18%, Valid: 42.64%, Test: 42.68%
+Epoch: 200, Loss: 1.2825, Train: 44.58%, Valid: 43.86%, Test: 43.99%
+Epoch: 225, Loss: 1.3426, Train: 41.75%, Valid: 41.22%, Test: 41.64%
+Epoch: 250, Loss: 1.2794, Train: 44.82%, Valid: 44.33%, Test: 44.41%
+Epoch: 275, Loss: 1.3292, Train: 44.16%, Valid: 43.52%, Test: 43.60%
+Epoch: 300, Loss: 1.2800, Train: 44.34%, Valid: 43.58%, Test: 43.65%
+Epoch: 325, Loss: 1.3142, Train: 43.54%, Valid: 42.82%, Test: 42.78%
+Epoch: 350, Loss: 1.2621, Train: 45.82%, Valid: 44.83%, Test: 45.11%
+Epoch: 375, Loss: 1.2685, Train: 45.34%, Valid: 44.30%, Test: 44.48%
+Epoch: 400, Loss: 1.2496, Train: 46.35%, Valid: 45.37%, Test: 45.54%
+Epoch: 425, Loss: 1.2575, Train: 46.54%, Valid: 45.56%, Test: 45.87%
+Epoch: 450, Loss: 1.4906, Train: 37.85%, Valid: 37.18%, Test: 37.55%
+Epoch: 475, Loss: 1.3659, Train: 42.85%, Valid: 42.43%, Test: 42.26%
+Run 01:
+Highest Train: 47.34
+Highest Valid: 46.29
+  Final Train: 47.34
+   Final Test: 46.32
+All runs:
+Highest Train: 47.34, nan
+Highest Valid: 46.29, nan
+  Final Train: 47.34, nan
+   Final Test: 46.32, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.1, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.8567, Train: 12.96%, Valid: 13.06%, Test: 12.90%
+Epoch: 25, Loss: 1.5906, Train: 27.98%, Valid: 27.64%, Test: 28.32%
+Epoch: 50, Loss: 1.4924, Train: 28.37%, Valid: 28.01%, Test: 28.35%
+Epoch: 75, Loss: 1.4006, Train: 39.33%, Valid: 39.11%, Test: 39.33%
+Epoch: 100, Loss: 1.3688, Train: 41.15%, Valid: 40.96%, Test: 41.29%
+Epoch: 125, Loss: 1.3355, Train: 42.20%, Valid: 42.37%, Test: 42.44%
+Epoch: 150, Loss: 1.3404, Train: 42.27%, Valid: 41.98%, Test: 42.19%
+Epoch: 175, Loss: 1.3317, Train: 42.59%, Valid: 42.00%, Test: 42.35%
+Epoch: 200, Loss: 1.3182, Train: 43.70%, Valid: 43.20%, Test: 43.45%
+Epoch: 225, Loss: 1.2980, Train: 44.60%, Valid: 43.96%, Test: 44.24%
+Epoch: 250, Loss: 1.3455, Train: 41.37%, Valid: 41.19%, Test: 41.19%
+Epoch: 275, Loss: 1.3118, Train: 43.73%, Valid: 43.00%, Test: 43.47%
+Epoch: 300, Loss: 1.3093, Train: 42.82%, Valid: 42.54%, Test: 42.63%
+Epoch: 325, Loss: 1.2844, Train: 45.03%, Valid: 44.40%, Test: 44.59%
+Epoch: 350, Loss: 1.4286, Train: 37.25%, Valid: 36.84%, Test: 36.64%
+Epoch: 375, Loss: 1.3428, Train: 42.50%, Valid: 42.00%, Test: 42.22%
+Epoch: 400, Loss: 1.3038, Train: 43.97%, Valid: 43.70%, Test: 43.87%
+Epoch: 425, Loss: 1.3183, Train: 43.94%, Valid: 43.47%, Test: 43.76%
+Epoch: 450, Loss: 1.2861, Train: 45.14%, Valid: 44.51%, Test: 44.72%
+Epoch: 475, Loss: 1.2755, Train: 45.65%, Valid: 44.95%, Test: 45.05%
+Run 01:
+Highest Train: 45.87
+Highest Valid: 45.13
+  Final Train: 45.87
+   Final Test: 45.20
+All runs:
+Highest Train: 45.87, nan
+Highest Valid: 45.13, nan
+  Final Train: 45.87, nan
+   Final Test: 45.20, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6039, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.5549, Train: 28.43%, Valid: 28.22%, Test: 28.53%
+Epoch: 50, Loss: 1.5030, Train: 28.93%, Valid: 28.80%, Test: 28.95%
+Epoch: 75, Loss: 1.4346, Train: 32.67%, Valid: 32.41%, Test: 32.60%
+Epoch: 100, Loss: 1.3974, Train: 35.53%, Valid: 35.28%, Test: 35.15%
+Epoch: 125, Loss: 1.3909, Train: 40.16%, Valid: 40.05%, Test: 39.73%
+Epoch: 150, Loss: 1.3795, Train: 40.93%, Valid: 40.61%, Test: 40.32%
+Epoch: 175, Loss: 1.3807, Train: 40.72%, Valid: 40.30%, Test: 40.18%
+Epoch: 200, Loss: 1.3679, Train: 41.18%, Valid: 40.89%, Test: 40.65%
+Epoch: 225, Loss: 1.4569, Train: 33.19%, Valid: 33.03%, Test: 32.66%
+Epoch: 250, Loss: 1.4148, Train: 38.88%, Valid: 38.78%, Test: 38.65%
+Epoch: 275, Loss: 1.3926, Train: 39.67%, Valid: 39.45%, Test: 39.23%
+Epoch: 300, Loss: 1.3957, Train: 40.05%, Valid: 39.62%, Test: 39.59%
+Epoch: 325, Loss: 1.3706, Train: 41.05%, Valid: 40.79%, Test: 40.65%
+Epoch: 350, Loss: 1.3768, Train: 40.09%, Valid: 39.81%, Test: 39.58%
+Epoch: 375, Loss: 1.3634, Train: 41.66%, Valid: 41.38%, Test: 41.33%
+Epoch: 400, Loss: 1.3896, Train: 39.73%, Valid: 39.36%, Test: 39.38%
+Epoch: 425, Loss: 1.3651, Train: 41.79%, Valid: 41.54%, Test: 41.63%
+Epoch: 450, Loss: 1.3590, Train: 42.06%, Valid: 41.62%, Test: 41.67%
+Epoch: 475, Loss: 1.3566, Train: 42.10%, Valid: 41.72%, Test: 41.80%
+Run 01:
+Highest Train: 42.15
+Highest Valid: 41.72
+  Final Train: 42.11
+   Final Test: 41.76
+All runs:
+Highest Train: 42.15, nan
+Highest Valid: 41.72, nan
+  Final Train: 42.11, nan
+   Final Test: 41.76, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6663, Train: 19.29%, Valid: 19.23%, Test: 19.03%
+Epoch: 25, Loss: 1.5128, Train: 28.78%, Valid: 28.59%, Test: 28.86%
+Epoch: 50, Loss: 1.4784, Train: 29.37%, Valid: 29.13%, Test: 29.52%
+Epoch: 75, Loss: 1.4446, Train: 28.71%, Valid: 28.48%, Test: 28.80%
+Epoch: 100, Loss: 1.4500, Train: 28.48%, Valid: 28.24%, Test: 28.49%
+Epoch: 125, Loss: 1.4283, Train: 37.86%, Valid: 37.56%, Test: 37.63%
+Epoch: 150, Loss: 1.4279, Train: 37.95%, Valid: 37.70%, Test: 37.77%
+Epoch: 175, Loss: 1.4133, Train: 38.81%, Valid: 38.44%, Test: 38.52%
+Epoch: 200, Loss: 1.4779, Train: 38.40%, Valid: 37.99%, Test: 38.00%
+Epoch: 225, Loss: 1.4273, Train: 38.36%, Valid: 38.03%, Test: 37.98%
+Epoch: 250, Loss: 1.4188, Train: 38.26%, Valid: 37.99%, Test: 37.95%
+Epoch: 275, Loss: 1.4163, Train: 38.82%, Valid: 38.45%, Test: 38.62%
+Epoch: 300, Loss: 1.4149, Train: 39.22%, Valid: 38.84%, Test: 39.14%
+Epoch: 325, Loss: 1.4135, Train: 39.15%, Valid: 38.64%, Test: 39.00%
+Epoch: 350, Loss: 1.4112, Train: 39.07%, Valid: 38.53%, Test: 38.83%
+Epoch: 375, Loss: 1.4047, Train: 39.03%, Valid: 38.49%, Test: 38.97%
+Epoch: 400, Loss: 1.4586, Train: 38.30%, Valid: 38.01%, Test: 38.00%
+Epoch: 425, Loss: 1.4284, Train: 38.24%, Valid: 37.99%, Test: 37.89%
+Epoch: 450, Loss: 1.4182, Train: 38.34%, Valid: 37.98%, Test: 38.04%
+Epoch: 475, Loss: 1.4143, Train: 39.42%, Valid: 38.93%, Test: 39.34%
+Run 01:
+Highest Train: 39.51
+Highest Valid: 39.03
+  Final Train: 39.39
+   Final Test: 39.02
+All runs:
+Highest Train: 39.51, nan
+Highest Valid: 39.03, nan
+  Final Train: 39.39, nan
+   Final Test: 39.02, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 2.3730, Train: 20.41%, Valid: 20.28%, Test: 20.16%
+Epoch: 25, Loss: 1.5102, Train: 32.23%, Valid: 31.92%, Test: 32.70%
+Epoch: 50, Loss: 1.4404, Train: 37.21%, Valid: 37.06%, Test: 37.11%
+Epoch: 75, Loss: 1.4138, Train: 37.68%, Valid: 37.57%, Test: 37.64%
+Epoch: 100, Loss: 1.3802, Train: 39.12%, Valid: 39.11%, Test: 39.10%
+Epoch: 125, Loss: 1.4163, Train: 38.25%, Valid: 37.92%, Test: 38.13%
+Epoch: 150, Loss: 1.4208, Train: 39.37%, Valid: 39.13%, Test: 39.38%
+Epoch: 175, Loss: 1.3636, Train: 40.80%, Valid: 40.20%, Test: 40.65%
+Epoch: 200, Loss: 1.3388, Train: 41.96%, Valid: 41.77%, Test: 41.87%
+Epoch: 225, Loss: 1.3278, Train: 42.66%, Valid: 42.24%, Test: 42.16%
+Epoch: 250, Loss: 1.3331, Train: 41.96%, Valid: 41.87%, Test: 41.99%
+Epoch: 275, Loss: 1.3339, Train: 42.45%, Valid: 42.22%, Test: 42.24%
+Epoch: 300, Loss: 1.3012, Train: 43.99%, Valid: 43.45%, Test: 43.71%
+Epoch: 325, Loss: 1.3230, Train: 42.76%, Valid: 42.37%, Test: 42.52%
+Epoch: 350, Loss: 1.3208, Train: 43.74%, Valid: 43.19%, Test: 43.43%
+Epoch: 375, Loss: 1.3448, Train: 43.82%, Valid: 43.18%, Test: 43.52%
+Epoch: 400, Loss: 1.2852, Train: 44.90%, Valid: 44.43%, Test: 44.54%
+Epoch: 425, Loss: 1.2936, Train: 44.83%, Valid: 44.42%, Test: 44.34%
+Epoch: 450, Loss: 1.3516, Train: 43.24%, Valid: 42.73%, Test: 43.09%
+Epoch: 475, Loss: 1.3168, Train: 43.73%, Valid: 43.23%, Test: 43.59%
+Run 01:
+Highest Train: 45.15
+Highest Valid: 44.67
+  Final Train: 45.06
+   Final Test: 44.78
+All runs:
+Highest Train: 45.15, nan
+Highest Valid: 44.67, nan
+  Final Train: 45.06, nan
+   Final Test: 44.78, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6130, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.4622, Train: 35.84%, Valid: 35.62%, Test: 35.86%
+Epoch: 50, Loss: 1.4208, Train: 37.44%, Valid: 37.04%, Test: 37.12%
+Epoch: 75, Loss: 1.4124, Train: 37.77%, Valid: 37.52%, Test: 37.33%
+Epoch: 100, Loss: 1.3831, Train: 38.94%, Valid: 38.88%, Test: 38.62%
+Epoch: 125, Loss: 1.3811, Train: 38.31%, Valid: 38.14%, Test: 37.95%
+Epoch: 150, Loss: 1.3851, Train: 37.50%, Valid: 36.80%, Test: 36.88%
+Epoch: 175, Loss: 1.3940, Train: 37.48%, Valid: 37.34%, Test: 36.93%
+Epoch: 200, Loss: 1.3648, Train: 39.49%, Valid: 38.99%, Test: 38.93%
+Epoch: 225, Loss: 1.3620, Train: 40.07%, Valid: 39.49%, Test: 39.61%
+Epoch: 250, Loss: 1.3585, Train: 40.16%, Valid: 39.56%, Test: 39.60%
+Epoch: 275, Loss: 1.3526, Train: 40.33%, Valid: 40.02%, Test: 40.14%
+Epoch: 300, Loss: 1.3540, Train: 40.64%, Valid: 40.24%, Test: 40.35%
+Epoch: 325, Loss: 1.3735, Train: 40.95%, Valid: 40.58%, Test: 40.63%
+Epoch: 350, Loss: 1.3472, Train: 40.85%, Valid: 40.34%, Test: 40.63%
+Epoch: 375, Loss: 1.3527, Train: 40.39%, Valid: 39.74%, Test: 39.87%
+Epoch: 400, Loss: 1.3476, Train: 41.78%, Valid: 41.16%, Test: 41.47%
+Epoch: 425, Loss: 1.3857, Train: 40.23%, Valid: 39.33%, Test: 39.92%
+Epoch: 450, Loss: 1.3476, Train: 40.90%, Valid: 40.21%, Test: 40.39%
+Epoch: 475, Loss: 1.3954, Train: 39.24%, Valid: 38.63%, Test: 38.85%
+Run 01:
+Highest Train: 42.22
+Highest Valid: 41.54
+  Final Train: 42.18
+   Final Test: 41.91
+All runs:
+Highest Train: 42.22, nan
+Highest Valid: 41.54, nan
+  Final Train: 42.18, nan
+   Final Test: 41.91, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.5797, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.4536, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 50, Loss: 1.4326, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 75, Loss: 1.4264, Train: 28.90%, Valid: 28.64%, Test: 28.99%
+Epoch: 100, Loss: 1.4348, Train: 28.79%, Valid: 28.58%, Test: 28.87%
+Epoch: 125, Loss: 1.4263, Train: 28.79%, Valid: 28.59%, Test: 28.85%
+Epoch: 150, Loss: 1.4328, Train: 29.38%, Valid: 29.16%, Test: 29.61%
+Epoch: 175, Loss: 1.4240, Train: 28.77%, Valid: 28.56%, Test: 28.87%
+Epoch: 200, Loss: 1.4883, Train: 28.63%, Valid: 28.46%, Test: 28.80%
+Epoch: 225, Loss: 1.4881, Train: 28.59%, Valid: 28.33%, Test: 28.67%
+Epoch: 250, Loss: 1.4546, Train: 29.36%, Valid: 29.08%, Test: 29.62%
+Epoch: 275, Loss: 1.4422, Train: 29.30%, Valid: 29.09%, Test: 29.62%
+Epoch: 300, Loss: 1.4358, Train: 29.36%, Valid: 29.16%, Test: 29.64%
+Epoch: 325, Loss: 1.4314, Train: 29.30%, Valid: 29.14%, Test: 29.64%
+Epoch: 350, Loss: 1.4330, Train: 28.72%, Valid: 28.57%, Test: 28.83%
+Epoch: 375, Loss: 1.4285, Train: 29.40%, Valid: 29.19%, Test: 29.63%
+Epoch: 400, Loss: 1.4262, Train: 29.69%, Valid: 29.51%, Test: 29.71%
+Epoch: 425, Loss: 1.4242, Train: 30.24%, Valid: 30.03%, Test: 30.20%
+Epoch: 450, Loss: 1.4227, Train: 30.36%, Valid: 30.19%, Test: 30.37%
+Epoch: 475, Loss: 1.4239, Train: 30.13%, Valid: 29.94%, Test: 30.04%
+Run 01:
+Highest Train: 32.73
+Highest Valid: 32.31
+  Final Train: 32.73
+   Final Test: 32.48
+All runs:
+Highest Train: 32.73, nan
+Highest Valid: 32.31, nan
+  Final Train: 32.73, nan
+   Final Test: 32.48, nan
+Saving results to results/arxiv-year.csv
+Namespace(SGD=False, adam=False, alpha=1.0, beta=1000.0, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.0, epochs=500, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.05, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 2.1624, Train: 22.31%, Valid: 22.30%, Test: 22.91%
+Epoch: 25, Loss: 1.4959, Train: 27.44%, Valid: 27.35%, Test: 27.47%
+Epoch: 50, Loss: 1.4669, Train: 37.91%, Valid: 37.87%, Test: 38.43%
+Epoch: 75, Loss: 1.4458, Train: 36.56%, Valid: 36.52%, Test: 37.14%
+Epoch: 100, Loss: 1.4571, Train: 37.28%, Valid: 37.11%, Test: 37.95%
+Epoch: 125, Loss: 1.4376, Train: 38.06%, Valid: 37.68%, Test: 37.94%
+Epoch: 150, Loss: 1.3861, Train: 39.85%, Valid: 39.45%, Test: 39.92%
+Epoch: 175, Loss: 1.4144, Train: 36.82%, Valid: 36.73%, Test: 36.90%
+Epoch: 200, Loss: 1.3699, Train: 40.81%, Valid: 40.34%, Test: 41.07%
+Epoch: 225, Loss: 1.3474, Train: 41.25%, Valid: 40.81%, Test: 41.25%
+Epoch: 250, Loss: 1.3591, Train: 41.65%, Valid: 41.56%, Test: 41.78%
+Epoch: 275, Loss: 1.3343, Train: 41.99%, Valid: 41.54%, Test: 42.16%
+Epoch: 300, Loss: 1.9149, Train: 24.95%, Valid: 24.95%, Test: 24.95%
+Epoch: 325, Loss: 1.5072, Train: 29.74%, Valid: 29.68%, Test: 29.73%
+Epoch: 350, Loss: 1.3980, Train: 41.09%, Valid: 40.63%, Test: 40.70%
+Epoch: 375, Loss: 1.3680, Train: 41.67%, Valid: 41.46%, Test: 41.47%
+Epoch: 400, Loss: 1.3574, Train: 41.68%, Valid: 41.48%, Test: 41.65%
+Epoch: 425, Loss: 1.3509, Train: 42.02%, Valid: 41.70%, Test: 41.87%
+Epoch: 450, Loss: 1.3549, Train: 42.22%, Valid: 41.83%, Test: 42.18%
+Epoch: 475, Loss: 1.3450, Train: 41.89%, Valid: 41.51%, Test: 41.73%
+Run 01:
+Highest Train: 42.81
+Highest Valid: 42.34
+  Final Train: 42.70
+   Final Test: 42.53
+All runs:
+Highest Train: 42.81, nan
+Highest Valid: 42.34, nan
+  Final Train: 42.70, nan
+   Final Test: 42.53, nan
+Saving results to results/arxiv-year.csv
+20211118-09:59 ---> 20211118-10:18 Totl:1114 seconds

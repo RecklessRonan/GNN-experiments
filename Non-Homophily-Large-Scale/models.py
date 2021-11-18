@@ -912,6 +912,7 @@ class MLPNORM(nn.Module):
         super(MLPNORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
+        self.fc3 = nn.Linear(nhid, nhid)
         self.nclass = nclass
         self.dropout = dropout
         self.alpha = torch.tensor(alpha).to(device)
@@ -919,6 +920,7 @@ class MLPNORM(nn.Module):
         self.gamma = torch.tensor(gamma).to(device)
         self.norm_layers = norm_layers
         self.orders = orders
+        self.device = device
         self.class_eye = torch.eye(self.nclass).to(device)
         self.orders_weight = Parameter(
             (torch.ones(orders, 1) / orders).to(device), requires_grad=True
@@ -947,12 +949,21 @@ class MLPNORM(nn.Module):
     def reset_parameters(self):
         self.fc1.reset_parameters()
         self.fc2.reset_parameters()
+        self.fc3.reset_parameters()
+        self.orders_weight = Parameter(
+            (torch.ones(self.orders, 1) / self.orders).to(self.device), requires_grad=True
+        )
         init.kaiming_normal_(self.orders_weight_matrix, mode='fan_out')
         init.kaiming_normal_(self.orders_weight_matrix2, mode='fan_out')
+        self.diag_weight = Parameter(
+            (torch.ones(self.nclass, 1) / self.nclass).to(self.device), requires_grad=True
+        )
 
     def forward(self, x, adj):
-        x = F.dropout(x, self.dropout, training=self.training)
+        # x = F.dropout(x, self.dropout, training=self.training)
         x = F.relu(self.fc1(x))
+        x = F.dropout(x, self.dropout, training=self.training)
+        x = F.relu(self.fc3(x))
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x

@@ -6,16 +6,16 @@ startTime_s=`date +%s`
 dataset=$1
 sub_dataset=${2:-''}
 
-lr_lst=(0.001 0.005 0.01)
+lr_lst=(0.001)
 hidden_channels_lst=(256)
-dropout_lst=(0.0)
-weight_decay_lst=(0.0 5e-7 5e-5)
+dropout_lst=(0.1)
+weight_decay_lst=(1e-7)
 alpha_lst=(1)
 beta_lst=(1000)
-gamma_lst=(0.4 0.5 0.6)
+gamma_lst=(0.5)
 norm_layers_lst=(2)
 orders_lst=(1)
-epochs=500
+epochs=1000
 runs=5
 
 for lr in "${lr_lst[@]}"; do

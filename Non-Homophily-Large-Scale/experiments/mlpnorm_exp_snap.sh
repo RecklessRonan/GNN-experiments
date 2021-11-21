@@ -6,7 +6,7 @@ startTime_s=`date +%s`
 dataset=snap-patents
 sub_dataset=${2:-''}
 
-lr_lst=(0.01)
+lr_lst=(0.01 0.05 0.001)
 hidden_channels_lst=(128)
 dropout_lst=(0.0)
 weight_decay_lst=(0.0)
@@ -15,7 +15,7 @@ beta_lst=(10.0)
 gamma_lst=(0.9)
 norm_layers_lst=(2)
 orders_lst=(3)
-epochs=1000
+epochs=2000
 runs=5
 norm_func_id=2
 order_func_id=2

@@ -1,0 +1,11 @@
+nohup: ignoring input
+Namespace(SGD=False, adam=False, alpha=1.0, beta=10.0, cached=False, cpu=False, dataset='pokec', directed=False, display_step=25, dropout=0.0, epochs=2000, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=128, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.01, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.0)
+num nodes 1632803 | num classes 2 | num node feats 65
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=65, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=2, bias=True)
+  (fc3): Linear(in_features=128, out_features=128, bias=True)
+)
+Epoch: 00, Loss: 0.6988, Train: 50.79%, Valid: 50.71%, Test: 50.66%
+Epoch: 25, Loss: 0.6909, Train: 51.96%, Valid: 52.05%, Test: 51.80%
+Epoch: 50, Loss: 0.6730, Train: 54.93%, Valid: 54.91%, Test: 54.91%

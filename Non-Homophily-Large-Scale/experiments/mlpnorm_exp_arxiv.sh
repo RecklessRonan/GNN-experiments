@@ -3,17 +3,17 @@
 startTime=`date +%Y%m%d-%H:%M`
 startTime_s=`date +%s`
 
-dataset=pokec
+dataset=arxiv-year
 sub_dataset=${2:-''}
 
-lr_lst=(0.05 0.01 0.005 0.001)
+lr_lst=(0.1 0.01 0.001)
 hidden_channels_lst=(256)
-dropout_lst=(0.5)
-weight_decay_lst=(1e-3)
+dropout_lst=(0.1 0.2 0.3 0.4 0.5)
+weight_decay_lst=(1e-7 1e-5 1e-3)
 alpha_lst=(1.0)
-beta_lst=(0.1 10.0 1000.0)
-gamma_lst=(0.1 0.5 0.9)
-norm_layers_lst=(2)
+beta_lst=(10.0)
+gamma_lst=(0.9)
+norm_layers_lst=(1 2 3)
 orders_lst=(1 2 3)
 epochs=1000
 runs=1

@@ -9,6 +9,7 @@ import scipy.sparse
 from tqdm import tqdm
 from torch.nn.parameter import Parameter
 import torch.nn.init as init
+import sys
 
 
 class LINK(nn.Module):
@@ -735,7 +736,11 @@ class LINKX(nn.Module):
         m = data.graph['num_nodes']
         feat_dim = data.graph['node_feat']
         row, col = data.graph['edge_index']
+        print('nodes num', m)
+        print('row num', row)
+        print('col num', col)
         row = row-row.min()
+        print('after row num', row)
         A = SparseTensor(row=row, col=col,
                          sparse_sizes=(m, self.num_nodes)
                          ).to_torch_sparse_coo_tensor()
@@ -750,7 +755,8 @@ class LINKX(nn.Module):
             x = F.relu(x)
         x = F.relu(x + xA + xX)
         x = self.mlp_final(x, input_tensor=True)
-
+        print('x', x.shape)
+        sys.exit()
         return x
 
 

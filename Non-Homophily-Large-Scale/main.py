@@ -21,7 +21,10 @@ faulthandler.enable()
 
 
 # NOTE: for consistent data splits, see data_utils.rand_train_test_idx
-np.random.seed(0)
+seed = 0
+np.random.seed(seed)
+# torch.manual_seed(seed)
+# torch.cuda.manual_seed(seed)
 
 ### Parse args ###
 parser = argparse.ArgumentParser(description='General Training Pipeline')

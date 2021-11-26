@@ -8,15 +8,15 @@ sub_dataset=Penn94
 
 lr_lst=(0.001)
 hidden_channels_lst=(256)
-dropout_lst=(0)
-weight_decay_lst=(0)
-alpha_lst=(1.0 10.0 100.0 1000.0)
-beta_lst=(500.0 750.0 1000.0 1250.0 1500.0)
+dropout_lst=(0 0.2 0.4)
+weight_decay_lst=(0 1e-5 1e-3)
+alpha_lst=(1.0 500.0 1000.0)
+beta_lst=(500.0 1000.0 1500.0)
 gamma_lst=(0.5)
 norm_layers_lst=(2)
 orders_lst=(1)
 epochs=1000
-runs=1
+runs=5
 norm_func_id=2
 order_func_id=2
 

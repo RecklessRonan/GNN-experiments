@@ -907,12 +907,13 @@ class GCNII(nn.Module):
 
 
 class MLPNORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma,
+    def __init__(self, nnodes, nfeat, nhid, nclass, dropout, alpha, beta, gamma, delta,
                  norm_func_id, norm_layers, orders, orders_func_id, device):
         super(MLPNORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
         self.fc3 = nn.Linear(nhid, nhid)
+        self.fc4 = nn.Linear(nnodes, nhid)
         # self.bn1 = nn.BatchNorm1d(nhid)
         # self.bn2 = nn.BatchNorm1d(nhid)
         self.nclass = nclass
@@ -920,6 +921,7 @@ class MLPNORM(nn.Module):
         self.alpha = torch.tensor(alpha).to(device)
         self.beta = torch.tensor(beta).to(device)
         self.gamma = torch.tensor(gamma).to(device)
+        self.delta = torch.tensor(delta).to(device)
         self.norm_layers = norm_layers
         self.orders = orders
         self.device = device
@@ -952,6 +954,7 @@ class MLPNORM(nn.Module):
         self.fc1.reset_parameters()
         self.fc2.reset_parameters()
         self.fc3.reset_parameters()
+        self.fc4.reset_parameters()
         self.orders_weight = Parameter(
             (torch.ones(self.orders, 1) / self.orders).to(self.device), requires_grad=True
         )
@@ -963,8 +966,10 @@ class MLPNORM(nn.Module):
 
     def forward(self, x, adj):
         # x = F.dropout(x, self.dropout, training=self.training)
-        x = F.relu(self.fc1(x))
+        xX = self.fc1(x)
         # x = self.bn1(x)
+        xA = self.fc4(adj)
+        x = F.relu(self.delta * xX + (1-self.delta) * xA)
         x = F.dropout(x, self.dropout, training=self.training)
         x = F.relu(self.fc3(x))
         # x = self.bn2(x)

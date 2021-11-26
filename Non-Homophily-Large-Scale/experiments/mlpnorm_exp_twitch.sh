@@ -6,20 +6,21 @@ startTime_s=`date +%s`
 dataset=twitch-gamer
 sub_dataset=${2:-''}
 
-lr_lst=(0.05 0.01 0.005 0.001)
-hidden_channels_lst=(32 64 128 256)
-dropout_lst=(0)
-weight_decay_lst=(1)
-alpha_lst=(1.0)
-beta_lst=(10.0)
-gamma_lst=(0.9)
-norm_layers_lst=(1 2 3)
-orders_lst=(1 3 5)
+lr_lst=(0.01)
+hidden_channels_lst=(256)
+dropout_lst=(0.0)
+weight_decay_lst=(0.0)
+alpha_lst=(0.0)
+beta_lst=(1.0)
+gamma_lst=(0.0 0.5 0.9)
+delta_lst=(0.0 0.5 0.9)
+norm_layers_lst=(1)
+orders_lst=(1)
+
 epochs=500
 runs=1
 norm_func_id=2
 order_func_id=2
-
 
 
 for lr in "${lr_lst[@]}"; do
@@ -31,11 +32,13 @@ for lr in "${lr_lst[@]}"; do
                         for weight_decay in "${weight_decay_lst[@]}"; do
                             for orders in "${orders_lst[@]}"; do
                                 for alpha in "${alpha_lst[@]}"; do
-                                    if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
-                                        python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 25 --runs $runs --directed
-                                    else
-                                        python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 25 --runs $runs
-                                    fi
+                                    for delta in "${delta_lst[@]}"; do
+                                        if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
+                                            python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --delta $delta --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs --directed
+                                        else
+                                            python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --delta $delta --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs
+                                        fi
+                                    done
                                 done
                             done
                         done

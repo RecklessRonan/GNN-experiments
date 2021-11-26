@@ -6,16 +6,16 @@ startTime_s=`date +%s`
 dataset=arxiv-year
 sub_dataset=${2:-''}
 
-lr_lst=(0.01 0.001)
+lr_lst=(0.005)
 hidden_channels_lst=(256)
-dropout_lst=(0.0)
+dropout_lst=(0.1)
 weight_decay_lst=(0.0)
 alpha_lst=(0.0)
 beta_lst=(1.0)
-gamma_lst=(0.0 0.1)
-delta_lst=(0.0 0.1)
-norm_layers_lst=(1 2 3)
-orders_lst=(1 2 3)
+gamma_lst=(0.9)
+delta_lst=(0.1)
+norm_layers_lst=(1)
+orders_lst=(1)
 
 epochs=500
 runs=1

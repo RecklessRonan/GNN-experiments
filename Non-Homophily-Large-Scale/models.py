@@ -965,7 +965,8 @@ class MLPNORM(nn.Module):
         )
 
     def forward(self, x, adj):
-        # x = F.dropout(x, self.dropout, training=self.training)
+        # xd = F.dropout(x, self.dropout, training=self.training)
+        # adjd = F.dropout(adj, self.dropout, training=self.training)
         xX = self.fc1(x)
         # x = self.bn1(x)
         xA = self.fc4(adj)

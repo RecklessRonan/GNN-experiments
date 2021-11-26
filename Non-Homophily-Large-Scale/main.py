@@ -174,8 +174,8 @@ for run in range(args.runs):
             model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 
     best_val = float('-inf')
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, 'min', factor=0.9, patience=20, verbose=True)
+    # scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+    #     optimizer, 'min', factor=0.9, patience=10, verbose=True, min_lr=0.001)
     for epoch in range(args.epochs):
         model.train()
 
@@ -203,7 +203,7 @@ for run in range(args.runs):
                     out[train_idx], dataset.label.squeeze(1)[train_idx])
             loss.backward()
             optimizer.step()
-            scheduler.step(loss)
+            # scheduler.step(loss)
         else:
             pbar = tqdm(total=train_idx.size(0))
             pbar.set_description(f'Epoch {epoch:02d}')
@@ -238,7 +238,6 @@ for run in range(args.runs):
                 best_out = F.softmax(result[-1], dim=1)
             else:
                 best_out = result[-1]
-
         if epoch % args.display_step == 0:
             print(f'Epoch: {epoch:02d}, '
                   f'Loss: {loss:.4f}, '

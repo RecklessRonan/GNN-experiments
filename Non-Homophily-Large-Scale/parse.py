@@ -73,8 +73,8 @@ def parse_method(args, dataset, n, c, d, device):
         model = GCNII(d, args.hidden_channels, c, args.num_layers,
                       args.gcn2_alpha, args.theta, dropout=args.dropout).to(device)
     elif args.method == 'mlpnorm':
-        model = MLPNORM(nfeat=d, nhid=args.hidden_channels, nclass=c, dropout=args.dropout, alpha=args.alpha, beta=args.beta, gamma=args.gamma,
-                        norm_func_id=args.norm_func_id, norm_layers=args.norm_layers, orders_func_id=args.orders_func_id, orders=args.orders, device=device).to(device)
+        model = MLPNORM(nnodes=dataset.graph['num_nodes'], nfeat=d, nhid=args.hidden_channels, nclass=c, dropout=args.dropout, alpha=args.alpha, beta=args.beta, gamma=args.gamma,
+                        delta=args.delta, norm_func_id=args.norm_func_id, norm_layers=args.norm_layers, orders_func_id=args.orders_func_id, orders=args.orders, device=device).to(device)
     else:
         raise ValueError('Invalid method')
     return model
@@ -142,12 +142,14 @@ def parser_add_main_args(parser):
     parser.add_argument('--link_init_layers_X', type=int, default=1)
 
     # used for mlpnorm
-    parser.add_argument('--alpha', type=float, default=0.1,
+    parser.add_argument('--alpha', type=float, default=0.0,
                         help='Weight for frobenius norm on Z.')
     parser.add_argument('--beta', type=float, default=1.0,
                         help='Weight for frobenius norm on Z-A')
     parser.add_argument('--gamma', type=float, default=0.0,
                         help='Weight for MLP results kept')
+    parser.add_argument('--delta', type=float, default=0.0,
+                        help='Weight for node features, thus 1-delta for adj')
     parser.add_argument('--norm_func_id', type=int, default=2,
                         help='Function of norm layer, ids \in [1, 2]')
     parser.add_argument('--norm_layers', type=int, default=2,

@@ -175,7 +175,7 @@ for run in range(args.runs):
 
     best_val = float('-inf')
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, 'min', factor=0.9, patience=50, verbose=True)
+        optimizer, 'min', factor=0.9, patience=20, verbose=True)
     for epoch in range(args.epochs):
         model.train()
 

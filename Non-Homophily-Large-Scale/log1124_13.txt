@@ -19616,3 +19616,270 @@ Epoch: 200, Loss: 1.4711, Train: 33.30%, Valid: 32.98%, Test: 33.55%
 Epoch: 225, Loss: 1.4685, Train: 34.75%, Valid: 34.55%, Test: 34.87%
 Epoch: 250, Loss: 1.4786, Train: 35.21%, Valid: 34.83%, Test: 35.05%
 Epoch: 275, Loss: 1.4621, Train: 35.80%, Valid: 35.48%, Test: 35.64%
+Epoch: 300, Loss: 1.4611, Train: 37.27%, Valid: 36.77%, Test: 36.96%
+Epoch: 325, Loss: 1.4747, Train: 37.33%, Valid: 36.91%, Test: 37.30%
+Epoch: 350, Loss: 1.4583, Train: 37.48%, Valid: 37.00%, Test: 37.24%
+Epoch: 375, Loss: 1.4524, Train: 37.50%, Valid: 37.02%, Test: 37.23%
+Epoch: 400, Loss: 1.4632, Train: 37.56%, Valid: 37.04%, Test: 37.51%
+Epoch: 425, Loss: 1.4586, Train: 37.33%, Valid: 36.79%, Test: 37.16%
+Epoch: 450, Loss: 1.4467, Train: 37.92%, Valid: 37.55%, Test: 37.92%
+Epoch: 475, Loss: 1.4461, Train: 37.82%, Valid: 37.37%, Test: 37.67%
+Epoch: 500, Loss: 1.4461, Train: 37.16%, Valid: 36.66%, Test: 37.01%
+Epoch: 525, Loss: 1.4437, Train: 37.99%, Valid: 37.62%, Test: 37.94%
+Epoch: 550, Loss: 1.4425, Train: 37.83%, Valid: 37.16%, Test: 37.63%
+Epoch: 575, Loss: 1.4438, Train: 37.70%, Valid: 37.22%, Test: 37.62%
+Epoch: 600, Loss: 1.4406, Train: 37.76%, Valid: 37.25%, Test: 37.66%
+Epoch: 625, Loss: 1.4415, Train: 37.89%, Valid: 37.40%, Test: 37.72%
+Epoch: 650, Loss: 1.4431, Train: 38.15%, Valid: 37.52%, Test: 37.99%
+Epoch: 675, Loss: 1.4411, Train: 37.92%, Valid: 37.22%, Test: 37.69%
+Epoch: 700, Loss: 1.4339, Train: 38.04%, Valid: 37.41%, Test: 37.82%
+Epoch: 725, Loss: 1.4315, Train: 38.00%, Valid: 37.30%, Test: 37.84%
+Epoch: 750, Loss: 1.4281, Train: 38.37%, Valid: 37.77%, Test: 38.21%
+Epoch: 775, Loss: 1.4278, Train: 38.22%, Valid: 37.62%, Test: 37.99%
+Epoch: 800, Loss: 1.4290, Train: 38.40%, Valid: 37.72%, Test: 38.18%
+Epoch: 825, Loss: 1.4299, Train: 38.15%, Valid: 37.50%, Test: 38.04%
+Epoch: 850, Loss: 1.4245, Train: 38.24%, Valid: 37.64%, Test: 38.02%
+Epoch: 875, Loss: 1.4271, Train: 38.09%, Valid: 37.43%, Test: 37.81%
+Epoch: 900, Loss: 1.4337, Train: 34.24%, Valid: 33.58%, Test: 34.16%
+Epoch: 925, Loss: 1.4285, Train: 36.37%, Valid: 35.65%, Test: 36.12%
+Epoch: 950, Loss: 1.4226, Train: 37.13%, Valid: 36.54%, Test: 37.03%
+Epoch: 975, Loss: 1.4212, Train: 36.99%, Valid: 36.37%, Test: 36.78%
+Run 01:
+Highest Train: 38.60
+Highest Valid: 38.06
+  Final Train: 38.59
+   Final Test: 38.40
+All runs:
+Highest Train: 38.60, nan
+Highest Valid: 38.06, nan
+  Final Train: 38.59, nan
+   Final Test: 38.40, nan
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.5, epochs=1000, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=64, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.001, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=64, bias=True)
+  (fc2): Linear(in_features=64, out_features=5, bias=True)
+  (fc3): Linear(in_features=64, out_features=64, bias=True)
+)
+Epoch: 00, Loss: 1.6117, Train: 22.16%, Valid: 22.17%, Test: 22.74%
+Epoch: 25, Loss: 1.5670, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 50, Loss: 1.5242, Train: 33.75%, Valid: 33.68%, Test: 33.84%
+Epoch: 75, Loss: 1.5072, Train: 34.33%, Valid: 34.17%, Test: 34.38%
+Epoch: 100, Loss: 1.4968, Train: 34.87%, Valid: 34.53%, Test: 34.76%
+Epoch: 125, Loss: 1.4889, Train: 35.39%, Valid: 34.86%, Test: 35.25%
+Epoch: 150, Loss: 1.4834, Train: 35.91%, Valid: 35.30%, Test: 35.72%
+Epoch: 175, Loss: 1.4786, Train: 36.32%, Valid: 35.51%, Test: 35.96%
+Epoch: 200, Loss: 1.4732, Train: 36.55%, Valid: 35.69%, Test: 36.14%
+Epoch: 225, Loss: 1.4708, Train: 36.78%, Valid: 35.79%, Test: 36.22%
+Epoch: 250, Loss: 1.4687, Train: 36.98%, Valid: 35.85%, Test: 36.35%
+Epoch: 275, Loss: 1.4655, Train: 37.24%, Valid: 35.93%, Test: 36.49%
+Epoch: 300, Loss: 1.4635, Train: 37.35%, Valid: 36.08%, Test: 36.56%
+Epoch: 325, Loss: 1.4603, Train: 37.56%, Valid: 36.13%, Test: 36.70%
+Epoch: 350, Loss: 1.4595, Train: 37.74%, Valid: 36.28%, Test: 36.70%
+Epoch   368: reducing learning rate of group 0 to 9.0000e-04.
+Epoch: 375, Loss: 1.4590, Train: 37.83%, Valid: 36.34%, Test: 36.77%
+Epoch: 400, Loss: 1.4575, Train: 37.96%, Valid: 36.40%, Test: 36.86%
+Epoch: 425, Loss: 1.4548, Train: 37.98%, Valid: 36.41%, Test: 36.87%
+Epoch: 450, Loss: 1.4542, Train: 38.11%, Valid: 36.46%, Test: 36.89%
+Epoch   466: reducing learning rate of group 0 to 8.1000e-04.
+Epoch: 475, Loss: 1.4536, Train: 38.17%, Valid: 36.47%, Test: 36.89%
+Epoch: 500, Loss: 1.4525, Train: 38.21%, Valid: 36.49%, Test: 36.92%
+Epoch: 525, Loss: 1.4515, Train: 38.29%, Valid: 36.51%, Test: 36.95%
+Epoch   549: reducing learning rate of group 0 to 7.2900e-04.
+Epoch: 550, Loss: 1.4505, Train: 38.35%, Valid: 36.53%, Test: 37.02%
+Epoch: 575, Loss: 1.4497, Train: 38.36%, Valid: 36.53%, Test: 36.92%
+Epoch   588: reducing learning rate of group 0 to 6.5610e-04.
+Epoch: 600, Loss: 1.4498, Train: 38.42%, Valid: 36.53%, Test: 36.98%
+Epoch: 625, Loss: 1.4476, Train: 38.48%, Valid: 36.59%, Test: 36.99%
+Epoch   640: reducing learning rate of group 0 to 5.9049e-04.
+Epoch: 650, Loss: 1.4468, Train: 38.52%, Valid: 36.53%, Test: 36.97%
+Epoch: 675, Loss: 1.4487, Train: 38.51%, Valid: 36.53%, Test: 36.96%
+Epoch: 700, Loss: 1.4455, Train: 38.55%, Valid: 36.55%, Test: 36.87%
+Epoch   707: reducing learning rate of group 0 to 5.3144e-04.
+Epoch: 725, Loss: 1.4470, Train: 38.61%, Valid: 36.50%, Test: 36.93%
+Epoch   731: reducing learning rate of group 0 to 4.7830e-04.
+Epoch: 750, Loss: 1.4469, Train: 38.60%, Valid: 36.51%, Test: 36.93%
+Epoch   755: reducing learning rate of group 0 to 4.3047e-04.
+Epoch   776: reducing learning rate of group 0 to 3.8742e-04.
+Epoch: 775, Loss: 1.4464, Train: 38.66%, Valid: 36.55%, Test: 36.93%
+Epoch: 800, Loss: 1.4453, Train: 38.72%, Valid: 36.50%, Test: 36.96%
+Epoch   805: reducing learning rate of group 0 to 3.4868e-04.
+Epoch   826: reducing learning rate of group 0 to 3.1381e-04.
+Epoch: 825, Loss: 1.4464, Train: 38.70%, Valid: 36.52%, Test: 36.93%
+Epoch: 850, Loss: 1.4436, Train: 38.71%, Valid: 36.52%, Test: 36.90%
+Epoch   857: reducing learning rate of group 0 to 2.8243e-04.
+Epoch: 875, Loss: 1.4454, Train: 38.72%, Valid: 36.55%, Test: 36.98%
+Epoch   878: reducing learning rate of group 0 to 2.5419e-04.
+Epoch   899: reducing learning rate of group 0 to 2.2877e-04.
+Epoch: 900, Loss: 1.4443, Train: 38.78%, Valid: 36.55%, Test: 36.94%
+Epoch   920: reducing learning rate of group 0 to 2.0589e-04.
+Epoch: 925, Loss: 1.4440, Train: 38.78%, Valid: 36.58%, Test: 36.95%
+Epoch   942: reducing learning rate of group 0 to 1.8530e-04.
+Epoch: 950, Loss: 1.4438, Train: 38.79%, Valid: 36.54%, Test: 36.97%
+Epoch   963: reducing learning rate of group 0 to 1.6677e-04.
+Epoch: 975, Loss: 1.4431, Train: 38.80%, Valid: 36.53%, Test: 36.94%
+Epoch   984: reducing learning rate of group 0 to 1.5009e-04.
+Run 01:
+Highest Train: 38.82
+Highest Valid: 36.60
+  Final Train: 38.68
+   Final Test: 36.96
+All runs:
+Highest Train: 38.82, nan
+Highest Valid: 36.60, nan
+  Final Train: 38.68, nan
+   Final Test: 36.96, nan
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.5, epochs=1000, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=64, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.001, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=3, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=64, bias=True)
+  (fc2): Linear(in_features=64, out_features=5, bias=True)
+  (fc3): Linear(in_features=64, out_features=64, bias=True)
+)
+Epoch: 00, Loss: 1.5978, Train: 29.21%, Valid: 29.00%, Test: 29.32%
+Epoch: 25, Loss: 1.5542, Train: 30.16%, Valid: 29.94%, Test: 30.40%
+Epoch: 50, Loss: 1.5138, Train: 34.20%, Valid: 33.94%, Test: 34.18%
+Epoch: 75, Loss: 1.5012, Train: 34.62%, Valid: 34.34%, Test: 34.52%
+Epoch: 100, Loss: 1.4935, Train: 34.99%, Valid: 34.71%, Test: 34.89%
+Epoch: 125, Loss: 1.4871, Train: 35.45%, Valid: 34.98%, Test: 35.31%
+Epoch: 150, Loss: 1.4835, Train: 35.90%, Valid: 35.23%, Test: 35.66%
+Epoch: 175, Loss: 1.4787, Train: 36.30%, Valid: 35.49%, Test: 35.92%
+Epoch: 200, Loss: 1.4752, Train: 36.67%, Valid: 35.69%, Test: 36.10%
+Epoch: 225, Loss: 1.4707, Train: 37.02%, Valid: 35.76%, Test: 36.24%
+Epoch: 250, Loss: 1.4677, Train: 37.21%, Valid: 35.91%, Test: 36.35%
+Epoch: 275, Loss: 1.4650, Train: 37.43%, Valid: 36.06%, Test: 36.43%
+Epoch: 300, Loss: 1.4611, Train: 37.52%, Valid: 36.11%, Test: 36.50%
+Epoch: 325, Loss: 1.4572, Train: 37.72%, Valid: 36.21%, Test: 36.61%
+Epoch: 350, Loss: 1.4536, Train: 37.87%, Valid: 36.25%, Test: 36.76%
+Epoch: 375, Loss: 1.4489, Train: 38.04%, Valid: 36.39%, Test: 36.84%
+Epoch: 400, Loss: 1.4421, Train: 38.22%, Valid: 36.58%, Test: 37.02%
+Epoch: 425, Loss: 1.4336, Train: 38.51%, Valid: 36.76%, Test: 37.20%
+Epoch: 450, Loss: 1.4283, Train: 38.80%, Valid: 36.98%, Test: 37.54%
+Epoch: 475, Loss: 1.4158, Train: 39.22%, Valid: 37.36%, Test: 37.81%
+Epoch: 500, Loss: 1.4148, Train: 39.55%, Valid: 37.63%, Test: 38.07%
+Epoch: 525, Loss: 1.4103, Train: 39.68%, Valid: 37.63%, Test: 38.14%
+Epoch: 550, Loss: 1.4069, Train: 39.84%, Valid: 37.78%, Test: 38.34%
+Epoch: 575, Loss: 1.4018, Train: 40.16%, Valid: 38.07%, Test: 38.54%
+Epoch: 600, Loss: 1.4006, Train: 40.38%, Valid: 38.34%, Test: 38.81%
+Epoch   617: reducing learning rate of group 0 to 9.0000e-04.
+Epoch: 625, Loss: 1.3979, Train: 40.65%, Valid: 38.54%, Test: 39.07%
+Epoch: 650, Loss: 1.3914, Train: 40.83%, Valid: 38.69%, Test: 39.08%
+Epoch: 675, Loss: 1.3898, Train: 40.89%, Valid: 38.74%, Test: 39.14%
+Epoch   678: reducing learning rate of group 0 to 8.1000e-04.
+Epoch: 700, Loss: 1.3859, Train: 40.97%, Valid: 38.83%, Test: 39.29%
+Epoch   714: reducing learning rate of group 0 to 7.2900e-04.
+Epoch: 725, Loss: 1.3852, Train: 40.96%, Valid: 38.84%, Test: 39.26%
+Epoch: 750, Loss: 1.3859, Train: 41.22%, Valid: 39.04%, Test: 39.38%
+Epoch: 775, Loss: 1.3815, Train: 41.03%, Valid: 38.95%, Test: 39.29%
+Epoch: 800, Loss: 1.3811, Train: 41.36%, Valid: 39.12%, Test: 39.61%
+Epoch: 825, Loss: 1.3790, Train: 41.42%, Valid: 39.25%, Test: 39.53%
+Epoch: 850, Loss: 1.3760, Train: 41.42%, Valid: 39.27%, Test: 39.63%
+Epoch: 875, Loss: 1.3806, Train: 41.55%, Valid: 39.26%, Test: 39.63%
+Epoch: 900, Loss: 1.3697, Train: 41.79%, Valid: 39.53%, Test: 39.88%
+Epoch   924: reducing learning rate of group 0 to 6.5610e-04.
+Epoch: 925, Loss: 1.3718, Train: 41.54%, Valid: 39.43%, Test: 39.73%
+Epoch: 950, Loss: 1.3692, Train: 41.99%, Valid: 39.59%, Test: 40.08%
+Epoch: 975, Loss: 1.3671, Train: 41.83%, Valid: 39.67%, Test: 40.08%
+Epoch   985: reducing learning rate of group 0 to 5.9049e-04.
+Run 01:
+Highest Train: 42.11
+Highest Valid: 39.80
+  Final Train: 41.96
+   Final Test: 40.25
+All runs:
+Highest Train: 42.11, nan
+Highest Valid: 39.80, nan
+  Final Train: 41.96, nan
+   Final Test: 40.25, nan
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=1.0, beta=0.1, cached=False, cpu=False, dataset='arxiv-year', directed=True, display_step=25, dropout=0.5, epochs=1000, gamma=0.9, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=64, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.001, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=5, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=64, bias=True)
+  (fc2): Linear(in_features=64, out_features=5, bias=True)
+  (fc3): Linear(in_features=64, out_features=64, bias=True)
+)
+Epoch: 00, Loss: 1.6311, Train: 12.30%, Valid: 12.29%, Test: 12.22%
+Epoch: 25, Loss: 1.5516, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 50, Loss: 1.5276, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch    67: reducing learning rate of group 0 to 9.0000e-04.
+Epoch: 75, Loss: 1.5270, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 100, Loss: 1.5100, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch   116: reducing learning rate of group 0 to 8.1000e-04.
+Epoch: 125, Loss: 1.5098, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 150, Loss: 1.5031, Train: 28.73%, Valid: 28.55%, Test: 28.82%
+Epoch   170: reducing learning rate of group 0 to 7.2900e-04.
+Epoch: 175, Loss: 1.5044, Train: 28.73%, Valid: 28.56%, Test: 28.82%
+Epoch: 200, Loss: 1.4940, Train: 28.74%, Valid: 28.56%, Test: 28.85%
+Epoch   206: reducing learning rate of group 0 to 6.5610e-04.
+Epoch: 225, Loss: 1.4985, Train: 28.80%, Valid: 28.63%, Test: 28.91%
+Epoch   237: reducing learning rate of group 0 to 5.9049e-04.
+Epoch: 250, Loss: 1.4844, Train: 29.04%, Valid: 28.82%, Test: 29.10%
+Epoch: 275, Loss: 1.4898, Train: 29.51%, Valid: 29.26%, Test: 29.60%
+Epoch: 300, Loss: 1.4786, Train: 29.93%, Valid: 29.58%, Test: 30.02%
+Epoch   310: reducing learning rate of group 0 to 5.3144e-04.
+Epoch: 325, Loss: 1.4792, Train: 30.02%, Valid: 29.67%, Test: 30.10%
+Epoch: 350, Loss: 1.4727, Train: 30.37%, Valid: 30.08%, Test: 30.49%
+Epoch: 375, Loss: 1.4703, Train: 30.76%, Valid: 30.45%, Test: 30.84%
+Epoch: 400, Loss: 1.4655, Train: 31.37%, Valid: 31.04%, Test: 31.29%
+Epoch   403: reducing learning rate of group 0 to 4.7830e-04.
+Epoch: 425, Loss: 1.4774, Train: 31.44%, Valid: 31.11%, Test: 31.35%
+Epoch   431: reducing learning rate of group 0 to 4.3047e-04.
+Epoch: 450, Loss: 1.4703, Train: 33.00%, Valid: 32.46%, Test: 32.97%
+Epoch   476: reducing learning rate of group 0 to 3.8742e-04.
+Epoch: 475, Loss: 1.4677, Train: 32.92%, Valid: 32.44%, Test: 32.78%
+Epoch: 500, Loss: 1.4647, Train: 33.35%, Valid: 32.73%, Test: 33.15%
+Epoch   525: reducing learning rate of group 0 to 3.4868e-04.
+Epoch: 525, Loss: 1.4609, Train: 32.41%, Valid: 31.88%, Test: 32.21%
+Epoch   546: reducing learning rate of group 0 to 3.1381e-04.
+Epoch: 550, Loss: 1.4616, Train: 32.77%, Valid: 32.32%, Test: 32.59%
+Epoch: 575, Loss: 1.4578, Train: 32.58%, Valid: 32.19%, Test: 32.40%
+Epoch   578: reducing learning rate of group 0 to 2.8243e-04.
+Epoch   599: reducing learning rate of group 0 to 2.5419e-04.
+Epoch: 600, Loss: 1.4584, Train: 33.03%, Valid: 32.59%, Test: 32.90%
+Epoch   624: reducing learning rate of group 0 to 2.2877e-04.
+Epoch: 625, Loss: 1.4595, Train: 34.00%, Valid: 33.49%, Test: 33.86%
+Epoch   650: reducing learning rate of group 0 to 2.0589e-04.
+Epoch: 650, Loss: 1.4562, Train: 33.73%, Valid: 33.22%, Test: 33.50%
+Epoch   671: reducing learning rate of group 0 to 1.8530e-04.
+Epoch: 675, Loss: 1.4652, Train: 34.38%, Valid: 33.73%, Test: 34.10%
+Epoch: 700, Loss: 1.4529, Train: 33.43%, Valid: 32.91%, Test: 33.17%
+Epoch   704: reducing learning rate of group 0 to 1.6677e-04.
+Epoch   725: reducing learning rate of group 0 to 1.5009e-04.
+Epoch: 725, Loss: 1.4573, Train: 33.79%, Valid: 33.11%, Test: 33.55%
+Epoch: 750, Loss: 1.4603, Train: 33.88%, Valid: 33.23%, Test: 33.58%
+Epoch   757: reducing learning rate of group 0 to 1.3509e-04.
+Epoch: 775, Loss: 1.4575, Train: 34.04%, Valid: 33.56%, Test: 33.82%
+Epoch   778: reducing learning rate of group 0 to 1.2158e-04.
+Epoch   799: reducing learning rate of group 0 to 1.0942e-04.
+Epoch: 800, Loss: 1.4586, Train: 34.45%, Valid: 33.87%, Test: 34.18%
+Epoch: 825, Loss: 1.4537, Train: 33.52%, Valid: 32.89%, Test: 33.34%
+Epoch   827: reducing learning rate of group 0 to 9.8477e-05.
+Epoch: 850, Loss: 1.4503, Train: 34.27%, Valid: 33.70%, Test: 34.01%
+Epoch   859: reducing learning rate of group 0 to 8.8629e-05.
+Epoch: 875, Loss: 1.4539, Train: 34.18%, Valid: 33.63%, Test: 33.87%
+Epoch   900: reducing learning rate of group 0 to 7.9766e-05.
+Epoch: 900, Loss: 1.4534, Train: 34.79%, Valid: 34.22%, Test: 34.55%
+Epoch   921: reducing learning rate of group 0 to 7.1790e-05.
+Epoch: 925, Loss: 1.4529, Train: 34.72%, Valid: 34.09%, Test: 34.41%
+Epoch   942: reducing learning rate of group 0 to 6.4611e-05.
+Epoch: 950, Loss: 1.4583, Train: 34.45%, Valid: 33.93%, Test: 34.18%
+Epoch   963: reducing learning rate of group 0 to 5.8150e-05.
+Epoch: 975, Loss: 1.4518, Train: 33.97%, Valid: 33.50%, Test: 33.81%
+Epoch   984: reducing learning rate of group 0 to 5.2335e-05.
+Run 01:
+Highest Train: 34.80
+Highest Valid: 34.23
+  Final Train: 34.79
+   Final Test: 34.56
+All runs:
+Highest Train: 34.80, nan
+Highest Valid: 34.23, nan
+  Final Train: 34.79, nan
+   Final Test: 34.56, nan
+Saving results to results/arxiv-year.csv

@@ -8,17 +8,16 @@ sub_dataset=${2:-''}
 
 lr_lst=(0.005)
 hidden_channels_lst=(256)
-dropout_lst=(0.1)
-weight_decay_lst=(0.0)
+dropout_lst=(0.4)
+weight_decay_lst=(1e-5)
 alpha_lst=(0.0)
 beta_lst=(1.0)
-gamma_lst=(0.9)
+gamma_lst=(0.1)
 delta_lst=(0.1)
 norm_layers_lst=(1)
 orders_lst=(1)
-
 epochs=500
-runs=1
+runs=5
 norm_func_id=2
 order_func_id=2
 

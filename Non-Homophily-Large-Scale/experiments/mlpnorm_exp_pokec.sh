@@ -6,16 +6,18 @@ startTime_s=`date +%s`
 dataset=pokec
 sub_dataset=${2:-''}
 
-lr_lst=(0.025)
-hidden_channels_lst=(256)
-dropout_lst=(0.0)
+
+lr_lst=(0.005)
+hidden_channels_lst=(128)
+dropout_lst=(0.5)
 weight_decay_lst=(0.0)
-alpha_lst=(1.0)
-beta_lst=(10.0)
-gamma_lst=(0.9)
-norm_layers_lst=(2)
-orders_lst=(3)
-epochs=2000
+alpha_lst=(0.0)
+beta_lst=(1.0)
+gamma_lst=(0.5)
+delta_lst=(0.5)
+norm_layers_lst=(1 2 3) 
+orders_lst=(1 2 3)
+epochs=200
 runs=5
 norm_func_id=2
 order_func_id=2
@@ -30,11 +32,13 @@ for lr in "${lr_lst[@]}"; do
                         for weight_decay in "${weight_decay_lst[@]}"; do
                             for orders in "${orders_lst[@]}"; do
                                 for alpha in "${alpha_lst[@]}"; do
-                                    if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
-                                        python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs --directed
-                                    else
-                                        python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs
-                                    fi
+                                    for delta in "${delta_lst[@]}"; do
+                                        if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
+                                            python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --delta $delta --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs --directed
+                                        else
+                                            python -u main.py --dataset $dataset --sub_dataset ${sub_dataset:-''} --method mlpnorm --epochs $epochs --hidden_channels $hidden_channels --lr $lr --dropout $dropout --weight_decay $weight_decay --alpha $alpha --beta $beta --gamma $gamma --delta $delta --norm_func_id $norm_func_id --norm_layers $norm_layers --orders_func_id $order_func_id --orders $orders --display_step 1 --runs $runs
+                                        fi
+                                    done
                                 done
                             done
                         done

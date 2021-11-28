@@ -81,12 +81,12 @@ def parse_method(args, dataset, n, c, d, device):
 
 
 def parser_add_main_args(parser):
-    parser.add_argument('--dataset', type=str, default='fb100')
+    parser.add_argument('--dataset', type=str, default='pokec')
     parser.add_argument('--sub_dataset', type=str, default='')
-    parser.add_argument('--hidden_channels', type=int, default=32)
+    parser.add_argument('--hidden_channels', type=int, default=128)
     parser.add_argument('--dropout', type=float, default=0.5)
     parser.add_argument('--lr', type=float, default=0.01)
-    parser.add_argument('--method', '-m', type=str, default='link')
+    parser.add_argument('--method', '-m', type=str, default='mlpnorm')
     parser.add_argument('--epochs', type=int, default=500)
     parser.add_argument('--cpu', action='store_true')
     parser.add_argument('--weight_decay', type=float, default=1e-3)

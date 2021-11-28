@@ -9,13 +9,13 @@ sub_dataset=${2:-''}
 lr_lst=(0.001)
 hidden_channels_lst=(256)
 dropout_lst=(0.0)
-weight_decay_lst=(0.0)
+weight_decay_lst=(1e-5)
 alpha_lst=(0.0)
 beta_lst=(1.0)
 gamma_lst=(0.9)
 delta_lst=(0.5)
-norm_layers_lst=(1 2 3)
-orders_lst=(1 2 3)
+norm_layers_lst=(2)
+orders_lst=(2)
 
 epochs=500
 runs=5

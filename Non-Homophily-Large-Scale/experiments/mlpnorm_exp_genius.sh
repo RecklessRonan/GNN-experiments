@@ -6,20 +6,20 @@ startTime_s=`date +%s`
 dataset=genius
 sub_dataset=${2:-''}
 
-lr_lst=(0.005 0.001)
+lr_lst=(0.001)
 hidden_channels_lst=(256)
-dropout_lst=(0.0 0.5)
-weight_decay_lst=(0.0 1e-3)
+dropout_lst=(0.05)
+weight_decay_lst=(0.0)
 alpha_lst=(0.0)
 beta_lst=(1.0)
-gamma_lst=(0.1 0.5 0.9)
-delta_lst=(0.1 0.5 0.9)
-norm_layers_lst=(1 2)
-orders_lst=(1 2)
+gamma_lst=(0.5)
+delta_lst=(0.5)
+norm_layers_lst=(2)
+orders_lst=(2)
 
 epochs=500
 runs=1
-norm_func_id=2
+norm_func_id=1
 order_func_id=2
 
 

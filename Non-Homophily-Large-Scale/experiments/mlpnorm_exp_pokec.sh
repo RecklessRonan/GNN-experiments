@@ -15,11 +15,11 @@ alpha_lst=(0.0)
 beta_lst=(1.0)
 gamma_lst=(0.5)
 delta_lst=(0.5)
-norm_layers_lst=(1 2 3) 
-orders_lst=(1 2 3)
+norm_layers_lst=(1) 
+orders_lst=(1)
 epochs=200
 runs=5
-norm_func_id=2
+norm_func_id=1
 order_func_id=2
 
 

@@ -13,7 +13,7 @@ best_config = {
     'pubmed': [0.01, 0.3, 40, 0.00001, 0.0, 1000.0, 0.8, 1, 4, 1.0, 1, 2],
     'texas': [0.01, 0.0, 200, 0.00005, 0.0, 0.1, 0.1, 2, 1, 1.0, 1, 2],
     'wisconsin': [0.01, 0.0, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 1.0, 1, 2],
-    'cornell': [0.01, 0.0, 200, 0.00005, 0.0, 1, 0.0, 2, 1, 1.0, 1, 2],
+    'cornell': [0.01, 0.0, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 1.0, 1, 2],
     'film': [0.01, 0.0, 40, 0.001, 0.0, 1000.0, 0.1, 2, 6, 1.0, 1, 2]
 }
 
@@ -38,9 +38,9 @@ for i in range(len(datasets)):
                 " --dataset " + dataset + " --split " + str(s)
             run_sh_all += run_sh + '\n'
 
-    config = best * 1
-    config.append(i)
-    config_list.append(config)
+        config = best * 1
+        config.append(i)
+        config_list.append(config)
 
 with open('config_list13', 'wb') as f:
     pickle.dump(config_list, f)

@@ -74,7 +74,7 @@ class GCN(nn.Module):
 
 
 class MLP_NORM(nn.Module):
-    def __init__(self, nfeat, nhid, nclass, dropout, alpha, beta, gamma, norm_func_id, norm_layers, orders, orders_func_id, cuda):
+    def __init__(self, nnodes, nfeat, nhid, nclass, dropout, alpha, beta, gamma, delta, norm_func_id, norm_layers, orders, orders_func_id, cuda):
         super(MLP_NORM, self).__init__()
         self.fc1 = nn.Linear(nfeat, nhid)
         self.fc2 = nn.Linear(nhid, nclass)
@@ -84,12 +84,16 @@ class MLP_NORM(nn.Module):
         self.alpha = torch.tensor(alpha)
         self.beta = torch.tensor(beta)
         self.gamma = torch.tensor(gamma)
+        self.delta = torch.tensor(delta)
         self.norm_layers = norm_layers
         self.orders = orders
         self.class_eye = torch.eye(self.nclass)
 
         self.fc3 = nn.Linear(nclass, orders)
         self.fc4 = nn.Linear(orders, orders)
+
+        self.fc5 = nn.Linear(nnodes, nhid)
+        self.fc6 = nn.Linear(nhid, nhid)
 
         if cuda:
             self.orders_weight = Parameter(
@@ -109,6 +113,7 @@ class MLP_NORM(nn.Module):
             self.alpha = self.alpha.cuda()
             self.beta = self.beta.cuda()
             self.gamma = self.gamma.cuda()
+            self.delta = self.delta.cuda()
             self.class_eye = self.class_eye.cuda()
         else:
             self.orders_weight = Parameter(
@@ -142,8 +147,10 @@ class MLP_NORM(nn.Module):
             self.order_func = self.order_func3
 
     def forward(self, x, adj):
-        x = F.dropout(x, self.dropout, training=self.training)
-        x = F.relu(self.fc1(x))
+        xX = F.dropout(x, self.dropout, training=self.training)
+        xX = self.fc1(xX)
+        xA = self.fc5(adj)
+        x = F.relu(self.delta * xX + (1-self.delta) * xA)
         x = F.dropout(x, self.dropout, training=self.training)
         x = self.fc2(x)
         h0 = x
@@ -467,6 +474,8 @@ parser.add_argument('--beta', type=float, default=0.1,
                     help='Weight for frobenius norm on Z-A')
 parser.add_argument('--gamma', type=float, default=0.2,
                     help='Weight for MLP results kept')
+parser.add_argument('--delta', type=float, default=1.0,
+                    help='Weight for nodes feature kept')
 parser.add_argument('--norm_layers', type=int, default=2,
                     help='Number of groupnorm layers')
 parser.add_argument('--dataset', type=str, default='wisconsin',
@@ -511,6 +520,7 @@ if args.model == 'gcn':
                 dropout=args.dropout)
 elif args.model == 'mlp_norm':
     model = MLP_NORM(
+        nnodes=adj.shape[0],
         nfeat=features.shape[1],
         nhid=args.hidden,
         nclass=labels.max().item() + 1,
@@ -518,6 +528,7 @@ elif args.model == 'mlp_norm':
         alpha=args.alpha,
         beta=args.beta,
         gamma=args.gamma,
+        delta=args.delta,
         norm_func_id=args.norm_func_id,
         norm_layers=args.norm_layers,
         orders=args.orders,
@@ -578,11 +589,11 @@ for epoch in range(args.epochs):
 # print("Optimization Finished!")
 # print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
-outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
-    f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\
-    f"nlid{args.norm_func_id}_nl{args.norm_layers}_" +\
-    f"ordersid{args.orders_func_id}_orders{args.orders}_split{args.split}_results.txt"
-print(outfile_name)
+# outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
+#     f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\
+#     f"nlid{args.norm_func_id}_nl{args.norm_layers}_" +\
+#     f"ordersid{args.orders_func_id}_orders{args.orders}_split{args.split}_results.txt"
+# print(outfile_name)
 
 # Testing
 model.eval()
@@ -600,7 +611,7 @@ results_dict['test_acc'] = float(acc_test.item())
 results_dict['test_duration'] = time.time()-test_time
 
 
-# outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
+outfile_name = f'''{args.dataset}_split{args.split}_results.txt'''
 
 with open(os.path.join('runs', outfile_name), 'w') as outfile:
     outfile.write(json.dumps(results_dict))

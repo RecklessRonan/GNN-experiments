@@ -1,0 +1,15 @@
+nohup: ignoring input
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split0_results.txt
+Test set results: loss= 3.4462 accuracy= 0.6557
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split1_results.txt
+Test set results: loss= 5.2304 accuracy= 0.6513
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split2_results.txt
+Test set results: loss= 4.2264 accuracy= 0.6557
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split3_results.txt
+Test set results: loss= 4.5746 accuracy= 0.6491
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split4_results.txt
+Test set results: loss= 4.6087 accuracy= 0.6469
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split5_results.txt
+Test set results: loss= 5.0064 accuracy= 0.6623
+chameleon_lr0.01_do0.0_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders1_split6_results.txt
+Test set results: loss= 4.0165 accuracy= 0.6513

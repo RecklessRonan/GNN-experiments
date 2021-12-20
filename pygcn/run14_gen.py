@@ -38,9 +38,9 @@ for i in range(len(datasets)):
                 " --dataset " + dataset + " --split " + str(s)
             run_sh_all += run_sh + '\n'
 
-    config = best * 1
-    config.append(i)
-    config_list.append(config)
+        config = best * 1
+        config.append(i)
+        config_list.append(config)
 
 with open('config_list14', 'wb') as f:
     pickle.dump(config_list, f)

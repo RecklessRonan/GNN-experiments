@@ -17,7 +17,7 @@ delta_lst=(0.1)
 norm_layers_lst=(1)
 orders_lst=(1)
 epochs=100
-runs=1
+runs=5
 norm_func_id=1
 order_func_id=2
 

@@ -18,7 +18,7 @@ norm_layers_lst=(2)
 orders_lst=(2)
 
 epochs=500
-runs=1
+runs=5
 norm_func_id=1
 order_func_id=2
 

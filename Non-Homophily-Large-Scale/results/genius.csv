@@ -1394,3 +1394,5 @@ mlpnorm,90.196, nan,90.228, nan
 mlpnorm,90.401, nan,90.406, nan
 mlpnorm,89.998, nan,90.024, nan
 mlpnorm,90.276, nan,90.201, nan
+mlpnorm,90.723, nan,90.760, nan
+mlpnorm,90.668, 0.064,90.662, 0.107

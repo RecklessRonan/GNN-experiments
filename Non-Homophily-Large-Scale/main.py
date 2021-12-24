@@ -98,7 +98,7 @@ print(f"num nodes {n} | num classes {c} | num node feats {d}")
 ### Load method ###
 
 model = parse_method(args, dataset, n, c, d, device)
-
+print('run1')
 
 # using rocauc as the eval function
 if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
@@ -109,6 +109,8 @@ else:
     eval_func = eval_acc
 
 logger = Logger(args.runs, args)
+print('run2')
+
 
 if args.method == 'cs':
     cs_logger = SimpleLogger('evaluate params', [], 2)
@@ -142,6 +144,9 @@ if args.method == 'lp':
                             f"{best_val.mean():.3f} ± {best_val.std():.3f}," +
                             f"{best_test.mean():.3f} ± {best_test.std():.3f}\n")
     sys.exit()
+
+print('run3')
+
 
 model.train()
 print('MODEL:', model)

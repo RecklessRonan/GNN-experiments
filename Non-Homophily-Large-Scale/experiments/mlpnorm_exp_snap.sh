@@ -8,12 +8,12 @@ sub_dataset=${2:-''}
 
 lr_lst=(0.005)
 hidden_channels_lst=(64)
-dropout_lst=(0.8)
-weight_decay_lst=(1e-2)
+dropout_lst=(0.7 0.8 0.9)
+weight_decay_lst=(1e-3 1e-2 1e-1)
 alpha_lst=(0.0)
 beta_lst=(1)
-gamma_lst=(0.7)
-delta_lst=(0.3)
+gamma_lst=(0.6 0.7 0.8)
+delta_lst=(0.3 0.5 0.7)
 norm_layers_lst=(1)
 orders_lst=(3)
 

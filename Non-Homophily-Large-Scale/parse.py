@@ -77,7 +77,7 @@ def parse_method(args, dataset, n, c, d, device):
                         delta=args.delta, norm_func_id=args.norm_func_id, norm_layers=args.norm_layers, orders_func_id=args.orders_func_id, orders=args.orders, device=device).to(device)
     elif args.method == 'ggcn':
         model = GGCN(nfeat=d, nlayers=args.num_layers, nhidden=args.hidden_channels, nclass=c, dropout=args.dropout, decay_rate=args.decay_rate, exponent=args.exponent, use_degree=True, use_sign=True,
-                     use_decay=True, use_sparse=False, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False)
+                     use_decay=True, use_sparse=True, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False)
     else:
         raise ValueError('Invalid method')
     return model

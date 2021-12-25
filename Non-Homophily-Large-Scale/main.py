@@ -85,6 +85,14 @@ if args.method == 'mlpnorm':
     adj = adj.to(device)
     x = x.to(torch.float64)
     adj = adj.to(torch.float64)
+elif args.method == 'ggcn':
+    x = dataset.graph['node_feat']
+    edge_index = dataset.graph['edge_index']
+    adj = SparseTensor(row=edge_index[0], col=edge_index[1], sparse_sizes=(
+        dataset.graph['num_nodes'], dataset.graph['num_nodes'])).to_torch_sparse_coo_tensor()
+    # adj = adj.to_dense()
+    x = x.to(device)
+    adj = adj.to(device)
 else:
     dataset.graph['edge_index'], dataset.graph['node_feat'] = \
         dataset.graph['edge_index'].to(

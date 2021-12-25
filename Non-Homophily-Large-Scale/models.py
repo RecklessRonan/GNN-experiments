@@ -1221,6 +1221,15 @@ class GGCN(nn.Module):
             for _ in range(nlayers-1):
                 self.norms.append(nn.LayerNorm(nhidden))
 
+    def reset_parameters(self):
+        for conv in self.convs:
+            conv.reset_parameters()
+        self.fcn.reset_parameters()
+
+        if self.use_norm:
+            for norm in self.norms:
+                norm.reset_parameters()
+
     def precompute_degree_d(self, adj):
         diag_adj = torch.diag(adj)
         diag_adj = torch.unsqueeze(diag_adj, dim=1)

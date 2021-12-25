@@ -5,7 +5,7 @@ hidden_channel_lst=(80 64 32 16 8)
 weight_decay_lst=(1e-7 1e-2)
 dropout_lst=(0.0 0.7)
 decay_rate_lst=(0.0 1.5)
-num_layers_lst=(2)
+num_layers_lst=(3 2 1)
 
 for dataset in "${dataset_lst[@]}"; do
     for num_layers in "${num_layers_lst[@]}"; do

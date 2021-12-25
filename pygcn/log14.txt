@@ -4497,3 +4497,11 @@ squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta1.0_nli
 Test set results: loss= 3.7746 accuracy= 0.3420
 squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta1.0_nlid2_nl3_ordersid2_orders1_split8_results.txt
 Test set results: loss= 4.2258 accuracy= 0.3189
+squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta1.0_nlid2_nl3_ordersid2_orders1_split9_results.txt
+Test set results: loss= 4.2526 accuracy= 0.2997
+squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta0.0_nlid2_nl1_ordersid2_orders2_split0_results.txt
+Test set results: loss= 3.4296 accuracy= 0.5485
+squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta0.0_nlid2_nl1_ordersid2_orders2_split1_results.txt
+Test set results: loss= 3.3266 accuracy= 0.5552
+squirrel_lr0.01_do0.5_es200_wd0.0_alpha0.0_beta100000000.0_gamma0.9_delta0.0_nlid2_nl1_ordersid2_orders2_split2_results.txt
+Test set results: loss= 3.0768 accuracy= 0.5504

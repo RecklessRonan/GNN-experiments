@@ -1052,6 +1052,8 @@ class GGCNlayer_SP(nn.Module):
         self.fcn = nn.Linear(in_features, out_features)
         self.use_degree = use_degree
         self.use_sign = use_sign
+        self.deg_intercept_init = deg_intercept_init
+        self.scale_init = scale_init
         if use_degree:
             if use_decay:
                 self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
@@ -1067,6 +1069,22 @@ class GGCNlayer_SP(nn.Module):
                 self.scale = nn.Parameter(scale_init*torch.ones([1]))
         self.sftmax = nn.Softmax(dim=-1)
         self.sftpls = nn.Softplus(beta=1)
+
+    def reset_parameters(self):
+        self.fcn.reset_parameters()
+
+        if self.use_degree:
+            if self.use_decay:
+                self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
+            else:
+                self.deg_coeff = nn.Parameter(
+                    torch.tensor([self.deg_intercept_init, 0.0]))
+        if self.use_sign:
+            self.coeff = nn.Parameter(0*torch.ones([3]))
+            if self.use_decay:
+                self.scale = nn.Parameter(2*torch.ones([1]))
+            else:
+                self.scale = nn.Parameter(self.scale_init*torch.ones([1]))
 
     def precompute_adj_wo_diag(self, adj):
         adj_i = adj._indices()
@@ -1132,6 +1150,8 @@ class GGCNlayer(nn.Module):
         self.fcn = nn.Linear(in_features, out_features)
         self.use_degree = use_degree
         self.use_sign = use_sign
+        self.deg_intercept_init = deg_intercept_init
+        self.scale_init = scale_init
         if use_degree:
             if use_decay:
                 self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
@@ -1146,6 +1166,22 @@ class GGCNlayer(nn.Module):
                 self.scale = nn.Parameter(scale_init*torch.ones([1]))
         self.sftmax = nn.Softmax(dim=-1)
         self.sftpls = nn.Softplus(beta=1)
+
+    def reset_parameters(self):
+        self.fcn.reset_parameters()
+
+        if self.use_degree:
+            if self.use_decay:
+                self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
+            else:
+                self.deg_coeff = nn.Parameter(
+                    torch.tensor([self.deg_intercept_init, 0.0]))
+        if self.use_sign:
+            self.coeff = nn.Parameter(0*torch.ones([3]))
+            if self.use_decay:
+                self.scale = nn.Parameter(2*torch.ones([1]))
+            else:
+                self.scale = nn.Parameter(self.scale_init*torch.ones([1]))
 
     def forward(self, h, adj, degree_precompute):
         if self.use_degree:

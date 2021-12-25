@@ -26,16 +26,16 @@ best_config = {
 run_sh_all = ""
 config_list = []
 
-lr = [0.01, 0.1]
-dropout = [0.0]
-beta = [100000000.0]
-alpha = [0.0, 0.1, 1.0, 10.0, 100.0, 1000.0]
-gamma = [0.0]
+lr = [0.01]
+dropout = [0.0, 0.5]
+beta = [100000000.0, 1.0]
+alpha = [0.0]
+gamma = [0.0, 0.5, 0.9]
 weight_decay = [0.0]
-orders = [1, 2]
+orders = [1, 2, 3]
 early_stopping = [200]
-norm_layers = [1, 2]
-delta = [0.0, 0.2, 0.5, 0.9]
+norm_layers = [1, 2, 3]
+delta = [0.0, 0.5, 1.0]
 
 best = best_config[dataset]
 for d, b, g, w, o, e, n, de, a, l in itertools.product(dropout, beta, gamma, weight_decay, orders, early_stopping, norm_layers, delta, alpha, lr):

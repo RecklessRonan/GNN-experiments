@@ -98,7 +98,6 @@ print(f"num nodes {n} | num classes {c} | num node feats {d}")
 ### Load method ###
 
 model = parse_method(args, dataset, n, c, d, device)
-print('run1')
 
 # using rocauc as the eval function
 if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
@@ -109,7 +108,6 @@ else:
     eval_func = eval_acc
 
 logger = Logger(args.runs, args)
-print('run2')
 
 
 if args.method == 'cs':
@@ -144,8 +142,6 @@ if args.method == 'lp':
                             f"{best_val.mean():.3f} ± {best_val.std():.3f}," +
                             f"{best_test.mean():.3f} ± {best_test.std():.3f}\n")
     sys.exit()
-
-print('run3')
 
 
 model.train()
@@ -186,7 +182,7 @@ for run in range(args.runs):
 
         if not args.sampling:
             optimizer.zero_grad()
-            if args.method == 'mlpnorm':
+            if args.method == 'mlpnorm' or args.method == 'ggcn':
                 out = model(x, adj)
             else:
                 out = model(dataset)
@@ -229,7 +225,7 @@ for run in range(args.runs):
                 optimizer.step()
                 pbar.update(batch_size)
             pbar.close()
-        if args.method == 'mlpnorm':
+        if args.method == 'mlpnorm' or args.method == 'ggcn':
             result = evaluate_mlpnorm(model, x, adj, dataset, split_idx, eval_func,
                                       sampling=args.sampling, subgraph_loader=subgraph_loader)
         else:

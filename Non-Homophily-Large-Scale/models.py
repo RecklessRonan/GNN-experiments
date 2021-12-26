@@ -1045,7 +1045,7 @@ class MLPNORM(nn.Module):
 
 
 class GGCNlayer_SP(nn.Module):
-    def __init__(self, in_features, out_features, use_degree=True, use_sign=True, use_decay=True, scale_init=0.5, deg_intercept_init=0.5):
+    def __init__(self, in_features, out_features, device, use_degree=True, use_sign=True, use_decay=True, scale_init=0.5, deg_intercept_init=0.5):
         super(GGCNlayer_SP, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
@@ -1054,6 +1054,9 @@ class GGCNlayer_SP(nn.Module):
         self.use_sign = use_sign
         self.deg_intercept_init = deg_intercept_init
         self.scale_init = scale_init
+        self.use_decay = use_decay
+        self.device = device
+
         if use_degree:
             if use_decay:
                 self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
@@ -1075,16 +1078,18 @@ class GGCNlayer_SP(nn.Module):
 
         if self.use_degree:
             if self.use_decay:
-                self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
+                self.deg_coeff = nn.Parameter(
+                    torch.tensor([0.5, 0.0]).to(self.device))
             else:
                 self.deg_coeff = nn.Parameter(
-                    torch.tensor([self.deg_intercept_init, 0.0]))
+                    torch.tensor([self.deg_intercept_init, 0.0]).to(self.device))
         if self.use_sign:
-            self.coeff = nn.Parameter(0*torch.ones([3]))
+            self.coeff = nn.Parameter(0*torch.ones([3]).to(self.device))
             if self.use_decay:
-                self.scale = nn.Parameter(2*torch.ones([1]))
+                self.scale = nn.Parameter(2*torch.ones([1]).to(self.device))
             else:
-                self.scale = nn.Parameter(self.scale_init*torch.ones([1]))
+                self.scale = nn.Parameter(
+                    self.scale_init*torch.ones([1]).to(self.device))
 
     def precompute_adj_wo_diag(self, adj):
         adj_i = adj._indices()
@@ -1143,7 +1148,7 @@ class GGCNlayer_SP(nn.Module):
 
 
 class GGCNlayer(nn.Module):
-    def __init__(self, in_features, out_features, use_degree=True, use_sign=True, use_decay=True, scale_init=0.5, deg_intercept_init=0.5):
+    def __init__(self, in_features, out_features, device, use_degree=True, use_sign=True, use_decay=True, scale_init=0.5, deg_intercept_init=0.5):
         super(GGCNlayer, self).__init__()
         self.in_features = in_features
         self.out_features = out_features
@@ -1152,18 +1157,23 @@ class GGCNlayer(nn.Module):
         self.use_sign = use_sign
         self.deg_intercept_init = deg_intercept_init
         self.scale_init = scale_init
+        self.use_decay = use_decay
+        self.device = device
+
         if use_degree:
             if use_decay:
-                self.deg_coeff = nn.Parameter(torch.tensor([0.5, 0.0]))
+                self.deg_coeff = nn.Parameter(
+                    torch.tensor([0.5, 0.0]).to(self.device))
             else:
                 self.deg_coeff = nn.Parameter(
-                    torch.tensor([deg_intercept_init, 0.0]))
+                    torch.tensor([deg_intercept_init, 0.0]).to(self.device))
         if use_sign:
-            self.coeff = nn.Parameter(0*torch.ones([3]))
+            self.coeff = nn.Parameter(0*torch.ones([3]).to(self.device))
             if use_decay:
-                self.scale = nn.Parameter(2*torch.ones([1]))
+                self.scale = nn.Parameter(2*torch.ones([1]).to(self.device))
             else:
-                self.scale = nn.Parameter(scale_init*torch.ones([1]))
+                self.scale = nn.Parameter(
+                    scale_init*torch.ones([1]).to(self.device))
         self.sftmax = nn.Softmax(dim=-1)
         self.sftpls = nn.Softplus(beta=1)
 
@@ -1222,7 +1232,7 @@ class GGCNlayer(nn.Module):
 
 
 class GGCN(nn.Module):
-    def __init__(self, nfeat, nlayers, nhidden, nclass, dropout, decay_rate, exponent, use_degree=True, use_sign=True, use_decay=True, use_sparse=False, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False):
+    def __init__(self, nfeat, nlayers, nhidden, nclass, dropout, decay_rate, exponent, device, use_degree=True, use_sign=True, use_decay=True, use_sparse=False, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False):
         super(GGCN, self).__init__()
         self.dropout = dropout
         self.convs = nn.ModuleList()
@@ -1230,12 +1240,12 @@ class GGCN(nn.Module):
             model_sel = GGCNlayer_SP
         else:
             model_sel = GGCNlayer
-        self.convs.append(model_sel(nfeat, nhidden, use_degree,
+        self.convs.append(model_sel(nfeat, nhidden, device, use_degree,
                           use_sign, use_decay, scale_init, deg_intercept_init))
         for _ in range(nlayers-2):
-            self.convs.append(model_sel(nhidden, nhidden, use_degree,
+            self.convs.append(model_sel(nhidden, nhidden, device, use_degree,
                               use_sign, use_decay, scale_init, deg_intercept_init))
-        self.convs.append(model_sel(nhidden, nclass, use_degree,
+        self.convs.append(model_sel(nhidden, nclass, device, use_degree,
                           use_sign, use_decay, scale_init, deg_intercept_init))
         self.fcn = nn.Linear(nfeat, nhidden)
         self.act_fn = F.elu
@@ -1275,21 +1285,28 @@ class GGCN(nn.Module):
     def precompute_degree_s(self, adj):
         adj_i = adj._indices()
         adj_v = adj._values()
+        # print('adj_i', adj_i.shape)
+        # print(adj_i)
+        # print('adj_v', adj_v.shape)
+        # print(adj_v)
         adj_diag_ind = (adj_i[0, :] == adj_i[1, :])
         adj_diag = adj_v[adj_diag_ind]
+        # print(adj_diag)
+        # print(adj_diag[0])
         v_new = torch.zeros_like(adj_v)
-        for i in range(adj_i.shape[1]):
+        for i in tqdm(range(adj_i.shape[1])):
+            # print('adj_i[0,', i, ']', adj_i[0, i])
             v_new[i] = adj_diag[adj_i[0, i]]/adj_v[i]-1
         self.degree_precompute = torch.sparse.FloatTensor(
             adj_i, v_new, adj.size())
 
     def forward(self, x, adj):
-        if self.use_degree:
-            if self.degree_precompute is None:
-                if self.use_sparse:
-                    self.precompute_degree_s(adj)
-                else:
-                    self.precompute_degree_d(adj)
+        # if self.use_degree:
+        #     if self.degree_precompute is None:
+        #         if self.use_sparse:
+        #             self.precompute_degree_s(adj)
+        #         else:
+        #             self.precompute_degree_d(adj)
         x = F.dropout(x, self.dropout, training=self.training)
         layer_previous = self.fcn(x)
         layer_previous = self.act_fn(layer_previous)
@@ -1310,4 +1327,4 @@ class GGCN(nn.Module):
                     coeff = 1
                 layer_previous = coeff*layer_inner + layer_previous
             layer_inner = con(layer_previous, adj, self.degree_precompute)
-        return F.log_softmax(layer_inner, dim=1)
+        return layer_inner

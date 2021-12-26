@@ -76,8 +76,8 @@ def parse_method(args, dataset, n, c, d, device):
         model = MLPNORM(nnodes=dataset.graph['num_nodes'], nfeat=d, nhid=args.hidden_channels, nclass=c, dropout=args.dropout, alpha=args.alpha, beta=args.beta, gamma=args.gamma,
                         delta=args.delta, norm_func_id=args.norm_func_id, norm_layers=args.norm_layers, orders_func_id=args.orders_func_id, orders=args.orders, device=device).to(device)
     elif args.method == 'ggcn':
-        model = GGCN(nfeat=d, nlayers=args.num_layers, nhidden=args.hidden_channels, nclass=c, dropout=args.dropout, decay_rate=args.decay_rate, exponent=args.exponent, use_degree=True, use_sign=True,
-                     use_decay=True, use_sparse=True, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False)
+        model = GGCN(nfeat=d, nlayers=args.num_layers, nhidden=args.hidden_channels, nclass=c, dropout=args.dropout, decay_rate=args.decay_rate, exponent=args.exponent, device=device, use_degree=False, use_sign=True,
+                     use_decay=True, use_sparse=True, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False).to(device)
     else:
         raise ValueError('Invalid method')
     return model

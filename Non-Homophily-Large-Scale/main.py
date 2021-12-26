@@ -10,6 +10,11 @@ from torch_geometric.utils import to_undirected
 from torch_geometric.data import NeighborSampler
 from torch_scatter import scatter
 from torch_sparse import SparseTensor
+from torch_geometric.utils import to_dense_adj, dense_to_sparse
+from torch_geometric.utils.convert import to_scipy_sparse_matrix
+import networkx as nx
+import scipy.sparse as sp
+from sklearn.preprocessing import normalize as sk_normalize
 
 from logger import Logger, SimpleLogger
 from dataset import load_nc_dataset
@@ -75,6 +80,48 @@ d = dataset.graph['node_feat'].shape[1]
 if not args.directed and args.dataset != 'ogbn-proteins':
     dataset.graph['edge_index'] = to_undirected(dataset.graph['edge_index'])
 
+
+# used in GGCN
+def sparse_mx_to_torch_sparse_tensor(sparse_mx):
+    """Convert a scipy sparse matrix to a torch sparse tensor."""
+    sparse_mx = sparse_mx.tocoo().astype(np.float32)
+    indices = torch.from_numpy(
+        np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
+    values = torch.from_numpy(sparse_mx.data)
+    shape = torch.Size(sparse_mx.shape)
+    return torch.sparse.FloatTensor(indices, values, shape)
+
+
+def row_normalized_adjacency(adj):
+    adj = sp.coo_matrix(adj)
+    adj = adj + sp.eye(adj.shape[0])
+    adj_normalized = sk_normalize(adj, norm='l1', axis=1)
+    # row_sum = np.array(adj.sum(1))
+    # row_sum = (row_sum == 0)*1+row_sum
+    # adj_normalized = adj/row_sum
+    return sp.coo_matrix(adj_normalized)
+
+
+def precompute_degree_s(adj):
+    adj_i = adj._indices()
+    adj_v = adj._values()
+    # print('adj_i', adj_i.shape)
+    # print(adj_i)
+    # print('adj_v', adj_v.shape)
+    # print(adj_v)
+    adj_diag_ind = (adj_i[0, :] == adj_i[1, :])
+    adj_diag = adj_v[adj_diag_ind]
+    # print(adj_diag)
+    # print(adj_diag[0])
+    v_new = torch.zeros_like(adj_v)
+    for i in tqdm(range(adj_i.shape[1])):
+        # print('adj_i[0,', i, ']', adj_i[0, i])
+        v_new[i] = adj_diag[adj_i[0, i]]/adj_v[i]-1
+    degree_precompute = torch.sparse.FloatTensor(
+        adj_i, v_new, adj.size())
+    return degree_precompute
+
+
 if args.method == 'mlpnorm':
     x = dataset.graph['node_feat']
     edge_index = dataset.graph['edge_index']
@@ -86,11 +133,37 @@ if args.method == 'mlpnorm':
     x = x.to(torch.float64)
     adj = adj.to(torch.float64)
 elif args.method == 'ggcn':
+    # adj = SparseTensor(row=edge_index[0], col=edge_index[1], sparse_sizes=(
+    #     dataset.graph['num_nodes'], dataset.graph['num_nodes'])).to_torch_sparse_coo_tensor()
+    # adj = adj.to_dense()
+    # edge_index_nx = []
+    # for i in tqdm(range(len(edge_index[0]))):
+    #     edge_index_nx.append((edge_index[0][i], edge_index[1][i]))
+    # G = nx.Graph()
+    # G.add_edges_from(edge_index_nx)
+    # adj = nx.adjacency_matrix(G, sorted(G.nodes()))
+    # adj = to_dense_adj(edge_index)
+    # adj = dense_to_sparse(adj)
     x = dataset.graph['node_feat']
     edge_index = dataset.graph['edge_index']
-    adj = SparseTensor(row=edge_index[0], col=edge_index[1], sparse_sizes=(
-        dataset.graph['num_nodes'], dataset.graph['num_nodes'])).to_torch_sparse_coo_tensor()
-    # adj = adj.to_dense()
+
+    adj_pt = 'ggcn_features/' + args.dataset + '_adj.pt'
+    degree_adj_pt = 'ggcn_features/' + args.dataset + '_degree_adj.pt'
+    if os.path.exists(adj_pt):
+        adj = torch.load(adj_pt)
+    else:
+        adj = to_scipy_sparse_matrix(edge_index)
+        adj = row_normalized_adjacency(adj)
+        adj = sparse_mx_to_torch_sparse_tensor(adj)
+        torch.save(adj, adj_pt)
+
+    # if os.path.exists(degree_adj_pt):
+    #     degree_adj = torch.load(degree_adj_pt)
+    # else:
+    #     degree_adj = precompute_degree_s(adj)
+
+    print('adj', adj.shape)
+    print(adj)
     x = x.to(device)
     adj = adj.to(device)
 else:
@@ -106,6 +179,8 @@ print(f"num nodes {n} | num classes {c} | num node feats {d}")
 ### Load method ###
 
 model = parse_method(args, dataset, n, c, d, device)
+# print('model', next(model.parameters()).device)
+
 
 # using rocauc as the eval function
 if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
@@ -191,10 +266,18 @@ for run in range(args.runs):
         if not args.sampling:
             optimizer.zero_grad()
             if args.method == 'mlpnorm' or args.method == 'ggcn':
+                # print('x', x.device)
+                # print(x.shape)
+                # print('adj', adj.device)
+                # print(adj.shape)
+                # print(adj)
+                # print('model', next(model.parameters()).device)
                 out = model(x, adj)
             else:
                 out = model(dataset)
             #loss = criterion(out[train_idx], dataset.label.squeeze(1)[train_idx].type_as(out))
+
+            # print('out', out.shape)
             if args.rocauc or args.dataset in ('yelp-chi', 'twitch-e', 'ogbn-proteins', 'genius'):
                 if dataset.label.shape[1] == 1:
                     # change -1 instances to 0 for one-hot transform

@@ -27,15 +27,15 @@ run_sh_all = ""
 config_list = []
 
 lr = [0.01]
-dropout = [0.0, 0.5]
-beta = [100000000.0, 1.0]
+dropout = [0.5]
+beta = [1.0]
 alpha = [0.0]
-gamma = [0.0, 0.5, 0.9]
+gamma = [0.0]
 weight_decay = [0.0]
-orders = [1, 2, 3]
+orders = [2]
 early_stopping = [200]
-norm_layers = [1, 2, 3]
-delta = [0.0, 0.5, 1.0]
+norm_layers = [3]
+delta = [0.0, 0.1]
 
 best = best_config[dataset]
 for d, b, g, w, o, e, n, de, a, l in itertools.product(dropout, beta, gamma, weight_decay, orders, early_stopping, norm_layers, delta, alpha, lr):
@@ -50,7 +50,7 @@ for d, b, g, w, o, e, n, de, a, l in itertools.product(dropout, beta, gamma, wei
     best[4] = a
     best[0] = l
     for s in range(10):
-        run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
+        run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 128" + \
             " --lr " + str(best[0]) + " --dropout " + str(best[1]) + " --early_stopping " + str(best[2]) + \
             " --weight_decay " + str(best[3]) + " --alpha " + str(best[4]) + " --beta " + str(best[5]) + \
             " --gamma " + str(best[6]) + " --delta " + str(best[9]) +\

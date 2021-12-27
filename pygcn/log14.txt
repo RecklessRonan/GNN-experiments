@@ -1,1 +1,9 @@
 nohup: ignoring input
+squirrel_lr0.01_do0.0_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split0_results.txt
+Test set results: loss= 1.4971 accuracy= 0.5082
+squirrel_lr0.01_do0.0_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split1_results.txt
+Test set results: loss= 1.5122 accuracy= 0.5235
+squirrel_lr0.01_do0.0_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split2_results.txt
+Test set results: loss= 1.4540 accuracy= 0.5005
+squirrel_lr0.01_do0.0_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split3_results.txt
+Test set results: loss= 1.5467 accuracy= 0.4986

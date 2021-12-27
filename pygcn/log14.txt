@@ -147,3 +147,31 @@ squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_
 Test set results: loss= 1.2471 accuracy= 0.5466
 squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split3_results.txt
 Test set results: loss= 1.2798 accuracy= 0.5591
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 1.3157 accuracy= 0.5524
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 1.2633 accuracy= 0.5379
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 1.2977 accuracy= 0.5408
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 1.2533 accuracy= 0.5562
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 1.3576 accuracy= 0.5110
+squirrel_lr0.01_do0.0_es40_wd5e-05_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 1.2832 accuracy= 0.5120
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split0_results.txt
+Test set results: loss= 1.3840 accuracy= 0.5149
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split1_results.txt
+Test set results: loss= 1.4152 accuracy= 0.5274
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split2_results.txt
+Test set results: loss= 1.3518 accuracy= 0.5082
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split3_results.txt
+Test set results: loss= 1.4321 accuracy= 0.5101
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split4_results.txt
+Test set results: loss= 1.4409 accuracy= 0.5197
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split5_results.txt
+Test set results: loss= 1.4249 accuracy= 0.5139
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split6_results.txt
+Test set results: loss= 1.4279 accuracy= 0.5072
+squirrel_lr0.01_do0.5_es40_wd0.0_alpha0.0_beta1.0_gamma0.0_delta0.0_nlid1_nl1_ordersid2_orders1_split7_results.txt
+Test set results: loss= 1.3707 accuracy= 0.5255

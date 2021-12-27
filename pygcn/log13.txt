@@ -1,17 +1,1 @@
 nohup: ignoring input
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
-Test set results: loss= 0.9975 accuracy= 0.7568
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
-Test set results: loss= 0.3666 accuracy= 0.8919
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
-Test set results: loss= 1.4231 accuracy= 0.7568
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
-Test set results: loss= 0.3197 accuracy= 0.8378
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
-Test set results: loss= 0.4171 accuracy= 0.8649
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
-Test set results: loss= 0.3811 accuracy= 0.8919
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
-Test set results: loss= 0.5471 accuracy= 0.8649
-texas_lr0.01_do0.0_es200_wd5e-05_alpha0.1_beta0.1_gamma0.1_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
-Test set results: loss= 0.6913 accuracy= 0.8649

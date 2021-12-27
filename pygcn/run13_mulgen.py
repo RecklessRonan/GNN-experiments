@@ -4,7 +4,7 @@ import itertools
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
-dataset = 'texas'
+dataset = 'squirrel'
 
 for i in range(len(datasets)):
     if datasets[i] == dataset:
@@ -27,17 +27,18 @@ run_sh_all = ""
 config_list = []
 
 lr = [0.01]
-delta = [1.0]
-dropout = [0.0]
-weight_decay = [0.00005]
-alpha = [0.1]
-beta = [0.1]
-gamma = [0.1]
-norm_layers = [2]
-orders = [3]
+delta = [0.0]
+dropout = [0.8]
+weight_decay = [0.0]
+alpha = [1.0]
+beta = [1.0]
+gamma = [0.0]
+norm_layers = [1, 2, 3]
+orders = [1, 2, 3]
+early_stopping = [200]
 
 best = best_config[dataset]
-for d, b, g, de, w, l, n, o, a in itertools.product(dropout, beta, gamma, delta, weight_decay, lr, norm_layers, orders, alpha):
+for d, b, g, de, w, l, n, o, a, e in itertools.product(dropout, beta, gamma, delta, weight_decay, lr, norm_layers, orders, alpha, early_stopping):
     best[1] = d
     best[5] = b
     best[6] = g
@@ -47,6 +48,7 @@ for d, b, g, de, w, l, n, o, a in itertools.product(dropout, beta, gamma, delta,
     best[7] = n
     best[8] = o
     best[4] = a
+    best[2] = e
     for s in range(10):
         run_sh = "python3 pygcn_raw.py --no-cuda --model mlp_norm --epochs 2000 --hidden 64" + \
             " --lr " + str(best[0]) + " --dropout " + str(best[1]) + " --early_stopping " + str(best[2]) + \

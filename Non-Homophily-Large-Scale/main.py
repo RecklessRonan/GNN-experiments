@@ -19,7 +19,7 @@ from sklearn.preprocessing import normalize as sk_normalize
 from logger import Logger, SimpleLogger
 from dataset import load_nc_dataset
 from correct_smooth import double_correlation_autoscale, double_correlation_fixed
-from data_utils import normalize, gen_normalized_adjs, evaluate, evaluate_mlpnorm, eval_acc, eval_rocauc, to_sparse_tensor, load_fixed_splits
+from data_utils import evaluate_acmgcn, normalize, gen_normalized_adjs, evaluate, evaluate_mlpnorm, evaluate_acmgcn, eval_acc, eval_rocauc, to_sparse_tensor, load_fixed_splits
 from parse import parse_method, parser_add_main_args
 import faulthandler
 faulthandler.enable()
@@ -162,10 +162,26 @@ elif args.method == 'ggcn':
     # else:
     #     degree_adj = precompute_degree_s(adj)
 
-    print('adj', adj.shape)
-    print(adj)
     x = x.to(device)
     adj = adj.to(device)
+elif args.method == 'acmgcn':
+    x = dataset.graph['node_feat']
+    edge_index = dataset.graph['edge_index']
+    adj_low_pt = 'acmgcn_features/' + args.dataset + '_adj_low.pt'
+    adj_high_pt = 'acmgcn_features/' + args.dataset + '_adj_high.pt'
+    if os.path.exists(adj_low_pt) and os.path.exists(adj_high_pt):
+        adj_low = torch.load(adj_low_pt)
+        adj_high = torch.load(adj_high_pt)
+    else:
+        adj_low = to_scipy_sparse_matrix(edge_index)
+        adj_low = row_normalized_adjacency(adj_low)
+        adj_low = sparse_mx_to_torch_sparse_tensor(adj_low)
+        adj_high = (torch.eye(n) - adj_low).to_sparse()
+        torch.save(adj_low, adj_low_pt)
+        torch.save(adj_high, adj_high_pt)
+    x = x.to(device)
+    adj_low = adj_low.to(device)
+    adj_high = adj_high.to(device)
 else:
     dataset.graph['edge_index'], dataset.graph['node_feat'] = \
         dataset.graph['edge_index'].to(
@@ -273,6 +289,8 @@ for run in range(args.runs):
                 # print(adj)
                 # print('model', next(model.parameters()).device)
                 out = model(x, adj)
+            elif args.method == 'acmgcn':
+                out = model(x, adj_low, adj_high)
             else:
                 out = model(dataset)
             #loss = criterion(out[train_idx], dataset.label.squeeze(1)[train_idx].type_as(out))
@@ -319,6 +337,9 @@ for run in range(args.runs):
         if args.method == 'mlpnorm' or args.method == 'ggcn':
             result = evaluate_mlpnorm(model, x, adj, dataset, split_idx, eval_func,
                                       sampling=args.sampling, subgraph_loader=subgraph_loader)
+        elif args.method == 'acmgcn':
+            result = evaluate_acmgcn(model, x, adj_low, adj_high, dataset, split_idx, eval_func,
+                                     sampling=args.sampling, subgraph_loader=subgraph_loader)
         else:
             result = evaluate(model, dataset, split_idx, eval_func,
                               sampling=args.sampling, subgraph_loader=subgraph_loader)

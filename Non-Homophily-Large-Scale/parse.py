@@ -1,5 +1,5 @@
 from numpy import select
-from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINK_Concat, LINKX, GPRGNN, GCNII, MLPNORM, GGCN
+from models import LINK, GCN, MLP, SGC, GAT, SGCMem, MultiLP, MixHop, GCNJK, GATJK, H2GCN, APPNP_Net, LINK_Concat, LINKX, GPRGNN, GCNII, MLPNORM, GGCN, ACMGCN
 from data_utils import normalize
 
 
@@ -78,6 +78,9 @@ def parse_method(args, dataset, n, c, d, device):
     elif args.method == 'ggcn':
         model = GGCN(nfeat=d, nlayers=args.num_layers, nhidden=args.hidden_channels, nclass=c, dropout=args.dropout, decay_rate=args.decay_rate, exponent=args.exponent, device=device, use_degree=False, use_sign=True,
                      use_decay=True, use_sparse=True, scale_init=0.5, deg_intercept_init=0.5, use_bn=False, use_ln=False).to(device)
+    elif args.method == 'acmgcn':
+        model = ACMGCN(nfeat=d, nhid=args.hidden_channels, nclass=c, dropout=args.dropout,
+                       model_type='acmgcn', nlayers=args.num_layers, variant=False).to(device)
     else:
         raise ValueError('Invalid method')
     return model

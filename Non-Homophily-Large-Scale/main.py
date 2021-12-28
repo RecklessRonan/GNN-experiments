@@ -122,6 +122,11 @@ def precompute_degree_s(adj):
     return degree_precompute
 
 
+def get_adj_high(adj_low):
+    adj_high = -adj_low + sp.eye(adj_low.shape[0])
+    return adj_high
+
+
 if args.method == 'mlpnorm':
     x = dataset.graph['node_feat']
     edge_index = dataset.graph['edge_index']
@@ -175,8 +180,12 @@ elif args.method == 'acmgcn':
     else:
         adj_low = to_scipy_sparse_matrix(edge_index)
         adj_low = row_normalized_adjacency(adj_low)
+        # print(adj_low)
+        adj_high = get_adj_high(adj_low)
+        # print(adj_high)
         adj_low = sparse_mx_to_torch_sparse_tensor(adj_low)
-        adj_high = (torch.eye(n) - adj_low).to_sparse()
+        adj_high = sparse_mx_to_torch_sparse_tensor(adj_high)
+        # adj_high = (torch.eye(n) - adj_low).to_sparse()
         torch.save(adj_low, adj_low_pt)
         torch.save(adj_high, adj_high_pt)
     x = x.to(device)

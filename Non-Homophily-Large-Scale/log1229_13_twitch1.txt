@@ -1,0 +1,28 @@
+nohup: ignoring input
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=1.0, cached=False, cpu=False, dataset='twitch-gamer', decay_rate=1.0, delta=0.0, directed=False, display_step=25, dropout=0.0, epochs=500, exponent=3.0, gamma=0.0, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=128, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.01, method='acmgcn', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 168114 | num classes 2 | num node feats 7
+MODEL: ACMGCN(
+  (gcns): ModuleList(
+    (0): GraphConvolution (7 -> 128)
+    (1): GraphConvolution (128 -> 2)
+  )
+  (mlps): ModuleList()
+)
+Epoch: 00, Loss: 0.8548, Train: 47.78%, Valid: 47.73%, Test: 47.58%
+Epoch: 25, Loss: 0.6854, Train: 53.24%, Valid: 53.17%, Test: 53.23%
+Epoch: 50, Loss: 0.6766, Train: 53.68%, Valid: 53.46%, Test: 53.66%
+Epoch: 75, Loss: 0.6655, Train: 53.94%, Valid: 53.87%, Test: 53.95%
+Epoch: 100, Loss: 0.6634, Train: 54.38%, Valid: 54.16%, Test: 54.37%
+Epoch: 125, Loss: 0.6611, Train: 55.51%, Valid: 55.15%, Test: 55.22%
+Epoch: 150, Loss: 0.6582, Train: 57.24%, Valid: 56.62%, Test: 56.65%
+Epoch: 175, Loss: 0.6608, Train: 57.07%, Valid: 56.45%, Test: 56.61%
+Epoch: 200, Loss: 0.6544, Train: 58.72%, Valid: 58.30%, Test: 58.56%
+Epoch: 225, Loss: 0.6535, Train: 58.91%, Valid: 58.48%, Test: 58.73%
+Epoch: 250, Loss: 0.6484, Train: 61.25%, Valid: 60.67%, Test: 60.87%
+Epoch: 275, Loss: 0.6485, Train: 60.89%, Valid: 60.37%, Test: 60.37%
+Epoch: 300, Loss: 0.6455, Train: 61.29%, Valid: 60.61%, Test: 60.80%
+Epoch: 325, Loss: 0.6462, Train: 61.40%, Valid: 60.70%, Test: 60.86%
+Epoch: 350, Loss: 0.6455, Train: 61.62%, Valid: 60.85%, Test: 61.09%
+Epoch: 375, Loss: 0.6436, Train: 61.53%, Valid: 60.78%, Test: 61.02%
+Epoch: 400, Loss: 0.6446, Train: 61.69%, Valid: 60.89%, Test: 61.10%

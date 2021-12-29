@@ -7,9 +7,9 @@
 # decay_rate_lst=(0.0 1.5)
 # num_layers_lst=(3 2 1)
 
-dataset_lst=(pokec)
-hidden_channel_lst=(64)
-weight_decay_lst=(1e-5 0.0)
+dataset_lst=(twitch-gamer)
+hidden_channel_lst=(128)
+weight_decay_lst=(1e-3)
 dropout_lst=(0.0)
 lr_lst=(0.01)
 num_layers_lst=(2)

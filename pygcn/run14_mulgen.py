@@ -4,7 +4,7 @@ import itertools
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
-dataset = 'squirrel'
+dataset = 'chameleon'
 
 for i in range(len(datasets)):
     if datasets[i] == dataset:
@@ -27,13 +27,13 @@ run_sh_all = ""
 config_list = []
 
 lr = [0.01]
-dropout = [0.8]
+dropout = [0.4, 0.8]
 beta = [1.0]
 alpha = [0.0]
 gamma = [0.0]
 weight_decay = [0.00005]
 orders = [1]
-early_stopping = [100, 200]
+early_stopping = [200]
 norm_layers = [2]
 delta = [0.0]
 

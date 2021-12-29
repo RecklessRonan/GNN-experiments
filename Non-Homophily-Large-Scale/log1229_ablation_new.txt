@@ -1,0 +1,958 @@
+nohup: ignoring input
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=1.0, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.1, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=1, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6147, Train: 33.56%, Valid: 32.43%, Test: 33.38%
+Epoch: 25, Loss: 0.4686, Train: 87.38%, Valid: 53.87%, Test: 54.00%
+Epoch: 50, Loss: 0.2493, Train: 91.83%, Valid: 52.69%, Test: 53.07%
+Epoch: 75, Loss: 0.2192, Train: 92.53%, Valid: 52.53%, Test: 52.83%
+Epoch: 100, Loss: 0.2039, Train: 93.06%, Valid: 52.41%, Test: 52.90%
+Epoch: 125, Loss: 0.1957, Train: 93.48%, Valid: 52.32%, Test: 52.89%
+Epoch: 150, Loss: 0.1866, Train: 93.93%, Valid: 52.24%, Test: 52.85%
+Epoch: 175, Loss: 0.1803, Train: 94.28%, Valid: 52.23%, Test: 52.82%
+Epoch: 200, Loss: 0.1731, Train: 94.58%, Valid: 52.08%, Test: 52.74%
+Epoch: 225, Loss: 0.1684, Train: 94.89%, Valid: 52.26%, Test: 52.70%
+Epoch: 250, Loss: 0.1645, Train: 95.09%, Valid: 52.26%, Test: 52.64%
+Epoch: 275, Loss: 0.1587, Train: 95.36%, Valid: 52.09%, Test: 52.57%
+Epoch: 300, Loss: 0.1562, Train: 95.51%, Valid: 52.04%, Test: 52.58%
+Epoch: 325, Loss: 0.1537, Train: 95.72%, Valid: 51.97%, Test: 52.51%
+Epoch: 350, Loss: 0.1501, Train: 95.83%, Valid: 52.08%, Test: 52.56%
+Epoch: 375, Loss: 0.1483, Train: 96.04%, Valid: 52.04%, Test: 52.59%
+Epoch: 400, Loss: 0.1457, Train: 96.06%, Valid: 52.04%, Test: 52.51%
+Epoch: 425, Loss: 0.1448, Train: 96.30%, Valid: 52.01%, Test: 52.42%
+Epoch: 450, Loss: 0.1432, Train: 96.44%, Valid: 52.04%, Test: 52.48%
+Epoch: 475, Loss: 0.1393, Train: 96.52%, Valid: 51.93%, Test: 52.33%
+Run 01:
+Highest Train: 96.66
+Highest Valid: 54.61
+  Final Train: 83.53
+   Final Test: 54.51
+Epoch: 00, Loss: 1.6084, Train: 29.21%, Valid: 29.34%, Test: 29.29%
+Epoch: 25, Loss: 0.4656, Train: 87.32%, Valid: 54.07%, Test: 53.82%
+Epoch: 50, Loss: 0.2492, Train: 91.85%, Valid: 52.93%, Test: 52.44%
+Epoch: 75, Loss: 0.2179, Train: 92.60%, Valid: 52.95%, Test: 52.36%
+Epoch: 100, Loss: 0.2031, Train: 93.11%, Valid: 52.81%, Test: 52.40%
+Epoch: 125, Loss: 0.1941, Train: 93.61%, Valid: 52.77%, Test: 52.26%
+Epoch: 150, Loss: 0.1843, Train: 93.98%, Valid: 52.87%, Test: 52.33%
+Epoch: 175, Loss: 0.1771, Train: 94.39%, Valid: 52.83%, Test: 52.13%
+Epoch: 200, Loss: 0.1724, Train: 94.64%, Valid: 52.61%, Test: 52.22%
+Epoch: 225, Loss: 0.1676, Train: 94.85%, Valid: 52.55%, Test: 52.16%
+Epoch: 250, Loss: 0.1624, Train: 95.17%, Valid: 52.52%, Test: 51.97%
+Epoch: 275, Loss: 0.1574, Train: 95.37%, Valid: 52.45%, Test: 52.05%
+Epoch: 300, Loss: 0.1552, Train: 95.53%, Valid: 52.52%, Test: 52.03%
+Epoch: 325, Loss: 0.1522, Train: 95.73%, Valid: 52.43%, Test: 52.04%
+Epoch: 350, Loss: 0.1499, Train: 95.89%, Valid: 52.41%, Test: 52.05%
+Epoch: 375, Loss: 0.1476, Train: 95.96%, Valid: 52.44%, Test: 52.10%
+Epoch: 400, Loss: 0.1423, Train: 96.18%, Valid: 52.46%, Test: 52.01%
+Epoch: 425, Loss: 0.1430, Train: 96.33%, Valid: 52.30%, Test: 52.09%
+Epoch: 450, Loss: 0.1400, Train: 96.41%, Valid: 52.37%, Test: 51.93%
+Epoch: 475, Loss: 0.1393, Train: 96.49%, Valid: 52.31%, Test: 51.93%
+Run 02:
+Highest Train: 96.64
+Highest Valid: 54.61
+  Final Train: 80.72
+   Final Test: 54.39
+Epoch: 00, Loss: 1.6192, Train: 34.43%, Valid: 33.37%, Test: 33.61%
+Epoch: 25, Loss: 0.4760, Train: 87.10%, Valid: 53.90%, Test: 54.17%
+Epoch: 50, Loss: 0.2510, Train: 91.83%, Valid: 52.83%, Test: 52.98%
+Epoch: 75, Loss: 0.2196, Train: 92.63%, Valid: 52.52%, Test: 52.83%
+Epoch: 100, Loss: 0.2044, Train: 93.16%, Valid: 52.43%, Test: 52.75%
+Epoch: 125, Loss: 0.1949, Train: 93.69%, Valid: 52.35%, Test: 52.67%
+Epoch: 150, Loss: 0.1847, Train: 94.08%, Valid: 52.33%, Test: 52.77%
+Epoch: 175, Loss: 0.1779, Train: 94.43%, Valid: 52.18%, Test: 52.63%
+Epoch: 200, Loss: 0.1719, Train: 94.71%, Valid: 52.07%, Test: 52.64%
+Epoch: 225, Loss: 0.1658, Train: 95.00%, Valid: 52.04%, Test: 52.52%
+Epoch: 250, Loss: 0.1605, Train: 95.23%, Valid: 52.08%, Test: 52.48%
+Epoch: 275, Loss: 0.1584, Train: 95.39%, Valid: 52.12%, Test: 52.45%
+Epoch: 300, Loss: 0.1540, Train: 95.59%, Valid: 52.12%, Test: 52.51%
+Epoch: 325, Loss: 0.1506, Train: 95.80%, Valid: 52.00%, Test: 52.53%
+Epoch: 350, Loss: 0.1486, Train: 95.87%, Valid: 51.95%, Test: 52.55%
+Epoch: 375, Loss: 0.1488, Train: 96.21%, Valid: 51.97%, Test: 52.46%
+Epoch: 400, Loss: 0.1442, Train: 96.34%, Valid: 52.08%, Test: 52.41%
+Epoch: 425, Loss: 0.1422, Train: 96.37%, Valid: 52.12%, Test: 52.38%
+Epoch: 450, Loss: 0.1412, Train: 96.44%, Valid: 52.03%, Test: 52.39%
+Epoch: 475, Loss: 0.1390, Train: 96.68%, Valid: 51.91%, Test: 52.39%
+Run 03:
+Highest Train: 96.78
+Highest Valid: 54.40
+  Final Train: 81.45
+   Final Test: 54.72
+Epoch: 00, Loss: 1.6097, Train: 29.11%, Valid: 29.45%, Test: 28.90%
+Epoch: 25, Loss: 0.4552, Train: 87.39%, Valid: 54.04%, Test: 53.98%
+Epoch: 50, Loss: 0.2456, Train: 91.84%, Valid: 52.68%, Test: 52.87%
+Epoch: 75, Loss: 0.2173, Train: 92.59%, Valid: 52.76%, Test: 52.59%
+Epoch: 100, Loss: 0.2011, Train: 93.09%, Valid: 52.62%, Test: 52.45%
+Epoch: 125, Loss: 0.1930, Train: 93.55%, Valid: 52.68%, Test: 52.41%
+Epoch: 150, Loss: 0.1841, Train: 93.97%, Valid: 52.56%, Test: 52.30%
+Epoch: 175, Loss: 0.1770, Train: 94.42%, Valid: 52.54%, Test: 52.33%
+Epoch: 200, Loss: 0.1717, Train: 94.72%, Valid: 52.52%, Test: 52.23%
+Epoch: 225, Loss: 0.1653, Train: 94.96%, Valid: 52.45%, Test: 52.25%
+Epoch: 250, Loss: 0.1610, Train: 95.22%, Valid: 52.29%, Test: 52.23%
+Epoch: 275, Loss: 0.1567, Train: 95.40%, Valid: 52.30%, Test: 52.27%
+Epoch: 300, Loss: 0.1537, Train: 95.65%, Valid: 52.19%, Test: 52.17%
+Epoch: 325, Loss: 0.1507, Train: 95.81%, Valid: 52.24%, Test: 52.14%
+Epoch: 350, Loss: 0.1487, Train: 95.88%, Valid: 52.39%, Test: 52.21%
+Epoch: 375, Loss: 0.1455, Train: 96.13%, Valid: 52.27%, Test: 52.18%
+Epoch: 400, Loss: 0.1457, Train: 96.20%, Valid: 52.22%, Test: 52.24%
+Epoch: 425, Loss: 0.1408, Train: 96.36%, Valid: 52.36%, Test: 52.18%
+Epoch: 450, Loss: 0.1409, Train: 96.52%, Valid: 52.17%, Test: 52.25%
+Epoch: 475, Loss: 0.1376, Train: 96.62%, Valid: 52.23%, Test: 52.17%
+Run 04:
+Highest Train: 96.73
+Highest Valid: 54.77
+  Final Train: 81.28
+   Final Test: 54.83
+Epoch: 00, Loss: 1.6223, Train: 41.01%, Valid: 39.75%, Test: 39.24%
+Epoch: 25, Loss: 0.4776, Train: 87.02%, Valid: 53.99%, Test: 53.91%
+Epoch: 50, Loss: 0.2502, Train: 91.84%, Valid: 52.70%, Test: 52.76%
+Epoch: 75, Loss: 0.2177, Train: 92.65%, Valid: 52.50%, Test: 52.49%
+Epoch: 100, Loss: 0.2027, Train: 93.16%, Valid: 52.55%, Test: 52.42%
+Epoch: 125, Loss: 0.1933, Train: 93.60%, Valid: 52.36%, Test: 52.42%
+Epoch: 150, Loss: 0.1846, Train: 94.02%, Valid: 52.36%, Test: 52.39%
+Epoch: 175, Loss: 0.1774, Train: 94.34%, Valid: 52.28%, Test: 52.29%
+Epoch: 200, Loss: 0.1714, Train: 94.71%, Valid: 52.14%, Test: 52.31%
+Epoch: 225, Loss: 0.1661, Train: 94.99%, Valid: 52.04%, Test: 52.21%
+Epoch: 250, Loss: 0.1622, Train: 95.15%, Valid: 52.14%, Test: 52.14%
+Epoch: 275, Loss: 0.1559, Train: 95.41%, Valid: 52.11%, Test: 52.03%
+Epoch: 300, Loss: 0.1548, Train: 95.58%, Valid: 52.08%, Test: 51.92%
+Epoch: 325, Loss: 0.1505, Train: 95.78%, Valid: 52.08%, Test: 51.97%
+Epoch: 350, Loss: 0.1501, Train: 96.05%, Valid: 52.05%, Test: 51.89%
+Epoch: 375, Loss: 0.1475, Train: 96.18%, Valid: 51.94%, Test: 52.00%
+Epoch: 400, Loss: 0.1445, Train: 96.20%, Valid: 52.11%, Test: 51.98%
+Epoch: 425, Loss: 0.1419, Train: 96.41%, Valid: 51.95%, Test: 51.88%
+Epoch: 450, Loss: 0.1402, Train: 96.58%, Valid: 51.99%, Test: 51.91%
+Epoch: 475, Loss: 0.1375, Train: 96.72%, Valid: 52.04%, Test: 51.86%
+Run 05:
+Highest Train: 96.77
+Highest Valid: 54.59
+  Final Train: 81.74
+   Final Test: 54.63
+All runs:
+Highest Train: 96.72, 0.06
+Highest Valid: 54.60, 0.13
+  Final Train: 81.75, 1.07
+   Final Test: 54.62, 0.17
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=0.0001, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.1, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=1, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6146, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 0.4729, Train: 87.15%, Valid: 54.03%, Test: 53.92%
+Epoch: 50, Loss: 0.2532, Train: 91.76%, Valid: 52.68%, Test: 53.09%
+Epoch: 75, Loss: 0.2204, Train: 92.56%, Valid: 52.62%, Test: 52.71%
+Epoch: 100, Loss: 0.2072, Train: 93.03%, Valid: 52.44%, Test: 52.73%
+Epoch: 125, Loss: 0.1967, Train: 93.46%, Valid: 52.55%, Test: 52.67%
+Epoch: 150, Loss: 0.1885, Train: 93.86%, Valid: 52.34%, Test: 52.65%
+Epoch: 175, Loss: 0.1806, Train: 94.25%, Valid: 52.40%, Test: 52.69%
+Epoch: 200, Loss: 0.1729, Train: 94.57%, Valid: 52.34%, Test: 52.65%
+Epoch: 225, Loss: 0.1705, Train: 94.78%, Valid: 52.41%, Test: 52.58%
+Epoch: 250, Loss: 0.1654, Train: 95.05%, Valid: 52.36%, Test: 52.63%
+Epoch: 275, Loss: 0.1606, Train: 95.34%, Valid: 52.26%, Test: 52.65%
+Epoch: 300, Loss: 0.1570, Train: 95.52%, Valid: 52.26%, Test: 52.52%
+Epoch: 325, Loss: 0.1544, Train: 95.62%, Valid: 52.16%, Test: 52.49%
+Epoch: 350, Loss: 0.1516, Train: 95.90%, Valid: 52.16%, Test: 52.59%
+Epoch: 375, Loss: 0.1487, Train: 96.07%, Valid: 52.27%, Test: 52.53%
+Epoch: 400, Loss: 0.1456, Train: 96.25%, Valid: 52.07%, Test: 52.49%
+Epoch: 425, Loss: 0.1444, Train: 96.29%, Valid: 52.14%, Test: 52.53%
+Epoch: 450, Loss: 0.1423, Train: 96.40%, Valid: 52.01%, Test: 52.31%
+Epoch: 475, Loss: 0.1393, Train: 96.58%, Valid: 52.14%, Test: 52.42%
+Run 01:
+Highest Train: 96.71
+Highest Valid: 54.52
+  Final Train: 80.23
+   Final Test: 54.78
+Epoch: 00, Loss: 1.6082, Train: 35.76%, Valid: 33.43%, Test: 33.14%
+Epoch: 25, Loss: 0.4566, Train: 87.75%, Valid: 53.93%, Test: 53.49%
+Epoch: 50, Loss: 0.2464, Train: 91.85%, Valid: 52.95%, Test: 52.50%
+Epoch: 75, Loss: 0.2198, Train: 92.61%, Valid: 52.88%, Test: 52.27%
+Epoch: 100, Loss: 0.2045, Train: 93.11%, Valid: 52.77%, Test: 52.32%
+Epoch: 125, Loss: 0.1943, Train: 93.59%, Valid: 52.81%, Test: 52.30%
+Epoch: 150, Loss: 0.1860, Train: 93.97%, Valid: 52.69%, Test: 52.08%
+Epoch: 175, Loss: 0.1784, Train: 94.28%, Valid: 52.68%, Test: 52.11%
+Epoch: 200, Loss: 0.1716, Train: 94.68%, Valid: 52.62%, Test: 52.06%
+Epoch: 225, Loss: 0.1668, Train: 94.89%, Valid: 52.59%, Test: 52.08%
+Epoch: 250, Loss: 0.1629, Train: 95.11%, Valid: 52.52%, Test: 52.04%
+Epoch: 275, Loss: 0.1603, Train: 95.32%, Valid: 52.52%, Test: 51.97%
+Epoch: 300, Loss: 0.1556, Train: 95.51%, Valid: 52.45%, Test: 51.85%
+Epoch: 325, Loss: 0.1512, Train: 95.75%, Valid: 52.27%, Test: 51.89%
+Epoch: 350, Loss: 0.1514, Train: 95.83%, Valid: 52.39%, Test: 51.95%
+Epoch: 375, Loss: 0.1466, Train: 96.04%, Valid: 52.32%, Test: 51.89%
+Epoch: 400, Loss: 0.1436, Train: 96.16%, Valid: 52.24%, Test: 51.81%
+Epoch: 425, Loss: 0.1424, Train: 96.32%, Valid: 52.13%, Test: 51.74%
+Epoch: 450, Loss: 0.1421, Train: 96.37%, Valid: 52.26%, Test: 51.70%
+Epoch: 475, Loss: 0.1388, Train: 96.53%, Valid: 52.28%, Test: 51.65%
+Run 02:
+Highest Train: 96.75
+Highest Valid: 54.46
+  Final Train: 81.87
+   Final Test: 54.15
+Epoch: 00, Loss: 1.6071, Train: 28.64%, Valid: 28.76%, Test: 28.75%
+Epoch: 25, Loss: 0.4701, Train: 87.23%, Valid: 53.76%, Test: 53.93%
+Epoch: 50, Loss: 0.2527, Train: 91.82%, Valid: 52.77%, Test: 53.11%
+Epoch: 75, Loss: 0.2203, Train: 92.59%, Valid: 52.50%, Test: 52.97%
+Epoch: 100, Loss: 0.2054, Train: 92.99%, Valid: 52.49%, Test: 52.98%
+Epoch: 125, Loss: 0.1954, Train: 93.52%, Valid: 52.45%, Test: 52.88%
+Epoch: 150, Loss: 0.1886, Train: 93.92%, Valid: 52.37%, Test: 52.87%
+Epoch: 175, Loss: 0.1799, Train: 94.24%, Valid: 52.36%, Test: 52.77%
+Epoch: 200, Loss: 0.1740, Train: 94.57%, Valid: 52.31%, Test: 52.73%
+Epoch: 225, Loss: 0.1677, Train: 94.91%, Valid: 52.32%, Test: 52.76%
+Epoch: 250, Loss: 0.1638, Train: 95.10%, Valid: 52.14%, Test: 52.71%
+Epoch: 275, Loss: 0.1602, Train: 95.37%, Valid: 52.17%, Test: 52.60%
+Epoch: 300, Loss: 0.1561, Train: 95.51%, Valid: 52.18%, Test: 52.66%
+Epoch: 325, Loss: 0.1529, Train: 95.74%, Valid: 51.99%, Test: 52.53%
+Epoch: 350, Loss: 0.1516, Train: 95.85%, Valid: 52.03%, Test: 52.46%
+Epoch: 375, Loss: 0.1501, Train: 96.04%, Valid: 52.00%, Test: 52.46%
+Epoch: 400, Loss: 0.1477, Train: 96.20%, Valid: 51.90%, Test: 52.37%
+Epoch: 425, Loss: 0.1435, Train: 96.29%, Valid: 51.95%, Test: 52.40%
+Epoch: 450, Loss: 0.1439, Train: 96.40%, Valid: 51.93%, Test: 52.33%
+Epoch: 475, Loss: 0.1385, Train: 96.45%, Valid: 51.91%, Test: 52.33%
+Run 03:
+Highest Train: 96.66
+Highest Valid: 54.68
+  Final Train: 80.23
+   Final Test: 54.93
+Epoch: 00, Loss: 1.6002, Train: 28.62%, Valid: 29.01%, Test: 28.55%
+Epoch: 25, Loss: 0.4541, Train: 87.42%, Valid: 54.16%, Test: 53.89%
+Epoch: 50, Loss: 0.2486, Train: 91.78%, Valid: 52.81%, Test: 52.71%
+Epoch: 75, Loss: 0.2159, Train: 92.55%, Valid: 52.71%, Test: 52.65%
+Epoch: 100, Loss: 0.2040, Train: 93.05%, Valid: 52.68%, Test: 52.62%
+Epoch: 125, Loss: 0.1935, Train: 93.53%, Valid: 52.54%, Test: 52.37%
+Epoch: 150, Loss: 0.1845, Train: 93.97%, Valid: 52.41%, Test: 52.47%
+Epoch: 175, Loss: 0.1757, Train: 94.32%, Valid: 52.34%, Test: 52.43%
+Epoch: 200, Loss: 0.1704, Train: 94.63%, Valid: 52.42%, Test: 52.44%
+Epoch: 225, Loss: 0.1635, Train: 94.90%, Valid: 52.37%, Test: 52.36%
+Epoch: 250, Loss: 0.1633, Train: 95.16%, Valid: 52.38%, Test: 52.36%
+Epoch: 275, Loss: 0.1568, Train: 95.34%, Valid: 52.24%, Test: 52.40%
+Epoch: 300, Loss: 0.1545, Train: 95.54%, Valid: 52.28%, Test: 52.24%
+Epoch: 325, Loss: 0.1515, Train: 95.78%, Valid: 52.25%, Test: 52.27%
+Epoch: 350, Loss: 0.1493, Train: 95.85%, Valid: 52.37%, Test: 52.28%
+Epoch: 375, Loss: 0.1463, Train: 95.98%, Valid: 52.18%, Test: 52.12%
+Epoch: 400, Loss: 0.1441, Train: 96.19%, Valid: 52.20%, Test: 52.14%
+Epoch: 425, Loss: 0.1420, Train: 96.35%, Valid: 52.16%, Test: 52.22%
+Epoch: 450, Loss: 0.1389, Train: 96.45%, Valid: 52.09%, Test: 52.21%
+Epoch: 475, Loss: 0.1393, Train: 96.49%, Valid: 52.13%, Test: 52.14%
+Run 04:
+Highest Train: 96.68
+Highest Valid: 54.90
+  Final Train: 79.98
+   Final Test: 54.95
+Epoch: 00, Loss: 1.6115, Train: 28.64%, Valid: 28.95%, Test: 28.58%
+Epoch: 25, Loss: 0.4496, Train: 87.55%, Valid: 53.90%, Test: 53.70%
+Epoch: 50, Loss: 0.2460, Train: 91.86%, Valid: 52.65%, Test: 53.01%
+Epoch: 75, Loss: 0.2175, Train: 92.66%, Valid: 52.60%, Test: 52.59%
+Epoch: 100, Loss: 0.2040, Train: 93.17%, Valid: 52.52%, Test: 52.41%
+Epoch: 125, Loss: 0.1933, Train: 93.62%, Valid: 52.45%, Test: 52.38%
+Epoch: 150, Loss: 0.1847, Train: 94.01%, Valid: 52.48%, Test: 52.35%
+Epoch: 175, Loss: 0.1752, Train: 94.40%, Valid: 52.38%, Test: 52.34%
+Epoch: 200, Loss: 0.1709, Train: 94.66%, Valid: 52.37%, Test: 52.24%
+Epoch: 225, Loss: 0.1665, Train: 94.97%, Valid: 52.33%, Test: 52.24%
+Epoch: 250, Loss: 0.1605, Train: 95.14%, Valid: 52.35%, Test: 52.28%
+Epoch: 275, Loss: 0.1567, Train: 95.37%, Valid: 52.33%, Test: 52.12%
+Epoch: 300, Loss: 0.1512, Train: 95.58%, Valid: 52.19%, Test: 52.08%
+Epoch: 325, Loss: 0.1513, Train: 95.78%, Valid: 52.15%, Test: 52.06%
+Epoch: 350, Loss: 0.1473, Train: 95.95%, Valid: 52.19%, Test: 52.11%
+Epoch: 375, Loss: 0.1441, Train: 96.12%, Valid: 52.03%, Test: 51.96%
+Epoch: 400, Loss: 0.1437, Train: 96.25%, Valid: 52.02%, Test: 51.90%
+Epoch: 425, Loss: 0.1408, Train: 96.47%, Valid: 52.15%, Test: 51.95%
+Epoch: 450, Loss: 0.1391, Train: 96.56%, Valid: 52.16%, Test: 51.98%
+Epoch: 475, Loss: 0.1368, Train: 96.68%, Valid: 52.03%, Test: 52.06%
+Run 05:
+Highest Train: 96.79
+Highest Valid: 54.86
+  Final Train: 81.79
+   Final Test: 54.69
+All runs:
+Highest Train: 96.72, 0.05
+Highest Valid: 54.69, 0.20
+  Final Train: 80.82, 0.93
+   Final Test: 54.70, 0.33
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=1.0, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.0, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=1, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6091, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 0.4225, Train: 88.25%, Valid: 53.45%, Test: 53.54%
+Epoch: 50, Loss: 0.2542, Train: 91.18%, Valid: 52.44%, Test: 52.77%
+Epoch: 75, Loss: 0.2326, Train: 91.45%, Valid: 52.22%, Test: 52.60%
+Epoch: 100, Loss: 0.2220, Train: 91.51%, Valid: 52.09%, Test: 52.59%
+Epoch: 125, Loss: 0.2174, Train: 91.53%, Valid: 52.03%, Test: 52.50%
+Epoch: 150, Loss: 0.2156, Train: 91.54%, Valid: 51.98%, Test: 52.40%
+Epoch: 175, Loss: 0.2128, Train: 91.54%, Valid: 52.13%, Test: 52.41%
+Epoch: 200, Loss: 0.2104, Train: 91.54%, Valid: 52.03%, Test: 52.37%
+Epoch: 225, Loss: 0.2096, Train: 91.55%, Valid: 52.03%, Test: 52.23%
+Epoch: 250, Loss: 0.2076, Train: 91.55%, Valid: 51.99%, Test: 52.20%
+Epoch: 275, Loss: 0.2065, Train: 91.56%, Valid: 52.04%, Test: 52.16%
+Epoch: 300, Loss: 0.2056, Train: 91.56%, Valid: 51.98%, Test: 52.30%
+Epoch: 325, Loss: 0.2051, Train: 91.56%, Valid: 51.98%, Test: 52.22%
+Epoch: 350, Loss: 0.2041, Train: 91.56%, Valid: 51.83%, Test: 52.12%
+Epoch: 375, Loss: 0.2049, Train: 91.55%, Valid: 51.97%, Test: 52.23%
+Epoch: 400, Loss: 0.2044, Train: 91.55%, Valid: 51.92%, Test: 52.25%
+Epoch: 425, Loss: 0.2037, Train: 91.56%, Valid: 51.94%, Test: 52.22%
+Epoch: 450, Loss: 0.2037, Train: 91.55%, Valid: 51.95%, Test: 52.20%
+Epoch: 475, Loss: 0.2035, Train: 91.55%, Valid: 51.93%, Test: 52.28%
+Run 01:
+Highest Train: 91.56
+Highest Valid: 54.45
+  Final Train: 80.77
+   Final Test: 54.52
+Epoch: 00, Loss: 1.6077, Train: 28.63%, Valid: 28.86%, Test: 28.71%
+Epoch: 25, Loss: 0.4416, Train: 87.97%, Valid: 53.80%, Test: 53.27%
+Epoch: 50, Loss: 0.2574, Train: 91.24%, Valid: 52.96%, Test: 52.46%
+Epoch: 75, Loss: 0.2334, Train: 91.51%, Valid: 52.81%, Test: 52.08%
+Epoch: 100, Loss: 0.2238, Train: 91.56%, Valid: 52.74%, Test: 52.08%
+Epoch: 125, Loss: 0.2181, Train: 91.59%, Valid: 52.61%, Test: 52.12%
+Epoch: 150, Loss: 0.2156, Train: 91.60%, Valid: 52.63%, Test: 52.10%
+Epoch: 175, Loss: 0.2129, Train: 91.60%, Valid: 52.54%, Test: 52.04%
+Epoch: 200, Loss: 0.2098, Train: 91.61%, Valid: 52.50%, Test: 52.00%
+Epoch: 225, Loss: 0.2073, Train: 91.61%, Valid: 52.47%, Test: 52.11%
+Epoch: 250, Loss: 0.2075, Train: 91.61%, Valid: 52.54%, Test: 51.97%
+Epoch: 275, Loss: 0.2064, Train: 91.61%, Valid: 52.62%, Test: 51.96%
+Epoch: 300, Loss: 0.2061, Train: 91.61%, Valid: 52.46%, Test: 51.99%
+Epoch: 325, Loss: 0.2053, Train: 91.61%, Valid: 52.54%, Test: 51.97%
+Epoch: 350, Loss: 0.2036, Train: 91.61%, Valid: 52.56%, Test: 52.02%
+Epoch: 375, Loss: 0.2038, Train: 91.61%, Valid: 52.47%, Test: 51.96%
+Epoch: 400, Loss: 0.2037, Train: 91.61%, Valid: 52.50%, Test: 51.91%
+Epoch: 425, Loss: 0.2036, Train: 91.62%, Valid: 52.47%, Test: 52.00%
+Epoch: 450, Loss: 0.2029, Train: 91.61%, Valid: 52.49%, Test: 52.00%
+Epoch: 475, Loss: 0.2030, Train: 91.61%, Valid: 52.25%, Test: 51.97%
+Run 02:
+Highest Train: 91.62
+Highest Valid: 54.35
+  Final Train: 80.73
+   Final Test: 53.99
+Epoch: 00, Loss: 1.6143, Train: 29.33%, Valid: 29.29%, Test: 29.24%
+Epoch: 25, Loss: 0.4322, Train: 88.15%, Valid: 53.25%, Test: 53.73%
+Epoch: 50, Loss: 0.2577, Train: 91.23%, Valid: 52.41%, Test: 52.80%
+Epoch: 75, Loss: 0.2325, Train: 91.52%, Valid: 52.16%, Test: 52.72%
+Epoch: 100, Loss: 0.2218, Train: 91.58%, Valid: 52.17%, Test: 52.62%
+Epoch: 125, Loss: 0.2165, Train: 91.60%, Valid: 52.17%, Test: 52.51%
+Epoch: 150, Loss: 0.2148, Train: 91.62%, Valid: 52.03%, Test: 52.58%
+Epoch: 175, Loss: 0.2105, Train: 91.61%, Valid: 51.96%, Test: 52.43%
+Epoch: 200, Loss: 0.2089, Train: 91.62%, Valid: 51.98%, Test: 52.44%
+Epoch: 225, Loss: 0.2078, Train: 91.62%, Valid: 51.96%, Test: 52.45%
+Epoch: 250, Loss: 0.2060, Train: 91.62%, Valid: 51.98%, Test: 52.34%
+Epoch: 275, Loss: 0.2056, Train: 91.62%, Valid: 51.91%, Test: 52.32%
+Epoch: 300, Loss: 0.2043, Train: 91.62%, Valid: 51.93%, Test: 52.30%
+Epoch: 325, Loss: 0.2049, Train: 91.63%, Valid: 51.96%, Test: 52.20%
+Epoch: 350, Loss: 0.2038, Train: 91.62%, Valid: 51.92%, Test: 52.20%
+Epoch: 375, Loss: 0.2028, Train: 91.62%, Valid: 51.81%, Test: 52.11%
+Epoch: 400, Loss: 0.2024, Train: 91.62%, Valid: 51.90%, Test: 52.26%
+Epoch: 425, Loss: 0.2024, Train: 91.62%, Valid: 51.80%, Test: 52.04%
+Epoch: 450, Loss: 0.2019, Train: 91.62%, Valid: 51.93%, Test: 52.22%
+Epoch: 475, Loss: 0.2013, Train: 91.61%, Valid: 51.87%, Test: 52.32%
+Run 03:
+Highest Train: 91.63
+Highest Valid: 54.33
+  Final Train: 84.42
+   Final Test: 54.48
+Epoch: 00, Loss: 1.6143, Train: 36.37%, Valid: 34.29%, Test: 33.80%
+Epoch: 25, Loss: 0.4407, Train: 87.88%, Valid: 53.80%, Test: 53.69%
+Epoch: 50, Loss: 0.2572, Train: 91.23%, Valid: 52.67%, Test: 52.89%
+Epoch: 75, Loss: 0.2304, Train: 91.52%, Valid: 52.47%, Test: 52.48%
+Epoch: 100, Loss: 0.2219, Train: 91.58%, Valid: 52.30%, Test: 52.33%
+Epoch: 125, Loss: 0.2159, Train: 91.61%, Valid: 52.37%, Test: 52.32%
+Epoch: 150, Loss: 0.2133, Train: 91.62%, Valid: 52.37%, Test: 52.35%
+Epoch: 175, Loss: 0.2092, Train: 91.63%, Valid: 52.35%, Test: 52.16%
+Epoch: 200, Loss: 0.2084, Train: 91.63%, Valid: 52.30%, Test: 52.19%
+Epoch: 225, Loss: 0.2065, Train: 91.64%, Valid: 52.16%, Test: 52.05%
+Epoch: 250, Loss: 0.2053, Train: 91.63%, Valid: 52.17%, Test: 52.11%
+Epoch: 275, Loss: 0.2053, Train: 91.64%, Valid: 52.20%, Test: 52.09%
+Epoch: 300, Loss: 0.2030, Train: 91.64%, Valid: 52.29%, Test: 52.22%
+Epoch: 325, Loss: 0.2031, Train: 91.63%, Valid: 52.22%, Test: 52.13%
+Epoch: 350, Loss: 0.2021, Train: 91.63%, Valid: 52.22%, Test: 52.00%
+Epoch: 375, Loss: 0.2018, Train: 91.64%, Valid: 52.16%, Test: 52.12%
+Epoch: 400, Loss: 0.2015, Train: 91.64%, Valid: 52.32%, Test: 52.16%
+Epoch: 425, Loss: 0.2008, Train: 91.64%, Valid: 52.16%, Test: 52.19%
+Epoch: 450, Loss: 0.2013, Train: 91.63%, Valid: 52.07%, Test: 52.10%
+Epoch: 475, Loss: 0.2012, Train: 91.64%, Valid: 52.20%, Test: 52.20%
+Run 04:
+Highest Train: 91.64
+Highest Valid: 54.80
+  Final Train: 79.66
+   Final Test: 54.78
+Epoch: 00, Loss: 1.6070, Train: 35.25%, Valid: 34.19%, Test: 33.52%
+Epoch: 25, Loss: 0.4294, Train: 88.07%, Valid: 53.62%, Test: 53.48%
+Epoch: 50, Loss: 0.2530, Train: 91.17%, Valid: 52.43%, Test: 52.62%
+Epoch: 75, Loss: 0.2306, Train: 91.48%, Valid: 52.46%, Test: 52.33%
+Epoch: 100, Loss: 0.2229, Train: 91.52%, Valid: 52.43%, Test: 52.19%
+Epoch: 125, Loss: 0.2170, Train: 91.54%, Valid: 52.33%, Test: 52.20%
+Epoch: 150, Loss: 0.2124, Train: 91.55%, Valid: 52.35%, Test: 52.09%
+Epoch: 175, Loss: 0.2100, Train: 91.56%, Valid: 52.13%, Test: 51.99%
+Epoch: 200, Loss: 0.2090, Train: 91.56%, Valid: 52.13%, Test: 52.08%
+Epoch: 225, Loss: 0.2065, Train: 91.56%, Valid: 52.12%, Test: 52.11%
+Epoch: 250, Loss: 0.2051, Train: 91.56%, Valid: 52.09%, Test: 52.03%
+Epoch: 275, Loss: 0.2050, Train: 91.56%, Valid: 52.14%, Test: 51.98%
+Epoch: 300, Loss: 0.2041, Train: 91.57%, Valid: 52.14%, Test: 51.97%
+Epoch: 325, Loss: 0.2043, Train: 91.57%, Valid: 52.03%, Test: 51.95%
+Epoch: 350, Loss: 0.2028, Train: 91.57%, Valid: 52.11%, Test: 51.96%
+Epoch: 375, Loss: 0.2025, Train: 91.56%, Valid: 52.03%, Test: 51.90%
+Epoch: 400, Loss: 0.2025, Train: 91.57%, Valid: 51.94%, Test: 51.88%
+Epoch: 425, Loss: 0.2026, Train: 91.56%, Valid: 51.97%, Test: 51.80%
+Epoch: 450, Loss: 0.2017, Train: 91.56%, Valid: 51.98%, Test: 51.85%
+Epoch: 475, Loss: 0.2017, Train: 91.57%, Valid: 51.96%, Test: 51.78%
+Run 05:
+Highest Train: 91.57
+Highest Valid: 54.53
+  Final Train: 80.43
+   Final Test: 54.46
+All runs:
+Highest Train: 91.60, 0.04
+Highest Valid: 54.49, 0.19
+  Final Train: 81.20, 1.85
+   Final Test: 54.45, 0.29
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=1.0, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=1.0, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=1, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.001)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6137, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 1.4959, Train: 35.02%, Valid: 34.81%, Test: 34.90%
+Epoch: 50, Loss: 1.4742, Train: 36.52%, Valid: 35.82%, Test: 36.22%
+Epoch: 75, Loss: 1.4618, Train: 37.42%, Valid: 36.34%, Test: 36.64%
+Epoch: 100, Loss: 1.4519, Train: 38.01%, Valid: 36.55%, Test: 36.92%
+Epoch: 125, Loss: 1.4451, Train: 38.56%, Valid: 36.64%, Test: 36.91%
+Epoch: 150, Loss: 1.4398, Train: 38.85%, Valid: 36.56%, Test: 37.01%
+Epoch: 175, Loss: 1.4363, Train: 39.27%, Valid: 36.63%, Test: 37.05%
+Epoch: 200, Loss: 1.4344, Train: 39.56%, Valid: 36.70%, Test: 37.05%
+Epoch: 225, Loss: 1.4294, Train: 39.90%, Valid: 36.66%, Test: 37.14%
+Epoch: 250, Loss: 1.4258, Train: 40.19%, Valid: 36.68%, Test: 37.11%
+Epoch: 275, Loss: 1.4235, Train: 40.33%, Valid: 36.83%, Test: 37.03%
+Epoch: 300, Loss: 1.4213, Train: 40.57%, Valid: 36.83%, Test: 37.04%
+Epoch: 325, Loss: 1.4199, Train: 40.89%, Valid: 36.77%, Test: 37.10%
+Epoch: 350, Loss: 1.4173, Train: 41.04%, Valid: 36.83%, Test: 37.05%
+Epoch: 375, Loss: 1.4151, Train: 41.27%, Valid: 36.69%, Test: 37.24%
+Epoch: 400, Loss: 1.4130, Train: 41.51%, Valid: 36.80%, Test: 37.25%
+Epoch: 425, Loss: 1.4117, Train: 41.54%, Valid: 36.78%, Test: 37.13%
+Epoch: 450, Loss: 1.4098, Train: 41.67%, Valid: 36.86%, Test: 37.16%
+Epoch: 475, Loss: 1.4082, Train: 41.81%, Valid: 36.83%, Test: 37.23%
+Run 01:
+Highest Train: 42.07
+Highest Valid: 36.96
+  Final Train: 41.27
+   Final Test: 37.23
+Epoch: 00, Loss: 1.6088, Train: 28.62%, Valid: 28.84%, Test: 28.71%
+Epoch: 25, Loss: 1.4945, Train: 35.09%, Valid: 34.84%, Test: 35.03%
+Epoch: 50, Loss: 1.4717, Train: 36.57%, Valid: 35.92%, Test: 36.12%
+Epoch: 75, Loss: 1.4598, Train: 37.33%, Valid: 36.31%, Test: 36.51%
+Epoch: 100, Loss: 1.4508, Train: 38.04%, Valid: 36.74%, Test: 36.83%
+Epoch: 125, Loss: 1.4439, Train: 38.49%, Valid: 36.74%, Test: 36.94%
+Epoch: 150, Loss: 1.4399, Train: 39.10%, Valid: 36.95%, Test: 37.09%
+Epoch: 175, Loss: 1.4348, Train: 39.39%, Valid: 36.98%, Test: 37.08%
+Epoch: 200, Loss: 1.4296, Train: 39.72%, Valid: 36.89%, Test: 37.06%
+Epoch: 225, Loss: 1.4279, Train: 40.00%, Valid: 37.02%, Test: 37.06%
+Epoch: 250, Loss: 1.4232, Train: 40.33%, Valid: 36.85%, Test: 36.98%
+Epoch: 275, Loss: 1.4199, Train: 40.50%, Valid: 37.01%, Test: 37.08%
+Epoch: 300, Loss: 1.4198, Train: 40.77%, Valid: 36.97%, Test: 36.99%
+Epoch: 325, Loss: 1.4140, Train: 40.95%, Valid: 36.95%, Test: 37.10%
+Epoch: 350, Loss: 1.4155, Train: 41.15%, Valid: 36.96%, Test: 37.12%
+Epoch: 375, Loss: 1.4108, Train: 41.24%, Valid: 37.01%, Test: 37.09%
+Epoch: 400, Loss: 1.4092, Train: 41.27%, Valid: 36.92%, Test: 36.95%
+Epoch: 425, Loss: 1.4087, Train: 41.70%, Valid: 36.87%, Test: 37.10%
+Epoch: 450, Loss: 1.4095, Train: 41.79%, Valid: 36.84%, Test: 36.95%
+Epoch: 475, Loss: 1.4043, Train: 41.89%, Valid: 36.89%, Test: 36.97%
+Run 02:
+Highest Train: 42.01
+Highest Valid: 37.14
+  Final Train: 40.52
+   Final Test: 37.00
+Epoch: 00, Loss: 1.6102, Train: 28.64%, Valid: 28.76%, Test: 28.75%
+Epoch: 25, Loss: 1.4957, Train: 35.00%, Valid: 35.08%, Test: 35.20%
+Epoch: 50, Loss: 1.4754, Train: 36.44%, Valid: 36.07%, Test: 36.36%
+Epoch: 75, Loss: 1.4628, Train: 37.34%, Valid: 36.49%, Test: 36.89%
+Epoch: 100, Loss: 1.4536, Train: 37.84%, Valid: 36.69%, Test: 37.05%
+Epoch: 125, Loss: 1.4465, Train: 38.47%, Valid: 36.80%, Test: 37.09%
+Epoch: 150, Loss: 1.4425, Train: 38.79%, Valid: 36.82%, Test: 37.08%
+Epoch: 175, Loss: 1.4379, Train: 39.15%, Valid: 36.86%, Test: 37.20%
+Epoch: 200, Loss: 1.4325, Train: 39.46%, Valid: 36.92%, Test: 37.30%
+Epoch: 225, Loss: 1.4290, Train: 39.75%, Valid: 36.95%, Test: 37.27%
+Epoch: 250, Loss: 1.4262, Train: 39.90%, Valid: 36.94%, Test: 37.27%
+Epoch: 275, Loss: 1.4246, Train: 40.32%, Valid: 36.94%, Test: 37.30%
+Epoch: 300, Loss: 1.4220, Train: 40.44%, Valid: 37.01%, Test: 37.37%
+Epoch: 325, Loss: 1.4191, Train: 40.49%, Valid: 37.16%, Test: 37.26%
+Epoch: 350, Loss: 1.4171, Train: 40.83%, Valid: 37.09%, Test: 37.32%
+Epoch: 375, Loss: 1.4129, Train: 40.88%, Valid: 37.14%, Test: 37.34%
+Epoch: 400, Loss: 1.4124, Train: 41.08%, Valid: 37.10%, Test: 37.45%
+Epoch: 425, Loss: 1.4091, Train: 41.32%, Valid: 37.19%, Test: 37.35%
+Epoch: 450, Loss: 1.4116, Train: 41.38%, Valid: 37.12%, Test: 37.43%
+Epoch: 475, Loss: 1.4078, Train: 41.52%, Valid: 37.18%, Test: 37.31%
+Run 03:
+Highest Train: 41.72
+Highest Valid: 37.27
+  Final Train: 41.27
+   Final Test: 37.45
+Epoch: 00, Loss: 1.6199, Train: 28.62%, Valid: 29.01%, Test: 28.55%
+Epoch: 25, Loss: 1.4983, Train: 34.54%, Valid: 35.01%, Test: 34.43%
+Epoch: 50, Loss: 1.4784, Train: 35.96%, Valid: 36.04%, Test: 35.49%
+Epoch: 75, Loss: 1.4642, Train: 36.96%, Valid: 36.63%, Test: 36.21%
+Epoch: 100, Loss: 1.4569, Train: 37.60%, Valid: 36.96%, Test: 36.56%
+Epoch: 125, Loss: 1.4493, Train: 38.05%, Valid: 37.10%, Test: 36.58%
+Epoch: 150, Loss: 1.4437, Train: 38.63%, Valid: 37.31%, Test: 36.73%
+Epoch: 175, Loss: 1.4410, Train: 39.00%, Valid: 37.41%, Test: 36.99%
+Epoch: 200, Loss: 1.4359, Train: 39.24%, Valid: 37.31%, Test: 36.93%
+Epoch: 225, Loss: 1.4325, Train: 39.52%, Valid: 37.30%, Test: 37.00%
+Epoch: 250, Loss: 1.4297, Train: 39.80%, Valid: 37.26%, Test: 37.06%
+Epoch: 275, Loss: 1.4252, Train: 40.07%, Valid: 37.28%, Test: 36.96%
+Epoch: 300, Loss: 1.4235, Train: 40.20%, Valid: 37.31%, Test: 37.06%
+Epoch: 325, Loss: 1.4211, Train: 40.39%, Valid: 37.24%, Test: 37.00%
+Epoch: 350, Loss: 1.4201, Train: 40.52%, Valid: 37.31%, Test: 37.14%
+Epoch: 375, Loss: 1.4199, Train: 40.71%, Valid: 37.39%, Test: 37.02%
+Epoch: 400, Loss: 1.4159, Train: 40.95%, Valid: 37.29%, Test: 36.99%
+Epoch: 425, Loss: 1.4142, Train: 41.00%, Valid: 37.20%, Test: 36.96%
+Epoch: 450, Loss: 1.4146, Train: 41.23%, Valid: 37.24%, Test: 36.88%
+Epoch: 475, Loss: 1.4107, Train: 41.30%, Valid: 37.31%, Test: 36.97%
+Run 04:
+Highest Train: 41.62
+Highest Valid: 37.45
+  Final Train: 38.91
+   Final Test: 36.85
+Epoch: 00, Loss: 1.6143, Train: 28.64%, Valid: 28.95%, Test: 28.58%
+Epoch: 25, Loss: 1.5009, Train: 34.71%, Valid: 34.81%, Test: 34.42%
+Epoch: 50, Loss: 1.4799, Train: 35.90%, Valid: 35.72%, Test: 35.38%
+Epoch: 75, Loss: 1.4675, Train: 36.90%, Valid: 36.56%, Test: 36.20%
+Epoch: 100, Loss: 1.4587, Train: 37.50%, Valid: 36.90%, Test: 36.39%
+Epoch: 125, Loss: 1.4495, Train: 38.04%, Valid: 36.96%, Test: 36.62%
+Epoch: 150, Loss: 1.4453, Train: 38.43%, Valid: 37.09%, Test: 36.64%
+Epoch: 175, Loss: 1.4415, Train: 38.88%, Valid: 37.11%, Test: 36.73%
+Epoch: 200, Loss: 1.4375, Train: 39.18%, Valid: 37.30%, Test: 36.91%
+Epoch: 225, Loss: 1.4326, Train: 39.49%, Valid: 37.15%, Test: 36.93%
+Epoch: 250, Loss: 1.4288, Train: 39.59%, Valid: 37.24%, Test: 36.94%
+Epoch: 275, Loss: 1.4274, Train: 39.82%, Valid: 37.34%, Test: 36.94%
+Epoch: 300, Loss: 1.4236, Train: 40.02%, Valid: 37.20%, Test: 36.96%
+Epoch: 325, Loss: 1.4216, Train: 40.37%, Valid: 37.27%, Test: 37.00%
+Epoch: 350, Loss: 1.4206, Train: 40.44%, Valid: 37.19%, Test: 37.02%
+Epoch: 375, Loss: 1.4178, Train: 40.72%, Valid: 37.34%, Test: 37.14%
+Epoch: 400, Loss: 1.4157, Train: 40.85%, Valid: 37.18%, Test: 37.01%
+Epoch: 425, Loss: 1.4144, Train: 41.02%, Valid: 37.15%, Test: 37.06%
+Epoch: 450, Loss: 1.4127, Train: 41.16%, Valid: 37.09%, Test: 36.96%
+Epoch: 475, Loss: 1.4103, Train: 41.41%, Valid: 37.16%, Test: 36.91%
+Run 05:
+Highest Train: 41.61
+Highest Valid: 37.39
+  Final Train: 40.80
+   Final Test: 37.10
+All runs:
+Highest Train: 41.81, 0.22
+Highest Valid: 37.24, 0.19
+  Final Train: 40.56, 0.98
+   Final Test: 37.12, 0.23
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.1, beta=1.0, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.1, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.1)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6108, Train: 28.73%, Valid: 28.55%, Test: 28.83%
+Epoch: 25, Loss: 0.5224, Train: 85.88%, Valid: 54.36%, Test: 54.34%
+Epoch: 50, Loss: 0.2626, Train: 91.48%, Valid: 52.68%, Test: 53.18%
+Epoch: 75, Loss: 0.2254, Train: 92.33%, Valid: 52.36%, Test: 52.83%
+Epoch: 100, Loss: 0.2095, Train: 92.86%, Valid: 52.31%, Test: 52.73%
+Epoch: 125, Loss: 0.1994, Train: 93.28%, Valid: 52.28%, Test: 52.76%
+Epoch: 150, Loss: 0.1896, Train: 93.68%, Valid: 52.09%, Test: 52.57%
+Epoch: 175, Loss: 0.1843, Train: 94.13%, Valid: 52.05%, Test: 52.52%
+Epoch: 200, Loss: 0.1786, Train: 94.45%, Valid: 52.14%, Test: 52.59%
+Epoch: 225, Loss: 0.1709, Train: 94.75%, Valid: 52.01%, Test: 52.57%
+Epoch: 250, Loss: 0.1657, Train: 94.96%, Valid: 51.95%, Test: 52.47%
+Epoch: 275, Loss: 0.1624, Train: 95.25%, Valid: 51.93%, Test: 52.42%
+Epoch: 300, Loss: 0.1604, Train: 95.42%, Valid: 51.97%, Test: 52.53%
+Epoch: 325, Loss: 0.1569, Train: 95.64%, Valid: 51.97%, Test: 52.48%
+Epoch: 350, Loss: 0.1533, Train: 95.85%, Valid: 51.86%, Test: 52.29%
+Epoch: 375, Loss: 0.1497, Train: 95.94%, Valid: 51.91%, Test: 52.36%
+Epoch: 400, Loss: 0.1505, Train: 96.17%, Valid: 51.73%, Test: 52.29%
+Epoch: 425, Loss: 0.1457, Train: 96.25%, Valid: 51.85%, Test: 52.36%
+Epoch: 450, Loss: 0.1443, Train: 96.39%, Valid: 51.80%, Test: 52.14%
+Epoch: 475, Loss: 0.1424, Train: 96.49%, Valid: 51.82%, Test: 52.16%
+Run 01:
+Highest Train: 96.71
+Highest Valid: 54.84
+  Final Train: 81.45
+   Final Test: 55.13
+Epoch: 00, Loss: 1.6076, Train: 28.62%, Valid: 28.84%, Test: 28.71%
+Epoch: 25, Loss: 0.5096, Train: 86.07%, Valid: 54.26%, Test: 53.73%
+Epoch: 50, Loss: 0.2579, Train: 91.65%, Valid: 53.07%, Test: 52.47%
+Epoch: 75, Loss: 0.2220, Train: 92.37%, Valid: 52.90%, Test: 52.19%
+Epoch: 100, Loss: 0.2078, Train: 92.91%, Valid: 52.77%, Test: 52.22%
+Epoch: 125, Loss: 0.1973, Train: 93.34%, Valid: 52.69%, Test: 52.21%
+Epoch: 150, Loss: 0.1890, Train: 93.74%, Valid: 52.81%, Test: 52.03%
+Epoch: 175, Loss: 0.1822, Train: 94.12%, Valid: 52.65%, Test: 51.95%
+Epoch: 200, Loss: 0.1762, Train: 94.48%, Valid: 52.63%, Test: 52.01%
+Epoch: 225, Loss: 0.1690, Train: 94.70%, Valid: 52.50%, Test: 51.87%
+Epoch: 250, Loss: 0.1644, Train: 95.01%, Valid: 52.63%, Test: 52.00%
+Epoch: 275, Loss: 0.1611, Train: 95.27%, Valid: 52.56%, Test: 51.81%
+Epoch: 300, Loss: 0.1583, Train: 95.46%, Valid: 52.60%, Test: 51.92%
+Epoch: 325, Loss: 0.1559, Train: 95.67%, Valid: 52.40%, Test: 51.94%
+Epoch: 350, Loss: 0.1515, Train: 95.84%, Valid: 52.49%, Test: 51.94%
+Epoch: 375, Loss: 0.1502, Train: 95.98%, Valid: 52.40%, Test: 51.94%
+Epoch: 400, Loss: 0.1460, Train: 96.07%, Valid: 52.30%, Test: 51.83%
+Epoch: 425, Loss: 0.1455, Train: 96.27%, Valid: 52.27%, Test: 51.54%
+Epoch: 450, Loss: 0.1429, Train: 96.40%, Valid: 52.42%, Test: 51.83%
+Epoch: 475, Loss: 0.1419, Train: 96.59%, Valid: 52.26%, Test: 51.66%
+Run 02:
+Highest Train: 96.63
+Highest Valid: 54.57
+  Final Train: 80.23
+   Final Test: 54.33
+Epoch: 00, Loss: 1.6091, Train: 28.85%, Valid: 28.94%, Test: 28.90%
+Epoch: 25, Loss: 0.5286, Train: 85.69%, Valid: 54.39%, Test: 54.39%
+Epoch: 50, Loss: 0.2611, Train: 91.56%, Valid: 52.87%, Test: 53.10%
+Epoch: 75, Loss: 0.2239, Train: 92.39%, Valid: 52.62%, Test: 52.85%
+Epoch: 100, Loss: 0.2078, Train: 92.95%, Valid: 52.45%, Test: 52.80%
+Epoch: 125, Loss: 0.1987, Train: 93.37%, Valid: 52.40%, Test: 52.65%
+Epoch: 150, Loss: 0.1900, Train: 93.78%, Valid: 52.33%, Test: 52.66%
+Epoch: 175, Loss: 0.1823, Train: 94.16%, Valid: 52.21%, Test: 52.61%
+Epoch: 200, Loss: 0.1763, Train: 94.48%, Valid: 52.29%, Test: 52.62%
+Epoch: 225, Loss: 0.1681, Train: 94.80%, Valid: 52.25%, Test: 52.55%
+Epoch: 250, Loss: 0.1657, Train: 95.06%, Valid: 52.20%, Test: 52.55%
+Epoch: 275, Loss: 0.1621, Train: 95.19%, Valid: 52.21%, Test: 52.52%
+Epoch: 300, Loss: 0.1581, Train: 95.47%, Valid: 52.06%, Test: 52.48%
+Epoch: 325, Loss: 0.1560, Train: 95.66%, Valid: 52.21%, Test: 52.52%
+Epoch: 350, Loss: 0.1543, Train: 95.77%, Valid: 52.21%, Test: 52.36%
+Epoch: 375, Loss: 0.1493, Train: 96.08%, Valid: 52.19%, Test: 52.28%
+Epoch: 400, Loss: 0.1488, Train: 96.17%, Valid: 52.15%, Test: 52.29%
+Epoch: 425, Loss: 0.1462, Train: 96.42%, Valid: 52.20%, Test: 52.34%
+Epoch: 450, Loss: 0.1434, Train: 96.38%, Valid: 52.09%, Test: 52.22%
+Epoch: 475, Loss: 0.1430, Train: 96.55%, Valid: 52.08%, Test: 52.12%
+Run 03:
+Highest Train: 96.73
+Highest Valid: 54.63
+  Final Train: 81.18
+   Final Test: 55.16
+Epoch: 00, Loss: 1.6038, Train: 28.64%, Valid: 29.02%, Test: 28.56%
+Epoch: 25, Loss: 0.5198, Train: 85.88%, Valid: 54.45%, Test: 54.30%
+Epoch: 50, Loss: 0.2596, Train: 91.54%, Valid: 52.87%, Test: 52.77%
+Epoch: 75, Loss: 0.2232, Train: 92.40%, Valid: 52.73%, Test: 52.59%
+Epoch: 100, Loss: 0.2068, Train: 92.92%, Valid: 52.47%, Test: 52.36%
+Epoch: 125, Loss: 0.1966, Train: 93.32%, Valid: 52.42%, Test: 52.28%
+Epoch: 150, Loss: 0.1888, Train: 93.76%, Valid: 52.26%, Test: 52.22%
+Epoch: 175, Loss: 0.1821, Train: 94.09%, Valid: 52.28%, Test: 52.26%
+Epoch: 200, Loss: 0.1749, Train: 94.50%, Valid: 52.15%, Test: 52.17%
+Epoch: 225, Loss: 0.1705, Train: 94.78%, Valid: 52.25%, Test: 52.25%
+Epoch: 250, Loss: 0.1653, Train: 94.94%, Valid: 52.22%, Test: 52.21%
+Epoch: 275, Loss: 0.1613, Train: 95.25%, Valid: 52.07%, Test: 52.06%
+Epoch: 300, Loss: 0.1579, Train: 95.45%, Valid: 52.00%, Test: 51.99%
+Epoch: 325, Loss: 0.1559, Train: 95.70%, Valid: 51.95%, Test: 52.01%
+Epoch: 350, Loss: 0.1514, Train: 95.74%, Valid: 52.00%, Test: 51.99%
+Epoch: 375, Loss: 0.1496, Train: 96.00%, Valid: 52.10%, Test: 51.97%
+Epoch: 400, Loss: 0.1464, Train: 96.09%, Valid: 51.97%, Test: 51.99%
+Epoch: 425, Loss: 0.1460, Train: 96.22%, Valid: 51.93%, Test: 51.91%
+Epoch: 450, Loss: 0.1433, Train: 96.39%, Valid: 51.98%, Test: 51.99%
+Epoch: 475, Loss: 0.1402, Train: 96.47%, Valid: 51.91%, Test: 51.92%
+Run 04:
+Highest Train: 96.69
+Highest Valid: 55.05
+  Final Train: 79.39
+   Final Test: 54.81
+Epoch: 00, Loss: 1.6096, Train: 28.64%, Valid: 28.95%, Test: 28.59%
+Epoch: 25, Loss: 0.5075, Train: 86.25%, Valid: 53.95%, Test: 53.84%
+Epoch: 50, Loss: 0.2599, Train: 91.65%, Valid: 52.71%, Test: 52.93%
+Epoch: 75, Loss: 0.2239, Train: 92.44%, Valid: 52.62%, Test: 52.64%
+Epoch: 100, Loss: 0.2077, Train: 92.98%, Valid: 52.46%, Test: 52.54%
+Epoch: 125, Loss: 0.2002, Train: 93.45%, Valid: 52.36%, Test: 52.45%
+Epoch: 150, Loss: 0.1892, Train: 93.86%, Valid: 52.42%, Test: 52.40%
+Epoch: 175, Loss: 0.1832, Train: 94.19%, Valid: 52.41%, Test: 52.27%
+Epoch: 200, Loss: 0.1776, Train: 94.53%, Valid: 52.34%, Test: 52.24%
+Epoch: 225, Loss: 0.1703, Train: 94.82%, Valid: 52.25%, Test: 52.07%
+Epoch: 250, Loss: 0.1647, Train: 95.08%, Valid: 52.30%, Test: 52.07%
+Epoch: 275, Loss: 0.1615, Train: 95.27%, Valid: 52.23%, Test: 52.04%
+Epoch: 300, Loss: 0.1584, Train: 95.43%, Valid: 52.19%, Test: 52.25%
+Epoch: 325, Loss: 0.1546, Train: 95.72%, Valid: 52.15%, Test: 52.03%
+Epoch: 350, Loss: 0.1512, Train: 95.94%, Valid: 52.13%, Test: 52.03%
+Epoch: 375, Loss: 0.1514, Train: 96.00%, Valid: 52.10%, Test: 51.91%
+Epoch: 400, Loss: 0.1469, Train: 96.12%, Valid: 52.12%, Test: 51.88%
+Epoch: 425, Loss: 0.1440, Train: 96.29%, Valid: 52.03%, Test: 51.85%
+Epoch: 450, Loss: 0.1430, Train: 96.43%, Valid: 51.99%, Test: 51.78%
+Epoch: 475, Loss: 0.1419, Train: 96.57%, Valid: 51.95%, Test: 51.71%
+Run 05:
+Highest Train: 96.74
+Highest Valid: 54.31
+  Final Train: 79.85
+   Final Test: 54.39
+All runs:
+Highest Train: 96.70, 0.04
+Highest Valid: 54.68, 0.28
+  Final Train: 80.42, 0.87
+   Final Test: 54.76, 0.39
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.1, beta=0.0001, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.1, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.1)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6049, Train: 28.72%, Valid: 28.54%, Test: 28.82%
+Epoch: 25, Loss: 0.4965, Train: 86.40%, Valid: 53.99%, Test: 53.80%
+Epoch: 50, Loss: 0.2591, Train: 91.58%, Valid: 52.85%, Test: 52.98%
+Epoch: 75, Loss: 0.2242, Train: 92.39%, Valid: 52.53%, Test: 52.87%
+Epoch: 100, Loss: 0.2096, Train: 92.87%, Valid: 52.34%, Test: 52.76%
+Epoch: 125, Loss: 0.2009, Train: 93.34%, Valid: 52.27%, Test: 52.68%
+Epoch: 150, Loss: 0.1913, Train: 93.72%, Valid: 52.25%, Test: 52.60%
+Epoch: 175, Loss: 0.1839, Train: 94.09%, Valid: 52.23%, Test: 52.43%
+Epoch: 200, Loss: 0.1777, Train: 94.44%, Valid: 52.15%, Test: 52.43%
+Epoch: 225, Loss: 0.1713, Train: 94.72%, Valid: 52.03%, Test: 52.45%
+Epoch: 250, Loss: 0.1673, Train: 95.13%, Valid: 52.10%, Test: 52.46%
+Epoch: 275, Loss: 0.1615, Train: 95.26%, Valid: 52.01%, Test: 52.41%
+Epoch: 300, Loss: 0.1594, Train: 95.39%, Valid: 52.10%, Test: 52.36%
+Epoch: 325, Loss: 0.1563, Train: 95.62%, Valid: 52.11%, Test: 52.26%
+Epoch: 350, Loss: 0.1546, Train: 95.83%, Valid: 52.11%, Test: 52.37%
+Epoch: 375, Loss: 0.1511, Train: 95.98%, Valid: 51.92%, Test: 52.28%
+Epoch: 400, Loss: 0.1496, Train: 96.13%, Valid: 52.06%, Test: 52.25%
+Epoch: 425, Loss: 0.1457, Train: 96.15%, Valid: 51.99%, Test: 52.39%
+Epoch: 450, Loss: 0.1436, Train: 96.38%, Valid: 52.03%, Test: 52.37%
+Epoch: 475, Loss: 0.1423, Train: 96.53%, Valid: 52.01%, Test: 52.34%
+Run 01:
+Highest Train: 96.76
+Highest Valid: 54.73
+  Final Train: 79.66
+   Final Test: 54.80
+Epoch: 00, Loss: 1.6044, Train: 28.62%, Valid: 28.84%, Test: 28.71%
+Epoch: 25, Loss: 0.5295, Train: 85.48%, Valid: 54.20%, Test: 53.96%
+Epoch: 50, Loss: 0.2625, Train: 91.53%, Valid: 52.93%, Test: 52.47%
+Epoch: 75, Loss: 0.2228, Train: 92.40%, Valid: 52.81%, Test: 52.22%
+Epoch: 100, Loss: 0.2092, Train: 92.89%, Valid: 52.68%, Test: 52.18%
+Epoch: 125, Loss: 0.1981, Train: 93.40%, Valid: 52.67%, Test: 52.18%
+Epoch: 150, Loss: 0.1894, Train: 93.76%, Valid: 52.62%, Test: 52.15%
+Epoch: 175, Loss: 0.1845, Train: 94.07%, Valid: 52.63%, Test: 52.07%
+Epoch: 200, Loss: 0.1774, Train: 94.41%, Valid: 52.60%, Test: 51.95%
+Epoch: 225, Loss: 0.1724, Train: 94.65%, Valid: 52.52%, Test: 51.93%
+Epoch: 250, Loss: 0.1678, Train: 94.86%, Valid: 52.49%, Test: 52.03%
+Epoch: 275, Loss: 0.1634, Train: 95.07%, Valid: 52.59%, Test: 51.78%
+Epoch: 300, Loss: 0.1604, Train: 95.30%, Valid: 52.55%, Test: 51.82%
+Epoch: 325, Loss: 0.1573, Train: 95.54%, Valid: 52.42%, Test: 51.85%
+Epoch: 350, Loss: 0.1553, Train: 95.62%, Valid: 52.46%, Test: 51.79%
+Epoch: 375, Loss: 0.1539, Train: 95.76%, Valid: 52.46%, Test: 51.90%
+Epoch: 400, Loss: 0.1485, Train: 95.88%, Valid: 52.43%, Test: 51.95%
+Epoch: 425, Loss: 0.1479, Train: 96.07%, Valid: 52.32%, Test: 51.68%
+Epoch: 450, Loss: 0.1451, Train: 96.21%, Valid: 52.28%, Test: 51.68%
+Epoch: 475, Loss: 0.1452, Train: 96.30%, Valid: 52.40%, Test: 51.74%
+Run 02:
+Highest Train: 96.55
+Highest Valid: 54.24
+  Final Train: 79.30
+   Final Test: 54.13
+Epoch: 00, Loss: 1.6083, Train: 28.64%, Valid: 28.76%, Test: 28.75%
+Epoch: 25, Loss: 0.5207, Train: 85.86%, Valid: 54.02%, Test: 54.33%
+Epoch: 50, Loss: 0.2618, Train: 91.53%, Valid: 52.71%, Test: 53.01%
+Epoch: 75, Loss: 0.2252, Train: 92.43%, Valid: 52.48%, Test: 52.78%
+Epoch: 100, Loss: 0.2088, Train: 92.87%, Valid: 52.37%, Test: 52.64%
+Epoch: 125, Loss: 0.1987, Train: 93.34%, Valid: 52.36%, Test: 52.77%
+Epoch: 150, Loss: 0.1903, Train: 93.81%, Valid: 52.35%, Test: 52.60%
+Epoch: 175, Loss: 0.1839, Train: 94.17%, Valid: 52.08%, Test: 52.46%
+Epoch: 200, Loss: 0.1782, Train: 94.46%, Valid: 52.12%, Test: 52.48%
+Epoch: 225, Loss: 0.1712, Train: 94.71%, Valid: 52.20%, Test: 52.52%
+Epoch: 250, Loss: 0.1679, Train: 94.94%, Valid: 52.15%, Test: 52.46%
+Epoch: 275, Loss: 0.1641, Train: 95.18%, Valid: 52.12%, Test: 52.48%
+Epoch: 300, Loss: 0.1607, Train: 95.36%, Valid: 51.94%, Test: 52.45%
+Epoch: 325, Loss: 0.1566, Train: 95.54%, Valid: 52.00%, Test: 52.48%
+Epoch: 350, Loss: 0.1537, Train: 95.71%, Valid: 51.93%, Test: 52.62%
+Epoch: 375, Loss: 0.1528, Train: 95.90%, Valid: 51.90%, Test: 52.54%
+Epoch: 400, Loss: 0.1502, Train: 96.09%, Valid: 51.91%, Test: 52.40%
+Epoch: 425, Loss: 0.1473, Train: 96.20%, Valid: 51.90%, Test: 52.39%
+Epoch: 450, Loss: 0.1459, Train: 96.29%, Valid: 51.94%, Test: 52.50%
+Epoch: 475, Loss: 0.1465, Train: 96.42%, Valid: 51.86%, Test: 52.45%
+Run 03:
+Highest Train: 96.60
+Highest Valid: 54.31
+  Final Train: 79.91
+   Final Test: 54.69
+Epoch: 00, Loss: 1.6117, Train: 32.93%, Valid: 32.16%, Test: 31.75%
+Epoch: 25, Loss: 0.5180, Train: 86.07%, Valid: 54.32%, Test: 54.09%
+Epoch: 50, Loss: 0.2552, Train: 91.59%, Valid: 52.92%, Test: 52.85%
+Epoch: 75, Loss: 0.2211, Train: 92.43%, Valid: 52.61%, Test: 52.49%
+Epoch: 100, Loss: 0.2060, Train: 92.91%, Valid: 52.60%, Test: 52.44%
+Epoch: 125, Loss: 0.1955, Train: 93.36%, Valid: 52.48%, Test: 52.40%
+Epoch: 150, Loss: 0.1881, Train: 93.74%, Valid: 52.29%, Test: 52.31%
+Epoch: 175, Loss: 0.1823, Train: 94.10%, Valid: 52.33%, Test: 52.27%
+Epoch: 200, Loss: 0.1752, Train: 94.43%, Valid: 52.33%, Test: 52.26%
+Epoch: 225, Loss: 0.1707, Train: 94.77%, Valid: 52.26%, Test: 52.28%
+Epoch: 250, Loss: 0.1647, Train: 95.06%, Valid: 52.26%, Test: 52.12%
+Epoch: 275, Loss: 0.1613, Train: 95.25%, Valid: 52.35%, Test: 52.24%
+Epoch: 300, Loss: 0.1580, Train: 95.43%, Valid: 52.29%, Test: 52.08%
+Epoch: 325, Loss: 0.1557, Train: 95.58%, Valid: 52.18%, Test: 52.20%
+Epoch: 350, Loss: 0.1516, Train: 95.81%, Valid: 52.18%, Test: 52.00%
+Epoch: 375, Loss: 0.1501, Train: 95.93%, Valid: 52.10%, Test: 52.14%
+Epoch: 400, Loss: 0.1479, Train: 96.14%, Valid: 52.00%, Test: 51.87%
+Epoch: 425, Loss: 0.1444, Train: 96.18%, Valid: 52.01%, Test: 52.10%
+Epoch: 450, Loss: 0.1444, Train: 96.35%, Valid: 52.05%, Test: 51.94%
+Epoch: 475, Loss: 0.1407, Train: 96.49%, Valid: 51.97%, Test: 51.93%
+Run 04:
+Highest Train: 96.60
+Highest Valid: 54.69
+  Final Train: 80.69
+   Final Test: 54.64
+Epoch: 00, Loss: 1.6044, Train: 28.64%, Valid: 28.95%, Test: 28.58%
+Epoch: 25, Loss: 0.5076, Train: 86.22%, Valid: 54.29%, Test: 54.06%
+Epoch: 50, Loss: 0.2591, Train: 91.59%, Valid: 52.76%, Test: 52.90%
+Epoch: 75, Loss: 0.2223, Train: 92.42%, Valid: 52.51%, Test: 52.63%
+Epoch: 100, Loss: 0.2073, Train: 92.89%, Valid: 52.40%, Test: 52.57%
+Epoch: 125, Loss: 0.1981, Train: 93.37%, Valid: 52.39%, Test: 52.26%
+Epoch: 150, Loss: 0.1907, Train: 93.73%, Valid: 52.45%, Test: 52.26%
+Epoch: 175, Loss: 0.1828, Train: 94.12%, Valid: 52.38%, Test: 52.09%
+Epoch: 200, Loss: 0.1763, Train: 94.49%, Valid: 52.28%, Test: 52.00%
+Epoch: 225, Loss: 0.1707, Train: 94.71%, Valid: 52.13%, Test: 52.12%
+Epoch: 250, Loss: 0.1660, Train: 95.04%, Valid: 52.19%, Test: 52.04%
+Epoch: 275, Loss: 0.1615, Train: 95.27%, Valid: 52.12%, Test: 51.91%
+Epoch: 300, Loss: 0.1584, Train: 95.50%, Valid: 52.12%, Test: 52.02%
+Epoch: 325, Loss: 0.1551, Train: 95.70%, Valid: 51.99%, Test: 51.90%
+Epoch: 350, Loss: 0.1521, Train: 95.85%, Valid: 51.99%, Test: 51.81%
+Epoch: 375, Loss: 0.1498, Train: 96.05%, Valid: 51.96%, Test: 51.79%
+Epoch: 400, Loss: 0.1462, Train: 96.25%, Valid: 51.87%, Test: 51.78%
+Epoch: 425, Loss: 0.1445, Train: 96.35%, Valid: 51.89%, Test: 51.81%
+Epoch: 450, Loss: 0.1419, Train: 96.49%, Valid: 51.91%, Test: 51.70%
+Epoch: 475, Loss: 0.1405, Train: 96.61%, Valid: 51.92%, Test: 51.71%
+Run 05:
+Highest Train: 96.78
+Highest Valid: 54.50
+  Final Train: 79.74
+   Final Test: 54.48
+All runs:
+Highest Train: 96.66, 0.10
+Highest Valid: 54.49, 0.22
+  Final Train: 79.86, 0.52
+   Final Test: 54.55, 0.26
+Saving results to results/arxiv-year.csv
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.1, beta=1.0, cached=False, cpu=False, dataset='arxiv-year', decay_rate=1.0, delta=0.0, directed=True, display_step=25, dropout=0.7, epochs=500, exponent=3.0, gamma=0.7, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.005, method='mlpnorm', no_bn=False, norm_func_id=2, norm_layers=1, num_layers=2, num_mlp_layers=1, orders=1, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=5, sampling=False, sub_dataset='None', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.1)
+num nodes 169343 | num classes 5 | num node feats 128
+MODEL: MLPNORM(
+  (fc1): Linear(in_features=128, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=5, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=169343, out_features=256, bias=True)
+)
+Epoch: 00, Loss: 1.6121, Train: 35.16%, Valid: 33.41%, Test: 34.10%
+Epoch: 25, Loss: 0.4892, Train: 86.62%, Valid: 53.85%, Test: 53.84%
+Epoch: 50, Loss: 0.2680, Train: 90.97%, Valid: 52.63%, Test: 52.80%
+Epoch: 75, Loss: 0.2360, Train: 91.37%, Valid: 52.33%, Test: 52.55%
+Epoch: 100, Loss: 0.2277, Train: 91.48%, Valid: 52.25%, Test: 52.43%
+Epoch: 125, Loss: 0.2214, Train: 91.50%, Valid: 52.09%, Test: 52.40%
+Epoch: 150, Loss: 0.2168, Train: 91.53%, Valid: 52.15%, Test: 52.40%
+Epoch: 175, Loss: 0.2150, Train: 91.54%, Valid: 52.10%, Test: 52.38%
+Epoch: 200, Loss: 0.2123, Train: 91.54%, Valid: 52.21%, Test: 52.45%
+Epoch: 225, Loss: 0.2107, Train: 91.54%, Valid: 52.00%, Test: 52.30%
+Epoch: 250, Loss: 0.2101, Train: 91.55%, Valid: 52.11%, Test: 52.26%
+Epoch: 275, Loss: 0.2091, Train: 91.55%, Valid: 52.10%, Test: 52.27%
+Epoch: 300, Loss: 0.2073, Train: 91.55%, Valid: 52.10%, Test: 52.16%
+Epoch: 325, Loss: 0.2074, Train: 91.55%, Valid: 52.07%, Test: 52.24%
+Epoch: 350, Loss: 0.2073, Train: 91.55%, Valid: 52.08%, Test: 52.18%
+Epoch: 375, Loss: 0.2073, Train: 91.55%, Valid: 52.00%, Test: 52.23%
+Epoch: 400, Loss: 0.2061, Train: 91.56%, Valid: 51.94%, Test: 52.21%
+Epoch: 425, Loss: 0.2058, Train: 91.55%, Valid: 52.01%, Test: 52.15%
+Epoch: 450, Loss: 0.2050, Train: 91.55%, Valid: 51.93%, Test: 52.08%
+Epoch: 475, Loss: 0.2059, Train: 91.54%, Valid: 51.95%, Test: 52.13%
+Run 01:
+Highest Train: 91.56
+Highest Valid: 54.50
+  Final Train: 83.68
+   Final Test: 54.46
+Epoch: 00, Loss: 1.6118, Train: 28.62%, Valid: 28.84%, Test: 28.71%
+Epoch: 25, Loss: 0.4798, Train: 86.86%, Valid: 53.73%, Test: 53.46%
+Epoch: 50, Loss: 0.2675, Train: 91.05%, Valid: 52.82%, Test: 52.33%
+Epoch: 75, Loss: 0.2350, Train: 91.44%, Valid: 52.52%, Test: 52.11%
+Epoch: 100, Loss: 0.2250, Train: 91.54%, Valid: 52.49%, Test: 51.88%
+Epoch: 125, Loss: 0.2215, Train: 91.58%, Valid: 52.50%, Test: 51.85%
+Epoch: 150, Loss: 0.2166, Train: 91.60%, Valid: 52.51%, Test: 51.90%
+Epoch: 175, Loss: 0.2130, Train: 91.60%, Valid: 52.36%, Test: 51.82%
+Epoch: 200, Loss: 0.2109, Train: 91.61%, Valid: 52.43%, Test: 51.81%
+Epoch: 225, Loss: 0.2092, Train: 91.61%, Valid: 52.27%, Test: 51.85%
+Epoch: 250, Loss: 0.2085, Train: 91.61%, Valid: 52.22%, Test: 51.81%
+Epoch: 275, Loss: 0.2072, Train: 91.62%, Valid: 52.31%, Test: 51.76%
+Epoch: 300, Loss: 0.2066, Train: 91.61%, Valid: 52.29%, Test: 51.75%
+Epoch: 325, Loss: 0.2048, Train: 91.62%, Valid: 52.13%, Test: 51.78%
+Epoch: 350, Loss: 0.2049, Train: 91.62%, Valid: 52.06%, Test: 51.83%
+Epoch: 375, Loss: 0.2048, Train: 91.62%, Valid: 52.17%, Test: 51.78%
+Epoch: 400, Loss: 0.2038, Train: 91.62%, Valid: 52.05%, Test: 51.77%
+Epoch: 425, Loss: 0.2038, Train: 91.62%, Valid: 52.08%, Test: 51.72%
+Epoch: 450, Loss: 0.2031, Train: 91.62%, Valid: 52.03%, Test: 51.68%
+Epoch: 475, Loss: 0.2034, Train: 91.61%, Valid: 52.12%, Test: 51.69%
+Run 02:
+Highest Train: 91.62
+Highest Valid: 54.43
+  Final Train: 83.13
+   Final Test: 54.25
+Epoch: 00, Loss: 1.6037, Train: 28.64%, Valid: 28.76%, Test: 28.75%
+Epoch: 25, Loss: 0.4628, Train: 87.16%, Valid: 53.56%, Test: 53.79%
+Epoch: 50, Loss: 0.2599, Train: 91.08%, Valid: 52.25%, Test: 52.69%
+Epoch: 75, Loss: 0.2323, Train: 91.47%, Valid: 52.10%, Test: 52.51%
+Epoch: 100, Loss: 0.2242, Train: 91.56%, Valid: 52.04%, Test: 52.46%
+Epoch: 125, Loss: 0.2180, Train: 91.60%, Valid: 52.01%, Test: 52.33%
+Epoch: 150, Loss: 0.2149, Train: 91.61%, Valid: 51.92%, Test: 52.38%
+Epoch: 175, Loss: 0.2116, Train: 91.62%, Valid: 51.86%, Test: 52.36%
+Epoch: 200, Loss: 0.2100, Train: 91.62%, Valid: 51.91%, Test: 52.28%
+Epoch: 225, Loss: 0.2081, Train: 91.62%, Valid: 51.87%, Test: 52.32%
+Epoch: 250, Loss: 0.2076, Train: 91.63%, Valid: 51.84%, Test: 52.14%
+Epoch: 275, Loss: 0.2058, Train: 91.62%, Valid: 51.78%, Test: 52.20%
+Epoch: 300, Loss: 0.2061, Train: 91.63%, Valid: 51.84%, Test: 52.23%
+Epoch: 325, Loss: 0.2053, Train: 91.63%, Valid: 51.82%, Test: 52.17%
+Epoch: 350, Loss: 0.2041, Train: 91.63%, Valid: 51.70%, Test: 52.09%
+Epoch: 375, Loss: 0.2035, Train: 91.63%, Valid: 51.76%, Test: 52.14%
+Epoch: 400, Loss: 0.2028, Train: 91.63%, Valid: 51.67%, Test: 52.08%
+Epoch: 425, Loss: 0.2042, Train: 91.62%, Valid: 51.78%, Test: 52.14%
+Epoch: 450, Loss: 0.2038, Train: 91.63%, Valid: 51.76%, Test: 52.13%
+Epoch: 475, Loss: 0.2037, Train: 91.63%, Valid: 51.77%, Test: 52.16%
+Run 03:
+Highest Train: 91.63
+Highest Valid: 54.50
+  Final Train: 82.90
+   Final Test: 54.72
+Epoch: 00, Loss: 1.6069, Train: 28.62%, Valid: 29.01%, Test: 28.55%
+Epoch: 25, Loss: 0.4714, Train: 86.97%, Valid: 53.95%, Test: 53.94%
+Epoch: 50, Loss: 0.2638, Train: 91.01%, Valid: 52.77%, Test: 52.76%
+Epoch: 75, Loss: 0.2335, Train: 91.47%, Valid: 52.55%, Test: 52.35%
+Epoch: 100, Loss: 0.2227, Train: 91.57%, Valid: 52.41%, Test: 52.35%
+Epoch: 125, Loss: 0.2171, Train: 91.60%, Valid: 52.33%, Test: 52.37%
+Epoch: 150, Loss: 0.2131, Train: 91.61%, Valid: 52.27%, Test: 52.22%
+Epoch: 175, Loss: 0.2115, Train: 91.62%, Valid: 52.23%, Test: 52.32%
+Epoch: 200, Loss: 0.2081, Train: 91.63%, Valid: 52.11%, Test: 52.20%
+Epoch: 225, Loss: 0.2075, Train: 91.63%, Valid: 52.15%, Test: 52.11%
+Epoch: 250, Loss: 0.2059, Train: 91.64%, Valid: 52.17%, Test: 51.98%
+Epoch: 275, Loss: 0.2052, Train: 91.64%, Valid: 52.05%, Test: 52.04%
+Epoch: 300, Loss: 0.2040, Train: 91.64%, Valid: 52.02%, Test: 52.06%
+Epoch: 325, Loss: 0.2039, Train: 91.63%, Valid: 52.06%, Test: 51.97%
+Epoch: 350, Loss: 0.2037, Train: 91.63%, Valid: 52.00%, Test: 51.95%
+Epoch: 375, Loss: 0.2031, Train: 91.64%, Valid: 52.01%, Test: 51.93%
+Epoch: 400, Loss: 0.2021, Train: 91.64%, Valid: 51.98%, Test: 51.94%
+Epoch: 425, Loss: 0.2024, Train: 91.63%, Valid: 51.95%, Test: 51.91%
+Epoch: 450, Loss: 0.2013, Train: 91.64%, Valid: 51.89%, Test: 51.89%
+Epoch: 475, Loss: 0.2020, Train: 91.64%, Valid: 51.86%, Test: 51.96%
+Run 04:
+Highest Train: 91.64
+Highest Valid: 54.80
+  Final Train: 82.28
+   Final Test: 54.78
+Epoch: 00, Loss: 1.6086, Train: 28.64%, Valid: 28.95%, Test: 28.58%
+Epoch: 25, Loss: 0.4817, Train: 86.71%, Valid: 53.69%, Test: 53.61%
+Epoch: 50, Loss: 0.2656, Train: 90.94%, Valid: 52.61%, Test: 52.52%
+Epoch: 75, Loss: 0.2357, Train: 91.39%, Valid: 52.25%, Test: 52.31%
+Epoch: 100, Loss: 0.2263, Train: 91.49%, Valid: 52.16%, Test: 52.25%
+Epoch: 125, Loss: 0.2192, Train: 91.52%, Valid: 52.10%, Test: 52.16%
+Epoch: 150, Loss: 0.2164, Train: 91.55%, Valid: 52.00%, Test: 52.13%
+Epoch: 175, Loss: 0.2127, Train: 91.56%, Valid: 51.97%, Test: 52.15%

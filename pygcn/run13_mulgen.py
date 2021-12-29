@@ -4,7 +4,7 @@ import itertools
 datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
-dataset = 'squirrel'
+dataset = 'film'
 
 for i in range(len(datasets)):
     if datasets[i] == dataset:
@@ -18,8 +18,8 @@ best_config = {
     'pubmed': [0.01, 0.3, 40, 0.00001, 0.0, 1000.0, 0.8, 1, 4, 1.0, 2, 2],
     'texas': [0.01, 0.0, 200, 0.00005, 0.0, 0.1, 0.1, 2, 1, 1.0, 2, 2],
     'wisconsin': [0.01, 0.0, 200, 0.00005, 0.1, 1.0, 0.0, 2, 1, 1.0, 2, 2],
-    'cornell': [0.01, 0.0, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 1.0, 2, 2],
-    'film': [0.01, 0.0, 40, 0.001, 0.0, 1000.0, 0.1, 2, 6, 1.0, 2, 2]
+    'cornell': [0.01, 0.0, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 1.0, 1, 2],
+    'film': [0.01, 0.0, 40, 0.001, 0.0, 1000.0, 0.1, 2, 6, 1.0, 1, 2]
 }
 
 
@@ -27,15 +27,15 @@ run_sh_all = ""
 config_list = []
 
 lr = [0.01]
-delta = [0.0]
-dropout = [0.8]
-weight_decay = [0.0]
-alpha = [1.0]
-beta = [1.0]
-gamma = [0.0]
-norm_layers = [1, 2, 3]
-orders = [1, 2, 3]
-early_stopping = [200]
+delta = [1.0]
+dropout = [0.0]
+weight_decay = [0.001]
+alpha = [0.0]
+beta = [1000.0]
+gamma = [0.1]
+norm_layers = [2]
+orders = [6]
+early_stopping = [40]
 
 best = best_config[dataset]
 for d, b, g, de, w, l, n, o, a, e in itertools.product(dropout, beta, gamma, delta, weight_decay, lr, norm_layers, orders, alpha, early_stopping):

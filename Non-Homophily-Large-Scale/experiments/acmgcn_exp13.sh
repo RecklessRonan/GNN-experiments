@@ -9,8 +9,8 @@
 
 dataset_lst=(pokec)
 hidden_channel_lst=(64)
-weight_decay_lst=(5e-5)
-dropout_lst=(0.9)
+weight_decay_lst=(1e-5 0.0)
+dropout_lst=(0.0)
 lr_lst=(0.01)
 num_layers_lst=(2)
 display_step=25

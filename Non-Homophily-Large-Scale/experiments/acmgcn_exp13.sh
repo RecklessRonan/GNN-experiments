@@ -7,13 +7,13 @@
 # decay_rate_lst=(0.0 1.5)
 # num_layers_lst=(3 2 1)
 
-dataset_lst=(genius fb100)
-hidden_channel_lst=(64)
-weight_decay_lst=(0.005 0.001 0.0005 0.0001 0.00005)
-dropout_lst=(0.3 0.4 0.5 0.6 0.7)
+dataset_lst=(arxiv-year)
+hidden_channel_lst=(256)
+weight_decay_lst=(0.005)
+dropout_lst=(0.3)
 lr_lst=(0.01)
-num_layers_lst=(2)
-display_step=25
+num_layers_lst=(3)
+display_step=1
 
 for dataset in "${dataset_lst[@]}"; do
     for lr in "${lr_lst[@]}"; do

@@ -158,11 +158,11 @@ def parser_add_main_args(parser):
                         help='Weight for node features, thus 1-delta for adj')
     parser.add_argument('--norm_func_id', type=int, default=2,
                         help='Function of norm layer, ids \in [1, 2]')
-    parser.add_argument('--norm_layers', type=int, default=2,
+    parser.add_argument('--norm_layers', type=int, default=1,
                         help='Number of groupnorm layers')
     parser.add_argument('--orders_func_id', type=int, default=2,
                         help='Sum function of adj orders in norm layer, ids \in [1, 2, 3]')
-    parser.add_argument('--orders', type=int, default=2,
+    parser.add_argument('--orders', type=int, default=1,
                         help='Number of adj orders in norm layer')
     # used for ggcn
     parser.add_argument('--decay_rate', type=float, default=1.0,

@@ -2,6 +2,7 @@ import argparse
 import sys
 import os
 from tqdm import tqdm
+import time
 import numpy as np
 import torch
 import torch.nn as nn
@@ -256,6 +257,8 @@ model.train()
 print('MODEL:', model)
 
 ### Training loop ###
+last_time = time.time()
+
 for run in range(args.runs):
     split_idx = split_idx_lst[run]
     train_idx = split_idx['train'].to(device)
@@ -360,12 +363,18 @@ for run in range(args.runs):
                 best_out = F.softmax(result[-1], dim=1)
             else:
                 best_out = result[-1]
+
+        now_time = time.time()
+        time_elapsed = now_time - last_time
+        last_time = now_time
+
         if epoch % args.display_step == 0:
             print(f'Epoch: {epoch:02d}, '
                   f'Loss: {loss:.4f}, '
                   f'Train: {100 * result[0]:.2f}%, '
                   f'Valid: {100 * result[1]:.2f}%, '
-                  f'Test: {100 * result[2]:.2f}%')
+                  f'Test: {100 * result[2]:.2f}%, '
+                  f'Time: {time_elapsed:.4f}')
             if args.print_prop:
                 pred = out.argmax(dim=-1, keepdim=True)
                 print("Predicted proportions:", pred.unique(

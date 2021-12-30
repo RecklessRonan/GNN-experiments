@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dataset=$1
+dataset=arxiv-year
 sub_dataset=${2:-'None'}
 
 hidden_channels_lst=(8 16 32 64)
@@ -15,11 +15,11 @@ for hidden_channels in "${hidden_channels_lst[@]}"; do
 			if [ "$dataset" = "snap-patents" ] || [ "$dataset" = "arxiv-year" ]; then
 				python main.py --dataset $dataset --sub_dataset $sub_dataset \
 				--method h2gcn --num_layers $num_layers --hidden_channels $hidden_channels \
-				--display_step 25 --runs 5 --dropout $dropout  --directed
+				--display_step 1 --runs 5 --dropout $dropout  --directed
 			else
 				python main.py --dataset $dataset --sub_dataset $sub_dataset \
 				--method h2gcn --num_layers $num_layers --hidden_channels $hidden_channels \
-				--display_step 25 --runs 5 --dropout $dropout 
+				--display_step 1 --runs 5 --dropout $dropout 
 			fi
 		done
 	done            

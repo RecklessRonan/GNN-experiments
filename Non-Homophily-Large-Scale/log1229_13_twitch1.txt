@@ -26,3 +26,15 @@ Epoch: 325, Loss: 0.6462, Train: 61.40%, Valid: 60.70%, Test: 60.86%
 Epoch: 350, Loss: 0.6455, Train: 61.62%, Valid: 60.85%, Test: 61.09%
 Epoch: 375, Loss: 0.6436, Train: 61.53%, Valid: 60.78%, Test: 61.02%
 Epoch: 400, Loss: 0.6446, Train: 61.69%, Valid: 60.89%, Test: 61.10%
+Epoch: 425, Loss: 0.6472, Train: 61.64%, Valid: 60.71%, Test: 61.07%
+Epoch: 450, Loss: 0.6420, Train: 61.79%, Valid: 60.90%, Test: 61.23%
+Epoch: 475, Loss: 0.6428, Train: 61.73%, Valid: 60.89%, Test: 61.22%
+Run 01:
+Highest Train: 61.91
+Highest Valid: 61.13
+  Final Train: 61.85
+   Final Test: 61.39
+Epoch: 00, Loss: 2.0420, Train: 52.78%, Valid: 52.86%, Test: 52.88%
+Epoch: 25, Loss: 0.6817, Train: 59.51%, Valid: 60.01%, Test: 59.74%
+Epoch: 50, Loss: 0.6779, Train: 60.17%, Valid: 60.31%, Test: 60.39%
+Epoch: 75, Loss: 0.6757, Train: 60.36%, Valid: 60.41%, Test: 60.47%

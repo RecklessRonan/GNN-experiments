@@ -7,10 +7,10 @@
 # decay_rate_lst=(0.0 1.5)
 # num_layers_lst=(3 2 1)
 
-dataset_lst=(twitch-gamer)
-hidden_channel_lst=(128)
-weight_decay_lst=(1e-3)
-dropout_lst=(0.0)
+dataset_lst=(genius fb100)
+hidden_channel_lst=(64)
+weight_decay_lst=(0.005 0.001 0.0005 0.0001 0.00005)
+dropout_lst=(0.3 0.4 0.5 0.6 0.7)
 lr_lst=(0.01)
 num_layers_lst=(2)
 display_step=25

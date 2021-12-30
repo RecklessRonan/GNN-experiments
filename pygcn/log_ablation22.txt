@@ -221,3 +221,341 @@ film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl2_o
 Test set results: loss= 1.4706 accuracy= 0.3691
 film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split0_results.txt
 Test set results: loss= 1.5724 accuracy= 0.2546
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split1_results.txt
+Test set results: loss= 1.5747 accuracy= 0.2546
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 1.5678 accuracy= 0.2645
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 1.5758 accuracy= 0.2546
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split4_results.txt
+Test set results: loss= 1.5749 accuracy= 0.2401
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split5_results.txt
+Test set results: loss= 1.5705 accuracy= 0.2592
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split6_results.txt
+Test set results: loss= 1.5749 accuracy= 0.2382
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split7_results.txt
+Test set results: loss= 1.5778 accuracy= 0.2441
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split8_results.txt
+Test set results: loss= 1.5851 accuracy= 0.2441
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta0.0_nlid2_nl2_ordersid2_orders4_split9_results.txt
+Test set results: loss= 1.5662 accuracy= 0.2757
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.9222 accuracy= 0.7568
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.3539 accuracy= 0.8919
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split2_results.txt
+Test set results: loss= 1.4022 accuracy= 0.7568
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.2860 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.4166 accuracy= 0.8378
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.3278 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.5970 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.6318 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.8844 accuracy= 0.7838
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.4676 accuracy= 0.8378
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.9196 accuracy= 0.7568
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.3557 accuracy= 0.8919
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split2_results.txt
+Test set results: loss= 1.4158 accuracy= 0.7568
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.2884 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.4212 accuracy= 0.8378
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.3352 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.5962 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.6310 accuracy= 0.8649
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.8609 accuracy= 0.7838
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.0001_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.4699 accuracy= 0.8378
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split0_results.txt
+Test set results: loss= 1.5811 accuracy= 0.5676
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split1_results.txt
+Test set results: loss= 2.2698 accuracy= 0.6486
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split2_results.txt
+Test set results: loss= 2.7979 accuracy= 0.3784
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split3_results.txt
+Test set results: loss= 1.9385 accuracy= 0.5946
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split4_results.txt
+Test set results: loss= 2.1797 accuracy= 0.6216
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split5_results.txt
+Test set results: loss= 2.2519 accuracy= 0.6216
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split6_results.txt
+Test set results: loss= 2.9267 accuracy= 0.4595
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split7_results.txt
+Test set results: loss= 2.1610 accuracy= 0.5946
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split8_results.txt
+Test set results: loss= 1.5376 accuracy= 0.5946
+texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta0.1_gamma0.2_delta0.0_nlid2_nl1_ordersid2_orders4_split9_results.txt
+Test set results: loss= 1.7296 accuracy= 0.5946
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.9414 accuracy= 0.8235
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.6151 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.5152 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.2240 accuracy= 0.9412
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.4405 accuracy= 0.8627
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.6527 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.4997 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.5094 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.6761 accuracy= 0.8431
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.5757 accuracy= 0.9216
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.9450 accuracy= 0.8235
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.6151 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.5148 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.2255 accuracy= 0.9412
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.4372 accuracy= 0.8627
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.6452 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.5009 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.5018 accuracy= 0.8824
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.6686 accuracy= 0.8431
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.0001_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.5925 accuracy= 0.9020
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 4.0380 accuracy= 0.3725
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 3.4079 accuracy= 0.5098
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 3.1237 accuracy= 0.5882
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 3.8698 accuracy= 0.4902
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 3.5434 accuracy= 0.4902
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 3.9869 accuracy= 0.3922
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 4.1344 accuracy= 0.4510
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 2.9923 accuracy= 0.5882
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 3.5807 accuracy= 0.4706
+wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta0.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 3.9800 accuracy= 0.4118
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.2973 accuracy= 0.8917
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.2870 accuracy= 0.8983
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.2954 accuracy= 0.8897
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.3145 accuracy= 0.8917
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.2895 accuracy= 0.8958
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.2901 accuracy= 0.8953
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.2997 accuracy= 0.8935
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.2958 accuracy= 0.8925
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.3063 accuracy= 0.8831
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.3006 accuracy= 0.8922
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.3572 accuracy= 0.8740
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.3332 accuracy= 0.8808
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.3520 accuracy= 0.8755
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.3573 accuracy= 0.8778
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.3415 accuracy= 0.8770
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.3243 accuracy= 0.8785
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.3523 accuracy= 0.8704
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.3356 accuracy= 0.8758
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.3495 accuracy= 0.8753
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta0.0001_gamma0.5_delta1.0_nlid2_nl1_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.3384 accuracy= 0.8773
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.7528 accuracy= 0.8197
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.7402 accuracy= 0.8114
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.7518 accuracy= 0.8121
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.7331 accuracy= 0.8086
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.7425 accuracy= 0.8101
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.7530 accuracy= 0.8154
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.7018 accuracy= 0.8174
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.7287 accuracy= 0.8154
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.7351 accuracy= 0.8169
+pubmed_lr0.01_do0.6_es200_wd0.0001_alpha0.0_beta20000.0_gamma0.5_delta0.0_nlid2_nl1_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.7306 accuracy= 0.8124
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.4374 accuracy= 0.8592
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.3303 accuracy= 0.8954
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 0.3334 accuracy= 0.8974
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.3568 accuracy= 0.8913
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.3766 accuracy= 0.8893
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.3828 accuracy= 0.8793
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.4458 accuracy= 0.8753
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.3651 accuracy= 0.8893
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.4203 accuracy= 0.8773
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.4153 accuracy= 0.8793
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.8151 accuracy= 0.7525
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.7694 accuracy= 0.7606
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 0.7056 accuracy= 0.7988
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.7296 accuracy= 0.7626
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.6737 accuracy= 0.8008
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.7286 accuracy= 0.7726
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.8541 accuracy= 0.7686
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.7478 accuracy= 0.7545
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.8045 accuracy= 0.7545
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta0.0001_gamma0.8_delta0.9_nlid2_nl2_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.7357 accuracy= 0.7807
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.6490 accuracy= 0.8249
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.5673 accuracy= 0.8511
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 0.5145 accuracy= 0.8672
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.5655 accuracy= 0.8491
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.6431 accuracy= 0.8350
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.6148 accuracy= 0.8431
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.6499 accuracy= 0.8209
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.5780 accuracy= 0.8410
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.6060 accuracy= 0.8431
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.6477 accuracy= 0.8209
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split0_results.txt
+Test set results: loss= 0.4247 accuracy= 0.8652
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split1_results.txt
+Test set results: loss= 0.3263 accuracy= 0.8994
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 0.3390 accuracy= 0.8934
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 0.3536 accuracy= 0.8813
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split4_results.txt
+Test set results: loss= 0.3708 accuracy= 0.8893
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split5_results.txt
+Test set results: loss= 0.3961 accuracy= 0.8692
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split6_results.txt
+Test set results: loss= 0.4479 accuracy= 0.8632
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split7_results.txt
+Test set results: loss= 0.3597 accuracy= 0.8793
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split8_results.txt
+Test set results: loss= 0.4274 accuracy= 0.8712
+cora_lr0.01_do0.8_es40_wd5e-05_alpha0.0_beta800.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders4_split9_results.txt
+Test set results: loss= 0.4146 accuracy= 0.8732
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.7852 accuracy= 0.7534
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.7159 accuracy= 0.7666
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.7990 accuracy= 0.7598
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.7507 accuracy= 0.7692
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.7487 accuracy= 0.7948
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 0.8181 accuracy= 0.7470
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.8090 accuracy= 0.7617
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.7194 accuracy= 0.8027
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.6917 accuracy= 0.7931
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.7579 accuracy= 0.7741
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 0.8785 accuracy= 0.7278
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 0.8573 accuracy= 0.7108
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 0.8824 accuracy= 0.7372
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 0.8920 accuracy= 0.7210
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 0.8447 accuracy= 0.7406
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 1.0679 accuracy= 0.7069
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 0.9369 accuracy= 0.7270
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 0.8226 accuracy= 0.7425
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 0.8428 accuracy= 0.7251
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta0.0001_gamma0.8_delta1.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 0.8388 accuracy= 0.7666
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
+Test set results: loss= 1.2546 accuracy= 0.6361
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
+Test set results: loss= 1.0733 accuracy= 0.6807
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
+Test set results: loss= 1.2162 accuracy= 0.6707
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
+Test set results: loss= 1.1780 accuracy= 0.6697
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
+Test set results: loss= 1.0376 accuracy= 0.7571
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
+Test set results: loss= 1.1258 accuracy= 0.7139
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
+Test set results: loss= 1.2621 accuracy= 0.6606
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
+Test set results: loss= 1.1780 accuracy= 0.6702
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
+Test set results: loss= 1.1356 accuracy= 0.6813
+citeseer_lr0.01_do0.8_es40_wd1e-05_alpha1.0_beta1000.0_gamma0.8_delta0.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
+Test set results: loss= 1.2082 accuracy= 0.6596

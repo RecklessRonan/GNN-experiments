@@ -2,8 +2,8 @@
 
 # datasets=(pokec snap-patents arxiv-year genius fb100 twitch-gamer)
 # h2gcn can only experiment arxiv-year and fb100
-datasets=(twitch-gamer)
-baselines=(h2gcn)
+datasets=(pokec)
+baselines=(gprgnn linkx)
 
 
 hidden_channels_lst=(8)

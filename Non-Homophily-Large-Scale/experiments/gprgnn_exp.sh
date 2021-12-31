@@ -3,7 +3,7 @@
 dataset=$1
 sub_dataset=${2:-''}
 
-hidden_channels_lst=(16 32 64 128 256)
+hidden_channels_lst=(256 128 64 32 16)
 lr_lst=(0.01 0.05 0.002)
 
 

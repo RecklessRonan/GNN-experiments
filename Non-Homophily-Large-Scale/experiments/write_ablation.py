@@ -45,32 +45,32 @@ for d in datasets:
     paras = best_config12[d]
     run_shs += get_sh(paras, d, sub_dataset, 1)
 
-    paras = best_config12[d] * 1
-    paras[5] = 0.0001
-    run_shs += get_sh(paras, d, sub_dataset, 1)
+    # paras = best_config12[d] * 1
+    # paras[5] = 0.0001
+    # run_shs += get_sh(paras, d, sub_dataset, 1)
 
-    paras = best_config12[d] * 1
-    paras[7] = 0.0
-    run_shs += get_sh(paras, d, sub_dataset, 1)
+    # paras = best_config12[d] * 1
+    # paras[7] = 0.0
+    # run_shs += get_sh(paras, d, sub_dataset, 1)
 
-    paras = best_config12[d] * 1
-    paras[7] = 1.0
-    run_shs += get_sh(paras, d, sub_dataset, 1)
+    # paras = best_config12[d] * 1
+    # paras[7] = 1.0
+    # run_shs += get_sh(paras, d, sub_dataset, 1)
 
-    paras = best_config22[d] * 1
+    paras = best_config22[d]
     run_shs += get_sh(paras, d, sub_dataset, 2)
 
-    paras = best_config22[d] * 1
-    paras[5] = 0.0001
-    run_shs += get_sh(paras, d, sub_dataset, 2)
+    # paras = best_config22[d] * 1
+    # paras[5] = 0.0001
+    # run_shs += get_sh(paras, d, sub_dataset, 2)
 
-    paras = best_config22[d] * 1
-    paras[7] = 0.0
-    run_shs += get_sh(paras, d, sub_dataset, 2)
+    # paras = best_config22[d] * 1
+    # paras[7] = 0.0
+    # run_shs += get_sh(paras, d, sub_dataset, 2)
 
-    paras = best_config22[d] * 1
-    paras[7] = 1.0
-    run_shs += get_sh(paras, d, sub_dataset, 2)
+    # paras = best_config22[d] * 1
+    # paras[7] = 1.0
+    # run_shs += get_sh(paras, d, sub_dataset, 2)
 
 
 with open('ablation_study.sh', 'w') as f:

@@ -12,11 +12,11 @@ def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--log-path', type=str, default='experiment/plot_20/')
+    parser.add_argument('--log-path', type=str, default='efficiency_logs/')
     # parser.add_argument('--log-file', type=str, default='')
     parser.add_argument('--dataset', type=str, default='freebase')
     parser.add_argument('--title', type=str, default='DBLP')
-    parser.add_argument('--epochs', type=int, default='300')
+    parser.add_argument('--epochs', type=int, default='500')
     args = parser.parse_args()
 
     return args

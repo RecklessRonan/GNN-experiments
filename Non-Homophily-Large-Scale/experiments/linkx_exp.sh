@@ -3,7 +3,7 @@
 dataset=$1
 sub_dataset=${2:-''}
 
-hidden_channels_lst=(16 32 128 256)
+hidden_channels_lst=(256 128 32 16)
 num_layers_lst=(1 2 3)
 
 

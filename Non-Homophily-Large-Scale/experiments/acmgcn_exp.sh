@@ -7,13 +7,13 @@
 # decay_rate_lst=(0.0 1.5)
 # num_layers_lst=(3 2 1)
 
-dataset_lst=(snap-patents fb100)
+dataset_lst=(genius)
 hidden_channel_lst=(64)
 weight_decay_lst=(5e-5 5e-4 5e-3)
-dropout_lst=(0.1 0.5 0.9)
+dropout_lst=(0.1 0.3 0.5 0.7 0.9)
 lr_lst=(0.01)
 num_layers_lst=(2)
-display_step=25
+display_step=1
 
 for dataset in "${dataset_lst[@]}"; do
     for lr in "${lr_lst[@]}"; do

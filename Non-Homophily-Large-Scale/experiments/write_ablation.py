@@ -29,7 +29,7 @@ def get_sh(paras, d, sub_dataset, norm_func):
         ' --alpha ' + str(paras[4]) + ' --beta ' + str(paras[5]) + ' --gamma ' + str(paras[6]) +\
         ' --delta ' + str(paras[7]) + ' --norm_func_id ' + str(norm_func) + ' --norm_layers ' + str(paras[8]) +\
         ' --orders_func_id ' + str(2) + ' --orders ' + \
-        str(paras[9]) + ' --display_step 25 --runs 5 '
+        str(paras[9]) + ' --display_step 1 --runs 5 '
     if d == 'snap-patents' or d == 'arxiv-year':
         sh += '--directed'
     sh += '\n'

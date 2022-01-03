@@ -162,8 +162,8 @@ class MLP_NORM(nn.Module):
         h0 = x
         for _ in range(self.norm_layers):
             # adj_drop = F.dropout(adj, self.dropout, training=self.training)
-            x = self.norm(x, h0, adj)
-        return F.log_softmax(x, dim=1)
+            x, z = self.norm(x, h0, adj)
+        return F.log_softmax(x, dim=1), z, x
 
     def norm_func1(self, x, h0, adj):
         # print('norm_func1 run')
@@ -214,7 +214,7 @@ class MLP_NORM(nn.Module):
                      torch.inverse(coe1 * coe1 * xx + (self.alpha + self.beta) * self.nodes_eye))
         # print(z.shape)
         # print(z)
-        return res
+        return res, z
 
     def order_func1(self, x, res, adj):
         # Orders1
@@ -228,8 +228,8 @@ class MLP_NORM(nn.Module):
     def order_func2(self, x, res, adj):
         # Orders2
         tmp_orders = torch.spmm(adj, res)
-        print('tmp_orders', tmp_orders.shape)
-        print('orders_weight', self.orders_weight[0].shape)
+        # print('tmp_orders', tmp_orders.shape)
+        # print('orders_weight', self.orders_weight[0].shape)
         sum_orders = tmp_orders * self.orders_weight[0]
         for i in range(1, self.orders):
             tmp_orders = torch.spmm(adj, tmp_orders)
@@ -575,11 +575,12 @@ t_total = time.time()
 
 
 # print(model.diag_weight)
+
 for epoch in range(args.epochs):
     t = time.time()
     model.train()
     optimizer.zero_grad()
-    output = model(features, adj)
+    output, z, x = model(features, adj)
     loss_train = F.nll_loss(output[idx_train], labels[idx_train])
     acc_train = accuracy(output[idx_train], labels[idx_train])
     loss_train.backward()
@@ -591,7 +592,11 @@ for epoch in range(args.epochs):
         # Evaluate validation set performance separately,
         # deactivates dropout during validation run.
         model.eval()
-        output = model(features, adj)
+        output, z, x = model(features, adj)
+        x_dir = 'h_vis/' + str(args.dataset) + '/' + str(args.split)
+        if not os.path.exists(x_dir):
+            os.mkdir(x_dir)
+        torch.save(x, x_dir + '/x_'+str(epoch)+'.pt')
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
@@ -608,6 +613,8 @@ for epoch in range(args.epochs):
 # print("Optimization Finished!")
 # print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
+torch.save(labels, x_dir + '/label.pt')
+
 outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
     f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\
     f"delta{args.delta}_nlid{args.norm_func_id}_nl{args.norm_layers}_" +\
@@ -616,7 +623,7 @@ print(outfile_name)
 
 # Testing
 model.eval()
-output = model(features, adj)
+output, z, x = model(features, adj)
 loss_test = F.nll_loss(output[idx_test], labels[idx_test])
 acc_test = accuracy(output[idx_test], labels[idx_test])
 print("Test set results:",

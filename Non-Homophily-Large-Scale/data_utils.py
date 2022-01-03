@@ -240,6 +240,27 @@ def evaluate_mlpnorm(model, x, adj, dataset, split_idx, eval_func, result=None, 
 
 
 @torch.no_grad()
+def evaluate_mlpnormz(model, x, adj, dataset, split_idx, eval_func, result=None, sampling=False, subgraph_loader=None):
+    if result is not None:
+        out = result
+    else:
+        model.eval()
+        if not sampling:
+            out, _ = model(x, adj)
+        else:
+            out, _ = model.inference(dataset, subgraph_loader)
+
+    train_acc = eval_func(
+        dataset.label[split_idx['train']], out[split_idx['train']])
+    valid_acc = eval_func(
+        dataset.label[split_idx['valid']], out[split_idx['valid']])
+    test_acc = eval_func(
+        dataset.label[split_idx['test']], out[split_idx['test']])
+
+    return train_acc, valid_acc, test_acc, out
+
+
+@torch.no_grad()
 def evaluate_acmgcn(model, x, adj_low, adj_high, dataset, split_idx, eval_func, result=None, sampling=False, subgraph_loader=None):
     if result is not None:
         out = result

@@ -1,0 +1,23 @@
+nohup: ignoring input
+Using backend: pytorch
+Namespace(SGD=False, adam=False, alpha=0.0, beta=1.0, cached=False, cpu=False, dataset='fb100', decay_rate=1.0, delta=0.5, directed=False, display_step=1, dropout=0.5, epochs=500, exponent=3.0, gamma=0.5, gat_heads=8, gcn2_alpha=0.1, gpr_alpha=0.1, hidden_channels=256, hops=1, inner_activation=False, inner_dropout=False, jk_type='max', link_init_layers_A=1, link_init_layers_X=1, lp_alpha=0.1, lr=0.001, method='mlpnorm_z', no_bn=False, norm_func_id=2, norm_layers=2, num_layers=2, num_mlp_layers=1, orders=2, orders_func_id=2, print_prop=False, rand_split=False, rocauc=False, runs=1, sampling=False, sub_dataset='Penn94', theta=0.5, train_prop=0.5, valid_prop=0.25, weight_decay=0.1)
+/data/code/GNN-experiments/Non-Homophily-Large-Scale/dataset.py:140: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  edge_index = torch.tensor(A.nonzero(), dtype=torch.long)
+num nodes 41554 | num classes 2 | num node feats 4814
+MODEL: MLPNORM_Z(
+  (fc1): Linear(in_features=4814, out_features=256, bias=True)
+  (fc2): Linear(in_features=256, out_features=2, bias=True)
+  (fc3): Linear(in_features=256, out_features=256, bias=True)
+  (fc4): Linear(in_features=41554, out_features=256, bias=True)
+)
+xx torch.Size([41554, 41554])
+Traceback (most recent call last):
+  File "main_z.py", line 306, in <module>
+    out, z = model(x, adj)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/data/code/GNN-experiments/Non-Homophily-Large-Scale/models.py", line 1123, in forward
+    x, z = self.norm(x, h0, adj)
+  File "/data/code/GNN-experiments/Non-Homophily-Large-Scale/models.py", line 1156, in norm_func2
+    hx = torch.mm(h0, x.t())
+RuntimeError: CUDA out of memory. Tried to allocate 12.87 GiB (GPU 0; 31.75 GiB total capacity; 27.87 GiB already allocated; 2.29 GiB free; 28.04 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

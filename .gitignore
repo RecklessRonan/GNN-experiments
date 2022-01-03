@@ -8,3 +8,4 @@ Non-Homophily-Large-Scale/dataset/
 Non-Homophily-Large-Scale/ggcn_features/
 Non-Homophily-Large-Scale/acmgcn_features/
 *.pt
+*.pkl

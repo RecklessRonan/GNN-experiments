@@ -1,59 +1,37 @@
 nohup: ignoring input
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split0_results.txt
-Test set results: loss= 0.9032 accuracy= 0.7568
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split1_results.txt
-Test set results: loss= 0.3553 accuracy= 0.8919
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split2_results.txt
-Test set results: loss= 1.3941 accuracy= 0.7568
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split3_results.txt
-Test set results: loss= 0.2914 accuracy= 0.8649
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split4_results.txt
-Test set results: loss= 0.4201 accuracy= 0.8378
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split5_results.txt
-Test set results: loss= 0.3521 accuracy= 0.9189
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split6_results.txt
-Test set results: loss= 0.5861 accuracy= 0.8649
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split7_results.txt
-Test set results: loss= 0.6321 accuracy= 0.8649
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split8_results.txt
-Test set results: loss= 0.8951 accuracy= 0.8108
-texas_lr0.01_do0.0_es200_wd0.0001_alpha10.0_beta1.0_gamma0.2_delta1.0_nlid2_nl1_ordersid2_orders4_split9_results.txt
-Test set results: loss= 0.4634 accuracy= 0.8378
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split1_results.txt
-Test set results: loss= 0.6993 accuracy= 0.9189
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split2_results.txt
-Test set results: loss= 0.5518 accuracy= 0.8649
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split3_results.txt
-Test set results: loss= 0.6016 accuracy= 0.9189
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split4_results.txt
-Test set results: loss= 0.8220 accuracy= 0.9189
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split5_results.txt
-Test set results: loss= 0.8177 accuracy= 0.8919
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split6_results.txt
-Test set results: loss= 0.8373 accuracy= 0.8108
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split7_results.txt
-Test set results: loss= 0.3977 accuracy= 0.8919
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split8_results.txt
-Test set results: loss= 0.8168 accuracy= 0.8378
-cornell_lr0.01_do0.0_es200_wd0.0001_alpha1.0_beta0.1_gamma0.7_delta1.0_nlid2_nl2_ordersid2_orders2_split9_results.txt
-Test set results: loss= 0.6935 accuracy= 0.8108
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split0_results.txt
-Test set results: loss= 0.9414 accuracy= 0.8235
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split1_results.txt
-Test set results: loss= 0.6151 accuracy= 0.8824
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split2_results.txt
-Test set results: loss= 0.5152 accuracy= 0.8824
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split3_results.txt
-Test set results: loss= 0.2240 accuracy= 0.9412
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split4_results.txt
-Test set results: loss= 0.4405 accuracy= 0.8627
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split5_results.txt
-Test set results: loss= 0.6527 accuracy= 0.8824
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split6_results.txt
-Test set results: loss= 0.4997 accuracy= 0.8824
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split7_results.txt
-Test set results: loss= 0.5094 accuracy= 0.8824
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split8_results.txt
-Test set results: loss= 0.6761 accuracy= 0.8431
-wisconsin_lr0.01_do0.0_es200_wd5e-05_alpha1.2_beta0.05_gamma0.3_delta1.0_nlid2_nl2_ordersid2_orders3_split9_results.txt
-Test set results: loss= 0.5757 accuracy= 0.9216
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/dist-packages/torch/serialization.py", line 379, in save
+    _save(obj, opened_zipfile, pickle_module, pickle_protocol)
+  File "/usr/local/lib/python3.6/dist-packages/torch/serialization.py", line 499, in _save
+    zip_file.write_record(name, storage.data_ptr(), num_bytes)
+OSError: [Errno 28] No space left on device
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "pygcn_z.py", line 603, in <module>
+    torch.save(z, z_dir + '/z_'+str(epoch)+'.pt')
+  File "/usr/local/lib/python3.6/dist-packages/torch/serialization.py", line 380, in save
+    return
+  File "/usr/local/lib/python3.6/dist-packages/torch/serialization.py", line 259, in __exit__
+    self.file_like.write_end_of_file()
+RuntimeError: [enforce fail at inline_container.cc:300] . unexpected pos 320 vs 241
+terminate called after throwing an instance of 'c10::Error'
+  what():  [enforce fail at inline_container.cc:300] . unexpected pos 320 vs 241
+frame #0: c10::ThrowEnforceNotMet(char const*, int, char const*, std::string const&, void const*) + 0x47 (0x7f8ab6bdbae7 in /usr/local/lib/python3.6/dist-packages/torch/lib/libc10.so)
+frame #1: <unknown function> + 0x2782d20 (0x7f8aff003d20 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_cpu.so)
+frame #2: <unknown function> + 0x277e2fc (0x7f8afefff2fc in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_cpu.so)
+frame #3: caffe2::serialize::PyTorchStreamWriter::writeRecord(std::string const&, void const*, unsigned long, bool) + 0xb5 (0x7f8aff006f65 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_cpu.so)
+frame #4: caffe2::serialize::PyTorchStreamWriter::writeEndOfFile() + 0x173 (0x7f8aff007253 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_cpu.so)
+frame #5: caffe2::serialize::PyTorchStreamWriter::~PyTorchStreamWriter() + 0x125 (0x7f8aff0074c5 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_cpu.so)
+frame #6: <unknown function> + 0xb44643 (0x7f8b13e42643 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_python.so)
+frame #7: <unknown function> + 0x2a2ce8 (0x7f8b135a0ce8 in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_python.so)
+frame #8: <unknown function> + 0x2a3fee (0x7f8b135a1fee in /usr/local/lib/python3.6/dist-packages/torch/lib/libtorch_python.so)
+frame #9: python3() [0x588a98]
+frame #10: python3() [0x5ad558]
+frame #11: python3() [0x5ad56e]
+frame #12: python3() [0x56b636]
+<omitting python frames>
+frame #18: __libc_start_main + 0xe7 (0x7f8b1845db97 in /lib/x86_64-linux-gnu/libc.so.6)
+
+Aborted (core dumped)

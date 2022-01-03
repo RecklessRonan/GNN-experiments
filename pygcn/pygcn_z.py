@@ -454,6 +454,7 @@ def load_data_new(dataset_str, split):
         idx_val = np.where(val_mask == 1)[0]
         idx_test = np.where(test_mask == 1)[0]
 
+    # np.save(adj, z_dir + '/adj.npz')
     adj = normalize(adj + sp.eye(adj.shape[0]))
     adj = sparse_mx_to_torch_sparse_tensor(adj)
 
@@ -519,6 +520,10 @@ parser.add_argument('--norm_func_id', type=int, default=2,
 args = parser.parse_args()
 args.cuda = not args.no_cuda and torch.cuda.is_available()
 
+z_dir = 'z_vis/' + str(args.dataset) + '/' + str(args.split)
+if not os.path.exists(z_dir):
+    os.mkdir(z_dir)
+
 np.random.seed(args.seed)
 torch.manual_seed(args.seed)
 if args.cuda:
@@ -532,6 +537,7 @@ adj, features, labels, idx_train, idx_val, idx_test = load_data_new(
 # Change data type to float
 features = features.to(torch.float64)
 adj = adj.to(torch.float64)
+
 
 # Model and optimizer
 
@@ -573,7 +579,8 @@ if args.cuda:
 cost_val = []
 t_total = time.time()
 
-
+torch.save(labels, z_dir + '/label.pt')
+torch.save(adj, z_dir + '/adj.pt')
 # print(model.diag_weight)
 
 for epoch in range(args.epochs):
@@ -593,9 +600,6 @@ for epoch in range(args.epochs):
         # deactivates dropout during validation run.
         model.eval()
         output, z = model(features, adj)
-        z_dir = 'z_vis/' + str(args.dataset) + '/' + str(args.split)
-        if not os.path.exists(z_dir):
-            os.mkdir(z_dir)
         torch.save(z, z_dir + '/z_'+str(epoch)+'.pt')
 
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
@@ -613,7 +617,6 @@ for epoch in range(args.epochs):
 # print("Optimization Finished!")
 # print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
-torch.save(labels, z_dir + '/label.pt')
 
 outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
     f"wd{args.weight_decay}_alpha{args.alpha}_beta{args.beta}_gamma{args.gamma}_" +\

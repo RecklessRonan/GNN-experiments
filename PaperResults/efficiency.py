@@ -1,12 +1,17 @@
 # %%
+from matplotlib.pyplot import MultipleLocator
 import pandas as pd
 import os
 import re
 import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 
+matplotlib.rcParams.update({'font.size': 15})
 
 # %%
+
+
 def get_result_df(file_name):
     with open(file_name, 'r') as f:
         all_logs = f.readlines()
@@ -351,6 +356,9 @@ for d in datasets:
     else:
         ylabel = 'Accuracy'
     # fig, ax = plt.subplots()
+    ax = plt.gca()
+    y_major_locator = MultipleLocator(0.1)
+    ax.yaxis.set_major_locator(y_major_locator)
     plt.ylabel(ylabel)
     # plt.xlabel('epoches')
     plt.xlabel('Seconds')

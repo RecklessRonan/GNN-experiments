@@ -63,3 +63,7 @@ film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta1.0_nlid2_nl2_
 Test set results: loss= 1.4203 accuracy= 0.3901
 film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta1.0_nlid2_nl2_ordersid2_orders4_split1_results.txt
 Test set results: loss= 1.4279 accuracy= 0.3658
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta1.0_nlid2_nl2_ordersid2_orders4_split2_results.txt
+Test set results: loss= 1.4088 accuracy= 0.3809
+film_lr0.01_do0.0_es40_wd0.001_alpha0.0_beta15000.0_gamma0.2_delta1.0_nlid2_nl2_ordersid2_orders4_split3_results.txt
+Test set results: loss= 1.4304 accuracy= 0.3770

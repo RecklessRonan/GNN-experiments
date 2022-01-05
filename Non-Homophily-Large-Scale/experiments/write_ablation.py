@@ -1,3 +1,7 @@
+# from left to right
+# lr, hidden_dim, dropout, weight_decay, beta1, beta2, gamma, alpha, norm_layers, orders
+
+# glognn
 best_config12 = {
     'arxiv-year': [0.005, 256, 0.7, 0.001, 0.0, 1.0, 0.7, 0.1, 1, 1],
     'genius': [0.001, 256, 0.0, 0.0, 0.0, 1.0, 0.9, 0.5, 2, 2],
@@ -7,6 +11,7 @@ best_config12 = {
     'snap-patents': [0.005, 64, 0.8, 0.01, 0.0, 1.0, 0.6, 0.5, 1, 3]
 }
 
+# glognn++
 best_config22 = {
     'arxiv-year': [0.005, 256, 0.7, 0.1, 0.1, 1.0, 0.7, 0.1, 1, 1],
     'genius': [0.001, 256, 0.0, 0.0, 1.0, 0.1, 0.9, 0.5, 2, 3],

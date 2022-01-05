@@ -5,6 +5,10 @@ datasets = ['chameleon', 'cornell', 'squirrel', 'film',
             'texas', 'wisconsin', 'pubmed', 'cora', 'citeseer']
 
 
+# from left to right
+# lr, dropout, early_stopping, weight_decay, beta1, beta2, gamma, norm_layers, orders, alpha, glognn_tag, glognn_tag
+
+# glognn
 best_config12 = {
     'chameleon': [0.01, 0.0, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 0.0, 1, 2],
     'squirrel': [0.01, 0.8, 200, 0.00005, 0.0, 1.0, 0.0, 2, 1, 1.0, 1, 2],
@@ -17,7 +21,7 @@ best_config12 = {
     'film': [0.01, 0.0, 40, 0.001, 0.0, 1000.0, 0.1, 2, 6, 1.0, 1, 2]
 }
 
-
+# glognn++
 best_config22 = {
     'chameleon': [0.01, 0.4, 300, 0.0001, 1.0, 1.0, 0.4, 3, 2, 0.0, 2, 2],
     'squirrel': [0.01, 0.8, 200, 0.0, 0.0, 1.0, 0.0, 3, 2, 0.0, 2, 2],

@@ -600,8 +600,6 @@ for epoch in range(args.epochs):
         # deactivates dropout during validation run.
         model.eval()
         output, z = model(features, adj)
-        torch.save(z, z_dir + '/z_'+str(epoch)+'.pt')
-
     loss_val = F.nll_loss(output[idx_val], labels[idx_val])
     acc_val = accuracy(output[idx_val], labels[idx_val])
     # print('Epoch: {:04d}'.format(epoch+1),
@@ -616,6 +614,8 @@ for epoch in range(args.epochs):
         break
 # print("Optimization Finished!")
 # print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
+
+torch.save(z, z_dir + '/z_'+str(epoch)+'.pt')
 
 
 outfile_name = f"{args.dataset}_lr{args.lr}_do{args.dropout}_es{args.early_stopping}_" +\
